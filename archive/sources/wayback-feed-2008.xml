@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/rss2full.xsl" type="text/xsl" media="screen"?><?xml-stylesheet href="http://feeds.feedburner.com/~d/styles/itemcontent.css" type="text/css" media="screen"?><rss version="2.0"><channel><title>SKHAZ's Blog</title><link>http://www.skhaz.com/blog</link><description>Code::Blog</description><language>en</language><generator>http://wordpress.org/?v=2.5</generator><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" href="http://feeds.feedburner.com/skhazblog" type="application/rss+xml" /><item><title>Meme - Como é seu Desktop</title><link>http://www.skhaz.com/blog/meme-como-e-seu-desktop/</link><category>Misc</category><category>Desktop</category><category>IDE</category><category>Meme</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Mon, 12 May 2008 07:53:46 -0500</pubDate><guid isPermaLink="false">http://www.skhaz.com/blog/?p=106</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><a href="http://vinigodoy.wordpress.com/2008/05/10/meme-como-e-o-seu-desktop/">Respondendo ao meme do Vínicius</a>, Eu não gosto de muitos icones no desktop, prefiro usar o &#8220;Inicialização Rapida&#8221;</p>
+<p><a href='http://www.skhaz.com/blog/wp-content/uploads/2008/05/desktop.jpg'><img src="http://www.skhaz.com/blog/wp-content/uploads/2008/05/desktop.jpg" alt="Desktop" title="desktop" width="500" height="312" class="alignnone size-full wp-image-107" /></a></p>
+<p>IDE: Codeblocks, Visual Studio 2008 e wxFormBuilder (valeu a indicação <a href="http://sonetto.wordpress.com/">n2liquid</a>)<br />
+Jogos: Diablo II, Starcraft, Turok 2<br />
+Outros softwares: Winamp, Kaspersky, Opera, Media Player Classic, DVD Shrink, Nero.<br />
+Tem alguns eBooks no canto superior, e no superior esquerdo alguns projetos.<br />
+Tema usado é o Zune, e minha taskbar eu sempre uso com o tamanho dobrado (talvez seja um abito vindo do KDE), Ah é.. e como muita gente limpou o desktop para a &#8220;visita&#8221;, eu tambem dei uma enxugada no meu xD</p>
+<p>A imagem está em baixa resolução porque meu monitor parou de funcionar e estou só com um reserva :(</p>
+<p><strong>Edit</strong> Visual Studio com tema modificado<br />
+<a href='http://www.skhaz.com/blog/wp-content/uploads/2008/05/msvczm8.png'><img src="http://www.skhaz.com/blog/wp-content/uploads/2008/05/msvczm8-300x225.png" alt="" title="msvczm8" width="300" height="225" class="alignnone size-medium wp-image-108" /></a></p>
+]]></content:encoded><description>Respondendo ao meme do Vínicius, Eu não gosto de muitos icones no desktop, prefiro usar o &amp;#8220;Inicialização Rapida&amp;#8221;
+
+IDE: Codeblocks, Visual Studio 2008 e wxFormBuilder (valeu a indicação n2liquid)
+Jogos: Diablo II, Starcraft, Turok 2
+Outros softwares: Winamp, Kaspersky, Opera, Media Player Classic, DVD Shrink, Nero.
+Tem alguns eBooks no canto superior, e no superior esquerdo alguns projetos.
+Tema usado [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/meme-como-e-seu-desktop/feed/</wfw:commentRss></item><item><title>Mapa térmico do blog</title><link>http://www.skhaz.com/blog/mapa-termico-do-blog/</link><category>Misc</category><category>Blog</category><category>ClickHeat</category><category>HeatMap</category><category>Mapa de Temperatura</category><category>PHP</category><category>Tracking</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Fri, 02 May 2008 08:49:13 -0500</pubDate><guid isPermaLink="false">http://www.skhaz.com/blog/?p=68</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Instalei o <a href="http://www.labsmedia.com/clickheat/index.html" target="_new">ClickHeat</a> no blog, para quem ainda não conhece ele registra os clicks dos visitantes e posteriormente gera gráficos com a temperatura dos clicks, abaixo algumas screenshots do ClickHeat rodando há 2 dias.</p>
+<p><a href="http://img240.imageshack.us/img240/2306/mapakm5.png"><img src="http://img240.imageshack.us/img240/2306/mapakm5.th.png" alt="Click para ampliar" /></a>   <a href="http://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.png"><img src="http://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.th.png" alt="Click para ampliar" /></a></p>
+<blockquote><p>Os pontos azuis são os clicks, quanto mais avermelhado mais clicks em um determinado ponto</p>
+</blockquote>
+]]></content:encoded><description>Instalei o ClickHeat no blog, para quem ainda não conhece ele registra os clicks dos visitantes e posteriormente gera gráficos com a temperatura dos clicks, abaixo algumas screenshots do ClickHeat rodando há 2 dias.
+   
+Os pontos azuis são os clicks, quanto mais avermelhado mais clicks em um determinado ponto</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/mapa-termico-do-blog/feed/</wfw:commentRss></item><item><title>Sistema de Arquivo Virtual usando a PhysicsFS</title><link>http://www.skhaz.com/blog/sistema-de-arquivo-virtual/</link><category>C++</category><category>SDL</category><category>boost</category><category>Engine</category><category>Framework</category><category>Irrlicht</category><category>lzma</category><category>Ogre</category><category>physfs</category><category>PhysicsFS</category><category>Sistema de arquivo virtual</category><category>VFS</category><category>Wrapper</category><category>zip</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Thu, 17 Apr 2008 07:29:04 -0500</pubDate><guid isPermaLink="false">http://www.skhaz.com/blog/?p=62</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><strong>O que é PhysicsFS</strong><br />
+PhysicsFS (Physics File System) ou physfs, fornece uma camada de abstração do sistema de arquivos do sistema operacional.</p>
+<p><strong>Motivação</strong><br />
+Quando estava escrevendo a <a href="http://wintermoon.sourceforge.net/">wintermoon</a> estudei varias engines dentre elas a <a href="http://www.ogre3d.org/">Ogre</a> e a <a href="http://irrlicht.sourceforge.net/">Irrlicht</a> cada uma possui seu próprio sistema de arquivo virtual como descrito acima. mais porque a PhysicsFS? bom além de ser considerada muito segura e portável, ela tem um wrapper para a estrutura SDL_RWops o que facilita muito para projetos usando a biblioteca SDL. Outro ponto forte é a segurança, sua aplicação apenas poderá acessar os diretórios que você escolher, ideal para projetos baseados em scripts.</p>
+<p><strong>Recursos</strong><br />
+Formatos suportados</p>
+<ul>
+<li><em>grp</em> - groupfiles ou seja vários arquivos em um só sem compressão</li>
+<li><em>hog</em> - maiores informações em <a href="http://www.descent2.com/ddn/specs/hog">href=&#8221;http://www.descent2.com/ddn/specs/hog</a></li>
+<li><em>lzma</em> - formato popular usado pelo 7z</li>
+<li><em>mvl</em> - Descent II Movielib, mais informações em <a href="http://www.descent2.com/ddn/specs/mvl/">http://www.descent2.com/ddn/specs/mvl/</a></li>
+<li><em>qpak</em> - formato de arquivo usado no Quake 1, Quake 2 e Quake 3</li>
+<li><em>wad</em> - usado na engine do DOOM</li>
+<li><em>zip</em> - formato popular e muito usado</li>
+</ul>
+<p><strong>Extras</strong></p>
+<ul>
+<li><em>selfextract</em> - suporta autoextração do executável</li>
+<li><em>ignorecase</em> - torna não case-sensitive (não diferencia maiúsculo de minusculo)</li>
+<li><em>wildcard</em> - mascara ex. arquivo.*, *.zip, arqui??.*, *.zi?</li>
+<li><em>physfsrwops</em> - abstração da estrutura SDL_RWops (é o que vamos usar, será mais explicado adiante)</li>
+<li><em>physfshttpd</em> - Possibilita enviar ou receber arquivos via http</li>
+</ul>
+<p><span id="more-62"></span></p>
+<p>Alem de varias outras coisas, como bind para ruby e .net.</p>
+<p><strong>Velocidade</strong><br />
+Como sabemos o acesso ao disco rígido é muito lento, usando um sistema de arquivos virtuais, reduzimos o acesso ao disco conseguindo um ganho de velocidade no carregamento.</p>
+<p><strong>Compilando</strong><br />
+Se você usa algum Unix* (*BSD, GNU/Linux, etc) execute os comandos a seguir em algum terminal</p>
+<p><code>cmake . &amp;&amp; make &amp;&amp; make install</code></p>
+<p>No windows, baixe o cmake ou criar seu próprio projeto na sua IDE preferida.<br />
+Como o Skhaz é um bom menino ele já criou um projeto para o CodeBlocks/mingw32 bem limpo suportando apenas os formatos grp, lzma e zip, se alguem precisar de algum outro formato e não souber adicionar, mande me um email. Não foi adicionado nenhum arquivo da pasta extra, para manter compatibilidade (tive dificuldades em compilar a wintermoon em outras plataformas além do codeblocks/mingw32) caso você queira alguma facilidade da pasta extra, adicione o arquivo ao seu projeto, como explicado adiante.</p>
+<p><strong>SDL e PhysicsFS</strong><br />
+A SDL é muito robusta e flexível, possibilitando &#8220;sobre escrever&#8221; as chamadas de open, read, write e close da estrutura SDL_RWops.</p>
+<p>No diretório extras você encontra physfsrwops.c e physfsrwops.h, adicione eles ao seu projeto.</p>
+<p>Abaixo segue um exemplo de como usar a physfs, antes de mais nada é preciso inicializar a physfs assim como a SDL</p>
+<pre class="syntax-highlight:cpp">
+int main(int argc, char** argv)
+{
+  if (PHYSFS_init(argv[0]) == 0)
+  {
+    fprintf(stderr, &quot;%s\n&quot;, PHYSFS_getLastError());
+    exit(-1);
+  }
+
+  // ...
+</pre>
+<p>PHYSFS_init recebe um único parâmetro, em algumas plataformas pode ser NULL, mais por questões de portabilidade aconselho sempre usa-lo.</p>
+<p>e também é necessário desnicializar</p>
+<pre class="syntax-highlight:cpp">
+PHYSFS_deinit();
+</pre>
+<p>Adicionando alguns diretórios e arquivos</p>
+<pre class="syntax-highlight:cpp">
+// adiciona o diretório media para a &quot;pesquisa&quot;
+PHYSFS_addToSearchPath(&quot;media/&quot;, true);
+
+// adiciona o arquivo jogador.zip
+PHYSFS_addToSearchPath(&quot;jogador.zip&quot;, true);
+</pre>
+<pre class="syntax-highlight:cpp">
+// PHYSFSRWOPS_openRead se encontra no arquivo physfsrwops.c
+// basicamente ela retorna uma estrutura SDL_RWops
+// jogador_1.png esta dentro de jogador.zip
+SDL_RWops* rwops = PHYSFSRWOPS_openRead(&quot;jogador1.png&quot;);
+
+// O segundo parâmetro diz a IMG_Load_RW que
+// libere o recurso após carrega-lo
+SDL_Surface* surface = IMG_Load_RW(rwops, 1);
+
+// Pronto já temos nossa imagem carregada.
+</pre>
+<p>Listando os arquivos</p>
+<pre class="syntax-highlight:cpp">
+char **rc = PHYSFS_enumerateFiles(&quot;/&quot;);
+char **i;
+
+for (i = rc; *i != NULL; i++)
+     printf(&quot;%s\n&quot;, *i);
+
+PHYSFS_freeList(rc);
+</pre>
+<p><strong>Onde</strong><br />
+Voce pode baixar o source e compilar manualmente, para quem usa algum Unix Like, rode o comando <code>cmake . &amp;&amp; make &amp;&amp; make install</code></p>
+<ul>
+<li>Site oficial da PhysicsFS (<a href="http://icculus.org/physfs/">http://icculus.org/physfs/</a>)
+</li>
+<li>7zip (<a href="http://www.7-zip.org/">http://www.7-zip.org/</a>)</li>
+<li><a href='http://www.skhaz.com/blog/wp-content/uploads/2008/04/physicsfs.zip'>PhysicsFS já com projeto, fontes e compilada</a></li>
+<li><a href='http://www.skhaz.com/blog/wp-content/uploads/2008/04/sdl-physicsfs.zip'>Exemplo completo</a></li>
+</ul>
+<p><strong>Dica</strong><br />
+PhysicsFS com mensagens em Português do Brasil: Adicione essa macro PHYSFS_LANG_PORTUGUESE_BR&#8221; sem aspas, ou então altere-a no arquivo physfs_internal.h na linha 78</p>
+<p><strong>Referencias</strong><br />
+ParaGUI (<a href="http://www.paragui.org/">http://www.paragui.org/</a>)<br />
+Irrlicht (<a href="http://irrlicht.sourceforge.net/">http://irrlicht.sourceforge.net/</a>)<br />
+Ogre (<a href="http://www.ogre3d.org/">http://www.ogre3d.org/</a>)</p>
+<p>Não deixem de comentar, criticas, sugestões e elogios são muito bem vindos.</p>
+]]></content:encoded><description>O que é PhysicsFS
+PhysicsFS (Physics File System) ou physfs, fornece uma camada de abstração do sistema de arquivos do sistema operacional.
+Motivação
+Quando estava escrevendo a wintermoon estudei varias engines dentre elas a Ogre e a Irrlicht cada uma possui seu próprio sistema de arquivo virtual como descrito acima. mais porque a PhysicsFS? bom além de ser [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/sistema-de-arquivo-virtual/feed/</wfw:commentRss></item><item><title>try catch no construtor</title><link>http://www.skhaz.com/blog/try-catch-no-construtor/</link><category>C++</category><category>catch</category><category>exception</category><category>try</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Thu, 10 Apr 2008 16:17:04 -0500</pubDate><guid isPermaLink="false">http://www.skhaz.com/blog/?p=59</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Eu dia antes de publicar este artigo (como tratar exceções nos construtores que encontrei no livro More Exceptional C++ em Constructor Failures) lendo meus feeds vi que o Wanderley Caloni publicou primeiro sobre isso primeiro em <a href="http://www.caloni.com.br/blog/archives/try-catch-flutuante">Try-catch flutuante</a>, o legal é que eu não sabia que nome poderia ser dado à isso :D</p>
+<p>Simples e resumido, apesar de ser bem estranho você pode tratar exceções na inicialização dos atributos das classes usando try como você já esta acostumado.<br />
+Exemplo retirado do livro More Exceptional C++</p>
+<pre class="syntax-highlight:cpp">
+class C : public A
+{
+    public:
+        C() try : A ()
+        {
+        }
+        catch( ... )
+        {
+        }
+};
+</pre>
+</p>
+<p><strong>Referencias</strong><br />
+More Exceptional C++<br />
+<a href="http://www.caloni.com.br/blog/archives/try-catch-flutuante">Try-catch flutuante - Caloni</a></p>
+]]></content:encoded><description>Eu dia antes de publicar este artigo (como tratar exceções nos construtores que encontrei no livro More Exceptional C++ em Constructor Failures) lendo meus feeds vi que o Wanderley Caloni publicou primeiro sobre isso primeiro em Try-catch flutuante, o legal é que eu não sabia que nome poderia ser dado à isso :D
+Simples e resumido, [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/try-catch-no-construtor/feed/</wfw:commentRss></item><item><title>Coder noob eu?</title><link>http://www.skhaz.com/blog/coder-noob-eu/</link><category>Humor</category><category>C++</category><category>Historias</category><category>Nonsense</category><category>stl</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Thu, 10 Apr 2008 15:12:54 -0500</pubDate><guid isPermaLink="false">http://www.skhaz.com/blog/?p=58</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Conversando hoje com o <a href="http://easy2d.sourceforge.net/">Jonatas</a> sobre as besteiras muita vezes ditas em alguns fóruns sobre programação, me lembrei de quando eu era chamado de coder noob e preguiçoso por preferir usar std::string ao invez de char* tem cabimento?</p>
+]]></content:encoded><description>Conversando hoje com o Jonatas sobre as besteiras muita vezes ditas em alguns fóruns sobre programação, me lembrei de quando eu era chamado de coder noob e preguiçoso por preferir usar std::string ao invez de char* tem cabimento?</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/coder-noob-eu/feed/</wfw:commentRss></item><item><title>mutable, o legado</title><link>http://www.skhaz.com/blog/mutable-o-legado/</link><category>C++</category><category>class</category><category>const</category><category>const_cast</category><category>mutable</category><category>volatile</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Tue, 08 Apr 2008 15:52:57 -0500</pubDate><guid isPermaLink="false">http://www.skhaz.com/blog/?p=57</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Continuando nosso artigo <a href="http://skhaz.wordpress.com/2008/02/05/mutable-que-raios-e-isso/">mutable, que raios é isso?</a> agora irei demonstrar um segunda maneira de &#8220;burlar&#8221; o mesmo método const sem usar atributos mutáveis (mutable).</p>
+<p><span id="more-57"></span></p>
+<p>Temos a seguinte interface de exemplo, Entity (pure abstract)</p>
+<pre class="syntax-highlight:cpp">
+class Entity
+{
+  public:
+    virtual void logic() = 0;
+    virtual void draw() const = 0;
+};
+</pre>
+<blockquote><p>Note que classes como a acima são muito comuns em vários projetos</p></blockquote>
+<p>Agora a classe Player que implementa Entity</p>
+<pre class="syntax-highlight:cpp">
+class Player : public Entity
+{
+  public:
+    void logic()
+    {
+    }
+
+    void draw() const
+    {
+       mDrawCount++;
+
+      // Erro! pois é um método const
+    }
+
+  private:
+     std::size_t mDrawCount;
+};
+</pre>
+<p>Mais skhaz porque não controlar isso no método logic que não é const? eu tenho bons motivos para isso, um deles é se você implementar um sistema de ticks como descrito no artigo <a href="http://vertexbuffer.wordpress.com/2008/01/29/controle-de-velocidade-de-jogo-com-ticks/">Controle de velocidade de jogo com ticks</a> onde quase sempre o método draw <strong>não</strong> será chamado no mesmo ciclo que logic.</p>
+<p><strong>ponteiro e const_cast os &#8220;vilões&#8221;</strong><br />
+Com o uso do cast const_cast podemos burlar o atributo declarado como mutable (assim como para const e volatile) para não constantes.</p>
+<pre class="syntax-highlight:cpp">
+void Player::draw() const
+{
+  const_cast&lt;player *&gt;(this)-&gt;mDrawCount++;
+
+  // work fine =D
+}
+</pre>
+<p>Referencia <a href="http://msdn2.microsoft.com/en-us/library/bz6at95h.aspx">http://msdn2.microsoft.com/en-us/library/bz6at95h.aspx</a><br />
+Um artigo recomendado pelo nosso amigo danielf sobre mutable <a href="http://www.highprogrammer.com/alan/rants/mutable.html">http://www.highprogrammer.com/alan/rants/mutable.html</a></player>
+]]></content:encoded><description>Continuando nosso artigo mutable, que raios é isso? agora irei demonstrar um segunda maneira de &amp;#8220;burlar&amp;#8221; o mesmo método const sem usar atributos mutáveis (mutable).
+
+Temos a seguinte interface de exemplo, Entity (pure abstract)
+
+class Entity
+{
+  public:
+    virtual void logic() = 0;
+    virtual void draw() const = 0;
+};
+
+Note que classes [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/mutable-o-legado/feed/</wfw:commentRss></item><item><title>Bem vindos</title><link>http://www.skhaz.com/blog/bem-vindos/</link><category>Misc</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Mon, 07 Apr 2008 20:12:05 -0500</pubDate><guid isPermaLink="false">http://www.skhaz.com/blog/?p=55</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[
+]]></content:encoded><description></description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/bem-vindos/feed/</wfw:commentRss></item><item><title>A vida é um Jogo?</title><link>http://www.skhaz.com/blog/a-vida-e-um-jogo/</link><category>Humor</category><category>Jogo</category><category>Tirinha</category><category>Vida</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Thu, 20 Mar 2008 12:55:06 -0500</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/2008/03/20/56/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Desculpem-me, mais eu não pude resistir em postar quando vi essa tirinha  :D</p>
+<p><a title="The Sims" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/jogo.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/jogo.thumbnail.jpg" alt="The Sims" /></a></p>
+<p>[Via <a href="http://explosm.net/">Cyanide &amp; Happiness</a>]</p>
+]]></content:encoded><description>Desculpem-me, mais eu não pude resistir em postar quando vi essa tirinha  :D
+
+[Via Cyanide &amp;#38; Happiness]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/a-vida-e-um-jogo/feed/</wfw:commentRss></item><item><title>Lançado o Arret</title><link>http://www.skhaz.com/blog/lancado-arret-3d/</link><category>Misc</category><category>Projetos</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Wed, 12 Mar 2008 11:42:49 -0500</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=50</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<div><a title="Arret" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/arret1.png"><img src="http://skhaz.files.wordpress.com/2008/03/arret.thumbnail.png" alt="Click para ampliar" align="left" /></a></div>
+<p>Esse ai sou eu, o alex fugindo da foto para o meio da neblina :D</p>
+<p align="left">O Arret 0.0.1a  escrito totalmente em C++ usando Irrlicht para o cliente e o   sistema de  colisão foi implementado no servidor usando a   biblioteca fisica Newton e partes da <a href="http://skhaz.wordpress.com/2008/02/12/one/">ONE</a>, o projeto não é novo, tem uns 3 anos, já foi até  2D usando SDL, mais informações em <a href="http://projetoarret.com.br/">http://projetoarret.com.br/</a>.</p>
+<p>Apesar de eu não fazer parte da equipe (não por nenhum tipo de desavença, mais sim porque prefiro usar <a href="http://ogre3d.org/">Ogre</a>), sempre torci e ajudei o projeto, estamos esperando novas atualizações :D</p>
+]]></content:encoded><description>Esse ai sou eu, o alex fugindo da foto para o meio da neblina :D
+O Arret 0.0.1a  escrito totalmente em C++ usando Irrlicht para o cliente e o   sistema de  colisão foi implementado no servidor usando a   biblioteca fisica Newton e partes da ONE, o projeto não é novo, [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/lancado-arret-3d/feed/</wfw:commentRss></item><item><title>CodeBlocks 8.02</title><link>http://www.skhaz.com/blog/codeblocks/</link><category>Misc</category><category>Autoversioning</category><category>C++</category><category>CodeBlocks</category><category>IDE</category><category>SVN</category><category>ThreadSearch</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Fri, 07 Mar 2008 06:02:33 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/2008/03/07/47/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<div><a title="About" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/cb_802.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/cb_802.thumbnail.jpg" alt="About" align="left" /></a></div>
+<p align="left">Recentemente formatei o pc e fui baixar o codeblocks no <a href="http://www.codeblocks.org/">site</a> e tive a  surpresa de encontrar a nova versao 8.02  disponivel, baixei ela  e  fui procurar os pacotes da nightly  build mais nao encontrei&#8230; ao  iniciar  a  instalação  já notei  uma quantidade generosa de novos  plugins :)</p>
+<p align="left">
+<p><a title="CodeBlocks" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/cb.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/cb.thumbnail.jpg" alt="CodeBlocks" /></a> <a title="main.jpg" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/main.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/main.thumbnail.jpg" alt="Main" /></a></p>
+<p align="left"><strong>Destaques</strong></p>
+<ul>
+<li>
+<p align="left"><strong>Instalador</strong></p>
+</li>
+<p>Nenhuma mudança significativa além de uma splashscreeen, e uma melhor organização dos diretorios</p>
+<p align="left"><a title="Instalador" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/instalador.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/instalador.thumbnail.jpg" alt="Instalador" /></a> <a title="Instalador" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/instalador2.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/instalador2.thumbnail.jpg" alt="Instalador" /> </a><a title="Diretorios" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/dir.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/dir.thumbnail.jpg" alt="dir.jpg" /></a></p>
+<li>
+<p align="left"><strong>Autoversioning</strong></p>
+</li>
+<p>Bom esse foi o recurso que estava procurando à muito tempo, qual a função dele? bom&#8230; ele cria um arquivo .h que contem informações do SVN, como versão, assim você pode criar uma tela &#8220;Sobre&#8221; igual a do CodeBlocks mostrando a versão do SVN</p>
+<p><a title="Autoversioning" href="http://skhaz.files.wordpress.com/2008/03/integracao_com_svn.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/integracao_com_svn.thumbnail.jpg" alt="Autoversioning" /></a></p>
+<li>
+<p align="left"><strong>Changelog</strong></p>
+</li>
+<p>Esse foi outro recurso que gostei muito</p>
+<p align="left"><a title="Changelog" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/autoversioning_changelog.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/autoversioning_changelog.thumbnail.jpg" alt="Changelog" /></a></p>
+<li>
+<p align="left"><strong>ThreadSearch</strong></p>
+</li>
+<p>É um sistema de busca muito eficiente, Não tem nada haver com programação paralela :P</p>
+<p><a title="ThreadSearch" href="http://www.skhaz.com/blog/wp-content/uploads/2008/03/threadsearch_toolbar.jpg"><img src="http://skhaz.files.wordpress.com/2008/03/threadsearch_toolbar.thumbnail.jpg" alt="ThreadSearch" /></a></ul>
+<p>Mais informações em <a href="http://www.codeblocks.org/features">http://www.codeblocks.org/</a></p>
+]]></content:encoded><description>Recentemente formatei o pc e fui baixar o codeblocks no site e tive a  surpresa de encontrar a nova versao 8.02  disponivel, baixei ela  e  fui procurar os pacotes da nightly  build mais nao encontrei&amp;#8230; ao  iniciar  a  instalação  já notei  uma quantidade generosa de [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/codeblocks/feed/</wfw:commentRss></item><item><title>Meu mousepad após minha namorada ver…</title><link>http://www.skhaz.com/blog/meu-mousepad-apos-minha-namorada-ver/</link><category>Humor</category><category>Mousepad</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Mon, 25 Feb 2008 08:39:16 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=36</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><a href="http://img261.imageshack.us/img261/2865/finalor9.png"><img src="http://img261.imageshack.us/img261/2865/finalor9.th.png" alt="Click para ampliar" align="left" /></a>Antes que vocês pensem que sou pervertido ao ponto de comprar um mousepad com esse tema, eu ganhei ele de presente de um amigo. Para quem está se perguntando, sim os seios são muito macios e evitam tendinite :P</p>
+]]></content:encoded><description>Antes que vocês pensem que sou pervertido ao ponto de comprar um mousepad com esse tema, eu ganhei ele de presente de um amigo. Para quem está se perguntando, sim os seios são muito macios e evitam tendinite :P</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/meu-mousepad-apos-minha-namorada-ver/feed/</wfw:commentRss></item><item><title>Documentação da Wintermoon lançada</title><link>http://www.skhaz.com/blog/documentacao-da-wintermoon-lancada/</link><category>SDL</category><category>Projetos</category><category>Wintermoon</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Fri, 22 Feb 2008 07:09:27 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=34</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Finalmente e depois de muito tempo, a documentação do meu projeto <a href="http://wintermoon.sourceforge.net/wordpress/">Wintermoon</a> foi lançada, versão online se encontra em <a href="http://wintermoon.sourceforge.net/wintermoondocs/index.html">http://wintermoon.sourceforge.net/wintermoondocs/index.html</a> ou se preferir baixar a versão offline <a href="http://wintermoon.sourceforge.net/wintermoondocs.zip">http://wintermoon.sourceforge.net/wintermoondocs.zip</a>, ainda não está totalmente comentada pois são muitas classes, erros gramaticais, criticas e sugestões são muito bem vindas, elogios mais ainda :D</p>
+]]></content:encoded><description>Finalmente e depois de muito tempo, a documentação do meu projeto Wintermoon foi lançada, versão online se encontra em http://wintermoon.sourceforge.net/wintermoondocs/index.html ou se preferir baixar a versão offline http://wintermoon.sourceforge.net/wintermoondocs.zip, ainda não está totalmente comentada pois são muitas classes, erros gramaticais, criticas e sugestões são muito bem vindas, elogios mais ainda :D</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/documentacao-da-wintermoon-lancada/feed/</wfw:commentRss></item><item><title>Eliminando o codigo Fanfarrão</title><link>http://www.skhaz.com/blog/eliminando-o-codigo-fonfarrao/</link><category>C++</category><category>auto_ptr</category><category>boost</category><category>Deleter</category><category>Friend</category><category>mem_fun</category><category>NonCopyable</category><category>shared_ptr</category><category>Singleton</category><category>std</category><category>template</category><category>volatile</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Mon, 18 Feb 2008 07:54:31 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=33</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Certo dia estava lendo a <a href="http://easy2d.sourceforge.net/">Easy2D</a>, e vi uma maneira Interessante, mais não desconhecida de implementar o padrão <strong>Singleton</strong> usando o std::auto_ptr. Eu já havia me deparado com um problema ao implementar uma classe Singleton, usando os ponteiros compartilhados da boost (boost::shared_ptr) que é semelhate à std::auto_ptr porem com mais recursos., mais o compilador acusava um erro, pois o destrutor da singleton era protected, eu não poderia deixar o destrutor publico, pois qualquer um podia deletar a instancia da singleton retornaria nulo, Então descobri que poderia passar um segundo parâmetro no construtor ou no método reset do shared_ptr, esse segundo parâmetro era o Deleter, uma classe especial para deletar o ponteiro (na verdade usava apenas o operador () da classe)., então crie uma classe genérica usando template chamada Deleter e à declarava como friend da Singleton, sua implementação ficou assim</p>
+<pre class="syntax-highlight:cpp">
+template &lt;class T&gt;
+class Deleter
+{
+public:
+void operator()(T* ptr)
+{
+if (ptr != NULL) {
+delete ptr;
+ptr = NULL;
+}
+}
+};
+</pre>
+<p>Eu achava perfeito, e ainda podia usar nos for_each da vida, porém ainda era POG&#8230;</p>
+<p>Uma noite, bebendo e ouvindo musica (metal!), lembrei das magicas que std::mem_fun podia fazer, e resolvi implementa-la, a cobaia foi a classe InputManager da Wintermoon, usando o método <em>teardown</em> de Mouse e Keyboard como Deleter</p>
+<pre class="syntax-highlight:cpp">
+InputManager::Init()
+{
+// ...
+mKeyboard = boost::shared_ptr&lt;keyboard&gt; (new Keyboard,
+std::mem_fun(&amp;amp;Keyboard::teardown));
+
+mMouse = boost::shared_ptr&lt;mouse&gt; (new Mouse,
+std::mem_fun(&amp;amp;Mouse::teardown));
+}
+</pre>
+<pre class="syntax-highlight:cpp">
+InputManager::Shut()
+{
+// reset é um membro de shared_ptr, responsavel
+// por liberar a memoria do ponteiro
+mKeyboard.reset();
+mMouse.reset();
+}
+</pre>
+<pre class="syntax-highlight:cpp">
+// class Mouse
+
+void Mouse::teardown()
+{
+// clean up data...
+}
+</pre>
+<pre class="syntax-highlight:cpp">
+// class Keyboard
+
+void Keyboard::teardown()
+{
+// clean up data...
+}
+</pre>
+<p>E não é que funcionou, o código ficou muito mais claro, mais ainda não acabou, ainda não crie a classe Singleton dos meus sonhos, usando shared_ptr, volatile, template, NonCopyable, mais estou no caminho&#8230;</mouse></keyboard></class></p>
+]]></content:encoded><description>Certo dia estava lendo a Easy2D, e vi uma maneira Interessante, mais não desconhecida de implementar o padrão Singleton usando o std::auto_ptr. Eu já havia me deparado com um problema ao implementar uma classe Singleton, usando os ponteiros compartilhados da boost (boost::shared_ptr) que é semelhate à std::auto_ptr porem com mais recursos., mais o compilador acusava [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/eliminando-o-codigo-fonfarrao/feed/</wfw:commentRss></item><item><title>Qual a cara da sua IDE?</title><link>http://www.skhaz.com/blog/qual-a-cara-da-sua-ide/</link><category>Misc</category><category>CodeBlocks</category><category>Desktop</category><category>IDE</category><category>Meme</category><category>Visual Studio</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Thu, 14 Feb 2008 09:47:34 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=28</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Qual a &#8220;cara&#8221; da sua IDE? Code::Blocks, Visual Studio, Eclipse, Code Warrior, programa em C++, Java, PHP, Asm, seja lá qual for, deixe uma foto dela aqui.</p>
+<p>Visual Studio 2005 Pro                          Code::Blocks</p>
+<p><a href="http://img91.imageshack.us/img91/9260/msvczm8.png"><img src="http://img91.imageshack.us/img91/9260/msvczm8.th.png" alt="" /></a> <a href="http://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.png"><img src="http://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.th.png" alt="" /> </a></p>
+<p>Para upar suas fotos use o <a href="http://my.imageshack.us/">ImageShack</a> ou qualquer outro serviço de hospedagem.</p>
+<p>Baseado no artigo de <a href="http://pliniotorres.wordpress.com/2008/02/01/qual-e-a-cara-da-sua-area-de-trabalho/">Plinio Torres - Qual é a cara da sua área de trabalho?</a></p>
+]]></content:encoded><description>Qual a &amp;#8220;cara&amp;#8221; da sua IDE? Code::Blocks, Visual Studio, Eclipse, Code Warrior, programa em C++, Java, PHP, Asm, seja lá qual for, deixe uma foto dela aqui.
+Visual Studio 2005 Pro                          [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/qual-a-cara-da-sua-ide/feed/</wfw:commentRss></item><item><title>Classe std::string STL no VC 6 provoca corrupção da memória</title><link>http://www.skhaz.com/blog/classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria/</link><category>C++</category><category>Memória</category><category>std</category><category>stl</category><category>string</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Tue, 12 Feb 2008 13:31:22 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=27</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Hoje em dia se torna mais comum computadores com mais de um núcleo, esse bug afeta apenas o Microsoft Visual C++ 6.0, e pode ser um problema para quem usa ele.</p>
+<p>Referencia <a href="http://support.microsoft.com/kb/813810/pt">Classe std::string STL provoca falhas e uma corrupção da memória em computadores com múltiplos processadores</a></p>
+]]></content:encoded><description>Hoje em dia se torna mais comum computadores com mais de um núcleo, esse bug afeta apenas o Microsoft Visual C++ 6.0, e pode ser um problema para quem usa ele.
+Referencia Classe std::string STL provoca falhas e uma corrupção da memória em computadores com múltiplos processadores</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria/feed/</wfw:commentRss></item><item><title>ONE (Object-Oriented Network Engine)</title><link>http://www.skhaz.com/blog/one/</link><category>Projetos</category><category>boost</category><category>Network</category><category>ONE</category><category>stl</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Tue, 12 Feb 2008 07:17:41 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/2008/02/12/23/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>ONE (Object-Oriented Network Engine)</p>
+<p>É um projeto de minha autoria e de <a href="http://programmershell.wordpress.com/">DarkSasori</a>, a idea é criar uma engine para redes (similar a <a href="http://www.jenkinssoftware.com/">RakNet</a>), Escrita em C++, usando <a href="http://boost.org/">boost</a>.</p>
+<p>O que já temos:</p>
+<ul>
+<li> DNS com cache</li>
+<li> IPAdrress</li>
+<li> SocketLayer (Interface)</li>
+<li> TCP::Socket (Implementação de SocketLayer)</li>
+<li> UDP::Socket (Implementação de SocketLayer)</li>
+<li> ServerInterface</li>
+<li> ClientInterface</li>
+<li> PeerInterface</li>
+<li> Thread</li>
+<li> ThreadGroup</li>
+<li> ThreadJob</li>
+<li> Mutex</li>
+<li> ScopedMutex</li>
+<li> NetworkInitializer</li>
+<li> Documentação (Doxygen)</li>
+</ul>
+<p>Características:</p>
+<ul>
+<li> Cache de DNS</li>
+<li> Suporte a plugins (.dll ou .so), como Voice, Updater, etc</li>
+</ul>
+<p>Principais plataformas alvo:</p>
+<ul>
+<li> Windows <img src="http://www.skhaz.com/blog/wp-content/uploads/2008/02/mb_windows-1.jpg" alt="windows" /></li>
+<li> Linux <img src="http://www.skhaz.com/blog/wp-content/uploads/2008/02/linux-ico.jpg" alt="linux" /></li>
+<li> MacOS <img src="http://www.skhaz.com/blog/wp-content/uploads/2008/02/mb_mac.jpg" alt="mac" /></li>
+<li> BSD</li>
+</ul>
+<p>Claro, qualquer outra plataforma que possuir sockets e threads, haverá um port da ONE!</p>
+<p>Metas:</p>
+<ul>
+<li> Sistema de plugins usando DLL (50% feito)</li>
+<li> Plugin Voice, similar ao RakVoice, usando a biblioteca <a href="http://www.speex.org/">speex</a></li>
+<li> Compactação usando zlib, bzip2 e lzma</li>
+<li> Criptografia (OpenSSL ?)</li>
+<li> Suporte ao IPv6 (20%)</li>
+</ul>
+<p>Quem já usa?</p>
+<ul>
+<li><a href="http://projetoarret.com.br/">Projeto Arret</a> (apenas algums modulos)</li>
+</ul>
+<p>Licença: <a href="http://www.gnu.org/licenses/lgpl-3.0.txt">LGPL 3</a></p>
+<p>PS. Eu ainda não disponibilizei o download nem o SVN do projeto, pois ainda não está preparado ainda.</p>
+]]></content:encoded><description>ONE (Object-Oriented Network Engine)
+É um projeto de minha autoria e de DarkSasori, a idea é criar uma engine para redes (similar a RakNet), Escrita em C++, usando boost.
+O que já temos:
+
+ DNS com cache
+ IPAdrress
+ SocketLayer (Interface)
+ TCP::Socket (Implementação de SocketLayer)
+ UDP::Socket (Implementação de SocketLayer)
+ ServerInterface
+ ClientInterface
+ PeerInterface
+ Thread
+ ThreadGroup
+ ThreadJob
+ Mutex
+ ScopedMutex
+ NetworkInitializer
+ Documentação [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/one/feed/</wfw:commentRss></item><item><title>Um pouco mais sobre namespace</title><link>http://www.skhaz.com/blog/um-pouco-mais-sobre-namespace/</link><category>C++</category><category>bridge</category><category>Designer Patterns</category><category>namespace</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Sun, 10 Feb 2008 14:21:04 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=21</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><strong>namespaces</strong> em C++ são muito poderosos não servem apenas para proteger nomes em conflitos com outras bibliotecas, nos ajudam a implementar patterns como a bridge de uma forma mais clara, alem de deixar o código mais profissional.</p>
+<pre class="syntax-highlight:cpp">
+namespace Engine
+{
+  namespace Video
+  {
+     namespace Gui
+     {
+         class Window
+         {
+             public:
+               virtual ~Window() { }
+         };
+     }
+  }
+}
+</pre>
+<p>Você tambem poderia escrever dessa forma</p>
+<pre class="syntax-highlight:cpp">
+using namespace Engine;
+using namespace Video;
+using namespace Gui;
+
+shared_ptr&lt;window&gt; window(new Window);
+</pre>
+<p>ou então</p>
+<pre class="syntax-highlight:cpp">
+using Engine::Video::Gui::Window;
+
+shared_ptr&lt;/window&gt;&lt;window&gt; window(new Window);
+</pre>
+<p>Nesse exemplo usamos muitos namespaces, é raro encontrar casos como esse, apenas encontrei na engine <a href="http://irrlicht.sourceforge.net/">Irrlicht</a> (até 3 sub namespaces) e na <a href="http://boost.org/">boost</a> (até 5 sub namespaces), o interessante é criar um <em>aliases</em> para o namespace da seguinte forma</p>
+<pre class="syntax-highlight:cpp">
+// evg é um aliases para Engine::Video::Gui
+namespace evg = Engine::Video::Gui;
+
+shared_ptr&lt;evg ::Window&gt; window(new evg::Window);
+</pre>
+<p>namespace &#8220;escopado&#8221;</p>
+<pre class="syntax-highlight:cpp">
+{
+  // EVG é um aliases para Engine::Video::Gui
+  namespace EVG = Engine::Video::Gui;
+  shared_ptr&lt;/evg&gt;&lt;evg ::Window&gt; window(new EVG::Window);
+}
+
+{
+  // Graphics é um aliases para Engine::Video
+  namespace Graphics = Engine::Video;
+  shared_ptr&lt;graphics ::Gui::Window&gt; window(new Graphics::Gui::Window);
+}
+
+{
+  using namespace Engine;
+  using namespace Video;
+  using namespace Gui;
+
+  shared_ptr&lt;/graphics&gt;&lt;graphics ::Gui::Window&gt; window(new graphics::Gui::Window);
+}
+</pre>
+<p>Veja que cada namespace tem seu próprio escopo.</p>
+<p>Como boa pratica de programação prefira declarar apenas as classes que for usar de um namespace, ao invés de declará-lo todo.</p>
+<p>Prefira usar</p>
+<pre class="syntax-highlight:cpp">
+using std::string;
+using std::vector;
+using std::map;
+</pre>
+<p>Ao invés de</p>
+<pre class="syntax-highlight:cpp">
+using namespace std;
+</pre>
+<p>Ou melhor ainda, se você tiver um projeto que use algum namespace, no seu header principal (global.h, internal.h), assim todos as classes declaradas podem ser usadas dentro do seu namespace, sem ter que ficar usando o <strong>using</strong></p>
+<pre class="syntax-highlight:cpp">
+namespace Wintermoon
+{
+  class Root;
+  class Image;
+  class ImageCache;
+  class EventReceiver;
+  class InputManager;
+  ...
+
+  using std::string;
+  using std::vector;
+  using std::map;
+  using std::set;
+  using std::multset;
+
+  using std::for_each;
+  using std::find;
+
+  using boost::shared_ptr;
+  using boost::scoped_ptr;
+}
+</pre>
+<p></graphics></evg></window></p>
+]]></content:encoded><description>namespaces em C++ são muito poderosos não servem apenas para proteger nomes em conflitos com outras bibliotecas, nos ajudam a implementar patterns como a bridge de uma forma mais clara, alem de deixar o código mais profissional.
+
+namespace Engine
+{
+  namespace Video
+  {
+     namespace Gui
+     {
+  [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/um-pouco-mais-sobre-namespace/feed/</wfw:commentRss></item><item><title>Visual Studio 2008</title><link>http://www.skhaz.com/blog/visual-studio-2008/</link><category>Humor</category><category>C++</category><category>IDE</category><category>Visual Studio</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Fri, 08 Feb 2008 08:35:35 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=20</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Minha surpresa ao instalar o M$ Visual Studio 2008, requer o .Net instalado, mesmo optando apenas instalando os pacotes relacionados apenas ao C++. Fora a porção de gente feia que aparece durante o setup&#8230;</p>
+<p><a href="http://img406.imageshack.us/img406/7664/msvc9mb0.png"><img src="http://img406.imageshack.us/img406/7664/msvc9mb0.th.png" ALT="Visual Studio 2008" /></a></p>
+]]></content:encoded><description>Minha surpresa ao instalar o M$ Visual Studio 2008, requer o .Net instalado, mesmo optando apenas instalando os pacotes relacionados apenas ao C++. Fora a porção de gente feia que aparece durante o setup&amp;#8230;</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/visual-studio-2008/feed/</wfw:commentRss></item><item><title>Carregando imagens com ou sem canal alpha</title><link>http://www.skhaz.com/blog/carregando-imagens-com-ou-sem-canal-alpha/</link><category>SDL</category><category>Alpha</category><category>C++</category><category>Classes</category><category>Surface</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Wed, 06 Feb 2008 13:55:14 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/2008/02/06/carregando-imagens-com-ou-sem-canal-alpha/</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Muitos já devem ter passado por isso, como descobrir se uma imagem tem ou não o canal alpha (transparência), e como carregá-la corretamente. Eis aqui uma classe que se encarrega de carregar a imagem, e descobrir se tem ou não o canal alpha.</p>
+<pre class="syntax-highlight:cpp">
+#include &lt;string&gt;
+#include &quot;SDL.h&quot;
+
+using std::string;
+
+class Image
+{
+   public:
+      Image();
+      virtual ~Image();
+
+      void load(const string&amp;amp; filename, bool transparent = true);
+
+      operator SDL_Surface*() const
+      {
+         return m_pSurface;
+      }
+
+   private:
+      SDL_Surface* m_pSurface;
+};
+</pre>
+<p>Vamos à implementação</p>
+<pre class="syntax-highlight:cpp">
+#include &quot;Image.h&quot;
+
+Image::Image()
+: m_pImage(NULL)
+{
+}
+
+Image::~Image()
+{
+   if (m_pImage != NULL) {
+      SDL_FreeSurface(m_pSurface);
+   }
+}
+
+void Image::load(const string&amp;amp; filename, bool transparent)
+{
+   if ((m_pSurface = IMG_Load(filename.c_str())) == NULL)
+   {
+      throw Exception(&quot;%s&quot;, IMG_GetError());
+   }
+
+   bool hasAlpha = false;
+
+   // Se a imagem tem 32 bits, provalvelmente
+   // ela tem o canal alpha, caso contrario ela
+   // não tem, e nem precissamos verificar.
+   if (m_pSurface-&gt;format-&gt;BitsPerPixel == 32)
+   {
+      // Percorremos toda a superficie da imagem
+      for (int i = 0; i &lt; m_pSurface-&gt;w * m_pSurface-&gt;h; ++i)
+      {
+         Uint8 r, g, b, a;
+
+         // Mapeamos o pixel e obtemos seus
+         // respectivos valores em RGBA
+         SDL_GetRGBA(((Uint32*) m_pSurface-&gt;pixels)[i],
+                     m_pSurface-&gt;format, &amp;amp;r, &amp;amp;g, &amp;amp;b, &amp;amp;a);
+
+         // Se o canal alpha for diferente de 255 (opaco)
+         // então a imagem tem trasparencia
+         // finalizamos o loop com o break.
+         if (a != 255)
+         {
+            hasAlpha = true;
+            break;
+         }
+      }
+   }
+
+   // Se a imagem tiver o canal de trasparencia
+   // optimizamos ela da maneira correta.
+   if (hasAlpha) {
+      temp = SDL_DisplayFormatAlpha(m_pSurface);
+   }
+
+   // Caso contrario, optimizamos para uma
+   // superficie sem alpha
+   else {
+      temp = SDL_DisplayFormat(m_pSurface);
+
+      if (transparent)
+      {
+         SDL_SetColorKey(temp, (SDL_SRCCOLORKEY | SDL_RLEACCEL | SDL_HWACCEL),
+             SDL_MapRGB(SDL_GetVideoSurface()-&gt;format,
+             255, 0, 255));
+      }
+   }
+
+   if (temp)
+   {
+      SDL_FreeSurface(m_pSurface);
+      m_pSurface = temp;
+   }
+}
+</pre>
+<p><strong>SDL_GetVideoSurface()</strong> Essa função retorna o ponteiro da superficie do video (a publica, e não a real), veja a documentação da SDL<br />
+para maiores informações</p>
+<p><strong>Veja também</strong><br />
+Mais detalhes da estrutura interna da SDL_Surface em <a HREF="http://diogorbg.blogspot.com/2008/01/sdlsurface-introduo-detalhada.html">SDL_Surface - Introdução detalhada</a>, de Diogo_RBG</string></p>
+]]></content:encoded><description>Muitos já devem ter passado por isso, como descobrir se uma imagem tem ou não o canal alpha (transparência), e como carregá-la corretamente. Eis aqui uma classe que se encarrega de carregar a imagem, e descobrir se tem ou não o canal alpha.
+
+#include &amp;#60;string&amp;#62;
+#include &amp;#34;SDL.h&amp;#34;
+
+using std::string;
+
+class Image
+{
+   public:
+      [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/carregando-imagens-com-ou-sem-canal-alpha/feed/</wfw:commentRss></item><item><title>Wintermoon no Contest da PDJ</title><link>http://www.skhaz.com/blog/wintermoon-no-contest-da-pdj/</link><category>Misc</category><category>Framework</category><category>Projetos</category><category>Wintermoon</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Wed, 06 Feb 2008 10:12:45 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=15</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p><img src='http://www.skhaz.com/blog/wp-content/uploads/2008/02/header_image1.png' alt='wintermoon' /><br />Recentemente inscrevi meu framework <a HREF="http://wintermoon.sourceforge.net/wordpress/">Wintermoon</a> no <a HREF="http://www.programadoresdejogos.com/contests/gpc07/">PDJ Contest</a> na categoria <em>Programação,</em> por enquanto meu único  oponente na categoria é o <a HREF="http://pspframework.sourceforge.net/">PSPFramework</a>, não vejo nenhuma atualização deles há muito tempo, eles que foram minha inspiração inicial de colocar o wordpress no sourceforge e transformar o site em blog.</p>
+<p>Desejem-me sorte :)</p>
+]]></content:encoded><description>Recentemente inscrevi meu framework Wintermoon no PDJ Contest na categoria Programação, por enquanto meu único  oponente na categoria é o PSPFramework, não vejo nenhuma atualização deles há muito tempo, eles que foram minha inspiração inicial de colocar o wordpress no sourceforge e transformar o site em blog.
+Desejem-me sorte :)</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/wintermoon-no-contest-da-pdj/feed/</wfw:commentRss></item><item><title>mutable, que raios é isso?</title><link>http://www.skhaz.com/blog/mutable-que-raios-e-isso/</link><category>C++</category><category>const</category><category>mutable</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Tue, 05 Feb 2008 12:13:04 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=14</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Talvez você seja como eu, viciado em usar const, mais muitas vezes nos deparamos com métodos que precisamos alterar<br />
+algum atributo dentro de um método declarado como const</p>
+<pre class="syntax-highlight:cpp">
+class Image
+{
+public:
+void Draw() const;
+
+private:
+std::size_t m_BlitErrorCount;
+}
+</pre>
+<p>Vejamos esse exemplo do metodo Draw da classe Image<br />
+precisamos implementar um contador de erros do SDL_BlitSurface (sinceramente não vejo utilidade isso)</p>
+<pre class="syntax-highlight:cpp">
+void Image::Draw() const
+{
+if (SDL_BlitSurface(mSurface, NULL, Screen, rect) &lt; 0)
+{
+m_BlitErrorCount++;
+// O compilador acusa erro na linha acima
+// pois não podemos modificar qualquer
+// atributo dentro desse método declarado como const
+}
+}
+</pre>
+<p><strong>Como solucionar?</p>
+<p>Adicione a palavra reservada <strong><em>mutable</em></strong> na declaração de m_BlitErrorCount, ficando assim:</p>
+<pre class="syntax-highlight:cpp">
+class Image
+{
+public:
+void Draw() const;
+
+&lt;strong&gt; private:
+mutable std::size_t m_BlitErrorCount;
+}
+</pre>
+<p></strong></p>
+<p><strong></strong><strong>Veja também</strong></p>
+<p><strong>Um outro caso para o uso da mutable é na implementação do design <a href="http://vinigodoy.wordpress.com/2007/12/24/organizando-a-janela-em-classes/">Organizando a janela em classes</a>, de nosso amigo Vinícius, onde temos à seguinte declaração do método draw</p>
+<pre class="syntax-highlight:cpp">
+virtual void draw() const = 0;
+</pre>
+<p>Usando a palavra reservada mutable na declaração do atributo usado internamente em draw você &#8220;burla&#8221; o const</strong></p>
+<p><strong>Agora seu código compila sem erros :)</strong></p>
+]]></content:encoded><description>Talvez você seja como eu, viciado em usar const, mais muitas vezes nos deparamos com métodos que precisamos alterar
+algum atributo dentro de um método declarado como const
+
+class Image
+{
+public:
+void Draw() const;
+
+private:
+std::size_t m_BlitErrorCount;
+}
+
+Vejamos esse exemplo do metodo Draw da classe Image
+precisamos implementar um contador de erros do SDL_BlitSurface (sinceramente não vejo utilidade isso)
+
+void Image::Draw() const
+{
+if (SDL_BlitSurface(mSurface, NULL, [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/mutable-que-raios-e-isso/feed/</wfw:commentRss></item><item><title>Classe Timer</title><link>http://www.skhaz.com/blog/classe-timer/</link><category>C++</category><category>SDL</category><category>boost</category><category>Classe</category><category>stl</category><category>Thread</category><category>Timer</category><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SKHAZ</dc:creator><pubDate>Mon, 04 Feb 2008 13:00:08 -0600</pubDate><guid isPermaLink="false">http://skhaz.wordpress.com/?p=13</guid><content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[<p>Uma classe indispensável durante a programação de um jogo ou engine, que seja responsável pelas chamadas de métodos em determinado intervalo de tempo durante a execução do aplicativo, que forneça uma maneira passiva e rápida de callbacks, orientada à objetos. Aqui segue um exemplo de tal classe usando o timer da SDL</p>
+<p>Declaração da classe Timer</p>
+<pre class="syntax-highlight:cpp">
+#include &quot;SDL.h&quot;
+
+class Timer
+{
+public:
+Timer();
+
+explicit Timer(Uint32 interval);
+
+virtual ~Timer();
+
+// Adcionamos um timer
+// interval O intervalo de tempo do timer
+void addTimer(Uint32 interval);
+
+// Remove o timer
+void removeTimer();
+
+// Seta um novo intervalo de tempo
+void setInterval(Uint32 interval);
+
+// Retorna o valor do intervalo do timer
+Uint32 Timer::getInterval() const;
+
+//
+// Método puro abstrato chamado em todo
+// intervalo definido pelo timer.
+// Deve ser implementado na classe filha.
+//
+virtual void onTimer() = 0;
+
+private:
+// Usado internamente, o ponto de entrada do SDL_Timer
+static Uint32 entryPoint(Uint32 interval, void* param);
+
+Uint32 mInterval;
+SDL_TimerID mTimerID;
+};
+</pre>
+<p>Vamos à implementação</p>
+<pre class="syntax-highlight:cpp">
+#include &quot;Timer.h&quot;
+
+Timer::Timer()
+: mInterval(0)
+{
+if (SDL_WasInit(SDL_INIT_TIMER) == 0)
+{
+SDL_InitSubSystem(SDL_INIT_TIMER);
+}
+}
+
+Timer::Timer(Uint32 interval)
+: mInterval(0)
+{
+if (SDL_WasInit(SDL_INIT_TIMER) == 0)
+{
+SDL_InitSubSystem(SDL_INIT_TIMER);
+}
+
+addTimer(interval);
+}
+
+Timer::~Timer()
+{
+SDL_RemoveTimer(mTimerID);
+}
+
+void Timer::addTimer(Uint32 interval)
+{
+mInterval = interval;
+mTimerID = SDL_AddTimer(mInterval, entryPoint, this);
+}
+
+void Timer::removeTimer()
+{
+SDL_RemoveTimer(mTimerID);
+}
+
+void Timer::setInterval(Uint32 interval)
+{
+mInterval = interval;
+}
+
+Uint32 Timer::getInterval() const
+{
+return mInterval;
+}
+
+Uint32 Timer::entryPoint(Uint32 interval, void* param)
+{
+Timer* ptr = reinterpret_cast&lt;timer *&gt;(param);
+ptr-&gt;onTimer();
+return ptr-&gt;mInterval;
+}
+</pre>
+<p>Exemplo de uso:</p>
+<pre class="syntax-highlight:cpp">
+#include &lt;iostream&gt;
+#include &lt;boost /scoped_ptr.hpp&gt;
+
+#include &quot;SDL.h&quot;
+#include &quot;Timer.h&quot;
+
+using std::cout;
+using std::endl;
+using boost::scoped_ptr;
+
+class Tick : public Timer
+{
+public:
+Tick()
+{
+// Adicionamos um timer de 1 Segundo
+addTimer(1000);
+}
+
+~Tick() { }
+
+protected:
+
+// onTImer método puro abstrato
+// herdado de Timer, ele será chamado
+// todo intervalo definido no timer
+void onTimer()
+{
+cout &lt; &lt; &quot;Tick::onTimer() chamado em &quot; &lt;&lt; SDL_GetTick() &lt;&lt; endl;
+}
+};
+
+int main()
+{
+// Criamos a classe Tick
+// usamos aqui scoped_ptr para
+// que o ponteiro seja deletado
+// automaticamente ao sair do escopo
+scoped_ptr&lt;tick&gt; tick(new Tick);
+
+// Aguardamos uns 5 segundos
+// enquanto isso o timer já esta rodando
+// e imprimindo a saida no console ou no stdout.txt
+SDL_Delay(5000);
+
+// Agora vamos mudar o intervalo de tempo
+// para meio segundo
+tick-&gt;setInterval(500);
+
+// Aguardamos mais ums 5 segundos
+// O timer continua rodando, mais agora com o
+// intervalo de meio segundo e não 1 segundo
+SDL_Delay(5000);
+
+// O resultado poderá ser visto no stdout.txt
+// ou na saida do console
+
+// Isso mantem o compilador feliz...
+return 0;
+}
+</pre>
+<p>Espero que tenha gostado, em breve eu posto as classes Thread, ThreadJob, ThreadGroup e Mutex baseadas nas Threads da SDL (até la vou ter aprendido mais sobre SDL semáforos), sintan-se à vontade de usá-las apenas mantenham os créditos ;D</boost></iostream></timer></p>
+]]></content:encoded><description>Uma classe indispensável durante a programação de um jogo ou engine, que seja responsável pelas chamadas de métodos em determinado intervalo de tempo durante a execução do aplicativo, que forneça uma maneira passiva e rápida de callbacks, orientada à objetos. Aqui segue um exemplo de tal classe usando o timer da SDL
+Declaração da classe Timer
+
+#include [...]</description><wfw:commentRss xmlns:wfw="http://wellformedweb.org/CommentAPI/">http://www.skhaz.com/blog/classe-timer/feed/</wfw:commentRss></item></channel></rss>

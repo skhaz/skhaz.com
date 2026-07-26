@@ -1,0 +1,1539 @@
+[
+  {
+    "slug": "maquina-do-tempo-com-o-vim",
+    "title": "Maquina do Tempo com o Vim",
+    "date": "2009-04-09",
+    "time": "2009-04-09T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Vim"
+    ],
+    "tags": [
+      "gvim",
+      "redo",
+      "time machine",
+      "undo",
+      "Vim"
+    ],
+    "html": "<p>Muitas vezes usar o <em>undo</em> e <em>redo </em>resolve a maior parte dos problemas, porém quando aquele trecho que você modificou ou apagou a 10 minutos atrás, quantos undos serão necessários para que se encontre tal modificação? pensando nisso o <a href=\"https://www.vim.org/\" rel=\"external noopener\" target=\"_blank\">Vim</a> possui uma maquina do tempo onde é possível “caminhar” pelo tempo no código.</p>\n<p>Retroceder 10 minutos atrás<br/>\n<em>:earlier 10m</em></p>\n<p>Avançar 30 segundos<br/>\n<em>:later 30s</em></p>",
+    "comments": [
+      {
+        "id": "comment-15",
+        "author": "Leandro Melo",
+        "url": "http://0xc0de.wordpress.com",
+        "date": "maio 21st, 2009 at 02:07\t\t\t\t\t | #1",
+        "html": "<p>Recurso interessante… Porém, eu já estaria satisfeito se soubesse usar bem os comandos básicos do Vim e conseguisse escrever um pequeno parágrafo em menos de 10 minutos. ;) </p>"
+      },
+      {
+        "id": "comment-18",
+        "author": "felipe tonello",
+        "url": "http://felipetonello.com",
+        "date": "agosto 14th, 2009 at 02:42\t\t\t\t\t | #2",
+        "html": "<p>Nóóó que muito loco isso… </p>\n<p>Valeu pela dica Rodrigo</p>"
+      },
+      {
+        "id": "comment-84",
+        "author": "garotosopa",
+        "url": "http://garotosopa.wordpress.com/",
+        "date": "dezembro 21st, 2009 at 23:26\t\t\t\t\t | #3",
+        "html": "<p>Seria legal poder abrir o vim, digitar :later 2h e ter o código pronto heheh</p>"
+      }
+    ],
+    "source": {
+      "archive": "Common Crawl",
+      "capturedAt": "20100310180930",
+      "originalUrl": "http://www.skhaz.com/blog/maquina-do-tempo-com-o-vim/",
+      "captureUrl": "https://data.commoncrawl.org/crawl-002/2010/04/02/16/1270210921119_16.arc.gz#offset=76474190&length=6484",
+      "record": {
+        "filename": "crawl-002/2010/04/02/16/1270210921119_16.arc.gz",
+        "offset": "76474190",
+        "length": "6484",
+        "digest": "WA6IHA7YVYI2AGPVPNTT7NBAFOKQJWYA"
+      }
+    },
+    "missingMedia": [],
+    "excerpt": "Muitas vezes usar o undo e redo resolve a maior parte dos problemas, porém quando aquele trecho que você modificou ou apagou a 10 minutos atrás, quantos undos serão necessários para que se encontre tal modificação? pensando nisso o Vim poss",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "hoje-sexta-feira-13-o-unix-time-chegara-ao-valor-1234567890",
+    "title": "Hoje, Sexta-feira 13 o Unix time chegará ao valor 1234567890",
+    "date": "2009-02-13",
+    "time": "2009-02-13T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Offtopic"
+    ],
+    "tags": [
+      "sexta-feira 13",
+      "unix"
+    ],
+    "html": "<p style=\"text-align: left;\">Como muitos já devem saber hoje o <a href=\"http://pt.wikipedia.org/wiki/Era_Unix\" rel=\"external noopener\" target=\"_blank\">Unix Time</a> chegará ao valor de 1234567890 por volta das 23:00 (não confirmei a hora exata) e eu quero acompanhar de perto e ver meus dados sumindo, maquinas travando, etc… então fiz esse “programa” em C++/Qt em ~2 minutos que não chega a ter 5 linhas uteis :D </p>\n<p style=\"text-align: left;\">\n</p><p style=\"text-align: center;\"><span class=\"missing-media\" data-original=\"http://www.skhaz.com/blog/wp-content/uploads/2009/02/unixsextafeira13-300x240.jpg\">Imagem histórica não recuperada</span></p>\n<p style=\"text-align: center;\">(clique para ampliar)</p>",
+    "comments": [
+      {
+        "id": "comment-9",
+        "author": "Henrique",
+        "url": null,
+        "date": "fevereiro 13th, 2009 at 15:33\t\t\t\t\t | #1",
+        "html": "<p>fala Condo..<br/>\n19/02/2038 acho que vai travar mesmo..kkk<br/>\nse n for passado para int64…um numerão maiorzinho…</p>\n<p>ms  seria bom ver um alocausto digital..kkkkkkkk…chances de resolver o problema podem deixar alguem rico..kkk</p>"
+      },
+      {
+        "id": "comment-10",
+        "author": "skhaz",
+        "url": "http://www.skhaz.com",
+        "date": "fevereiro 13th, 2009 at 15:41\t\t\t\t\t | #2",
+        "html": "<p>Se for int64 não vamos ter problemas tão cedo :D </p>"
+      },
+      {
+        "id": "comment-11",
+        "author": "Magic",
+        "url": null,
+        "date": "fevereiro 21st, 2009 at 20:36\t\t\t\t\t | #3",
+        "html": "<p>Eu sei que já passou a data, mas só conheci o blog agora, to comentando porque não tem o código do programinha que você fez (sei que é simples, mas seria legal poder vê-lo), ficou meio sem propósito o post sem o código :-p</p>"
+      },
+      {
+        "id": "comment-12",
+        "author": "skhaz",
+        "url": "http://www.skhaz.com",
+        "date": "fevereiro 25th, 2009 at 11:04\t\t\t\t\t | #4",
+        "html": "<p>Olá Magic,<br/>\nbasicamente é só isso, futuramente eu pretendo postar algumas coisas legais sobre a Qt</p>\n<p>MainWindow::MainWindow(QWidget *parent)<br/>\n    : QMainWindow(parent), ui(new Ui::MainWindowClass)<br/>\n{<br/>\n    ui-&gt;setupUi(this);</p>\n<p>    QTimer* timer = new QTimer(this); // cria um timer<br/>\n    connect(timer, SIGNAL(timeout()), SLOT(updateTime())); // conecta o sinal timeout ao slot updateTime desta classe<br/>\n    timer-&gt;start(100); // emite o sinal timeout a cada 100 milissegundos<br/>\n}</p>\n<p>void MainWindow::updateTime()<br/>\n{<br/>\n   QDateTime t = QDateTime::currentDateTime(); // pega a data e hora do sistema<br/>\n   ui-&gt;timeLabel-&gt;setText(QString::number(t.toTime_t())); // toTime_t retorna o Unix-Time<br/>\n}</p>"
+      },
+      {
+        "id": "comment-13",
+        "author": "Magic",
+        "url": null,
+        "date": "março 5th, 2009 at 07:30\t\t\t\t\t | #5",
+        "html": "<p>Legal skhaz, já acompanho o feed RSS, estou de olho :-D , abraço!</p>"
+      },
+      {
+        "id": "comment-55",
+        "author": "Jennifer-Tool",
+        "url": "http://my-addr.com/",
+        "date": "outubro 26th, 2009 at 08:03\t\t\t\t\t | #6",
+        "html": "<p>bom comeco</p>"
+      }
+    ],
+    "source": {
+      "archive": "Common Crawl",
+      "capturedAt": "20100310180916",
+      "originalUrl": "http://www.skhaz.com/blog/hoje-sexta-feira-13-o-unix-time-chegara-ao-valor-1234567890/",
+      "captureUrl": "https://data.commoncrawl.org/crawl-002/2010/04/02/16/1270210921119_16.arc.gz#offset=76466880&length=7310",
+      "record": {
+        "filename": "crawl-002/2010/04/02/16/1270210921119_16.arc.gz",
+        "offset": "76466880",
+        "length": "7310",
+        "digest": "JSVVZIW43YYPED5DX4QB2KWM7X2O6K5S"
+      }
+    },
+    "missingMedia": [
+      "http://www.skhaz.com/blog/wp-content/uploads/2009/02/unixsextafeira13-300x240.jpg"
+    ],
+    "excerpt": "Como muitos já devem saber hoje o Unix Time chegará ao valor de 1234567890 por volta das 23:00 (não confirmei a hora exata) e eu quero acompanhar de perto e ver meus dados sumindo, maquinas travando, etc… então fiz esse “programa” em C++/Qt",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "meme-aleatoriedades",
+    "title": "[Meme] Aleatoriedades",
+    "date": "2009-02-05",
+    "time": "2009-02-05T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Offtopic"
+    ],
+    "tags": [
+      "meme",
+      "Offtopic"
+    ],
+    "html": "<p>O <a href=\"http://vinigodoy.wordpress.com/2009/01/15/off-topic-meme-aleatoriedades/\" rel=\"external noopener\" target=\"_blank\" title=\"Vinícius do Ponto V\">Vinícius do Ponto V</a> me convidou para esse meme,</p>\n<p>Vamos as regras:</p>\n<ol>\n<li>Linkar a pessoa que te indicou.</li>\n<li>Escrever as regras do meme em seu blog.</li>\n<li>Contar 6 coisas aleatórias sobre você.</li>\n<li>Indique mais 6 pessoas e coloque os links no final do post.</li>\n<li>Deixe a pessoa saber que você o indicou, deixando um comentário para ela.</li>\n<li>Deixe os indicados saberem quando você publicar seu post.</li>\n</ol>\n<p>Minhas coisas aleatórias</p>\n<ol>\n<li>Tenho vontade de ter uma bateria, embora não tenho vontade de participar de uma banda, só por tocar mesmo.</li>\n<li>Musica, minha segunda paixão, ouço de tudo de blues a metal, é mais fácil me ver sem calças do que sem fones.</li>\n<li>Cerveja, adoro (já outras bebidas como destilados não gosto, nem mesmo vinho).</li>\n<li>Gosto muito de ler e estudar e não só assuntos como programação, eletrônica, mais também sobre religiões (embora seja agnóstico), e apesar disso nunca fui bom aluno na escola, na verdade sempre estive entre os piores alunos, e me considero um autodidata nato.</li>\n<li>Pessoas diferentes tem idéias diferentes ao meu respeito totalmente opostas, alguns me acham idiota e brincalhão e outros serio e inteligente, não por ter varias personalidades e sim porque sempre tento conhecer as pessoas antes de dizer algo.</li>\n<li>Estudar Latex, Vim e Expressões regulares são meus hobbies</li>\n</ol>\n<p>Convido <a href=\"http://opinguimdegeladeira.blogspot.com/\" rel=\"external noopener\" target=\"_blank\" title=\"Amanda\">Amanda</a>, <a href=\"http://diesoftgames.blogspot.com/\" rel=\"external noopener\" target=\"_blank\" title=\"DieSoft\">Diego</a>, <a href=\"http://crocidb.wordpress.com/\" rel=\"external noopener\" target=\"_blank\" title=\"Bruno Croci\">Bruno Croci</a> os outros que eu não indiquei é porque já foram indicados.</p>",
+    "comments": [
+      {
+        "id": "comment-8",
+        "author": "Andre Brito",
+        "url": null,
+        "date": "fevereiro 5th, 2009 at 22:15\t\t\t\t\t | #1",
+        "html": "<p>Como pode o Vinícius não gostar de cerveja?!</p>"
+      }
+    ],
+    "source": {
+      "archive": "Common Crawl",
+      "capturedAt": "20100208155018",
+      "originalUrl": "http://www.skhaz.com/blog/meme-aleatoriedades/",
+      "captureUrl": "https://data.commoncrawl.org/crawl-002/2010/02/16/16/1266350201975_16.arc.gz#offset=23544293&length=6584",
+      "record": {
+        "filename": "crawl-002/2010/02/16/16/1266350201975_16.arc.gz",
+        "offset": "23544293",
+        "length": "6584",
+        "digest": "BRIQQDBEYSOUSP2APJ54UWHNEOMI4QSR"
+      }
+    },
+    "missingMedia": [],
+    "excerpt": "O Vinícius do Ponto V me convidou para esse meme, Vamos as regras: Linkar a pessoa que te indicou. Escrever as regras do meme em seu blog. Contar 6 coisas aleatórias sobre você. Indique mais 6 pessoas e coloque os links no final do post. De",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "qt-agora-e-lgpl",
+    "title": "Qt agora é LGPL",
+    "date": "2009-01-14",
+    "time": "2009-01-14T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Qt"
+    ],
+    "tags": [
+      "gpl",
+      "lgpl",
+      "license",
+      "Qt"
+    ],
+    "html": "<p>A <a href=\"http://www.qtsoftware.com/\" rel=\"external noopener\" target=\"_blank\" title=\"Qt\">Qt</a> agora está disponível também sobre a licença <a href=\"http://www.gnu.org/licenses/lgpl.html\" rel=\"external noopener\" target=\"_blank\" title=\"lgpl\">LGPL</a></p>\n<p>Mais informções:</p>\n<ul>\n<li><a href=\"http://www.qtsoftware.com/about/news/lgpl-license-option-added-to-qt\" rel=\"external noopener\" target=\"_blank\">http://www.qtsoftware.com/about/news/lgpl-license-option-added-to-qt</a></li>\n<li><a href=\"http://labs.trolltech.com/blogs/2009/01/14/nokia-to-license-qt-under-lgpl/\" rel=\"external noopener\" target=\"_blank\">http://labs.trolltech.com/blogs/2009/01/14/nokia-to-license-qt-under-lgpl/</a></li>\n<li><a href=\"http://www.qtsoftware.com/about/licensing/frequently-asked-questions\" rel=\"external noopener\" target=\"_blank\">http://www.qtsoftware.com/about/licensing/frequently-asked-questions</a></li>\n</ul>\n<p>Para quem não conhece a LGPL, ela permite ao programador linkar bibliotecas dinamicamente (DLL) sem exigir que o código fonte seja distribuido junto ao binario, tornando possivel usa-la em projetos comercias e não opensource, que ao contrario da GPL mesmo usando linkagem dinamica viola os termos da licença se nao distribuido os fontes.</p>",
+    "comments": [
+      {
+        "id": "comment-6",
+        "author": "Andrei Regiani",
+        "url": null,
+        "date": "janeiro 15th, 2009 at 15:11\t\t\t\t\t | #1",
+        "html": "<p>Adeus wxWidgets e GTK. Agora sim volto a usar Qt. A licença era a unica coisa que me fez parar de usar ele, mas agora LGPL pra mim virou a melhor.<br/>\nflw!</p>"
+      },
+      {
+        "id": "comment-7",
+        "author": "skhaz",
+        "url": "http://www.skhaz.com",
+        "date": "janeiro 15th, 2009 at 15:21\t\t\t\t\t | #2",
+        "html": "<p>Eu usava a Qt quando ela era GPL, mais isso não era problema no meu caso, quando a nokia adquiriu a trolltech eu apostei minhas fichas que a licença seria trocada pela BSD, bom foi por pouco xD</p>"
+      }
+    ],
+    "source": {
+      "archive": "Common Crawl",
+      "capturedAt": "20100310180830",
+      "originalUrl": "http://www.skhaz.com/blog/qt-agora-e-lgpl/",
+      "captureUrl": "https://data.commoncrawl.org/crawl-002/2010/04/02/16/1270210921119_16.arc.gz#offset=76480674&length=6409",
+      "record": {
+        "filename": "crawl-002/2010/04/02/16/1270210921119_16.arc.gz",
+        "offset": "76480674",
+        "length": "6409",
+        "digest": "NSRP2SEKOKZ6LRDJLU4RO3AASIDL6MQG"
+      }
+    },
+    "missingMedia": [],
+    "excerpt": "A Qt agora está disponível também sobre a licença LGPL Mais informções: http://www.qtsoftware.com/about/news/lgpl-license-option-added-to-qt http://labs.trolltech.com/blogs/2009/01/14/nokia-to-license-qt-under-lgpl/ http://www.qtsoftware.co",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "por-onde-andas-skhaz",
+    "title": "Por onde andas skhaz?",
+    "date": "2008-12-10",
+    "time": "2008-12-10T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++",
+      "Qt"
+    ],
+    "tags": [
+      "qt c++ sql postgres"
+    ],
+    "html": "<p>Depois de um bom tempo sem postar, devido há inumeras coisas, como mudança de emprego, escolher um toolkit para criação de ‘GUI’s e aprende-lo, o fim de um namoro de 3 anos, e muita correria… enfim o bom filho a casa retorna.</p>\n<p>A boa noticia é que aprendi muitas coisas novas (sem maldade xD) como as bibliotecas <a href=\"http://trolltech.com/\" rel=\"external noopener\" target=\"_blank\">Qt</a>, <a href=\"https://phonon.kde.org/\" rel=\"external noopener\" target=\"_blank\">phonon</a>, <a href=\"http://webkit.org/\" rel=\"external noopener\" target=\"_blank\">Webkit</a>, e aprendi mais sobre as que eu já sabia (<a href=\"http://www.boost.org/\" rel=\"external noopener\" target=\"_blank\">boost</a> e stl), expressões regulares e até uma linguagem nova chamada <a href=\"http://www.ruby-lang.org/pt/\" rel=\"external noopener\" target=\"_blank\">Ruby</a></p>\n<p>Eu sempre achei a idea de usar combobox, checkbox, etc como filtro uma idea complicada, ter que ficar marcando e depois clicar em filtrar, entao pensei em algo assim, basta voce digitar qualquer atributo do material que já vinha tudo que for relevante, por exemplo “AL TR”, já retorna todos os alumunios que são trifilados. No video da para se ter uma idea do que eu escrevi (claro que não é nenhum google, é bem simples)</p>\n<div class=\"video-embed\"><iframe allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\" src=\"https://www.youtube-nocookie.com/embed/IUH4IQg1C8s\" title=\"Vídeo arquivado do post\"></iframe></div>\n<p>E aqui o codigo responsável pela busca</p>\n<div class=\"wp_syntax\"><table><tr><td class=\"line_numbers\"><pre>18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n</pre></td><td class=\"code\"><pre class=\"cpp\" style=\"font-family:monospace;\"><span style=\"color: #0000ff;\">void</span> ItemView<span style=\"color: #008080;\">::</span><span style=\"color: #007788;\">filterChanged</span><span style=\"color: #008000;\">(</span><span style=\"color: #0000ff;\">const</span> QString<span style=\"color: #000040;\">&amp;</span> text<span style=\"color: #008000;\">)</span>\n<span style=\"color: #008000;\">{</span>\n\tQString filter, query<span style=\"color: #008080;\">;</span>\n\tQStringList list <span style=\"color: #000080;\">=</span> text.<span style=\"color: #007788;\">split</span><span style=\"color: #008000;\">(</span><span style=\"color: #FF0000;\">\" \"</span>, QString<span style=\"color: #008080;\">::</span><span style=\"color: #007788;\">SkipEmptyParts</span><span style=\"color: #008000;\">)</span><span style=\"color: #008080;\">;</span>\n \n\t<span style=\"color: #0000ff;\">for</span> <span style=\"color: #008000;\">(</span><span style=\"color: #0000ff;\">int</span> i <span style=\"color: #000080;\">=</span> <span style=\"color: #0000dd;\">0</span><span style=\"color: #008080;\">;</span> i <span style=\"color: #000080;\">&lt;</span> list.<span style=\"color: #007788;\">size</span><span style=\"color: #008000;\">(</span><span style=\"color: #008000;\">)</span><span style=\"color: #008080;\">;</span> <span style=\"color: #000040;\">++</span>i<span style=\"color: #008000;\">)</span> <span style=\"color: #008000;\">{</span>\n\t\tfilter.<span style=\"color: #007788;\">append</span><span style=\"color: #008000;\">(</span>QString<span style=\"color: #008000;\">(</span><span style=\"color: #FF0000;\">\" %1 nome ILIKE '\\%%2\\%'\"</span><span style=\"color: #008000;\">)</span>.<span style=\"color: #007788;\">arg</span><span style=\"color: #008000;\">(</span>\n\t\t\tlist.<span style=\"color: #007788;\">size</span><span style=\"color: #008000;\">(</span><span style=\"color: #008000;\">)</span> <span style=\"color: #000080;\">&gt;</span> <span style=\"color: #0000dd;\">1</span> <span style=\"color: #000040;\">&amp;&amp;</span> i <span style=\"color: #000040;\">!</span><span style=\"color: #000080;\">=</span> <span style=\"color: #0000dd;\">0</span> <span style=\"color: #008080;\">?</span> <span style=\"color: #FF0000;\">\" AND \"</span> <span style=\"color: #008080;\">:</span> <span style=\"color: #FF0000;\">\" \"</span><span style=\"color: #008000;\">)</span>.<span style=\"color: #007788;\">arg</span><span style=\"color: #008000;\">(</span>list.<span style=\"color: #007788;\">at</span><span style=\"color: #008000;\">(</span>i<span style=\"color: #008000;\">)</span><span style=\"color: #008000;\">)</span><span style=\"color: #008000;\">)</span><span style=\"color: #008080;\">;</span>\n\t<span style=\"color: #008000;\">}</span>\n \n\tmodel<span style=\"color: #000040;\">-</span><span style=\"color: #000080;\">&gt;</span>setFilter<span style=\"color: #008000;\">(</span>filter<span style=\"color: #008000;\">)</span><span style=\"color: #008080;\">;</span>\n<span style=\"color: #008000;\">}</span></pre></td></tr></table></div>\n<p>Onde model é um ponteiro do tipo <a href=\"http://doc.trolltech.com/4.4/qsqltablemodel.html\" rel=\"external noopener\" target=\"_blank\">QSqlTableModel</a>, e o metodo setFilter nada mais é do que a inserção da clausa <a href=\"http://www.w3schools.com/Sql/sql_where.asp\" rel=\"external noopener\" target=\"_blank\">WHERE</a></p>\n<p>Se voce quer aprender mais como a Qt implementa o padrão de projeto <a href=\"http://en.wikipedia.org/wiki/Model-view-controller\" rel=\"external noopener\" target=\"_blank\">Model-View-Controller</a> leia <a href=\"http://doc.trolltech.com/4.4/model-view-programming.html\" rel=\"external noopener\" target=\"_blank\">aqui</a></p>\n<p>É isso ae, espero que gostem, qualquer duvida, critica e/ou sujestões já sabem</p>",
+    "comments": [
+      {
+        "id": "comment-4",
+        "author": "DarkSasori",
+        "url": null,
+        "date": "janeiro 5th, 2009 at 21:47\t\t\t\t\t | #1",
+        "html": "<p>Quanto tempo que naum entrava nesse blog, estava um pouco esquecido por “DEUS”, não tanto quanto o meu (espero reativar ele em breve). Mas esse primeiro post do ano vem com muita qualidade, como esperado de um grande programador.</p>\n<p>T++<br/>\nAbraços</p>"
+      },
+      {
+        "id": "comment-5",
+        "author": "skhaz",
+        "url": "http://www.skhaz.com",
+        "date": "janeiro 7th, 2009 at 07:18\t\t\t\t\t | #2",
+        "html": "<p>valeu!! o importante é nunca parar de estudar :D<br/>\nAbraços</p>"
+      }
+    ],
+    "source": {
+      "archive": "Common Crawl",
+      "capturedAt": "20100208155033",
+      "originalUrl": "http://www.skhaz.com/blog/por-onde-andas-skhaz/",
+      "captureUrl": "https://data.commoncrawl.org/crawl-002/2010/02/16/16/1266350201975_16.arc.gz#offset=23550877&length=7658",
+      "record": {
+        "filename": "crawl-002/2010/02/16/16/1266350201975_16.arc.gz",
+        "offset": "23550877",
+        "length": "7658",
+        "digest": "4RANVAOSWRXGYFFAEHQOS5YCF3AVAU56"
+      }
+    },
+    "missingMedia": [],
+    "excerpt": "Depois de um bom tempo sem postar, devido há inumeras coisas, como mudança de emprego, escolher um toolkit para criação de ‘GUI’s e aprende-lo, o fim de um namoro de 3 anos, e muita correria… enfim o bom filho a casa retorna. A boa noticia ",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "boost-136",
+    "title": "boost 1.36",
+    "date": "2008-09",
+    "time": null,
+    "author": "SKHAZ",
+    "categories": [],
+    "tags": [],
+    "html": "<p>Meio atrasado este post mas… dia 14 de agosto foi liberada a nova versão da boost, dentre as novas bibliotecas o destaque fica para</p>\n<p>Accumulators Um framework de calculo incremental</p>\n<p>Asio agora com suporte portas serial, raw sockets (fazia falta mesmo), ICMP (mais conhecido como ping) entre outras ‘coisitas’.</p>\n<p>PtrContainer Chega de ficar declarando vector de shared_ptr, alem […]</p>",
+    "comments": [],
+    "knownCommentCount": 0,
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080923160108",
+      "originalUrl": "http://www.skhaz.com/blog/boost-136/",
+      "captureUrl": "https://web.archive.org/web/20080923160108id_/http://www.skhaz.com/blog/",
+      "context": "Only the homepage excerpt survived; the remainder and exact publication date were not present in the capture."
+    },
+    "missingMedia": [],
+    "missingDownloads": [],
+    "partialContent": true,
+    "dateNote": "Publicado após o lançamento da Boost 1.36 em 14 de agosto e já presente em 23 de setembro de 2008; o dia exato não foi preservado.",
+    "excerpt": "Meio atrasado este post mas… dia 14 de agosto foi liberada a nova versão da boost, dentre as novas bibliotecas o destaque fica para Accumulators, Asio e PtrContainer.",
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "ctrlc-e-ctrlv",
+    "title": "Ctrl+C e Ctrl+V",
+    "date": "2008-07-02",
+    "time": "2008-07-02T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Humor"
+    ],
+    "tags": [],
+    "html": "<blockquote><p>Em programação não existe plágio, na verdade tudo é refactory em código fonte alheio</p></blockquote>",
+    "comments": [],
+    "knownCommentCount": 1,
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080705192754",
+      "originalUrl": "http://www.skhaz.com/blog/ctrlc-e-ctrlv/",
+      "captureUrl": "https://web.archive.org/web/20080705192754id_/http://www.skhaz.com/blog/",
+      "context": "Full post body recovered from the archived homepage."
+    },
+    "missingMedia": [],
+    "missingDownloads": [],
+    "excerpt": "Em programação não existe plágio, na verdade tudo é refactory em código fonte alheio",
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "wordpress-god",
+    "title": "Wordpress god",
+    "date": "2008-06-23",
+    "time": "2008-06-23T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Wordpress"
+    ],
+    "tags": [],
+    "html": "<p>Achei esse link ao acaso e achei útil para quem usa o <a href=\"http://www.wordpress.org/\" rel=\"external noopener\" target=\"_blank\">wordpress</a> como ferramenta de <em>blogging</em> <a href=\"http://mashable.com/2007/08/16/wordpress-god300-tools-for-running-your-wordpress-blog/\" rel=\"external noopener\" target=\"_blank\">WORDPRESS GOD: 300+ Tools for Running Your WordPress Blog</a></p>\n<p>E para quem usa o <a href=\"http://www.vim.org/\" rel=\"external noopener\" target=\"_blank\">VIM</a>, O <a href=\"http://www.vim.org/scripts/script.php?script_id=1953\" rel=\"external noopener\" target=\"_blank\">vimpress</a> esse plugin (do vim, e não do wordpress) permite postar e editar posts pelo editor sem ter que sair do conforto do vim.</p>",
+    "comments": [],
+    "knownCommentCount": 0,
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080703055748",
+      "originalUrl": "http://www.skhaz.com/blog/wordpress-god/",
+      "captureUrl": "https://web.archive.org/web/20080703055748id_/http://www.skhaz.com/blog/wordpress-god/",
+      "context": "Full post body recovered from the archived individual page."
+    },
+    "missingMedia": [],
+    "missingDownloads": [],
+    "excerpt": "Achei esse link ao acaso e achei útil para quem usa o wordpress como ferramenta de blogging WORDPRESS GOD: 300+ Tools for Running Your WordPress Blog E para quem usa o VIM , O vimpress esse plugin (do vim, e não do wordpress) permite postar",
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "7-habits-for-effective-text-editing-20",
+    "title": "7 Habits For Effective Text Editing 2.0",
+    "date": "2008-06",
+    "time": null,
+    "author": "SKHAZ",
+    "categories": [
+      "Vim"
+    ],
+    "tags": [],
+    "html": "<div class=\"video-embed\"><iframe allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\" src=\"https://www.youtube-nocookie.com/embed/3vnpf3xQGK0\" title=\"7 Habits For Effective Text Editing 2.0\"></iframe></div>\n<p>[Via <a href=\"http://youtube.com/watch?v=3vnpf3xQGK0\" rel=\"external noopener\" target=\"_blank\">youtube</a>]</p>",
+    "comments": [],
+    "knownCommentCount": 0,
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080705192754",
+      "originalUrl": "http://www.skhaz.com/blog/7-habits-for-effective-text-editing-20/",
+      "captureUrl": "https://web.archive.org/web/20080705192754id_/http://www.skhaz.com/blog/",
+      "context": "Full post body recovered from the archived homepage."
+    },
+    "missingMedia": [],
+    "missingDownloads": [],
+    "excerpt": "[Via youtube ]",
+    "dateNote": "A captura omitiu o dia; a ordem do blog posiciona o post entre 19 e 23 de junho de 2008.",
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "os-10-ultimos-mais-usados-comandos-no-linux",
+    "title": "Os 10 ultimos mais usados comandos no linux",
+    "date": "2008-06-19",
+    "time": "2008-06-19T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Misc"
+    ],
+    "tags": [],
+    "html": "<p>Achei <a href=\"http://zyakannazio.eti.br/fudeblog/2007/05/26/os-10-mais-da-linha-de-comando/\" rel=\"external noopener\" target=\"_blank\">esse meme</a> e então resolvi participar</p>\n<p><code>history|awk '{print $2}'|awk 'BEGIN {FS=\"|\"} {print $1}'|sort|uniq -c|sort -rn|head -10</code></p>\n<p>Resultado</p>\n<ol>\n<li>ls</li>\n<li>cd</li>\n<li>vim</li>\n<li>g++</li>\n<li>mplayer</li>\n<li>startx</li>\n<li>lynx</li>\n<li>ps</li>\n<li>mc</li>\n<li>tar</li>\n</ol>\n<p>Fica registrado meu “intimado” a todos que lêem me blog, postarem os 10 ultimo mais usados comando do linux (ou qualquer outro *nix)</p>",
+    "comments": [],
+    "knownCommentCount": 4,
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080705192754",
+      "originalUrl": "http://www.skhaz.com/blog/os-10-ultimos-mais-usados-comandos-no-linux/",
+      "captureUrl": "https://web.archive.org/web/20080705192754id_/http://www.skhaz.com/blog/",
+      "context": "Full post body recovered from the archived homepage."
+    },
+    "missingMedia": [],
+    "missingDownloads": [],
+    "excerpt": "Achei esse meme e então resolvi participar history|awk '{print $2}'|awk 'BEGIN {FS=\"|\"} {print $1}'|sort|uniq -c|sort -rn|head -10 Resultado ls cd vim g++ mplayer startx lynx ps mc tar Fica registrado meu “intimado” a todos que lêem me blog",
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "instalador-da-boost",
+    "title": "Instalador da boost",
+    "date": "2008-06-08",
+    "time": "2008-06-08T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [],
+    "html": "<p>Para quem ainda tem dificuldades para compilar a biblioteca <a href=\"http://www.boost.org/\" rel=\"external noopener\" target=\"_blank\">boost</a>, eu encontrei um instalador que baixa os pacotes dependendo de suas escolhas (multithreaded, static, debug, etc) sem contar que nos polpa de ter que esperar pela compilação, pena que é só para o Visual C++.<br/>\n<span class=\"missing-media\" data-original=\"http://www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1.png\">Imagem histórica não recuperada</span></p>\n<p><span class=\"missing-media\" data-original=\"http://www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2.png\">Imagem histórica não recuperada</span></p>\n<p>O instalador pode ser baixado <a href=\"http://www.boost-consulting.com/boost_1_35_0_setup.exe\" rel=\"external noopener\" target=\"_blank\">aqui</a>, mais informações em <a href=\"http://www.boost-consulting.com/products/free\" rel=\"external noopener\" target=\"_blank\">http://www.boost-consulting.com/products/free</a></p>",
+    "comments": [],
+    "knownCommentCount": 1,
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080705192754",
+      "originalUrl": "http://www.skhaz.com/blog/instalador-da-boost/",
+      "captureUrl": "https://web.archive.org/web/20080705192754id_/http://www.skhaz.com/blog/",
+      "context": "Full post body recovered from the archived homepage."
+    },
+    "missingMedia": [
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1.png",
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2.png"
+    ],
+    "missingDownloads": [],
+    "excerpt": "Para quem ainda tem dificuldades para compilar a biblioteca boost , eu encontrei um instalador que baixa os pacotes dependendo de suas escolhas (multithreaded, static, debug, etc) sem contar que nos polpa de ter que esperar pela compilação,",
+    "missingMediaVariants": [
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1-300x234.png",
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2-300x234.png"
+    ]
+  },
+  {
+    "slug": "agendamento-de-tarefas",
+    "title": "Agendamento de Tarefas",
+    "date": "2008-06-05",
+    "time": "2008-06-05T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [],
+    "html": "<p>Essa é minha implementação de um pequeno sistema de agendamento de tarefas, que futuramente usarei em um outro projeto, achei que ficou legal então resolvi postar. Vamos à implementação</p>\n<p>task.hpp</p>\n<pre class=\"syntax-highlight:cpp\">\n#ifndef _task_hpp\n#define _task_hpp\n\n#include &lt;ctime&gt;\n#include &lt;boost /function.hpp&gt;\n#include &lt;/boost&gt;&lt;boost /bind.hpp&gt;\n\nclass task\n{\n\tpublic:\n\t\texplicit task(const boost::function&lt;void ()&gt;&amp; callback)\n\t\t: _call_back(callback)\n\t\t, _call_count(0)\n\t\t, _total_time_used(0)\n\t\t{\n\t\t}\n\n\t\tvirtual ~task() { }\n\n\t\tvirtual void before_task() { }\n\n\t\tvoid do_task()\n\t\t{\n\t\t\tbefore_task();\n\t\t\t_call_back();\n\t\t\tafter_task();\n\t\t}\n\n\t\tvirtual void after_task() { }\n\n\t\tvoid set_callback(const boost::function&lt;/void&gt;&lt;void ()&gt;&amp; callback)\n\t\t{\n\t\t\t_call_back = callback;\n\t\t}\n\n\t\tconst boost::function&lt;/void&gt;&lt;void ()&gt;&amp; get_callback() const\n\t\t{\n\t\t\treturn _call_back;\n\t\t}\n\n\t\tbool is_valid() const\n\t\t{\n\t\t\treturn true;\n\t\t}\n\n\tprivate:\n\t\tboost::function&lt;/void&gt;&lt;void ()&gt; _call_back;\n\t\tstd::size_t _call_count;\n\t\tstd::clock_t _total_time_used;\n};\n\n#endif\n</pre>\n<p>schedule.hpp</p>\n<pre class=\"syntax-highlight:cpp\">\n#ifndef _schedule_hpp\n#define _schedule_hpp\n\n#include &lt;algorithm&gt;\n#include &lt;deque&gt;\n#include &lt;boost /pool/pool_alloc.hpp&gt;\n#include &lt;/boost&gt;&lt;boost /shared_ptr.hpp&gt;\n#include &lt;/boost&gt;&lt;boost /noncopyable.hpp&gt;\n#include &lt;/boost&gt;&lt;boost /thread/thread.hpp&gt;\n#include &lt;/boost&gt;&lt;boost /thread/xtime.hpp&gt;\n#include &lt;/boost&gt;&lt;boost /thread/mutex.hpp&gt;\n\n#include \"task.hpp\"\n\nusing std::for_each;\nusing std::deque;\nusing boost::shared_ptr;\n\nclass task;\ntypedef shared_ptr&lt;task&gt; task_ptr;\ntypedef deque&lt;task_ptr , boost::pool_allocator&lt;task_ptr&gt; &gt; deque_task;\n\nclass schedule : public boost::noncopyable\n{\n\tpublic:\n\t\tschedule() : job(boost::bind(&amp;schedule::thread_dispatcher, this))\n\t\t{\n\t\t\t_thread_sleep.sec = 10;\n\n\t\t\ttry\n\t\t\t{\n\t\t\t\tjob.join();\n\t\t\t}\n\n\t\t\tcatch (boost::thread_interrupted&amp;) { /* don't care... */ }\n\t\t}\n\n\t\tvirtual ~schedule() { }\n\n\t\tvoid add_task(const shared_ptr&lt;task&gt;&amp; _task)\n\t\t{\n\t\t\tboost::mutex::scoped_lock lock(monitor);\n\n\t\t\tdeque_task::const_iterator it = std::find(_task_pool.begin(),\n\t\t\t\t\t_task_pool.end(), _task);\n\n\t\t\tif (it == _task_pool.end())\n\t\t\t{\n\t\t\t\t_task_pool.push_back(_task);\n\t\t\t}\n\n\t\t\telse {\n\t\t\t\t// duplicate item\n\t\t\t}\n\t\t}\n\n\t\tvoid remove_task(const shared_ptr&lt;/task&gt;&lt;task&gt;&amp; _task)\n\t\t{\n\t\t\tboost::mutex::scoped_lock lock(monitor);\n\n\t\t\tdeque_task::iterator it = std::find(_task_pool.begin(),\n\t\t\t\t\t_task_pool.end(), _task);\n\n\t\t\tif (it != _task_pool.end())\n\t\t\t{\n\t\t\t\t_task_pool.erase(it);\n\t\t\t}\n\n\t\t\telse {\n\t\t\t\t// does't exist\n\t\t\t}\n\t\t}\n\n\tprotected:\n\t\tvoid thread_dispatcher()\n\t\t{\n\t\t\tfor (;;)\n\t\t\t{\n\t\t\t\tfor_each(_task_pool.begin(), _task_pool.end(),\n\t\t\t\t\tboost::mem_fn(&amp;task::do_task));\n\n\t\t\t\tboost::thread::sleep(_thread_sleep);\n\t\t\t}\n\t\t}\n\n\tprivate:\n\t\tdeque_task _task_pool;\n\t\tboost::thread job;\n\t\tboost::mutex monitor;\n\t\tboost::xtime _thread_sleep;\n};\n\n#endif\n</pre>\n<p>Unidade para testes, main.cpp</p>\n<pre class=\"syntax-highlight:cpp\">\n#include &lt;iostream&gt;\n#include &lt;boost /scoped_ptr.hpp&gt;\n#include &lt;/boost&gt;&lt;boost /bind.hpp&gt;\n\n#include \"schedule.hpp\"\n\nvoid f1()\n{\n\tstd::cout &lt; &lt; \"f1()\" &lt;&lt; std::endl;\n}\n\nvoid f2()\n{\n\tstd::cout &lt;&lt; \"f2()\" &lt;&lt; std::endl;\n}\n\nint main()\n{\n\tboost::scoped_ptr&lt;schedule&gt; _schedule(new schedule());\n\n\tshared_ptr&lt;task&gt; _task1 (new task(f1));\n\tshared_ptr&lt;/task&gt;&lt;task&gt; _task2 (new task(f2));\n\n\t_schedule-&gt;add_task(_task1);\n\t_schedule-&gt;add_task(_task1); // repetido, nao insere...\n\t_schedule-&gt;add_task(_task2);\n\n\t_schedule-&gt;start();\n\n\treturn 0;\n}\n</pre>\n<p>Agradecimentos</p>\n<ul>\n<li><a href=\"http://vertexbuffer.wordpress.com/\" rel=\"external noopener\" target=\"_blank\">Daniel</a> pela sugestão de usar fila e apenas uma thread ao invés de uma para cada tarefa e assim evitando busy-waiting</li>\n<li><a href=\"http://www.projetoarret.com.br/\" rel=\"external noopener\" target=\"_blank\">Alex</a> pelos testes de compatibilidade com mingw e msvc (vide <a href=\"http://www.skhaz.com/blog/deque-shared_ptr-for_each-mem_fun-cabummm/\" rel=\"external noopener\" target=\"_blank\">mem_fun e shared_ptr</a>)</li>\n</ul>\n<p><span class=\"missing-download\" data-original=\"http://www.skhaz.com/blog/wp-content/uploads/2008/06/scheduler.zip\">schedule.zip <small>(arquivo não recuperado)</small></span></p>\n<p></p>",
+    "comments": [],
+    "knownCommentCount": 0,
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080705192754",
+      "originalUrl": "http://www.skhaz.com/blog/agendamento-de-tarefas/",
+      "captureUrl": "https://web.archive.org/web/20080705192754id_/http://www.skhaz.com/blog/",
+      "context": "Full post body recovered from the archived homepage."
+    },
+    "missingMedia": [],
+    "missingDownloads": [
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/06/scheduler.zip"
+    ],
+    "excerpt": "Essa é minha implementação de um pequeno sistema de agendamento de tarefas, que futuramente usarei em um outro projeto, achei que ficou legal então resolvi postar. Vamos à implementação task.hpp #ifndef _task_hpp #define _task_hpp #include ",
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "deque-shared_ptr-for_each-mem_fun-cabummm",
+    "title": "deque + shared_ptr + for_each + mem_fun = cabumm",
+    "date": "2008-05-28",
+    "time": "2008-05-28T12:00:00-03:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [],
+    "html": "<p>Recentemente tive problemas com mem_fun e shared_ptr em um loop for_each</p>\n<p>Os elementos</p>\n<pre class=\"syntax-highlight:cpp\">\ntypedef shared_ptr&lt;task&gt; task_ptr;\ntypedef deque&lt;task_ptr , pool_allocator&lt;task_ptr&gt; &gt; deque_task_ptr;\n</pre>\n<p>Agora a combinação explosiva</p>\n<pre class=\"syntax-highlight:cpp\">\nfor_each(_task_pool.begin(), _task_pool.end(),\n       std::mem_fun(&amp;task::do_task));\n</pre>\n<p>O problema está em usar std::mem_fun, ela não suporta chamar métodos de uma classe que estão em um shared_ptr, eu poderia ter usado bind, mais preferi manter o código, como a boost tem sua própria implementação de <a href=\"http://www.boost.org/doc/libs/1_35_0/libs/bind/mem_fn.html\" rel=\"external noopener\" target=\"_blank\">mem_fn</a> ficando assim:</p>\n<pre class=\"syntax-highlight:cpp\">\nfor_each(_task_pool.begin(), _task_pool.end(),\n       boost::mem_fn(&amp;task::do_task));\n</pre>\n<p>Resolvido, obrigado <a href=\"http://www.projetoarret.com.br/\" rel=\"external noopener\" target=\"_blank\">Alex</a> por reportar o problema.<br/>\n</p>",
+    "comments": [],
+    "knownCommentCount": 4,
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080705192754",
+      "originalUrl": "http://www.skhaz.com/blog/deque-shared_ptr-for_each-mem_fun-cabummm/",
+      "captureUrl": "https://web.archive.org/web/20080705192754id_/http://www.skhaz.com/blog/",
+      "context": "Full post body recovered from the archived homepage."
+    },
+    "missingMedia": [],
+    "missingDownloads": [],
+    "excerpt": "Recentemente tive problemas com mem_fun e shared_ptr em um loop for_each Os elementos typedef shared_ptr<task> task_ptr; typedef deque<task_ptr , pool_allocator<task_ptr> > deque_task_ptr; Agora a combinação explosiva for_each(_task_pool.be",
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "meme-como-e-seu-desktop",
+    "title": "Meme - Como é seu Desktop",
+    "date": "2008-05-12",
+    "time": "2008-05-12T07:53:46-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Misc"
+    ],
+    "tags": [
+      "Desktop",
+      "IDE",
+      "Meme"
+    ],
+    "html": "<p><a href=\"http://vinigodoy.wordpress.com/2008/05/10/meme-como-e-o-seu-desktop/\" rel=\"external noopener\" target=\"_blank\">Respondendo ao meme do Vínicius</a>, Eu não gosto de muitos icones no desktop, prefiro usar o “Inicialização Rapida”</p>\n<p><span class=\"missing-media\" data-original=\"http://www.skhaz.com/blog/wp-content/uploads/2008/05/desktop.jpg\">Imagem histórica não recuperada</span></p>\n<p>IDE: Codeblocks, Visual Studio 2008 e wxFormBuilder (valeu a indicação <a href=\"http://sonetto.wordpress.com/\" rel=\"external noopener\" target=\"_blank\">n2liquid</a>)<br/>\nJogos: Diablo II, Starcraft, Turok 2<br/>\nOutros softwares: Winamp, Kaspersky, Opera, Media Player Classic, DVD Shrink, Nero.<br/>\nTem alguns eBooks no canto superior, e no superior esquerdo alguns projetos.<br/>\nTema usado é o Zune, e minha taskbar eu sempre uso com o tamanho dobrado (talvez seja um abito vindo do KDE), Ah é.. e como muita gente limpou o desktop para a “visita”, eu tambem dei uma enxugada no meu xD</p>\n<p>A imagem está em baixa resolução porque meu monitor parou de funcionar e estou só com um reserva :(</p>\n<p><strong>Edit</strong> Visual Studio com tema modificado<br/>\n<span class=\"missing-media\" data-original=\"http://www.skhaz.com/blog/wp-content/uploads/2008/05/msvczm8-300x225.png\">Imagem histórica não recuperada</span></p>",
+    "comments": [
+      {
+        "id": "comment-154",
+        "author": "MiWi",
+        "url": "http://diskchocolate.wordpress.com",
+        "date": "May 12th, 2008 at 3:57 pm",
+        "html": "<p> :cool: </p><p>Percebe-se o vício em C++, ein xD</p><p>Nossa, me dá uma agonia taskbar com tamanho dobrado x_x nem sei pq… uma época eu até usava mas, seilá xD</p><p>seu wallpaper é bem bonito xD</p>"
+      },
+      {
+        "id": "comment-155",
+        "author": "Livao",
+        "url": null,
+        "date": "May 12th, 2008 at 6:22 pm",
+        "html": "<p>Batataaaaaaas<br/>\n:biggrin: :tongue2: :wub: :rolleyes: :nowink: :mad: :ohmy:<br/>\nta parei &gt;,&lt;</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080527223713",
+      "originalUrl": "http://www.skhaz.com:80/blog/meme-como-e-seu-desktop/",
+      "captureUrl": "https://web.archive.org/web/20080527223713/http://www.skhaz.com:80/blog/meme-como-e-seu-desktop/"
+    },
+    "missingMedia": [
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/05/desktop.jpg",
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/05/msvczm8-300x225.png"
+    ],
+    "excerpt": "Respondendo ao meme do Vínicius , Eu não gosto de muitos icones no desktop, prefiro usar o “Inicialização Rapida” Imagem histórica não recuperada IDE: Codeblocks, Visual Studio 2008 e wxFormBuilder (valeu a indicação n2liquid ) Jogos: Diabl",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "mapa-termico-do-blog",
+    "title": "Mapa térmico do blog",
+    "date": "2008-05-02",
+    "time": "2008-05-02T08:49:13-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Misc"
+    ],
+    "tags": [
+      "Blog",
+      "ClickHeat",
+      "HeatMap",
+      "Mapa de Temperatura",
+      "PHP",
+      "Tracking"
+    ],
+    "html": "<p>Instalei o <a href=\"http://www.labsmedia.com/clickheat/index.html\" rel=\"external noopener\" target=\"_blank\">ClickHeat</a> no blog, para quem ainda não conhece ele registra os clicks dos visitantes e posteriormente gera gráficos com a temperatura dos clicks, abaixo algumas screenshots do ClickHeat rodando há 2 dias.</p>\n<p><span class=\"missing-media\" data-original=\"http://img240.imageshack.us/img240/2306/mapakm5.th.png\">Imagem histórica não recuperada</span>   <span class=\"missing-media\" data-original=\"http://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.th.png\">Imagem histórica não recuperada</span></p>\n<blockquote><p>Os pontos azuis são os clicks, quanto mais avermelhado mais clicks em um determinado ponto</p>\n</blockquote>",
+    "comments": [
+      {
+        "id": "comment-152",
+        "author": "Fernando Tonon",
+        "url": "http://www.projetoarret.com.br",
+        "date": "May 8, 2008\t\t\t| 2:55 pm",
+        "html": "<p></p><p> :ph34r: Rox, se ta cheio dessas porcarias de faze estratistica heim, to me divertindo com o Analystics hehe</p>"
+      },
+      {
+        "id": "comment-153",
+        "author": "Lineu Felipe",
+        "url": "http://www.lineufelipe.net",
+        "date": "May 11, 2008\t\t\t| 7:43 pm",
+        "html": "<p></p><p>Muito loko mano……………..</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080519004722",
+      "originalUrl": "http://www.skhaz.com:80/blog/mapa-termico-do-blog/",
+      "captureUrl": "https://web.archive.org/web/20080519004722/http://www.skhaz.com:80/blog/mapa-termico-do-blog/"
+    },
+    "missingMedia": [
+      "http://img240.imageshack.us/img240/2306/mapakm5.th.png",
+      "http://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.th.png"
+    ],
+    "excerpt": "Instalei o ClickHeat no blog, para quem ainda não conhece ele registra os clicks dos visitantes e posteriormente gera gráficos com a temperatura dos clicks, abaixo algumas screenshots do ClickHeat rodando há 2 dias. Imagem histórica não rec",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "sistema-de-arquivo-virtual",
+    "title": "Sistema de Arquivo Virtual usando a PhysicsFS",
+    "date": "2008-04-17",
+    "time": "2008-04-17T07:29:04-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++",
+      "SDL"
+    ],
+    "tags": [
+      "boost",
+      "Engine",
+      "Framework",
+      "Irrlicht",
+      "lzma",
+      "Ogre",
+      "physfs",
+      "PhysicsFS",
+      "Sistema de arquivo virtual",
+      "VFS",
+      "Wrapper",
+      "zip"
+    ],
+    "html": "<p><strong>O que é PhysicsFS</strong><br/>\nPhysicsFS (Physics File System) ou physfs, fornece uma camada de abstração do sistema de arquivos do sistema operacional.</p>\n<p><strong>Motivação</strong><br/>\nQuando estava escrevendo a <a href=\"http://wintermoon.sourceforge.net/\" rel=\"external noopener\" target=\"_blank\">wintermoon</a> estudei varias engines dentre elas a <a href=\"http://www.ogre3d.org/\" rel=\"external noopener\" target=\"_blank\">Ogre</a> e a <a href=\"http://irrlicht.sourceforge.net/\" rel=\"external noopener\" target=\"_blank\">Irrlicht</a> cada uma possui seu próprio sistema de arquivo virtual como descrito acima. mais porque a PhysicsFS? bom além de ser considerada muito segura e portável, ela tem um wrapper para a estrutura SDL_RWops o que facilita muito para projetos usando a biblioteca SDL. Outro ponto forte é a segurança, sua aplicação apenas poderá acessar os diretórios que você escolher, ideal para projetos baseados em scripts.</p>\n<p><strong>Recursos</strong><br/>\nFormatos suportados</p>\n<ul>\n<li><em>grp</em> - groupfiles ou seja vários arquivos em um só sem compressão</li>\n<li><em>hog</em> - maiores informações em <a href=\"http://www.descent2.com/ddn/specs/hog\" rel=\"external noopener\" target=\"_blank\">href=”http://www.descent2.com/ddn/specs/hog</a></li>\n<li><em>lzma</em> - formato popular usado pelo 7z</li>\n<li><em>mvl</em> - Descent II Movielib, mais informações em <a href=\"http://www.descent2.com/ddn/specs/mvl/\" rel=\"external noopener\" target=\"_blank\">http://www.descent2.com/ddn/specs/mvl/</a></li>\n<li><em>qpak</em> - formato de arquivo usado no Quake 1, Quake 2 e Quake 3</li>\n<li><em>wad</em> - usado na engine do DOOM</li>\n<li><em>zip</em> - formato popular e muito usado</li>\n</ul>\n<p><strong>Extras</strong></p>\n<ul>\n<li><em>selfextract</em> - suporta autoextração do executável</li>\n<li><em>ignorecase</em> - torna não case-sensitive (não diferencia maiúsculo de minusculo)</li>\n<li><em>wildcard</em> - mascara ex. arquivo.*, *.zip, arqui??.*, *.zi?</li>\n<li><em>physfsrwops</em> - abstração da estrutura SDL_RWops (é o que vamos usar, será mais explicado adiante)</li>\n<li><em>physfshttpd</em> - Possibilita enviar ou receber arquivos via http</li>\n</ul>\n<p><span id=\"more-62\"></span></p>\n<p>Alem de varias outras coisas, como bind para ruby e .net.</p>\n<p><strong>Velocidade</strong><br/>\nComo sabemos o acesso ao disco rígido é muito lento, usando um sistema de arquivos virtuais, reduzimos o acesso ao disco conseguindo um ganho de velocidade no carregamento.</p>\n<p><strong>Compilando</strong><br/>\nSe você usa algum Unix* (*BSD, GNU/Linux, etc) execute os comandos a seguir em algum terminal</p>\n<p><code>cmake . &amp;&amp; make &amp;&amp; make install</code></p>\n<p>No windows, baixe o cmake ou criar seu próprio projeto na sua IDE preferida.<br/>\nComo o Skhaz é um bom menino ele já criou um projeto para o CodeBlocks/mingw32 bem limpo suportando apenas os formatos grp, lzma e zip, se alguem precisar de algum outro formato e não souber adicionar, mande me um email. Não foi adicionado nenhum arquivo da pasta extra, para manter compatibilidade (tive dificuldades em compilar a wintermoon em outras plataformas além do codeblocks/mingw32) caso você queira alguma facilidade da pasta extra, adicione o arquivo ao seu projeto, como explicado adiante.</p>\n<p><strong>SDL e PhysicsFS</strong><br/>\nA SDL é muito robusta e flexível, possibilitando “sobre escrever” as chamadas de open, read, write e close da estrutura SDL_RWops.</p>\n<p>No diretório extras você encontra physfsrwops.c e physfsrwops.h, adicione eles ao seu projeto.</p>\n<p>Abaixo segue um exemplo de como usar a physfs, antes de mais nada é preciso inicializar a physfs assim como a SDL</p>\n<pre class=\"syntax-highlight:cpp\">\nint main(int argc, char** argv)\n{\n  if (PHYSFS_init(argv[0]) == 0)\n  {\n    fprintf(stderr, \"%s\\n\", PHYSFS_getLastError());\n    exit(-1);\n  }\n\n  // ...\n</pre>\n<p>PHYSFS_init recebe um único parâmetro, em algumas plataformas pode ser NULL, mais por questões de portabilidade aconselho sempre usa-lo.</p>\n<p>e também é necessário desnicializar</p>\n<pre class=\"syntax-highlight:cpp\">\nPHYSFS_deinit();\n</pre>\n<p>Adicionando alguns diretórios e arquivos</p>\n<pre class=\"syntax-highlight:cpp\">\n// adiciona o diretório media para a \"pesquisa\"\nPHYSFS_addToSearchPath(\"media/\", true);\n\n// adiciona o arquivo jogador.zip\nPHYSFS_addToSearchPath(\"jogador.zip\", true);\n</pre>\n<pre class=\"syntax-highlight:cpp\">\n// PHYSFSRWOPS_openRead se encontra no arquivo physfsrwops.c\n// basicamente ela retorna uma estrutura SDL_RWops\n// jogador_1.png esta dentro de jogador.zip\nSDL_RWops* rwops = PHYSFSRWOPS_openRead(\"jogador1.png\");\n\n// O segundo parâmetro diz a IMG_Load_RW que\n// libere o recurso após carrega-lo\nSDL_Surface* surface = IMG_Load_RW(rwops, 1);\n\n// Pronto já temos nossa imagem carregada.\n</pre>\n<p>Listando os arquivos</p>\n<pre class=\"syntax-highlight:cpp\">\nchar **rc = PHYSFS_enumerateFiles(\"/\");\nchar **i;\n\nfor (i = rc; *i != NULL; i++)\n     printf(\"%s\\n\", *i);\n\nPHYSFS_freeList(rc);\n</pre>\n<p><strong>Onde</strong><br/>\nVoce pode baixar o source e compilar manualmente, para quem usa algum Unix Like, rode o comando <code>cmake . &amp;&amp; make &amp;&amp; make install</code></p>\n<ul>\n<li>Site oficial da PhysicsFS (<a href=\"http://icculus.org/physfs/\" rel=\"external noopener\" target=\"_blank\">http://icculus.org/physfs/</a>)\n</li>\n<li>7zip (<a href=\"http://www.7-zip.org/\" rel=\"external noopener\" target=\"_blank\">http://www.7-zip.org/</a>)</li>\n<li><span class=\"missing-download\">PhysicsFS já com projeto, fontes e compilada <small>(arquivo não recuperado)</small></span></li>\n<li><span class=\"missing-download\">Exemplo completo <small>(arquivo não recuperado)</small></span></li>\n</ul>\n<p><strong>Dica</strong><br/>\nPhysicsFS com mensagens em Português do Brasil: Adicione essa macro PHYSFS_LANG_PORTUGUESE_BR” sem aspas, ou então altere-a no arquivo physfs_internal.h na linha 78</p>\n<p><strong>Referencias</strong><br/>\nParaGUI (<a href=\"http://www.paragui.org/\" rel=\"external noopener\" target=\"_blank\">http://www.paragui.org/</a>)<br/>\nIrrlicht (<a href=\"http://irrlicht.sourceforge.net/\" rel=\"external noopener\" target=\"_blank\">http://irrlicht.sourceforge.net/</a>)<br/>\nOgre (<a href=\"http://www.ogre3d.org/\" rel=\"external noopener\" target=\"_blank\">http://www.ogre3d.org/</a>)</p>\n<p>Não deixem de comentar, criticas, sugestões e elogios são muito bem vindos.</p>",
+    "comments": [
+      {
+        "id": "comment-102",
+        "author": "DarkSasori",
+        "url": "http://www.lineufelipe.net",
+        "date": "April 17, 2008\t\t\t| 4:47 pm",
+        "html": "<p></p><p>Muito bom artigo, vai me ajudar muito em futuros desenvolvimentos.</p>"
+      },
+      {
+        "id": "comment-103",
+        "author": "Diogo_RBG",
+        "url": "http://diogorbg.blogspot.com",
+        "date": "April 17, 2008\t\t\t| 8:09 pm",
+        "html": "<p></p><p> :blink: Muito bom !</p>\n<p>Eu tinha problemas para listar arquivos do diretório em meus jogos, apesar da SDL ser portável o sistema de arquivos não é.<br/>\nAproveito e resolvo também o problema dos arquivos soltos com o .grp</p>\n<p>Vlw pela dica !</p>"
+      },
+      {
+        "id": "comment-104",
+        "author": "Todi",
+        "url": "http://grindsoft.wordpress.com",
+        "date": "April 17, 2008\t\t\t| 8:11 pm",
+        "html": "<p></p><p>Ótimo artigo! Vai me ajudar bastante, também, em meus projetos! =~</p>"
+      },
+      {
+        "id": "comment-106",
+        "author": "Fernando Tonon",
+        "url": "http://www.projetoarret.com.br",
+        "date": "April 22, 2008\t\t\t| 1:18 pm",
+        "html": "<p></p><p> :ph34r: &lt;- parece um ninja :D</p>\n<p>Nunca usei o SDL_RWops, esse artigo me ajudou a intender um pouco sobre o funcionamento dele, vlw skhaz  :biggrin:</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080519004802",
+      "originalUrl": "http://www.skhaz.com:80/blog/sistema-de-arquivo-virtual/",
+      "captureUrl": "https://web.archive.org/web/20080519004802/http://www.skhaz.com:80/blog/sistema-de-arquivo-virtual/"
+    },
+    "missingMedia": [],
+    "excerpt": "O que é PhysicsFS PhysicsFS (Physics File System) ou physfs, fornece uma camada de abstração do sistema de arquivos do sistema operacional. Motivação Quando estava escrevendo a wintermoon estudei varias engines dentre elas a Ogre e a Irrlic",
+    "missingDownloads": [
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/04/physicsfs.zip",
+      "http://www.skhaz.com/blog/wp-content/uploads/2008/04/sdl-physicsfs.zip"
+    ],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "try-catch-no-construtor",
+    "title": "try catch no construtor",
+    "date": "2008-04-10",
+    "time": "2008-04-10T16:17:04-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [
+      "catch",
+      "exception",
+      "try"
+    ],
+    "html": "<p>Eu dia antes de publicar este artigo (como tratar exceções nos construtores que encontrei no livro More Exceptional C++ em Constructor Failures) lendo meus feeds vi que o Wanderley Caloni publicou primeiro sobre isso primeiro em <a href=\"http://www.caloni.com.br/blog/archives/try-catch-flutuante\" rel=\"external noopener\" target=\"_blank\">Try-catch flutuante</a>, o legal é que eu não sabia que nome poderia ser dado à isso :D</p>\n<p>Simples e resumido, apesar de ser bem estranho você pode tratar exceções na inicialização dos atributos das classes usando try como você já esta acostumado.<br/>\nExemplo retirado do livro More Exceptional C++</p>\n<pre class=\"syntax-highlight:cpp\">\nclass C : public A\n{\n    public:\n        C() try : A ()\n        {\n        }\n        catch( ... )\n        {\n        }\n};\n</pre>\n<p><strong>Referencias</strong><br/>\nMore Exceptional C++<br/>\n<a href=\"http://www.caloni.com.br/blog/archives/try-catch-flutuante\" rel=\"external noopener\" target=\"_blank\">Try-catch flutuante - Caloni</a></p>",
+    "comments": [],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080518012059",
+      "originalUrl": "http://www.skhaz.com:80/blog/try-catch-no-construtor/",
+      "captureUrl": "https://web.archive.org/web/20080518012059/http://www.skhaz.com:80/blog/try-catch-no-construtor/"
+    },
+    "missingMedia": [],
+    "excerpt": "Eu dia antes de publicar este artigo (como tratar exceções nos construtores que encontrei no livro More Exceptional C++ em Constructor Failures) lendo meus feeds vi que o Wanderley Caloni publicou primeiro sobre isso primeiro em Try-catch f",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "coder-noob-eu",
+    "title": "Coder noob eu?",
+    "date": "2008-04-10",
+    "time": "2008-04-10T15:12:54-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Humor",
+      "C++"
+    ],
+    "tags": [
+      "Historias",
+      "Nonsense",
+      "stl"
+    ],
+    "html": "<p>Conversando hoje com o <a href=\"http://easy2d.sourceforge.net/\" rel=\"external noopener\" target=\"_blank\">Jonatas</a> sobre as besteiras muita vezes ditas em alguns fóruns sobre programação, me lembrei de quando eu era chamado de coder noob e preguiçoso por preferir usar std::string ao invez de char* tem cabimento?</p>",
+    "comments": [
+      {
+        "id": "comment-97",
+        "author": "n2liquid",
+        "url": "http://sonetto.googlecode.com/",
+        "date": "April 10, 2008\t\t\t| 9:36 pm",
+        "html": "<p></p><p>Eu sempre preferia char *. Era meio conservado C’zista, mas ultimamente tenho dado o braço a torcer, e usado string em vários casos XD</p>\n<p>Mas ainda assim, prefiro char * sempre que possível, já que tem menos overhead. Só uso string pra concatenar strings XDD</p>"
+      },
+      {
+        "id": "comment-98",
+        "author": "MiWi",
+        "url": "http://diskchocolate.wordpress.com",
+        "date": "April 10, 2008\t\t\t| 10:07 pm",
+        "html": "<p></p><p>Realmente, os caras manjam um pouco de sintaxe e já se acham os senhores da programação…</p>\n<p>É por isso que eu nem vou muito em fóruns de programação… prefiro perguntar para algum amigo que saiba daquilo e que não fique, “OMFG, vc não usou a técnica avançada para hackers metidas nessa parte do seu programa!”.</p>\n<p>=___=</p>\n<p>Meu, já reparou como fóruns que ficam grandes ficam ENTUPIDOS de sabichões e de “vc está errado pq é diferente da gente”? </p>\n<p>Fóruns pequenos FTW!</p>"
+      },
+      {
+        "id": "comment-99",
+        "author": "ViniGodoy",
+        "url": "http://vinigodoy.wordpress.com",
+        "date": "April 10, 2008\t\t\t| 11:20 pm",
+        "html": "<p></p><p>Preguiçoso é o cara, que resolveu se congelar na idade da pedra ao invés de estudar o que vem de novo por aí…</p>\n<p>Mas deixa eles com os char** enquanto a gente fica por aqui com as nossa boost e nosso código super limpo, rápido e produtivo. ;)</p>"
+      },
+      {
+        "id": "comment-100",
+        "author": "SKHAZ",
+        "url": "/",
+        "date": "April 11, 2008\t\t\t| 2:19 pm",
+        "html": "<p></p><p>Sem contar quando eles mudam totalmente o escopo do tópico :(</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080518012021",
+      "originalUrl": "http://www.skhaz.com:80/blog/coder-noob-eu/",
+      "captureUrl": "https://web.archive.org/web/20080518012021/http://www.skhaz.com:80/blog/coder-noob-eu/"
+    },
+    "missingMedia": [],
+    "excerpt": "Conversando hoje com o Jonatas sobre as besteiras muita vezes ditas em alguns fóruns sobre programação, me lembrei de quando eu era chamado de coder noob e preguiçoso por preferir usar std::string ao invez de char* tem cabimento?",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "mutable-o-legado",
+    "title": "mutable, o legado",
+    "date": "2008-04-08",
+    "time": "2008-04-08T15:52:57-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [
+      "class",
+      "const",
+      "const_cast",
+      "mutable",
+      "volatile"
+    ],
+    "html": "<p>Continuando nosso artigo <a href=\"http://skhaz.wordpress.com/2008/02/05/mutable-que-raios-e-isso/\" rel=\"external noopener\" target=\"_blank\">mutable, que raios é isso?</a> agora irei demonstrar um segunda maneira de “burlar” o mesmo método const sem usar atributos mutáveis (mutable).</p>\n<p><span id=\"more-57\"></span></p>\n<p>Temos a seguinte interface de exemplo, Entity (pure abstract)</p>\n<pre class=\"syntax-highlight:cpp\">\nclass Entity\n{\n  public:\n    virtual void logic() = 0;\n    virtual void draw() const = 0;\n};\n</pre>\n<blockquote><p>Note que classes como a acima são muito comuns em vários projetos</p></blockquote>\n<p>Agora a classe Player que implementa Entity</p>\n<pre class=\"syntax-highlight:cpp\">\nclass Player : public Entity\n{\n  public:\n    void logic()\n    {\n    }\n\n    void draw() const\n    {\n       mDrawCount++;\n\n      // Erro! pois é um método const\n    }\n\n  private:\n     std::size_t mDrawCount;\n};\n</pre>\n<p>Mais skhaz porque não controlar isso no método logic que não é const? eu tenho bons motivos para isso, um deles é se você implementar um sistema de ticks como descrito no artigo <a href=\"http://vertexbuffer.wordpress.com/2008/01/29/controle-de-velocidade-de-jogo-com-ticks/\" rel=\"external noopener\" target=\"_blank\">Controle de velocidade de jogo com ticks</a> onde quase sempre o método draw <strong>não</strong> será chamado no mesmo ciclo que logic.</p>\n<p><strong>ponteiro e const_cast os “vilões”</strong><br/>\nCom o uso do cast const_cast podemos burlar o atributo declarado como mutable (assim como para const e volatile) para não constantes.</p>\n<pre class=\"syntax-highlight:cpp\">\nvoid Player::draw() const\n{\n  const_cast&lt;player *&gt;(this)-&gt;mDrawCount++;\n\n  // work fine =D\n}\n</pre>\n<p>Referencia <a href=\"http://msdn2.microsoft.com/en-us/library/bz6at95h.aspx\" rel=\"external noopener\" target=\"_blank\">http://msdn2.microsoft.com/en-us/library/bz6at95h.aspx</a><br/>\nUm artigo recomendado pelo nosso amigo danielf sobre mutable <a href=\"http://www.highprogrammer.com/alan/rants/mutable.html\" rel=\"external noopener\" target=\"_blank\">http://www.highprogrammer.com/alan/rants/mutable.html</a></p>",
+    "comments": [
+      {
+        "id": "comment-96",
+        "author": "ViniGodoy",
+        "url": "http://vinigodoy.wordpress.com",
+        "date": "April 9, 2008\t\t\t| 12:41 am",
+        "html": "<p></p><p>Const cast é o tal recurso C++ de “hei mermão. Eu sou o programador aqui e sou eu que mando.”</p>\n<p>Aliás, quer cast mais agressivo do que o reinterpret_cast? Você pode dizer que um monte de bytes se refere a uma classe (ou vice versa)… e voilá… acaba até com o encapsulamento.</p>\n<p>Só lembrando que nosso amigo const_cast também consegue retirar ou colocar imutabilidade. </p>\n<p>E ele também consegue deixar const algo que não é const. </p>\n<p>É o caso, por exemplo, de vc querer chamar a versão const de um método a partir da sua versão não const. Exige um pouco de ginástica, já que vc vai precisar tornar o ponteiro da função um const (aí o uso do const cast), mas pode ser feito. </p>\n<p>A dica completa está no Effective C++.</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080518012032",
+      "originalUrl": "http://www.skhaz.com:80/blog/mutable-o-legado/",
+      "captureUrl": "https://web.archive.org/web/20080518012032/http://www.skhaz.com:80/blog/mutable-o-legado/"
+    },
+    "missingMedia": [],
+    "excerpt": "Continuando nosso artigo mutable, que raios é isso? agora irei demonstrar um segunda maneira de “burlar” o mesmo método const sem usar atributos mutáveis (mutable). Temos a seguinte interface de exemplo, Entity (pure abstract) class Entity ",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "bem-vindos",
+    "title": "Bem vindos",
+    "date": "2008-04-07",
+    "time": "2008-04-07T20:12:05-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Misc"
+    ],
+    "tags": [],
+    "html": "",
+    "comments": [
+      {
+        "id": "comment-91",
+        "author": "MiWi",
+        "url": "http://diskchocolate.wordpress.com",
+        "date": "April 7, 2008\t\t\t| 11:32 pm",
+        "html": "<p></p><p>Bom, assinei o blog novo :)<br/>\nEsse layout ficou bonito :)<br/>\nE, nossa, que lindo aquele smiley amando o Opera e chutando o FireFox xDDDD<br/>\n;**</p>"
+      },
+      {
+        "id": "comment-92",
+        "author": "ViniGodoy",
+        "url": "http://vinigodoy.wordpress.com",
+        "date": "April 8, 2008\t\t\t| 8:05 am",
+        "html": "<p></p><p>Feed atualizado! :)</p>"
+      },
+      {
+        "id": "comment-93",
+        "author": "SKHAZ",
+        "url": "/",
+        "date": "April 8, 2008\t\t\t| 12:13 pm",
+        "html": "<p></p><p>Muito obrigado por já terem atualizado o feed :D<br/>\nEsse layout ainda vai mudar, odeio o efeito laranja nos links e tem algums itens que são muito exagerados…</p>"
+      },
+      {
+        "id": "comment-94",
+        "author": "n2liquid",
+        "url": "http://sonetto.wordpress.com/",
+        "date": "April 8, 2008\t\t\t| 3:31 pm",
+        "html": "<p></p><p>Opera é coisa de bicha (perdão, bichas, nada contra vocês).</p>\n<p>Parabéns pelo domínio, ficou rox XDDD<br/>\nFalou!</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080518012001",
+      "originalUrl": "http://www.skhaz.com:80/blog/bem-vindos/",
+      "captureUrl": "https://web.archive.org/web/20080518012001/http://www.skhaz.com:80/blog/bem-vindos/"
+    },
+    "missingMedia": [],
+    "excerpt": "",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "a-vida-e-um-jogo",
+    "title": "A vida é um Jogo?",
+    "date": "2008-03-20",
+    "time": "2008-03-20T12:55:06-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Humor"
+    ],
+    "tags": [
+      "Jogo",
+      "Tirinha",
+      "Vida"
+    ],
+    "html": "<p>Desculpem-me, mais eu não pude resistir em postar quando vi essa tirinha  :D</p>\n<p><a href=\"/assets/media/a-vida-e-um-jogo/jogo.jpg\" title=\"The Sims\"><img alt=\"The Sims\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/a-vida-e-um-jogo/jogo.thumbnail.jpg\"/></a></p>\n<p>[Via <a href=\"http://explosm.net/\" rel=\"external noopener\" target=\"_blank\">Cyanide &amp; Happiness</a>]</p>",
+    "comments": [
+      {
+        "id": "comment-151",
+        "author": "Fernando Tonon",
+        "url": "http://www.projetoarret.com.br",
+        "date": "March 27, 2008\t\t\t| 1:33 pm",
+        "html": "<p></p><p>Sobre essa tira, cheguei a conclusão que somos todos NPCs.</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080518012001",
+      "originalUrl": "http://www.skhaz.com:80/blog/a-vida-e-um-jogo/",
+      "captureUrl": "https://web.archive.org/web/20080518012001/http://www.skhaz.com:80/blog/a-vida-e-um-jogo/"
+    },
+    "missingMedia": [],
+    "excerpt": "Desculpem-me, mais eu não pude resistir em postar quando vi essa tirinha :D [Via Cyanide & Happiness ]",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "lancado-arret-3d",
+    "title": "Lançado o Arret",
+    "date": "2008-03-12",
+    "time": "2008-03-12T11:42:49-05:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Misc",
+      "Projetos"
+    ],
+    "tags": [],
+    "html": "<div><a href=\"/assets/media/lancado-arret-3d/arret.thumbnail.png\" title=\"Arret\"><img alt=\"Click para ampliar\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/lancado-arret-3d/arret.thumbnail.png\"/></a></div>\n<p>Esse ai sou eu, o alex fugindo da foto para o meio da neblina :D</p>\n<p align=\"left\">O Arret 0.0.1a  escrito totalmente em C++ usando Irrlicht para o cliente e o   sistema de  colisão foi implementado no servidor usando a   biblioteca fisica Newton e partes da <a href=\"http://skhaz.wordpress.com/2008/02/12/one/\" rel=\"external noopener\" target=\"_blank\">ONE</a>, o projeto não é novo, tem uns 3 anos, já foi até  2D usando SDL, mais informações em <a href=\"http://projetoarret.com.br/\" rel=\"external noopener\" target=\"_blank\">http://projetoarret.com.br/</a>.</p>\n<p>Apesar de eu não fazer parte da equipe (não por nenhum tipo de desavença, mais sim porque prefiro usar <a href=\"http://ogre3d.org/\" rel=\"external noopener\" target=\"_blank\">Ogre</a>), sempre torci e ajudei o projeto, estamos esperando novas atualizações :D</p>",
+    "comments": [
+      {
+        "id": "comment-146",
+        "author": "DarkSasori",
+        "url": null,
+        "date": "March 12th, 2008 at 9:00 pm",
+        "html": "<p>Muito legal esse projeto…..<br/>\nacabei de testa ele aqui no meu pc, e funcionou sem lag……</p>"
+      },
+      {
+        "id": "comment-147",
+        "author": "Fernando Tonon",
+        "url": "http://www.projetoarret.com.br",
+        "date": "March 13th, 2008 at 3:08 pm",
+        "html": "<p>Skhaz, muito obrigado por publicar, gostei muito quando vc falo e eu vi aqui no FEEDs hehe</p><p>DarkSasori, vlw por testar, é muito bom ter um feed back do nosso trabalho…</p><p>O skhaz não faz parte realmente da equipe, mas a gente sempre ta procurando ele pra pegar umas dicas e ele que ta desenvolvendo a ONE que estamos utilizando no projeto…</p><p>O projeto tem 3 anos, mas apenas uma semana antes do contest de PacMan da Unidev que começamos a fazer ele em 3D, então ta tudo refeito hehe</p><p>Acompanhem o site e esperem novidades ;D</p><p>Quando ao uso da Irrlicht, a gente ainda ta estamos estudando se utilizamos a Ogre por ser mais leve e ter melhores recursos… mas por enquando está em Irrlicht mesmo. Porque é mais fácil pra desenvolver com ela, e os recursos também não ficam muito atras… além dela estar evoluindo rápido, deu uma grande diferença no desempenho da versão 1.3 pra 1.4…</p>"
+      },
+      {
+        "id": "comment-148",
+        "author": "Pérsio Flexa",
+        "url": "http://programacaodejogos.com.br",
+        "date": "March 13th, 2008 at 8:43 pm",
+        "html": "<p>Eu já utilizei o Ogre, mas este só ouvi falar.<br/>\nSe bem que no momento to em outro mundo, heheh, to desenvolvendo meu game com XNA, por enquanto tá indo bem. Espero publicar no meu blog um demo em breve ^^</p>"
+      },
+      {
+        "id": "comment-149",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "March 13th, 2008 at 8:49 pm",
+        "html": "<p>Eu nunca usei XNA, mais parece ser muito boa e ainda roda no xbox360, ela só peca por rodar apenas na plataforma da microsoft</p>"
+      },
+      {
+        "id": "comment-150",
+        "author": "pandadev",
+        "url": null,
+        "date": "March 21st, 2008 at 3:41 am",
+        "html": "<p>meus parabéns para o Arret, ta ficando uma belezura.<br/>\nso quero ver quando aparecer os menus e a cidade.</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080527231909",
+      "originalUrl": "http://www.skhaz.com:80/blog/lancado-arret-3d/",
+      "captureUrl": "https://web.archive.org/web/20080527231909/http://www.skhaz.com:80/blog/lancado-arret-3d/"
+    },
+    "missingMedia": [],
+    "excerpt": "Esse ai sou eu, o alex fugindo da foto para o meio da neblina :D O Arret 0.0.1a escrito totalmente em C++ usando Irrlicht para o cliente e o sistema de colisão foi implementado no servidor usando a biblioteca fisica Newton e partes da ONE ,",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "codeblocks",
+    "title": "CodeBlocks 8.02",
+    "date": "2008-03-07",
+    "time": "2008-03-07T06:02:33-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Misc",
+      "C++"
+    ],
+    "tags": [
+      "Autoversioning",
+      "CodeBlocks",
+      "IDE",
+      "SVN",
+      "ThreadSearch"
+    ],
+    "html": "<div><a href=\"/assets/media/codeblocks/cb_802.jpg\" title=\"About\"><img alt=\"About\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/cb_802.thumbnail.jpg\"/></a></div>\n<p align=\"left\">Recentemente formatei o pc e fui baixar o codeblocks no <a href=\"http://www.codeblocks.org/\" rel=\"external noopener\" target=\"_blank\">site</a> e tive a  surpresa de encontrar a nova versao 8.02  disponivel, baixei ela  e  fui procurar os pacotes da nightly  build mais nao encontrei… ao  iniciar  a  instalação  já notei  uma quantidade generosa de novos  plugins :)</p>\n<p align=\"left\">\n</p><p><a href=\"/assets/media/codeblocks/cb.jpg\" title=\"CodeBlocks\"><img alt=\"CodeBlocks\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/cb.thumbnail.jpg\"/></a> <a href=\"/assets/media/codeblocks/main.jpg\" title=\"main.jpg\"><img alt=\"Main\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/main.thumbnail.jpg\"/></a></p>\n<p align=\"left\"><strong>Destaques</strong></p>\n<ul>\n<li>\n<p align=\"left\"><strong>Instalador</strong></p>\n</li>\n<p>Nenhuma mudança significativa além de uma splashscreeen, e uma melhor organização dos diretorios</p>\n<p align=\"left\"><a href=\"/assets/media/codeblocks/instalador.jpg\" title=\"Instalador\"><img alt=\"Instalador\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/instalador.thumbnail.jpg\"/></a> <a href=\"/assets/media/codeblocks/instalador2.jpg\" title=\"Instalador\"><img alt=\"Instalador\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/instalador2.thumbnail.jpg\"/> </a><a href=\"/assets/media/codeblocks/dir.jpg\" title=\"Diretorios\"><img alt=\"dir.jpg\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/dir.thumbnail.jpg\"/></a></p>\n<li>\n<p align=\"left\"><strong>Autoversioning</strong></p>\n</li>\n<p>Bom esse foi o recurso que estava procurando à muito tempo, qual a função dele? bom… ele cria um arquivo .h que contem informações do SVN, como versão, assim você pode criar uma tela “Sobre” igual a do CodeBlocks mostrando a versão do SVN</p>\n<p><a href=\"/assets/media/codeblocks/integracao_com_svn.thumbnail.jpg\" title=\"Autoversioning\"><img alt=\"Autoversioning\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/integracao_com_svn.thumbnail.jpg\"/></a></p>\n<li>\n<p align=\"left\"><strong>Changelog</strong></p>\n</li>\n<p>Esse foi outro recurso que gostei muito</p>\n<p align=\"left\"><a href=\"/assets/media/codeblocks/autoversioning_changelog.jpg\" title=\"Changelog\"><img alt=\"Changelog\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/autoversioning_changelog.thumbnail.jpg\"/></a></p>\n<li>\n<p align=\"left\"><strong>ThreadSearch</strong></p>\n</li>\n<p>É um sistema de busca muito eficiente, Não tem nada haver com programação paralela :P</p>\n<p><a href=\"/assets/media/codeblocks/threadsearch_toolbar.jpg\" title=\"ThreadSearch\"><img alt=\"ThreadSearch\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/codeblocks/threadsearch_toolbar.thumbnail.jpg\"/></a></p></ul>\n<p>Mais informações em <a href=\"http://www.codeblocks.org/features\" rel=\"external noopener\" target=\"_blank\">http://www.codeblocks.org/</a></p>",
+    "comments": [
+      {
+        "id": "comment-142",
+        "author": "Visitante",
+        "url": null,
+        "date": "March 7, 2008\t\t\t| 6:06 pm",
+        "html": "<p></p><p>Legal brow….<br/>\nvo baixa essa versao….daki uns dias…assism q arrumar a net no meu pc…<br/>\nauahuah</p>\n<p>T++</p>"
+      },
+      {
+        "id": "comment-143",
+        "author": "vinigodoy",
+        "url": "http://vinigodoy.wordpress.com",
+        "date": "March 7, 2008\t\t\t| 8:43 pm",
+        "html": "<p></p><p>Eu notei outras vantagens:<br/>\n1. O MinGW já vem no instalador! Isso facilita muito o processo de instalação;<br/>\n2. O autocomplete deu uma graaande melhorada;<br/>\n3. O GDB também já vem no instalador! Já dá para usar o depurador por padrão! E ele funciona muito bem!</p>\n<p>Faz um tempinho que eu tinha notado esse C::B.</p>\n<p>Até atualizei meu blog já com <a>o tutorial de como instalar</a> usando essa versão. :)</p>\n<p>Agora, definitivamente, dá para decretar a morte do DevCpp.</p>"
+      },
+      {
+        "id": "comment-144",
+        "author": "crocidb",
+        "url": "http://crocidb.wordpress.com/",
+        "date": "March 8, 2008\t\t\t| 11:50 pm",
+        "html": "<p></p><p>Interessante, cara!</p>\n<p>Vou baixar!</p>\n<p>Valeu aí pela dicaaa! ^^</p>"
+      },
+      {
+        "id": "comment-145",
+        "author": "Fernando Tonon",
+        "url": "http://www.projetoarret.com.br",
+        "date": "March 10, 2008\t\t\t| 6:50 pm",
+        "html": "<p></p><p>Eu ja tinha ficado sabendo, mas ainda num tinha baxado, vi agora la nos feeds a noticia e lembrei huahuahauhau vo baxa, VLW SKHAZ!</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080518012017",
+      "originalUrl": "http://www.skhaz.com:80/blog/codeblocks/",
+      "captureUrl": "https://web.archive.org/web/20080518012017/http://www.skhaz.com:80/blog/codeblocks/"
+    },
+    "missingMedia": [],
+    "excerpt": "Recentemente formatei o pc e fui baixar o codeblocks no site e tive a surpresa de encontrar a nova versao 8.02 disponivel, baixei ela e fui procurar os pacotes da nightly build mais nao encontrei… ao iniciar a instalação já notei uma quanti",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "meu-mousepad-apos-minha-namorada-ver",
+    "title": "Meu mousepad após minha namorada ver…",
+    "date": "2008-02-25",
+    "time": "2008-02-25T08:39:16-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Humor"
+    ],
+    "tags": [
+      "Mousepad"
+    ],
+    "html": "<p><span class=\"missing-media\" data-original=\"http://img261.imageshack.us/img261/2865/finalor9.th.png\">Imagem histórica não recuperada</span>Antes que vocês pensem que sou pervertido ao ponto de comprar um mousepad com esse tema, eu ganhei ele de presente de um amigo. Para quem está se perguntando, sim os seios são muito macios e evitam tendinite :P</p>",
+    "comments": [
+      {
+        "id": "comment-139",
+        "author": "DarkSasori",
+        "url": null,
+        "date": "February 25th, 2008 at 2:43 pm",
+        "html": "<p>ahuhauahuahua………seu pervertido<br/>\nnão tem nem o que comentar sobre isso…..</p>"
+      },
+      {
+        "id": "comment-138",
+        "author": "Fernando Tonon",
+        "url": "http://www.projetoarret.com.br",
+        "date": "March 3rd, 2008 at 9:15 pm",
+        "html": "<p>lol se fosse a minha namorada ela num ia faze nada…</p><p>com o mouse pad…</p><p>:.(</p>"
+      },
+      {
+        "id": "comment-140",
+        "author": "miwi",
+        "url": null,
+        "date": "March 17th, 2008 at 7:47 pm",
+        "html": "<p>lol, xD<br/>\ne olha q ela ainda te deixou com o mousepad… eu cortava em pedaços e jogava fora xD<br/>\nou melhor, só jogava fora, pq daria um trabalhao cortar esse negócio… :p</p><p>mas sua namorada é criativa, admito xD</p>"
+      },
+      {
+        "id": "comment-141",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "March 17th, 2008 at 8:00 pm",
+        "html": "<p>Na verdade otem ela tentou arrancar o silicone e rabiscou mais ainda o mausepad =z</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080528111135",
+      "originalUrl": "http://www.skhaz.com:80/blog/meu-mousepad-apos-minha-namorada-ver/",
+      "captureUrl": "https://web.archive.org/web/20080528111135/http://www.skhaz.com:80/blog/meu-mousepad-apos-minha-namorada-ver/"
+    },
+    "missingMedia": [
+      "http://img261.imageshack.us/img261/2865/finalor9.th.png"
+    ],
+    "excerpt": "Imagem histórica não recuperada Antes que vocês pensem que sou pervertido ao ponto de comprar um mousepad com esse tema, eu ganhei ele de presente de um amigo. Para quem está se perguntando, sim os seios são muito macios e evitam tendinite ",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "documentacao-da-wintermoon-lancada",
+    "title": "Documentação da Wintermoon lançada",
+    "date": "2008-02-22",
+    "time": "2008-02-22T07:09:27-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "SDL",
+      "Projetos"
+    ],
+    "tags": [
+      "Wintermoon"
+    ],
+    "html": "<p>Finalmente e depois de muito tempo, a documentação do meu projeto <a href=\"http://wintermoon.sourceforge.net/wordpress/\" rel=\"external noopener\" target=\"_blank\">Wintermoon</a> foi lançada, versão online se encontra em <a href=\"http://wintermoon.sourceforge.net/wintermoondocs/index.html\" rel=\"external noopener\" target=\"_blank\">http://wintermoon.sourceforge.net/wintermoondocs/index.html</a> ou se preferir baixar a versão offline <a href=\"http://wintermoon.sourceforge.net/wintermoondocs.zip\" rel=\"external noopener\" target=\"_blank\">http://wintermoon.sourceforge.net/wintermoondocs.zip</a>, ainda não está totalmente comentada pois são muitas classes, erros gramaticais, criticas e sugestões são muito bem vindas, elogios mais ainda :D</p>",
+    "comments": [],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080528111120",
+      "originalUrl": "http://www.skhaz.com:80/blog/documentacao-da-wintermoon-lancada/",
+      "captureUrl": "https://web.archive.org/web/20080528111120/http://www.skhaz.com:80/blog/documentacao-da-wintermoon-lancada/"
+    },
+    "missingMedia": [],
+    "excerpt": "Finalmente e depois de muito tempo, a documentação do meu projeto Wintermoon foi lançada, versão online se encontra em http://wintermoon.sourceforge.net/wintermoondocs/index.html ou se preferir baixar a versão offline http://wintermoon.sour",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "eliminando-o-codigo-fonfarrao",
+    "title": "Eliminando o codigo Fanfarrão",
+    "date": "2008-02-18",
+    "time": "2008-02-18T07:54:31-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [
+      "auto_ptr",
+      "boost",
+      "Deleter",
+      "Friend",
+      "mem_fun",
+      "NonCopyable",
+      "shared_ptr",
+      "Singleton",
+      "std",
+      "template",
+      "volatile"
+    ],
+    "html": "<p>Certo dia estava lendo a <a href=\"http://easy2d.sourceforge.net/\" rel=\"external noopener\" target=\"_blank\">Easy2D</a>, e vi uma maneira Interessante, mais não desconhecida de implementar o padrão <strong>Singleton</strong> usando o std::auto_ptr. Eu já havia me deparado com um problema ao implementar uma classe Singleton, usando os ponteiros compartilhados da boost (boost::shared_ptr) que é semelhate à std::auto_ptr porem com mais recursos., mais o compilador acusava um erro, pois o destrutor da singleton era protected, eu não poderia deixar o destrutor publico, pois qualquer um podia deletar a instancia da singleton retornaria nulo, Então descobri que poderia passar um segundo parâmetro no construtor ou no método reset do shared_ptr, esse segundo parâmetro era o Deleter, uma classe especial para deletar o ponteiro (na verdade usava apenas o operador () da classe)., então crie uma classe genérica usando template chamada Deleter e à declarava como friend da Singleton, sua implementação ficou assim</p>\n<pre class=\"syntax-highlight:cpp\">\ntemplate &lt;class T&gt;\nclass Deleter\n{\npublic:\nvoid operator()(T* ptr)\n{\nif (ptr != NULL) {\ndelete ptr;\nptr = NULL;\n}\n}\n};\n</pre>\n<p>Eu achava perfeito, e ainda podia usar nos for_each da vida, porém ainda era POG…</p>\n<p>Uma noite, bebendo e ouvindo musica (metal!), lembrei das magicas que std::mem_fun podia fazer, e resolvi implementa-la, a cobaia foi a classe InputManager da Wintermoon, usando o método <em>teardown</em> de Mouse e Keyboard como Deleter</p>\n<pre class=\"syntax-highlight:cpp\">\nInputManager::Init()\n{\n// ...\nmKeyboard = boost::shared_ptr&lt;keyboard&gt; (new Keyboard,\nstd::mem_fun(&amp;amp;Keyboard::teardown));\n\nmMouse = boost::shared_ptr&lt;mouse&gt; (new Mouse,\nstd::mem_fun(&amp;amp;Mouse::teardown));\n}\n</pre>\n<pre class=\"syntax-highlight:cpp\">\nInputManager::Shut()\n{\n// reset é um membro de shared_ptr, responsavel\n// por liberar a memoria do ponteiro\nmKeyboard.reset();\nmMouse.reset();\n}\n</pre>\n<pre class=\"syntax-highlight:cpp\">\n// class Mouse\n\nvoid Mouse::teardown()\n{\n// clean up data...\n}\n</pre>\n<pre class=\"syntax-highlight:cpp\">\n// class Keyboard\n\nvoid Keyboard::teardown()\n{\n// clean up data...\n}\n</pre>\n<p>E não é que funcionou, o código ficou muito mais claro, mais ainda não acabou, ainda não crie a classe Singleton dos meus sonhos, usando shared_ptr, volatile, template, NonCopyable, mais estou no caminho…</p>",
+    "comments": [
+      {
+        "id": "comment-135",
+        "author": "DarkSasori",
+        "url": null,
+        "date": "February 18th, 2008 at 2:58 pm",
+        "html": "<p>Isso ai….abaixo ao POG….<br/>\napesar q eu ainda uso muito pog por falta de conhecimento :(<br/>\nmais isso a gente resolver estudando</p><p>T++</p>"
+      },
+      {
+        "id": "comment-136",
+        "author": "vinigodoy",
+        "url": "http://vinigodoy.wordpress.com",
+        "date": "February 18th, 2008 at 4:41 pm",
+        "html": "<p>Eu vejo poucas vantagens em limpar um Singleton, exceto claro, se ele for MUITO pesado. Como o singleton restringe o objeto a uma única instância isso é raramente um problema.</p><p>Mas é claro que é MUITO legal conhecer truques como esse, que ainda deixam o código elegante e pouco sujeito à erros.</p>"
+      },
+      {
+        "id": "comment-137",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 18th, 2008 at 4:56 pm",
+        "html": "<p>Valeu!!</p><p>Só explicando… Mouse e Keyboard não são do tipo Singleton, mais só podem ser criadas pela InputManager (construtor e descontrutor são protected e InputManager é “friend” deles, e InputManager é uma singleton porque não faria sentido em ter 2 ou mais copias dela no sistema)  ao meu ver o usuario construir essas classes (Keyboard e Mouse, futuramente Joystick), elas são criadas e deletadas automaticamente, acho que não ficou muito claro, eu deveria ter postado mais codigo :/</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080528111125",
+      "originalUrl": "http://www.skhaz.com:80/blog/eliminando-o-codigo-fonfarrao/",
+      "captureUrl": "https://web.archive.org/web/20080528111125/http://www.skhaz.com:80/blog/eliminando-o-codigo-fonfarrao/"
+    },
+    "missingMedia": [],
+    "excerpt": "Certo dia estava lendo a Easy2D , e vi uma maneira Interessante, mais não desconhecida de implementar o padrão Singleton usando o std::auto_ptr. Eu já havia me deparado com um problema ao implementar uma classe Singleton, usando os ponteiro",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "qual-a-cara-da-sua-ide",
+    "title": "Qual a cara da sua IDE?",
+    "date": "2008-02-14",
+    "time": "2008-02-14T09:47:34-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Misc"
+    ],
+    "tags": [
+      "CodeBlocks",
+      "Desktop",
+      "IDE",
+      "Meme",
+      "Visual Studio"
+    ],
+    "html": "<p>Qual a “cara” da sua IDE? Code::Blocks, Visual Studio, Eclipse, Code Warrior, programa em C++, Java, PHP, Asm, seja lá qual for, deixe uma foto dela aqui.</p>\n<p>Visual Studio 2005 Pro                          Code::Blocks</p>\n<p><span class=\"missing-media\" data-original=\"http://img91.imageshack.us/img91/9260/msvczm8.th.png\">Imagem histórica não recuperada</span> <span class=\"missing-media\" data-original=\"http://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.th.png\">Imagem histórica não recuperada</span> </p>\n<p>Para upar suas fotos use o <a href=\"http://my.imageshack.us/\" rel=\"external noopener\" target=\"_blank\">ImageShack</a> ou qualquer outro serviço de hospedagem.</p>\n<p>Baseado no artigo de <a href=\"http://pliniotorres.wordpress.com/2008/02/01/qual-e-a-cara-da-sua-area-de-trabalho/\" rel=\"external noopener\" target=\"_blank\">Plinio Torres - Qual é a cara da sua área de trabalho?</a></p>",
+    "comments": [
+      {
+        "id": "comment-128",
+        "author": "Visitante",
+        "url": null,
+        "date": "February 14, 2008\t\t\t| 8:55 pm",
+        "html": "<p></p><p><a href=\"http://img89.imageshack.us/img89/3986/ideqx9.jpg\" rel=\"external noopener\" target=\"_blank\">http://img89.imageshack.us/img89/3986/ideqx9.jpg</a></p>"
+      },
+      {
+        "id": "comment-129",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 14, 2008\t\t\t| 9:00 pm",
+        "html": "<p></p><p>Acreditem ou não meu chefe é clippeiro, e atá hoje usa o edit do msdos</p>"
+      },
+      {
+        "id": "comment-130",
+        "author": "vinigodoy",
+        "url": "http://vinigodoy.wordpress.com",
+        "date": "February 14, 2008\t\t\t| 11:21 pm",
+        "html": "<p></p><p>A minha é bem padrão:<br/>\n<a href=\"http://www.vinigodoy.com.br/desktopVinigodoy.png\" rel=\"external noopener\" target=\"_blank\">http://www.vinigodoy.com.br/desktopVinigodoy.png</a></p>"
+      },
+      {
+        "id": "comment-132",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 15, 2008\t\t\t| 12:40 am",
+        "html": "<p></p><p>A unica coisa que me encomoda no codeblocks padrão é a cor do operador (vermelha)</p>"
+      },
+      {
+        "id": "comment-131",
+        "author": "diegomazala",
+        "url": "http://diegomazala.googlepages.com",
+        "date": "February 15, 2008\t\t\t| 11:14 am",
+        "html": "<p></p><p>Bem simples.<br/>\n<a href=\"http://img145.imageshack.us/img145/8817/msvcidezw6.jpg\" rel=\"external noopener\" target=\"_blank\">http://img145.imageshack.us/img145/8817/msvcidezw6.jpg</a></p>"
+      },
+      {
+        "id": "comment-133",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 15, 2008\t\t\t| 1:57 pm",
+        "html": "<p></p><p>É parece que o pessoal prefere a configuração padrão das suas IDEs, O mais interessante é poder ver no que estão trabalhando :P</p>"
+      },
+      {
+        "id": "comment-134",
+        "author": "Diego",
+        "url": "http://diesoftgames.blogspot.com/",
+        "date": "February 16, 2008\t\t\t| 11:38 pm",
+        "html": "<p></p><p>Eu uso as configurações normais do Visual Studio. A única coisa que mudo é ligar o auto hide das janelas Solution Explorer, Properties …</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080515014701",
+      "originalUrl": "http://www.skhaz.com:80/blog/qual-a-cara-da-sua-ide/",
+      "captureUrl": "https://web.archive.org/web/20080515014701/http://www.skhaz.com:80/blog/qual-a-cara-da-sua-ide/"
+    },
+    "missingMedia": [
+      "http://img91.imageshack.us/img91/9260/msvczm8.th.png",
+      "http://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.th.png"
+    ],
+    "excerpt": "Qual a “cara” da sua IDE? Code::Blocks, Visual Studio, Eclipse, Code Warrior, programa em C++, Java, PHP, Asm, seja lá qual for, deixe uma foto dela aqui. Visual Studio 2005 Pro Code::Blocks Imagem histórica não recuperada Imagem histórica ",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "one",
+    "title": "ONE (Object-Oriented Network Engine)",
+    "date": "2008-02-12",
+    "time": "2008-02-12T07:17:41-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Projetos"
+    ],
+    "tags": [
+      "boost",
+      "Network",
+      "ONE",
+      "stl"
+    ],
+    "html": "<p>ONE (Object-Oriented Network Engine)</p>\n<p>É um projeto de minha autoria e de <a href=\"http://programmershell.wordpress.com/\" rel=\"external noopener\" target=\"_blank\">DarkSasori</a>, a idea é criar uma engine para redes (similar a <a href=\"http://www.jenkinssoftware.com/\" rel=\"external noopener\" target=\"_blank\">RakNet</a>), Escrita em C++, usando <a href=\"http://boost.org/\" rel=\"external noopener\" target=\"_blank\">boost</a>.</p>\n<p>O que já temos:</p>\n<ul>\n<li> DNS com cache</li>\n<li> IPAdrress</li>\n<li> SocketLayer (Interface)</li>\n<li> TCP::Socket (Implementação de SocketLayer)</li>\n<li> UDP::Socket (Implementação de SocketLayer)</li>\n<li> ServerInterface</li>\n<li> ClientInterface</li>\n<li> PeerInterface</li>\n<li> Thread</li>\n<li> ThreadGroup</li>\n<li> ThreadJob</li>\n<li> Mutex</li>\n<li> ScopedMutex</li>\n<li> NetworkInitializer</li>\n<li> Documentação (Doxygen)</li>\n</ul>\n<p>Características:</p>\n<ul>\n<li> Cache de DNS</li>\n<li> Suporte a plugins (.dll ou .so), como Voice, Updater, etc</li>\n</ul>\n<p>Principais plataformas alvo:</p>\n<ul>\n<li> Windows <img alt=\"windows\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/one/mb_windows-1.jpg\"/></li>\n<li> Linux <img alt=\"linux\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/one/linux-ico.jpg\"/></li>\n<li> MacOS <img alt=\"mac\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/one/mb_mac.jpg\"/></li>\n<li> BSD</li>\n</ul>\n<p>Claro, qualquer outra plataforma que possuir sockets e threads, haverá um port da ONE!</p>\n<p>Metas:</p>\n<ul>\n<li> Sistema de plugins usando DLL (50% feito)</li>\n<li> Plugin Voice, similar ao RakVoice, usando a biblioteca <a href=\"http://www.speex.org/\" rel=\"external noopener\" target=\"_blank\">speex</a></li>\n<li> Compactação usando zlib, bzip2 e lzma</li>\n<li> Criptografia (OpenSSL ?)</li>\n<li> Suporte ao IPv6 (20%)</li>\n</ul>\n<p>Quem já usa?</p>\n<ul>\n<li><a href=\"http://projetoarret.com.br/\" rel=\"external noopener\" target=\"_blank\">Projeto Arret</a> (apenas algums modulos)</li>\n</ul>\n<p>Licença: <a href=\"http://www.gnu.org/licenses/lgpl-3.0.txt\" rel=\"external noopener\" target=\"_blank\">LGPL 3</a></p>\n<p>PS. Eu ainda não disponibilizei o download nem o SVN do projeto, pois ainda não está preparado ainda.</p>",
+    "comments": [
+      {
+        "id": "comment-122",
+        "author": "Lançado o Arret « SKHAZ’s Blog",
+        "url": "http://skhaz.wordpress.com/2008/03/12/lancado-arret-3d/",
+        "date": "March 12th, 2008 at 8:39 pm",
+        "html": "<p>[…] de  colisão foi implementado no servidor usando a   biblioteca fisica Newton e partes da ONE, o projeto não é novo, tem uns 3 anos, já foi até  2D usando SDL, mais informações em […]</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080528111145",
+      "originalUrl": "http://www.skhaz.com:80/blog/one/",
+      "captureUrl": "https://web.archive.org/web/20080528111145/http://www.skhaz.com:80/blog/one/"
+    },
+    "missingMedia": [],
+    "excerpt": "ONE (Object-Oriented Network Engine) É um projeto de minha autoria e de DarkSasori , a idea é criar uma engine para redes (similar a RakNet ), Escrita em C++, usando boost . O que já temos: DNS com cache IPAdrress SocketLayer (Interface) TC",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria",
+    "title": "Classe std::string STL no VC 6 provoca corrupção da memória",
+    "date": "2008-02-12",
+    "time": "2008-02-12T13:31:22-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [
+      "Memória",
+      "std",
+      "stl",
+      "string"
+    ],
+    "html": "<p>Hoje em dia se torna mais comum computadores com mais de um núcleo, esse bug afeta apenas o Microsoft Visual C++ 6.0, e pode ser um problema para quem usa ele.</p>\n<p>Referencia <a href=\"http://support.microsoft.com/kb/813810/pt\" rel=\"external noopener\" target=\"_blank\">Classe std::string STL provoca falhas e uma corrupção da memória em computadores com múltiplos processadores</a></p>",
+    "comments": [],
+    "source": {
+      "archive": "Wayback Machine",
+      "originalUrl": "http://www.skhaz.com/blog/classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria/",
+      "captureUrl": "https://web.archive.org/web/*/http://www.skhaz.com/blog/classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria/"
+    },
+    "missingMedia": [],
+    "excerpt": "Hoje em dia se torna mais comum computadores com mais de um núcleo, esse bug afeta apenas o Microsoft Visual C++ 6.0, e pode ser um problema para quem usa ele. Referencia Classe std::string STL provoca falhas e uma corrupção da memória em c",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "um-pouco-mais-sobre-namespace",
+    "title": "Um pouco mais sobre namespace",
+    "date": "2008-02-10",
+    "time": "2008-02-10T14:21:04-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [
+      "bridge",
+      "Designer Patterns",
+      "namespace"
+    ],
+    "html": "<p><strong>namespaces</strong> em C++ são muito poderosos não servem apenas para proteger nomes em conflitos com outras bibliotecas, nos ajudam a implementar patterns como a bridge de uma forma mais clara, alem de deixar o código mais profissional.</p>\n<pre class=\"syntax-highlight:cpp\">\nnamespace Engine\n{\n  namespace Video\n  {\n     namespace Gui\n     {\n         class Window\n         {\n             public:\n               virtual ~Window() { }\n         };\n     }\n  }\n}\n</pre>\n<p>Você tambem poderia escrever dessa forma</p>\n<pre class=\"syntax-highlight:cpp\">\nusing namespace Engine;\nusing namespace Video;\nusing namespace Gui;\n\nshared_ptr&lt;window&gt; window(new Window);\n</pre>\n<p>ou então</p>\n<pre class=\"syntax-highlight:cpp\">\nusing Engine::Video::Gui::Window;\n\nshared_ptr&lt;/window&gt;&lt;window&gt; window(new Window);\n</pre>\n<p>Nesse exemplo usamos muitos namespaces, é raro encontrar casos como esse, apenas encontrei na engine <a href=\"http://irrlicht.sourceforge.net/\" rel=\"external noopener\" target=\"_blank\">Irrlicht</a> (até 3 sub namespaces) e na <a href=\"http://boost.org/\" rel=\"external noopener\" target=\"_blank\">boost</a> (até 5 sub namespaces), o interessante é criar um <em>aliases</em> para o namespace da seguinte forma</p>\n<pre class=\"syntax-highlight:cpp\">\n// evg é um aliases para Engine::Video::Gui\nnamespace evg = Engine::Video::Gui;\n\nshared_ptr&lt;evg ::Window&gt; window(new evg::Window);\n</pre>\n<p>namespace “escopado”</p>\n<pre class=\"syntax-highlight:cpp\">\n{\n  // EVG é um aliases para Engine::Video::Gui\n  namespace EVG = Engine::Video::Gui;\n  shared_ptr&lt;/evg&gt;&lt;evg ::Window&gt; window(new EVG::Window);\n}\n\n{\n  // Graphics é um aliases para Engine::Video\n  namespace Graphics = Engine::Video;\n  shared_ptr&lt;graphics ::Gui::Window&gt; window(new Graphics::Gui::Window);\n}\n\n{\n  using namespace Engine;\n  using namespace Video;\n  using namespace Gui;\n\n  shared_ptr&lt;/graphics&gt;&lt;graphics ::Gui::Window&gt; window(new graphics::Gui::Window);\n}\n</pre>\n<p>Veja que cada namespace tem seu próprio escopo.</p>\n<p>Como boa pratica de programação prefira declarar apenas as classes que for usar de um namespace, ao invés de declará-lo todo.</p>\n<p>Prefira usar</p>\n<pre class=\"syntax-highlight:cpp\">\nusing std::string;\nusing std::vector;\nusing std::map;\n</pre>\n<p>Ao invés de</p>\n<pre class=\"syntax-highlight:cpp\">\nusing namespace std;\n</pre>\n<p>Ou melhor ainda, se você tiver um projeto que use algum namespace, no seu header principal (global.h, internal.h), assim todos as classes declaradas podem ser usadas dentro do seu namespace, sem ter que ficar usando o <strong>using</strong></p>\n<pre class=\"syntax-highlight:cpp\">\nnamespace Wintermoon\n{\n  class Root;\n  class Image;\n  class ImageCache;\n  class EventReceiver;\n  class InputManager;\n  ...\n\n  using std::string;\n  using std::vector;\n  using std::map;\n  using std::set;\n  using std::multset;\n\n  using std::for_each;\n  using std::find;\n\n  using boost::shared_ptr;\n  using boost::scoped_ptr;\n}\n</pre>\n<p></p>",
+    "comments": [
+      {
+        "id": "comment-119",
+        "author": "Visitante",
+        "url": null,
+        "date": "February 12, 2008\t\t\t| 2:33 pm",
+        "html": "<p></p><p>Cara muito interessante….<br/>\napesar de eu já ter estudado sobre elas, não tinha conhecimento sobre a tecnica<br/>\nnamespace EVG = Engine::Video::Gui;<br/>\nBelo post…..vamo ve como vão ser os proximos….espero que melhorem ainda mais!</p>\n<p>T++</p>"
+      },
+      {
+        "id": "comment-120",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 12, 2008\t\t\t| 2:40 pm",
+        "html": "<p></p><p>Isso de “namespace EVG = Engine::Video::Gui;” eu só vi na boost, nunca tinha visto em nenhum outro lugar, por isso decidi escrever o artigo.</p>"
+      },
+      {
+        "id": "comment-121",
+        "author": "Fernando Tonon",
+        "url": "http://www.projetoarret.com.br",
+        "date": "February 20, 2008\t\t\t| 7:34 pm",
+        "html": "<p></p><p>Tbm num sabia que dava de fazer isso com o namespace… foda!</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080519005926",
+      "originalUrl": "http://www.skhaz.com:80/blog/um-pouco-mais-sobre-namespace/",
+      "captureUrl": "https://web.archive.org/web/20080519005926/http://www.skhaz.com:80/blog/um-pouco-mais-sobre-namespace/"
+    },
+    "missingMedia": [],
+    "excerpt": "namespaces em C++ são muito poderosos não servem apenas para proteger nomes em conflitos com outras bibliotecas, nos ajudam a implementar patterns como a bridge de uma forma mais clara, alem de deixar o código mais profissional. namespace E",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "visual-studio-2008",
+    "title": "Visual Studio 2008",
+    "date": "2008-02-08",
+    "time": "2008-02-08T08:35:35-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Humor",
+      "C++"
+    ],
+    "tags": [
+      "IDE",
+      "Visual Studio"
+    ],
+    "html": "<p>Minha surpresa ao instalar o M$ Visual Studio 2008, requer o .Net instalado, mesmo optando apenas instalando os pacotes relacionados apenas ao C++. Fora a porção de gente feia que aparece durante o setup…</p>\n<p><span class=\"missing-media\" data-original=\"http://img406.imageshack.us/img406/7664/msvc9mb0.th.png\">Imagem histórica não recuperada</span></p>",
+    "comments": [
+      {
+        "id": "comment-117",
+        "author": "n2liquid",
+        "url": null,
+        "date": "February 12th, 2008 at 8:19 pm",
+        "html": "<p>Mas pense bem….</p><p>O que seria do C++ sem a invenção do .Net?</p>"
+      },
+      {
+        "id": "comment-118",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 12th, 2008 at 8:22 pm",
+        "html": "<p>Sem duvida, o C++ não seria nada sem o .net, segundo a M$ ;D</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080528111150",
+      "originalUrl": "http://www.skhaz.com:80/blog/visual-studio-2008/",
+      "captureUrl": "https://web.archive.org/web/20080528111150/http://www.skhaz.com:80/blog/visual-studio-2008/"
+    },
+    "missingMedia": [
+      "http://img406.imageshack.us/img406/7664/msvc9mb0.th.png"
+    ],
+    "excerpt": "Minha surpresa ao instalar o M$ Visual Studio 2008, requer o .Net instalado, mesmo optando apenas instalando os pacotes relacionados apenas ao C++. Fora a porção de gente feia que aparece durante o setup… Imagem histórica não recuperada",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "wintermoon-no-contest-da-pdj",
+    "title": "Wintermoon no Contest da PDJ",
+    "date": "2008-02-06",
+    "time": "2008-02-06T10:12:45-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "Misc",
+      "Projetos"
+    ],
+    "tags": [
+      "Framework",
+      "Wintermoon"
+    ],
+    "html": "<p><img alt=\"wintermoon\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/wintermoon-no-contest-da-pdj/header_image1.png\"/><br/>Recentemente inscrevi meu framework <a href=\"http://wintermoon.sourceforge.net/wordpress/\" rel=\"external noopener\" target=\"_blank\">Wintermoon</a> no <a href=\"http://www.programadoresdejogos.com/contests/gpc07/\" rel=\"external noopener\" target=\"_blank\">PDJ Contest</a> na categoria <em>Programação,</em> por enquanto meu único  oponente na categoria é o <a href=\"http://pspframework.sourceforge.net/\" rel=\"external noopener\" target=\"_blank\">PSPFramework</a>, não vejo nenhuma atualização deles há muito tempo, eles que foram minha inspiração inicial de colocar o wordpress no sourceforge e transformar o site em blog.</p>\n<p>Desejem-me sorte :)</p>",
+    "comments": [
+      {
+        "id": "comment-115",
+        "author": "Fernando Tonon",
+        "url": "http://www.projetoarret.com.br",
+        "date": "February 8th, 2008 at 2:42 pm",
+        "html": "<p>Boa Sorte, que bom que vc inscreveu o Wintermoon em um contest, assim tem mais motivação pra desenvolver… :D</p><p>Vc sabe que sou fan dos seus projetos ;D</p>"
+      },
+      {
+        "id": "comment-116",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 8th, 2008 at 9:19 pm",
+        "html": "<p>Valeu mesmo! Eu Também torço muito e contribuo sempre que posso para o <a href=\"http://projetoarret.com.br/\" rel=\"external noopener\" target=\"_blank\">Arret</a></p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080528111155",
+      "originalUrl": "http://www.skhaz.com:80/blog/wintermoon-no-contest-da-pdj/",
+      "captureUrl": "https://web.archive.org/web/20080528111155/http://www.skhaz.com:80/blog/wintermoon-no-contest-da-pdj/"
+    },
+    "missingMedia": [],
+    "excerpt": "Recentemente inscrevi meu framework Wintermoon no PDJ Contest na categoria Programação, por enquanto meu único oponente na categoria é o PSPFramework , não vejo nenhuma atualização deles há muito tempo, eles que foram minha inspiração inici",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "carregando-imagens-com-ou-sem-canal-alpha",
+    "title": "Carregando imagens com ou sem canal alpha",
+    "date": "2008-02-06",
+    "time": "2008-02-06T13:55:14-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "SDL",
+      "C++"
+    ],
+    "tags": [
+      "Alpha",
+      "Classes",
+      "Surface"
+    ],
+    "html": "<p>Muitos já devem ter passado por isso, como descobrir se uma imagem tem ou não o canal alpha (transparência), e como carregá-la corretamente. Eis aqui uma classe que se encarrega de carregar a imagem, e descobrir se tem ou não o canal alpha.</p>\n<pre class=\"syntax-highlight:cpp\">\n#include &lt;string&gt;\n#include \"SDL.h\"\n\nusing std::string;\n\nclass Image\n{\n   public:\n      Image();\n      virtual ~Image();\n\n      void load(const string&amp;amp; filename, bool transparent = true);\n\n      operator SDL_Surface*() const\n      {\n         return m_pSurface;\n      }\n\n   private:\n      SDL_Surface* m_pSurface;\n};\n</pre>\n<p>Vamos à implementação</p>\n<pre class=\"syntax-highlight:cpp\">\n#include \"Image.h\"\n\nImage::Image()\n: m_pImage(NULL)\n{\n}\n\nImage::~Image()\n{\n   if (m_pImage != NULL) {\n      SDL_FreeSurface(m_pSurface);\n   }\n}\n\nvoid Image::load(const string&amp;amp; filename, bool transparent)\n{\n   if ((m_pSurface = IMG_Load(filename.c_str())) == NULL)\n   {\n      throw Exception(\"%s\", IMG_GetError());\n   }\n\n   bool hasAlpha = false;\n\n   // Se a imagem tem 32 bits, provalvelmente\n   // ela tem o canal alpha, caso contrario ela\n   // não tem, e nem precissamos verificar.\n   if (m_pSurface-&gt;format-&gt;BitsPerPixel == 32)\n   {\n      // Percorremos toda a superficie da imagem\n      for (int i = 0; i &lt; m_pSurface-&gt;w * m_pSurface-&gt;h; ++i)\n      {\n         Uint8 r, g, b, a;\n\n         // Mapeamos o pixel e obtemos seus\n         // respectivos valores em RGBA\n         SDL_GetRGBA(((Uint32*) m_pSurface-&gt;pixels)[i],\n                     m_pSurface-&gt;format, &amp;amp;r, &amp;amp;g, &amp;amp;b, &amp;amp;a);\n\n         // Se o canal alpha for diferente de 255 (opaco)\n         // então a imagem tem trasparencia\n         // finalizamos o loop com o break.\n         if (a != 255)\n         {\n            hasAlpha = true;\n            break;\n         }\n      }\n   }\n\n   // Se a imagem tiver o canal de trasparencia\n   // optimizamos ela da maneira correta.\n   if (hasAlpha) {\n      temp = SDL_DisplayFormatAlpha(m_pSurface);\n   }\n\n   // Caso contrario, optimizamos para uma\n   // superficie sem alpha\n   else {\n      temp = SDL_DisplayFormat(m_pSurface);\n\n      if (transparent)\n      {\n         SDL_SetColorKey(temp, (SDL_SRCCOLORKEY | SDL_RLEACCEL | SDL_HWACCEL),\n             SDL_MapRGB(SDL_GetVideoSurface()-&gt;format,\n             255, 0, 255));\n      }\n   }\n\n   if (temp)\n   {\n      SDL_FreeSurface(m_pSurface);\n      m_pSurface = temp;\n   }\n}\n</pre>\n<p><strong>SDL_GetVideoSurface()</strong> Essa função retorna o ponteiro da superficie do video (a publica, e não a real), veja a documentação da SDL<br/>\npara maiores informações</p>\n<p><strong>Veja também</strong><br/>\nMais detalhes da estrutura interna da SDL_Surface em <a href=\"http://diogorbg.blogspot.com/2008/01/sdlsurface-introduo-detalhada.html\" rel=\"external noopener\" target=\"_blank\">SDL_Surface - Introdução detalhada</a>, de Diogo_RBG</p>",
+    "comments": [
+      {
+        "id": "comment-1",
+        "author": "Carregando imagens com a SDL « Ponto V",
+        "url": "http://vinigodoy.wordpress.com/2008/08/11/carregando-imagens-com-a-sdl/",
+        "date": "August 11th, 2008 at 1:50 pm",
+        "html": "<p>[...] BitsPerPixel: Quantidade de bits num único pixel de cor. Se só os formatos RGB e ARGB existirem em sua aplicação essa informação já será suficiente para diferenciar as duas imagens, já que um usa 24 bits por pixel e o outro 32. O uso dessa técnica pode ser vista aqui no blog do Shkaz.; [...]</p>"
+      },
+      {
+        "id": "comment-2",
+        "author": "DarkSasori",
+        "url": null,
+        "date": "August 11th, 2008 at 1:50 pm",
+        "html": "<p>Legal…..<br/>\nmuito interessante esse seu artigo..</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20081006095902",
+      "originalUrl": "http://www.skhaz.com:80/blog/carregando-imagens-com-ou-sem-canal-alpha/",
+      "captureUrl": "https://web.archive.org/web/20081006095902/http://www.skhaz.com:80/blog/carregando-imagens-com-ou-sem-canal-alpha/"
+    },
+    "missingMedia": [],
+    "excerpt": "Muitos já devem ter passado por isso, como descobrir se uma imagem tem ou não o canal alpha (transparência), e como carregá-la corretamente. Eis aqui uma classe que se encarrega de carregar a imagem, e descobrir se tem ou não o canal alpha.",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "mutable-que-raios-e-isso",
+    "title": "mutable, que raios é isso?",
+    "date": "2008-02-05",
+    "time": "2008-02-05T12:13:04-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++"
+    ],
+    "tags": [
+      "const",
+      "mutable"
+    ],
+    "html": "<p>Talvez você seja como eu, viciado em usar const, mais muitas vezes nos deparamos com métodos que precisamos alterar<br/>\nalgum atributo dentro de um método declarado como const</p>\n<pre class=\"syntax-highlight:cpp\">\nclass Image\n{\npublic:\nvoid Draw() const;\n\nprivate:\nstd::size_t m_BlitErrorCount;\n}\n</pre>\n<p>Vejamos esse exemplo do metodo Draw da classe Image<br/>\nprecisamos implementar um contador de erros do SDL_BlitSurface (sinceramente não vejo utilidade isso)</p>\n<pre class=\"syntax-highlight:cpp\">\nvoid Image::Draw() const\n{\nif (SDL_BlitSurface(mSurface, NULL, Screen, rect) &lt; 0)\n{\nm_BlitErrorCount++;\n// O compilador acusa erro na linha acima\n// pois não podemos modificar qualquer\n// atributo dentro desse método declarado como const\n}\n}\n</pre>\n<p><strong>Como solucionar?</strong></p>\n<p>Adicione a palavra reservada <strong><em>mutable</em></strong> na declaração de m_BlitErrorCount, ficando assim:</p>\n<pre class=\"syntax-highlight:cpp\">\nclass Image\n{\npublic:\nvoid Draw() const;\n\n&lt;strong&gt; private:\nmutable std::size_t m_BlitErrorCount;\n}\n</pre>\n<p></p>\n<p><strong></strong><strong>Veja também</strong></p>\n<p><strong>Um outro caso para o uso da mutable é na implementação do design <a href=\"http://vinigodoy.wordpress.com/2007/12/24/organizando-a-janela-em-classes/\" rel=\"external noopener\" target=\"_blank\">Organizando a janela em classes</a>, de nosso amigo Vinícius, onde temos à seguinte declaração do método draw</strong></p>\n<pre class=\"syntax-highlight:cpp\">\nvirtual void draw() const = 0;\n</pre>\n<p>Usando a palavra reservada mutable na declaração do atributo usado internamente em draw você “burla” o const</p>\n<p><strong>Agora seu código compila sem erros :)</strong></p>",
+    "comments": [
+      {
+        "id": "comment-109",
+        "author": "Daniel",
+        "url": null,
+        "date": "February 5th, 2008 at 7:02 pm",
+        "html": "<p>Até onde eu sei o uso de mutable não é muito recomendado, é só para casos muito concretos (realmente nunca precisei). Tem um artigo interessante, que discute o uso de mutable: <a href=\"http://www.highprogrammer.com/alan/rants/mutable.html\" rel=\"external noopener\" target=\"_blank\">http://www.highprogrammer.com/alan/rants/mutable.html</a></p>"
+      },
+      {
+        "id": "comment-110",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 5th, 2008 at 8:41 pm",
+        "html": "<p>Eu também não recomendo usar ela, porem é bom saber que existe e para que serve, precisei usar apenas uma vez em um trecho da <a href=\"http://wintermoon.sourceforge.net/wordpress/\" rel=\"external noopener\" target=\"_blank\">Wintermoon</a> no exemplo <em>Player</em> no metodo draw (talvez eu realmente não precissa-se usar). Esse artigo é otimo, e eu já tinha lido ele antes de escrever este post. obrigado por comentar ;D</p>"
+      },
+      {
+        "id": "comment-111",
+        "author": "vinigodoy",
+        "url": "http://vinigodoy.wordpress.com",
+        "date": "February 5th, 2008 at 8:46 pm",
+        "html": "<p>O exemplo que ele deu foi bom.</p><p>A palavra mutable não é recomendada quando envolve atributos que tem relação com o estado da classe. O que não é o caso, por exemplo, do contador de erros, variável tipicamente usada para logs, e que deveria ser imperceptível para um observador externo.</p><p>Eu também nunca precisei dela.</p><p>Mas… como uma das políticas do C++ é certamente dar poder ao programador para fazer tudo, seja isso bom ou não, é bom conhecer os recursos, e os impactos que ele pode causar.</p>"
+      },
+      {
+        "id": "comment-112",
+        "author": "Master Orion",
+        "url": null,
+        "date": "February 7th, 2008 at 4:41 am",
+        "html": "<p>Isto eh q eu chamo de um blog do underground ^^<br/>\nnunca vi em nenhum curso essa funçao da C++<br/>\nrealment parabens</p>"
+      },
+      {
+        "id": "comment-113",
+        "author": "skhaz",
+        "url": "http://skhaz.wordpress.com/",
+        "date": "February 8th, 2008 at 9:21 pm",
+        "html": "<p>Valeu, realmente foi dificel achar um exemplo legal para usar nesse artigo…<br/>\nquanto a mutable é meio rara alguem usar ou falar sobre ela, só vi a engine Ogre usar ela ate hoje (e a wintermoon claro)</p>"
+      },
+      {
+        "id": "comment-114",
+        "author": "Mutable, o legado | SKHAZ's Blog",
+        "url": "/blog/mutable-o-legado/",
+        "date": "April 8th, 2008 at 8:53 pm",
+        "html": "<p>[…] nosso artigo mutable, que raios é isso? agora irei demonstrar um segunda maneira de “burlar” o mesmo método const sem usar […]</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080528111140",
+      "originalUrl": "http://www.skhaz.com:80/blog/mutable-que-raios-e-isso/",
+      "captureUrl": "https://web.archive.org/web/20080528111140/http://www.skhaz.com:80/blog/mutable-que-raios-e-isso/"
+    },
+    "missingMedia": [],
+    "excerpt": "Talvez você seja como eu, viciado em usar const, mais muitas vezes nos deparamos com métodos que precisamos alterar algum atributo dentro de um método declarado como const class Image { public: void Draw() const; private: std::size_t m_Blit",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  },
+  {
+    "slug": "classe-timer",
+    "title": "Classe Timer",
+    "date": "2008-02-04",
+    "time": "2008-02-04T13:00:08-06:00",
+    "author": "SKHAZ",
+    "categories": [
+      "C++",
+      "SDL"
+    ],
+    "tags": [
+      "boost",
+      "Classe",
+      "stl",
+      "Thread",
+      "Timer"
+    ],
+    "html": "<p>Uma classe indispensável durante a programação de um jogo ou engine, que seja responsável pelas chamadas de métodos em determinado intervalo de tempo durante a execução do aplicativo, que forneça uma maneira passiva e rápida de callbacks, orientada à objetos. Aqui segue um exemplo de tal classe usando o timer da SDL</p>\n<p>Declaração da classe Timer</p>\n<pre class=\"syntax-highlight:cpp\">\n#include \"SDL.h\"\n\nclass Timer\n{\npublic:\nTimer();\n\nexplicit Timer(Uint32 interval);\n\nvirtual ~Timer();\n\n// Adcionamos um timer\n// interval O intervalo de tempo do timer\nvoid addTimer(Uint32 interval);\n\n// Remove o timer\nvoid removeTimer();\n\n// Seta um novo intervalo de tempo\nvoid setInterval(Uint32 interval);\n\n// Retorna o valor do intervalo do timer\nUint32 Timer::getInterval() const;\n\n//\n// Método puro abstrato chamado em todo\n// intervalo definido pelo timer.\n// Deve ser implementado na classe filha.\n//\nvirtual void onTimer() = 0;\n\nprivate:\n// Usado internamente, o ponto de entrada do SDL_Timer\nstatic Uint32 entryPoint(Uint32 interval, void* param);\n\nUint32 mInterval;\nSDL_TimerID mTimerID;\n};\n</pre>\n<p>Vamos à implementação</p>\n<pre class=\"syntax-highlight:cpp\">\n#include \"Timer.h\"\n\nTimer::Timer()\n: mInterval(0)\n{\nif (SDL_WasInit(SDL_INIT_TIMER) == 0)\n{\nSDL_InitSubSystem(SDL_INIT_TIMER);\n}\n}\n\nTimer::Timer(Uint32 interval)\n: mInterval(0)\n{\nif (SDL_WasInit(SDL_INIT_TIMER) == 0)\n{\nSDL_InitSubSystem(SDL_INIT_TIMER);\n}\n\naddTimer(interval);\n}\n\nTimer::~Timer()\n{\nSDL_RemoveTimer(mTimerID);\n}\n\nvoid Timer::addTimer(Uint32 interval)\n{\nmInterval = interval;\nmTimerID = SDL_AddTimer(mInterval, entryPoint, this);\n}\n\nvoid Timer::removeTimer()\n{\nSDL_RemoveTimer(mTimerID);\n}\n\nvoid Timer::setInterval(Uint32 interval)\n{\nmInterval = interval;\n}\n\nUint32 Timer::getInterval() const\n{\nreturn mInterval;\n}\n\nUint32 Timer::entryPoint(Uint32 interval, void* param)\n{\nTimer* ptr = reinterpret_cast&lt;timer *&gt;(param);\nptr-&gt;onTimer();\nreturn ptr-&gt;mInterval;\n}\n</pre>\n<p>Exemplo de uso:</p>\n<pre class=\"syntax-highlight:cpp\">\n#include &lt;iostream&gt;\n#include &lt;boost /scoped_ptr.hpp&gt;\n\n#include \"SDL.h\"\n#include \"Timer.h\"\n\nusing std::cout;\nusing std::endl;\nusing boost::scoped_ptr;\n\nclass Tick : public Timer\n{\npublic:\nTick()\n{\n// Adicionamos um timer de 1 Segundo\naddTimer(1000);\n}\n\n~Tick() { }\n\nprotected:\n\n// onTImer método puro abstrato\n// herdado de Timer, ele será chamado\n// todo intervalo definido no timer\nvoid onTimer()\n{\ncout &lt; &lt; \"Tick::onTimer() chamado em \" &lt;&lt; SDL_GetTick() &lt;&lt; endl;\n}\n};\n\nint main()\n{\n// Criamos a classe Tick\n// usamos aqui scoped_ptr para\n// que o ponteiro seja deletado\n// automaticamente ao sair do escopo\nscoped_ptr&lt;tick&gt; tick(new Tick);\n\n// Aguardamos uns 5 segundos\n// enquanto isso o timer já esta rodando\n// e imprimindo a saida no console ou no stdout.txt\nSDL_Delay(5000);\n\n// Agora vamos mudar o intervalo de tempo\n// para meio segundo\ntick-&gt;setInterval(500);\n\n// Aguardamos mais ums 5 segundos\n// O timer continua rodando, mais agora com o\n// intervalo de meio segundo e não 1 segundo\nSDL_Delay(5000);\n\n// O resultado poderá ser visto no stdout.txt\n// ou na saida do console\n\n// Isso mantem o compilador feliz...\nreturn 0;\n}\n</pre>\n<p>Espero que tenha gostado, em breve eu posto as classes Thread, ThreadJob, ThreadGroup e Mutex baseadas nas Threads da SDL (até la vou ter aprendido mais sobre SDL semáforos), sintan-se à vontade de usá-las apenas mantenham os créditos ;D</p>",
+    "comments": [
+      {
+        "id": "comment-108",
+        "author": "Diogo_RBG",
+        "url": "http://diogorbg.blogspot.com",
+        "date": "February 8th, 2008 at 4:03 pm",
+        "html": "<p>Acho que essa deve ser a classe Timer do Witermoon Framework.<br/>\nEstou à procura de como criar a minha e isto irá me ajudar muito, vlw !</p>"
+      }
+    ],
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080528111115",
+      "originalUrl": "http://www.skhaz.com:80/blog/classe-timer/",
+      "captureUrl": "https://web.archive.org/web/20080528111115/http://www.skhaz.com:80/blog/classe-timer/"
+    },
+    "missingMedia": [],
+    "excerpt": "Uma classe indispensável durante a programação de um jogo ou engine, que seja responsável pelas chamadas de métodos em determinado intervalo de tempo durante a execução do aplicativo, que forneça uma maneira passiva e rápida de callbacks, o",
+    "missingDownloads": [],
+    "missingMediaVariants": []
+  }
+]

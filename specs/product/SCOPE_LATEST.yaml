@@ -1,0 +1,39 @@
+initiative: restore-skhaz-blog
+status: implemented
+objective: >-
+  Restore the historical skhaz.com/blog publication as a safe, portable static
+  archive while preserving original URLs, content, comments, and provenance.
+in_scope:
+  - posts published from 2008-02-04 through 2009-04-09
+  - comments present in retrievable archive copies
+  - original post, category, tag, month, feed, and index routes
+  - recoverable media and explicit placeholders for missing media
+  - responsive adaptation of the final observed visual identity
+out_of_scope:
+  - reviving WordPress, its database, plugins, forms, or trackers
+  - domain-parking pages captured after the blog disappeared
+  - merging later nullonerror.org content into this historical archive
+  - fabricating text, comments, dates, images, or metadata
+acceptance:
+  verify: npm test
+  expected_posts: 35
+  expected_complete_comments: 72
+  expected_recorded_comments: 82
+  expected_missing_media_markers: 11
+  expected_missing_downloads: 3
+prior_art:
+  - candidate: Wayback Machine RSS and page captures
+    verdict: adopt
+    use: 29 complete posts, one partial post, comments, and URL evidence
+  - candidate: Common Crawl ARC records
+    verdict: compose
+    use: five later posts and their comments
+  - candidate: WordPress.com media archive
+    verdict: compose
+    use: original image binaries still available
+  - candidate: iNove WordPress theme
+    verdict: extend
+    use: final observed visual identity, adapted for static responsive HTML
+  - candidate: GitHub nullonerror repositories
+    verdict: reject_for_scope
+    reason: editorial continuation on a different domain and period
