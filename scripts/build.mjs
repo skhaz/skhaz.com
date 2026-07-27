@@ -1,6 +1,10 @@
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+	enhanceCodeBlocks,
+	getHighlightedCodeBlockCount,
+} from "./code-presentation.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -26,7 +30,10 @@ const loadContentCollection = async (filename, label) => {
 	}
 };
 
-const posts = await loadContentCollection("posts.json", "the restored posts");
+const sourcePosts = await loadContentCollection(
+	"posts.json",
+	"the restored posts",
+);
 const predecessorPosts = await loadContentCollection(
 	"predecessor-posts.json",
 	"the predecessor-site records",
@@ -60,6 +67,11 @@ const stripTags = (value = "") =>
 		.replace(/\s+/g, " ")
 		.trim();
 
+const posts = sourcePosts.map((post) => ({
+	...post,
+	presentationHtml: enhanceCodeBlocks(post.html, post.slug),
+}));
+
 const slugify = (value) => {
 	if (value.toLowerCase() === "c++") return "cpp";
 	return value
@@ -72,25 +84,35 @@ const slugify = (value) => {
 };
 
 const isFullDate = (date) => /^\d{4}-\d{2}-\d{2}$/.test(date);
-const formatDate = (date) => {
-	if (!isFullDate(date)) {
-		return `${formatMonth(date)} · dia exato não preservado`;
-	}
-	return new Intl.DateTimeFormat("pt-BR", {
-		day: "2-digit",
-		month: "long",
-		year: "numeric",
-		timeZone: "UTC",
-	}).format(new Date(`${date}T12:00:00Z`));
-};
-
+const DATE_FORMATTER = new Intl.DateTimeFormat("pt-BR", {
+	day: "2-digit",
+	month: "long",
+	year: "numeric",
+	timeZone: "UTC",
+});
+const MONTH_FORMATTER = new Intl.DateTimeFormat("pt-BR", {
+	month: "long",
+	timeZone: "UTC",
+});
+const formattedDates = new Map();
+const formattedMonths = new Map();
 const formatMonth = (monthKey) => {
+	if (formattedMonths.has(monthKey)) return formattedMonths.get(monthKey);
 	const [year, month] = monthKey.split("-");
-	const label = new Intl.DateTimeFormat("pt-BR", {
-		month: "long",
-		timeZone: "UTC",
-	}).format(new Date(`${year}-${month}-15T12:00:00Z`));
-	return `${label[0].toUpperCase()}${label.slice(1)} ${year}`;
+	const label = MONTH_FORMATTER.format(
+		new Date(`${year}-${month}-15T12:00:00Z`),
+	);
+	const formatted = `${label[0].toUpperCase()}${label.slice(1)} ${year}`;
+	formattedMonths.set(monthKey, formatted);
+	return formatted;
+};
+const formatDate = (date) => {
+	if (formattedDates.has(date)) return formattedDates.get(date);
+	const formatted = isFullDate(date)
+		? DATE_FORMATTER.format(new Date(`${date}T12:00:00Z`))
+		: `${formatMonth(date)} · dia exato não preservado`;
+	formattedDates.set(date, formatted);
+	return formatted;
 };
 
 const countBy = (values) =>
@@ -150,15 +172,21 @@ const cardCommentMeta = (post) => {
 const restorationGapsNote = (post) => {
 	const notes = [];
 	if (post.partialContent) {
-		notes.push("a captura preservou somente o trecho exibido na página inicial; o restante do texto não foi localizado");
+		notes.push(
+			"a captura preservou somente o trecho exibido na página inicial; o restante do texto não foi localizado",
+		);
 	}
 	if (post.missingMedia.length > 0) {
 		const count = post.missingMedia.length;
-		notes.push(`${count} ${count === 1 ? "imagem não foi recuperada" : "imagens não foram recuperadas"}`);
+		notes.push(
+			`${count} ${count === 1 ? "imagem não foi recuperada" : "imagens não foram recuperadas"}`,
+		);
 	}
 	if ((post.missingDownloads ?? []).length > 0) {
 		const count = post.missingDownloads.length;
-		notes.push(`${count} ${count === 1 ? "download não foi recuperado" : "downloads não foram recuperados"}`);
+		notes.push(
+			`${count} ${count === 1 ? "download não foi recuperado" : "downloads não foram recuperados"}`,
+		);
 	}
 	if (notes.length === 0) return "";
 	return `<aside class="media-note" aria-label="Nota de restauração"><strong>Nota de restauração:</strong> ${escapeHtml(notes.join("; "))}.</aside>`;
@@ -390,7 +418,7 @@ for (const [index, post] of posts.entries()) {
         <h1>${escapeHtml(post.title)}</h1>
         <p class="post-meta"><time datetime="${post.date}">${escapeHtml(formatDate(post.date))}</time> · por SKHAZ</p>
       </header>
-      <div class="post-body">${post.html || '<p class="restoration-empty">O post original não tinha texto; apenas o título foi publicado.</p>'}</div>
+      <div class="post-body">${post.presentationHtml || '<p class="restoration-empty">O post original não tinha texto; apenas o título foi publicado.</p>'}</div>
       ${restorationGapsNote(post)}
       <footer class="post-taxonomy">${badgeList(post)}</footer>
       <details class="source-details">
@@ -470,15 +498,27 @@ const legacyTagAliases = [
 		tag: "shared_ptr",
 		slugs: ["deque-shared_ptr-for_each-mem_fun-cabummm"],
 	},
-	{ route: "/blog/tag/deque/", title: "deque", slugs: ["deque-shared_ptr-for_each-mem_fun-cabummm"] },
-	{ route: "/blog/tag/mem_fn/", title: "mem_fn", slugs: ["deque-shared_ptr-for_each-mem_fun-cabummm"] },
+	{
+		route: "/blog/tag/deque/",
+		title: "deque",
+		slugs: ["deque-shared_ptr-for_each-mem_fun-cabummm"],
+	},
+	{
+		route: "/blog/tag/mem_fn/",
+		title: "mem_fn",
+		slugs: ["deque-shared_ptr-for_each-mem_fun-cabummm"],
+	},
 	{
 		route: "/blog/tag/mem_fun/",
 		title: "mem_fun",
 		tag: "mem_fun",
 		slugs: ["deque-shared_ptr-for_each-mem_fun-cabummm"],
 	},
-	{ route: "/blog/tag/thread/", title: "Thread", slugs: ["agendamento-de-tarefas"] },
+	{
+		route: "/blog/tag/thread/",
+		title: "Thread",
+		slugs: ["agendamento-de-tarefas"],
+	},
 ];
 for (const alias of legacyTagAliases) {
 	const selectedPosts = posts.filter(
@@ -709,5 +749,5 @@ await cp(routeToFile("/404/"), path.join(DIST, "404.html"));
 await writeFile(path.join(DIST, ".nojekyll"), "");
 
 process.stdout.write(
-	`Built ${posts.length} posts, ${categories.length} categories, ${tags.length} tags and ${months.length} monthly archives.\n`,
+	`Built ${posts.length} posts, ${getHighlightedCodeBlockCount()} highlighted code blocks, ${categories.length} categories, ${tags.length} tags and ${months.length} monthly archives.\n`,
 );

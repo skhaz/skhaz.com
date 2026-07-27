@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-07-27T12:45:53Z",
+  "scope": "Static, non-executing verification of the contemporaneous third-party installer linked by the post instalador-da-boost. The executable itself is not republished in this repository.",
+  "historicalPostUrl": "http://www.skhaz.com/blog/instalador-da-boost/",
+  "historicalLink": "http://www.boost-consulting.com/boost_1_35_0_setup.exe",
+  "historicalLinkCdxResult": {
+    "queriedHostVariants": [
+      "boost-consulting.com/boost_1_35_0_setup.exe",
+      "www.boost-consulting.com/boost_1_35_0_setup.exe"
+    ],
+    "status200Rows": 0
+  },
+  "vendorPageEvidence": {
+    "boostConsultingReplay": "https://web.archive.org/web/20080615150814id_/http://www.boost-consulting.com/products/free",
+    "boostProReplay": "https://web.archive.org/web/20080829203256id_/http://www.boostpro.com/products/free",
+    "observedText": "BoostPro 1.35.0 Installer (192K .exe)",
+    "observedHref": "/boost_1_35_0_setup.exe",
+    "provenanceQualification": "The exact post-linked boost-consulting.com executable URL has no status-200 CDX row. The same first-party product page survived on both vendor hostnames, and the exact filename survived under the later boostpro.com hostname. This is strong vendor-lineage evidence, not proof that both hostname payloads were byte-identical."
+  },
+  "waybackCapture": {
+    "timestamp": "20081113215056",
+    "original": "http://www.boostpro.com/boost_1_35_0_setup.exe",
+    "rawReplay": "https://web.archive.org/web/20081113215056id_/http://www.boostpro.com/boost_1_35_0_setup.exe",
+    "status": 200,
+    "mime": "application/octet-stream",
+    "cdxDigestBase32Sha1": "TTRAUQTHOEQM4XLQ6W3PPLWBCFHYBKBI",
+    "cdxDigestHexSha1": "9ce20a42677120ce5d70f5b6f7aec1114f80a828",
+    "cdxRecordLength": 171259,
+    "cdxRecordLengthQualification": "CDX length describes the archived record and is not the decoded HTTP entity length.",
+    "archiveSource": "BNF-CRAWL-004-20081113213720-03785-crawling108-c/BNF-CRAWL-004-20081113214700-03360-crawling107.us.archive.org.arc.gz",
+    "mementoDatetime": "Thu, 13 Nov 2008 21:50:56 GMT",
+    "originalResponseHeaders": {
+      "contentLength": 191672,
+      "lastModified": "Mon, 07 Jul 2008 19:11:36 GMT",
+      "date": "Thu, 13 Nov 2008 21:42:33 GMT",
+      "server": "lighttpd/1.4.20",
+      "etag": "1606152211"
+    }
+  },
+  "payloadValidation": {
+    "downloadedEntityLength": 191672,
+    "magicHexPrefix": "4d5a90000300000004000000ffff0000",
+    "detectedType": "PE32 executable (GUI) Intel 80386, for MS Windows, Nullsoft Installer self-extracting archive",
+    "sha1": "9ce20a42677120ce5d70f5b6f7aec1114f80a828",
+    "sha1MatchesCdxDigest": true,
+    "sha256": "a450ec3449f701a6a97584cb6c1c04bf3ee87d5694ed7fff29a216fd1d1b9946",
+    "pe": {
+      "architecture": "i386",
+      "subsystem": "Windows GUI",
+      "headerTimeDate": "Sat Jul 14 12:12:54 2007",
+      "securityDirectorySize": 0,
+      "authenticode": "No embedded Authenticode signature was present.",
+      "nsisManifestDescription": "Nullsoft Install System v2.29"
+    },
+    "execution": "The executable was never launched.",
+    "extraction": "unar identified NSIS but failed to parse the archive; no embedded-resource inventory or screenshot comparison was possible with the installed static tools."
+  },
+  "restorationDisposition": "The installer is a verified contemporaneous first-party-vendor artifact, but not one of the three missing author-created ZIP downloads and not either missing author screenshot. Its bytes are intentionally not shipped. boostconfig1.png and boostinstaller2.png remain unrecovered."
+}

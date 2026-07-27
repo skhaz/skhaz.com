@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-07-27T13:41:43.570045+00:00",
+  "method": "Fifteen warm build runs per revision using node scripts/build.mjs, interleaved in alternating order. Sizes are measured after the final run. The affected-page comparison uses the same 11 canonical post-page paths in both revisions. Gzip totals compress each file independently at level 9 and sum the resulting byte lengths. treeSha256 hashes sorted records of relative path, byte length, and per-file SHA-256, binding the measurement to the generated tree.",
+  "environment": {
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "node": "v26.5.0",
+    "runs": 15,
+    "gzipLevel": 9
+  },
+  "affectedPostPaths": [
+    "blog/agendamento-de-tarefas/index.html",
+    "blog/um-pouco-mais-sobre-namespace/index.html",
+    "blog/eliminando-o-codigo-fonfarrao/index.html",
+    "blog/carregando-imagens-com-ou-sem-canal-alpha/index.html",
+    "blog/classe-timer/index.html",
+    "blog/por-onde-andas-skhaz/index.html",
+    "blog/try-catch-no-construtor/index.html",
+    "blog/mutable-que-raios-e-isso/index.html",
+    "blog/mutable-o-legado/index.html",
+    "blog/sistema-de-arquivo-virtual/index.html",
+    "blog/deque-shared_ptr-for_each-mem_fun-cabummm/index.html"
+  ],
+  "revisions": {
+    "before": {
+      "git": "6cbad9c16fb95ba7bee754d40847b4964f4a2274",
+      "treeSha256": "0741875e4fd5ea306cb7876e20f85b062a4c35879bfaa9c0eb7c3c9330567b8d",
+      "buildMilliseconds": [
+        144.218,
+        143.812,
+        141.925,
+        145.936,
+        142.25,
+        143.668,
+        143.592,
+        144.609,
+        142.702,
+        143.203,
+        141.647,
+        143.571,
+        142.417,
+        143.613,
+        144.287
+      ],
+      "buildMedianMilliseconds": 143.592,
+      "buildMeanMilliseconds": 143.43,
+      "dist": {
+        "files": 239,
+        "rawBytes": 3492582,
+        "gzipBytes": 1673242
+      },
+      "html": {
+        "files": 193,
+        "rawBytes": 1795914,
+        "gzipBytes": 517930
+      },
+      "codePostHtml": {
+        "files": 11,
+        "rawBytes": 128985,
+        "gzipBytes": 40411
+      },
+      "styleCss": {
+        "files": 1,
+        "rawBytes": 15770,
+        "gzipBytes": 4254
+      },
+      "appJs": {
+        "files": 1,
+        "rawBytes": 1055,
+        "gzipBytes": 533
+      }
+    },
+    "after": {
+      "git": "working-tree-over-6cbad9c16fb95ba7bee754d40847b4964f4a2274",
+      "treeSha256": "f43a3e192fdf2530b1ba17136050a5a14bac39167f5d801ca654e08505cfa26c",
+      "buildMilliseconds": [
+        114.182,
+        114.474,
+        115.025,
+        113.883,
+        115.583,
+        115.191,
+        115.225,
+        114.31,
+        112.531,
+        114.229,
+        116.759,
+        112.488,
+        114.231,
+        113.464,
+        112.599
+      ],
+      "buildMedianMilliseconds": 114.231,
+      "buildMeanMilliseconds": 114.278,
+      "dist": {
+        "files": 239,
+        "rawBytes": 3531465,
+        "gzipBytes": 1677728
+      },
+      "html": {
+        "files": 193,
+        "rawBytes": 1831149,
+        "gzipBytes": 521296
+      },
+      "codePostHtml": {
+        "files": 11,
+        "rawBytes": 164220,
+        "gzipBytes": 43777
+      },
+      "styleCss": {
+        "files": 1,
+        "rawBytes": 17949,
+        "gzipBytes": 4790
+      },
+      "appJs": {
+        "files": 1,
+        "rawBytes": 2524,
+        "gzipBytes": 1117
+      }
+    }
+  },
+  "delta": {
+    "buildMedianMilliseconds": -29.361,
+    "buildMedianPercent": -20.45,
+    "distRawBytes": 38883,
+    "distGzipBytes": 4486,
+    "htmlRawBytes": 35235,
+    "htmlGzipBytes": 3366,
+    "codePostHtmlRawBytes": 35235,
+    "codePostHtmlGzipBytes": 3366,
+    "styleRawBytes": 2179,
+    "styleGzipBytes": 536,
+    "appRawBytes": 1469,
+    "appGzipBytes": 584
+  }
+}

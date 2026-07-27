@@ -8,7 +8,8 @@ in_scope:
   - the verified WordPress.com migration notice that announced skhaz.com, kept in a separate predecessor section
   - comments present in retrievable archive copies
   - original post, category, tag, month, feed, and index routes
-  - recoverable media and explicit placeholders for missing media
+  - recoverable media, broad public-archive forensics, and explicit placeholders for missing media
+  - build-time C++ syntax highlighting with presentation-only four-space indentation
   - responsive adaptation of the final observed visual identity
 out_of_scope:
   - reviving WordPress, its database, plugins, forms, or trackers
@@ -23,6 +24,7 @@ acceptance:
   expected_recorded_comments: 82
   expected_missing_media_markers: 11
   expected_missing_downloads: 3
+  expected_highlighted_cpp_blocks: 38
 prior_art:
   - candidate: Wayback Machine RSS and page captures
     verdict: adopt

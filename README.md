@@ -8,13 +8,14 @@ Restauração estática do blog original de **Rodrigo “Skhaz” Delduca**, pub
 - 1 aviso de migração do antecessor `skhaz.wordpress.com`, mantido em seção separada;
 - 72 comentários integrais recuperados de 82 registrados nas capturas;
 - categorias, tags, arquivos mensais, índice pesquisável, RSS e sitemap;
+- 38 blocos C++ com realce estático, indentação consistente de quatro espaços e cópia rápida;
 - imagens recuperadas localmente sempre que uma fonte confiável ainda existia;
 - 11 imagens (6 identificadas por metadados), 3 downloads, 10 comentários e o fim de 1 post não recuperados, sempre marcados sem conteúdo inventado;
 - visual inspirado no iNove, o último tema observado no blog.
 
 ## Executar
 
-Requer Node.js 20 ou superior e não possui dependências externas.
+Requer Node.js 20 ou superior. O build instala `highlight.js` como dependência local; nenhuma biblioteca de realce é enviada ao navegador.
 
 ```bash
 npm run dev
@@ -40,7 +41,7 @@ O repositório público é `github.com/skhaz/skhaz.com`, com **Source: GitHub Ac
 ## Fontes históricas
 
 - Internet Archive / Wayback Machine — 29 posts integrais, 1 post parcial, índice, páginas e comentários de 2008;
-- Common Crawl — cinco posts e comentários de dezembro de 2008 a abril de 2009;
+- Common Crawl — cinco posts e comentários de dezembro de 2008 a abril de 2009; os 125 índices anunciados também foram examinados em uma busca binária independente pelas mídias e ZIPs ausentes;
 - `skhaz.wordpress.com` — mídias originais ainda disponíveis e o aviso histórico que anunciou `www.skhaz.com`;
 - perfil público do ImageShack — metadados forenses de seis imagens ausentes, sem os binários;
 - repositório público do tema iNove — identidade visual da fase final.

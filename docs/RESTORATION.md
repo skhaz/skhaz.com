@@ -77,6 +77,10 @@ Os índices `CC-MAIN-2009-2010` e `CC-MAIN-2012` revelaram cinco URLs adicionais
 
 Os registros ARC foram lidos diretamente por `filename`, `offset` e `length`. Esses metadados permanecem no campo `source.record` de cada post recuperado.
 
+Uma segunda investigação usou os índices brutos, sem depender da API pública instável. Em 27/07/2026, foram examinados todos os **125 índices anunciados** pelo inventário de `data.commoncrawl.org`, de `CC-MAIN-2008-2009` a `CC-MAIN-2026-25`. Para 22 prefixos SURT — variantes com e sem `www`, os oito uploads/ZIPs locais e os seis caminhos ImageShack — a busca binária leu 15.980.084.528 bytes de `cluster.idx`, baixou e descompactou 723 blocos CDX (117.492.051 bytes comprimidos) e realizou 2.750 consultas, sem erro e sem linha correspondente. Dois arquivos ARC especialmente relevantes também foram integralmente examinados: 200.014.588 bytes comprimidos e 660.100.325 bytes descompactados, sem cabeçalho de registro dos alvos.
+
+Como nenhum localizador CDXJ foi encontrado, não existia registro ARC/WARC candidato para validação de payload. Essa é uma negativa rigorosa para o inventário, intervalo e prefixos documentados — não prova de inexistência global, cobertura de arquivos privados ou garantia sobre coleções futuras. Os detalhes reproduzíveis, hashes de cada índice e de cada bloco, ranges e limites da busca estão em `archive/sources/commoncrawl-missing-assets-raw-index-2026-07-27.json` e `archive/sources/commoncrawl-missing-assets-remaining-indexes-2026-07-27.json`.
+
 ### ImageShack
 
 Em 26 de julho de 2026, o perfil público `imageshack.com/user/skhaz` ainda declarava 49 uploads feitos entre agosto de 2007 e maio de 2008. A API pública preservava metadados para os seis arquivos do ImageShack referenciados pelo blog:
@@ -92,13 +96,25 @@ Em 26 de julho de 2026, o perfil público `imageshack.com/user/skhaz` ainda decl
 
 Cinco datas coincidem com o dia das respectivas publicações; `msvczm8.png` antecede em dois meses o post que reutilizou a imagem. Os registros confirmam conta, nomes, shards e buckets históricos. O valor `filesize` não foi interpretado porque a API não documenta sua unidade para esses registros legados. O snapshot bruto está em `archive/sources/imageshack-profile-2026-07-26.json`.
 
-Os IDs continuam resolvendo para páginas e JSON de metadados, mas nenhuma rota testada entregou bytes de imagem: originais, miniaturas e Imagizer retornaram `404 text/html` de 168 bytes; as páginas `/i/{id}/download` redirecionaram à home em HTML; e `/download/{id}` terminou em `200 application/octet-stream` com corpo vazio. A [documentação do ArchiveTeam](https://wiki.archiveteam.org/index.php/ImageShack) registra que muitas imagens do serviço foram apagadas em 2014 e classifica o ImageShack como “Not saved yet”; a coleção pública do ArchiveTeam no Internet Archive não apresentou um conjunto ImageShack recuperável. Esses seis arquivos permanecem, portanto, **identificados mas não recuperados**.
+Os IDs continuam resolvendo para páginas e JSON de metadados, mas nenhuma rota testada entregou bytes de imagem. A primeira rodada cobriu originais, miniaturas, Imagizer e downloads. A rodada ampliada derivou rotas do próprio JavaScript público do ImageShack e verificou mais 54 combinações de `/download`, `/a/img…`, perfis `v2`, tamanhos e miniaturas: todas terminaram em HTML/JSON, corpo vazio ou `404`, nunca em uma assinatura de imagem. A [documentação do ArchiveTeam](https://wiki.archiveteam.org/index.php/ImageShack) registra que muitas imagens do serviço foram apagadas em 2014 e classifica o ImageShack como “Not saved yet”; a coleção pública do ArchiveTeam no Internet Archive não apresentou um conjunto ImageShack recuperável. Esses seis arquivos permanecem, portanto, **identificados mas não recuperados**.
+
+Também foram testadas 72 combinações de uploads do WordPress.com, `skhaz.files.wordpress.com` e caches `i0`/`i1`/`i2.wp.com` para originais e miniaturas conhecidas; nenhuma resposta passou assinatura, MIME e dimensões. Os IDs de mídia 107, 108, 118 e 120 existem, mas a API exige autenticação (`403`) e seus bytes não foram expostos. Dez buscas exatas no Openverse retornaram zero resultados. O manifesto completo é `archive/sources/missing-media-deep-sweep-2026-07-27.json`.
 
 ### Capturas do instalador Boost
 
-As imagens `boostconfig1.png` e `boostinstaller2.png` eram uploads locais do WordPress, não arquivos do site do fornecedor. Consultas exatas na Wayback Machine e no Arquivo.pt não retornaram capturas dos originais; consultas Wayback bem-sucedidas para as variantes `-300x234.png` também retornaram listas vazias. Páginas contemporâneas da Boost Consulting confirmam o instalador BoostPro 1.35, suas opções e o link `boost_1_35_0_setup.exe`, mas não contêm as duas capturas do autor. O executável histórico tampouco foi localizado em captura verificável. Nenhuma imagem de outro tutorial foi usada como substituta.
+As imagens `boostconfig1.png` e `boostinstaller2.png` eram uploads locais do WordPress, não arquivos do site do fornecedor. Consultas exatas na Wayback Machine e no Arquivo.pt não retornaram capturas dos originais; consultas Wayback bem-sucedidas para as variantes `-300x234.png` também retornaram listas vazias. Páginas contemporâneas da Boost Consulting e da BoostPro confirmam o instalador BoostPro 1.35, suas opções e o link `boost_1_35_0_setup.exe`, mas não contêm as duas capturas do autor. Nenhuma imagem de outro tutorial foi usada como substituta.
+
+Uma captura exata do executável no hostname posterior do mesmo fornecedor foi localizada em `20081113215056`: `http://www.boostpro.com/boost_1_35_0_setup.exe`. O payload de 191.672 bytes é um PE32/NSIS para Windows; SHA-1 `9ce20a42677120ce5d70f5b6f7aec1114f80a828`, idêntico ao digest Base32 do CDX, e SHA-256 `a450ec3449f701a6a97584cb6c1c04bf3ee87d5694ed7fff29a216fd1d1b9946`. A análise foi estritamente estática e o programa não foi executado. A URL exata em `boost-consulting.com` usada pelo post não possui captura 200, portanto a relação entre hostnames é registrada como linhagem forte do fornecedor, não como prova de bytes idênticos. O executável de terceiro não é republicado, não conta como um dos três ZIPs autorais ausentes e não substitui os screenshots. Evidência: `archive/sources/boostpro-1.35-installer-2026-07-27.json`.
 
 As URLs, status, tipos, tamanhos, hashes integrais das respostas e resultados de validação binária dessa rodada estão preservados em `archive/sources/recovery-attempts-2026-07-27.json`. Respostas transitórias `503`/`504` também foram mantidas; novas tentativas bem-sucedidas e vazias foram registradas separadamente, sem transformar indisponibilidade temporária em prova de ausência.
+
+### Código-fonte nos posts
+
+Os 38 blocos C++ são transformados somente durante o build. `content/posts.json` continua preservando o HTML recuperado, enquanto a apresentação gerada remove os antigos `<span style>`, decodifica as camadas de entidades comprovadamente introduzidas pelo HTML (`&amp;amp;` → `&`) e aplica realce estático com Highlight.js. Não há parser ou biblioteca de realce no navegador.
+
+A indentação é refeita com quatro espaços a partir de chaves, rótulos de acesso, `case` e continuações simples. Essa normalização é apenas visual e não altera o corpus arquivado. Fragmentos historicamente corrompidos como `boost /function.hpp`, `</boost><boost /bind.hpp>` e `shared_ptr</task><task>` são mantidos literalmente: sem um ZIP ou snapshot contemporâneo do fonte, “corrigi-los” seria inventar código. Cada bloco oferece cópia do texto exatamente exibido depois dessa normalização conservadora.
+
+Uma medição intercalou quinze builds aquecidos com o commit-base `6cbad9c`. Depois de reutilizar formatadores de data em vez de recriá-los para cada cartão, a mediana passou de 143,592 ms para 114,231 ms (**−29,361 ms; −20,45%**), mesmo incluindo o realce. Nos 11 posts afetados, o HTML cresceu 35.235 bytes bruto e 3.366 bytes ao comprimir cada página com gzip nível 9; em todo `dist/`, o acréscimo foi 38.883 bytes bruto e 4.486 bytes gzip. CSS e JavaScript somaram, respectivamente, +536 e +584 bytes gzip. Não há custo de parsing do Highlight.js no navegador. Ambiente, amostras, caminhos e método estão em `archive/sources/highlighting-performance-2026-07-27.json`; os totais gzip são comparativos, não uma previsão exata do servidor HTTP.
 
 ## Segurança do material histórico
 
@@ -114,7 +130,9 @@ Os dois embeds preservados são vídeos do YouTube, convertidos dos antigos obje
 
 ## Integridade e lacunas
 
-Imagens só foram incorporadas quando o arquivo original ainda estava disponível e sua assinatura binária era válida. Imagens do ImageShack e alguns uploads locais não apareceram na Wayback, no Common Crawl nem no WordPress.com. O perfil do ImageShack ainda identifica seis delas, mas já não entrega seus bytes. Nesses onze pontos, o site mostra **“Imagem histórica não recuperada”**. Três downloads também são marcados como indisponíveis.
+Imagens só foram incorporadas quando o arquivo original ainda estava disponível e sua assinatura binária era válida. Imagens do ImageShack e alguns uploads locais não apareceram nas consultas Wayback/Arquivo.pt, nos 125 índices Common Crawl anunciados em 27/07/2026, nas rotas públicas do WordPress.com/Photon nem nas rotas atuais do ImageShack/Imagizer que foram testadas. O perfil do ImageShack ainda identifica seis delas, mas já não entrega seus bytes. Nesses onze pontos, o site mostra **“Imagem histórica não recuperada”**. Três downloads também são marcados como indisponíveis.
+
+Buscas exatas em repositórios públicos do autor, árvores e histórico alcançável do GitHub, Openverse, páginas de fornecedores e mirrors públicos não produziram candidato com proveniência suficiente. Resultados genéricos e imagens apenas semelhantes foram rejeitados. As negativas permanecem delimitadas: export autenticado do WordPress.com/ImageShack, backups pessoais, caches locais, objetos Git inalcançáveis e coleções privadas ainda poderiam conter bytes.
 
 As capturas registram dez comentários cujos corpos não sobreviveram. O site preserva suas contagens sem fabricar autores ou mensagens. O post `boost-136` é exibido como fragmento e termina com uma nota explícita sobre a parte ausente.
 
@@ -132,4 +150,4 @@ Os arquivos artísticos derivados do iNove são GPL-2.0. Consulte `public/assets
 npm test
 ```
 
-A validação exige 35 posts, 1 aviso predecessor separado, 72 comentários integrais de 82 registrados, captura específica para cada post, 11 lacunas de imagem, 3 downloads ausentes, feeds históricos, ausência de scripts antigos e inexistência de links locais quebrados no site gerado.
+A validação exige 35 posts, 1 aviso predecessor separado, 72 comentários integrais de 82 registrados, captura específica para cada post, 11 lacunas de imagem, 3 downloads ausentes, 38 blocos C++ destacados estaticamente, os manifestos forenses íntegros, feeds históricos, ausência de scripts antigos e inexistência de links locais quebrados no site gerado.

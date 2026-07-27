@@ -1,7 +1,12 @@
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+	decodeCodeEntitiesOnce,
+	normalizeCppCode,
+} from "./code-presentation.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -11,6 +16,31 @@ const MIGRATION_ROUTE =
 const problems = [];
 const check = (condition, message) => {
 	if (!condition) problems.push(message);
+};
+const hasExactValues = (actual, expected) => {
+	const actualSet = new Set(actual);
+	const expectedSet = new Set(expected);
+	return (
+		actual.length === actualSet.size &&
+		actualSet.size === expectedSet.size &&
+		[...expectedSet].every((value) => actualSet.has(value))
+	);
+};
+const isSha256 = (value) => /^[0-9a-f]{64}$/.test(value ?? "");
+const decodeBase32Hex = (value) => {
+	const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+	if (!/^[A-Z2-7]{32}$/.test(value)) return null;
+	let bits = "";
+	for (const character of value) {
+		const index = alphabet.indexOf(character);
+		bits += index.toString(2).padStart(5, "0");
+	}
+	if (bits.length !== 160) return null;
+	const bytes = [];
+	for (let index = 0; index < bits.length; index += 8) {
+		bytes.push(Number.parseInt(bits.slice(index, index + 8), 2));
+	}
+	return bytes.length === 20 ? Buffer.from(bytes).toString("hex") : null;
 };
 
 try {
@@ -41,7 +71,14 @@ let currentMigrationPost;
 let currentMigrationReplies;
 let historicalMigrationSource;
 let historicalFeedSource;
+let historicalSeptemberHomeSource;
 let recoveryAttempts;
+let deepMediaSweep;
+let commonCrawlEarlySweep;
+let commonCrawlRemainingSweep;
+let commonCrawlCollectionsSource;
+let boostInstallerEvidence;
+let highlightingPerformance;
 try {
 	imageshackProfile = JSON.parse(
 		readFileSync(
@@ -71,21 +108,66 @@ try {
 		),
 	);
 	historicalMigrationSource = readFileSync(
-		path.join(
-			ROOT,
-			"archive/sources/wayback-wordpress-com-home-2008-04.html",
-		),
+		path.join(ROOT, "archive/sources/wayback-wordpress-com-home-2008-04.html"),
 		"utf8",
 	);
 	historicalFeedSource = readFileSync(
 		path.join(ROOT, "archive/sources/wayback-feed-2008.xml"),
 		"utf8",
 	);
+	historicalSeptemberHomeSource = readFileSync(
+		path.join(ROOT, "archive/sources/wayback-home-2008-09.html"),
+	);
 	recoveryAttempts = JSON.parse(
+		readFileSync(
+			path.join(ROOT, "archive/sources/recovery-attempts-2026-07-27.json"),
+			"utf8",
+		),
+	);
+	deepMediaSweep = JSON.parse(
 		readFileSync(
 			path.join(
 				ROOT,
-				"archive/sources/recovery-attempts-2026-07-27.json",
+				"archive/sources/missing-media-deep-sweep-2026-07-27.json",
+			),
+			"utf8",
+		),
+	);
+	commonCrawlEarlySweep = JSON.parse(
+		readFileSync(
+			path.join(
+				ROOT,
+				"archive/sources/commoncrawl-missing-assets-raw-index-2026-07-27.json",
+			),
+			"utf8",
+		),
+	);
+	commonCrawlRemainingSweep = JSON.parse(
+		readFileSync(
+			path.join(
+				ROOT,
+				"archive/sources/commoncrawl-missing-assets-remaining-indexes-2026-07-27.json",
+			),
+			"utf8",
+		),
+	);
+	commonCrawlCollectionsSource = readFileSync(
+		path.join(ROOT, "archive/sources/commoncrawl-collections-2026-07-27.html"),
+	);
+	boostInstallerEvidence = JSON.parse(
+		readFileSync(
+			path.join(
+				ROOT,
+				"archive/sources/boostpro-1.35-installer-2026-07-27.json",
+			),
+			"utf8",
+		),
+	);
+	highlightingPerformance = JSON.parse(
+		readFileSync(
+			path.join(
+				ROOT,
+				"archive/sources/highlighting-performance-2026-07-27.json",
 			),
 			"utf8",
 		),
@@ -97,6 +179,12 @@ try {
 	process.exit(1);
 }
 
+check(
+	historicalSeptemberHomeSource.length === 11172 &&
+		createHash("sha256").update(historicalSeptemberHomeSource).digest("hex") ===
+			"31165f3957508e4fa958de7ca86646d3e5acaca8e7664fc996f6e5a5eede623e",
+	"the raw September 2008 Wayback source must remain byte-for-byte unchanged",
+);
 check(Array.isArray(posts), "posts.json must contain an array");
 check(posts.length === 35, `expected 35 restored posts, found ${posts.length}`);
 check(
@@ -121,6 +209,43 @@ check(
 check(
 	posts.reduce((sum, post) => sum + post.missingDownloads.length, 0) === 3,
 	"expected 3 explicitly documented missing downloads",
+);
+const countCppBlocks = (html) =>
+	[...html.matchAll(/<pre\b([^>]*)>[\s\S]*?<\/pre>/gi)].filter((match) =>
+		/(?:syntax-highlight:cpp|class="cpp")/i.test(match[1]),
+	).length;
+const expectedCppBlockCount = posts.reduce(
+	(sum, post) => sum + countCppBlocks(post.html),
+	0,
+);
+check(
+	expectedCppBlockCount === 38,
+	`expected 38 historical C++ blocks, found ${expectedCppBlockCount}`,
+);
+check(
+	decodeCodeEntitiesOnce("&#x110000; &#55296;") === "&#x110000; &#55296;" &&
+		normalizeCppCode('const char* entity = "&amp;amp;";') ===
+			'const char* entity = "&amp;";' &&
+		normalizeCppCode('const char* entity = "&amp;amp;";', {
+			decodeTwice: true,
+		}) === 'const char* entity = "&";',
+	"C++ entity decoding must be bounded, scalar-safe and explicitly attested",
+);
+check(
+	normalizeCppCode(
+		'class Fixture\n{\npublic:\nvoid run()\n{\nconst char* brace = "}";\n/* { */\nwork();\n}\n};',
+	).includes(
+		'public:\n    void run()\n    {\n        const char* brace = "}";\n        /* { */\n        work();',
+	),
+	"C++ indentation must ignore braces inside strings and comments",
+);
+check(
+	normalizeCppCode(
+		"for (int index = 0; index < count; index++)\nprocess(index);",
+	) === "for (int index = 0; index < count; index++)\n    process(index);" &&
+		normalizeCppCode("if (ready)\n{\nprocess();\n}") ===
+			"if (ready)\n{\n    process();\n}",
+	"C++ indentation must distinguish unbraced bodies from next-line braces",
 );
 const imageshackImages = imageshackProfile?.result?.images ?? [];
 check(
@@ -194,6 +319,517 @@ check(
 		recoveryAttempts?.archiveTeamSearch?.semantic?.numFound === 0,
 	"the recovery manifest must retain successful negative Boost and ArchiveTeam queries",
 );
+const deepImageShackAttempts =
+	deepMediaSweep?.imageShackDeepRoutes?.attempts ?? [];
+const deepWordPressAttempts =
+	deepMediaSweep?.wordpressCdnRoutes?.attempts ?? [];
+const protectedWordPressMedia =
+	deepMediaSweep?.wordpressMediaApi?.attempts ?? [];
+const expectedDeepImageShackRoutes = [
+	"app-download",
+	"app-download-com",
+	"app-archive-link",
+	"v2-thumb",
+	"v2-1024x768",
+	"v2-quality-only",
+	"scaled-thumb60x60",
+	"scaled-square70",
+	"api-image-detail",
+];
+const expectedWordPressAssets = [
+	"unixsextafeira13.jpg",
+	"unixsextafeira13-300x240.jpg",
+	"boostconfig1.png",
+	"boostconfig1-300x234.png",
+	"boostinstaller2.png",
+	"boostinstaller2-300x234.png",
+	"desktop.jpg",
+	"msvczm8.png",
+	"msvczm8-300x225.png",
+];
+const expectedWordPressRoutes = [
+	"direct:skhaz.files.wordpress.com",
+	"i0.wp.com:skhaz.files.wordpress.com",
+	"i1.wp.com:skhaz.files.wordpress.com",
+	"i2.wp.com:skhaz.files.wordpress.com",
+	"direct:skhaz.wordpress.com",
+	"i0.wp.com:skhaz.wordpress.com",
+	"i1.wp.com:skhaz.wordpress.com",
+	"i2.wp.com:skhaz.wordpress.com",
+];
+const isCoherentNegativeAttempt = (attempt) =>
+	attempt?.binarySignature == null &&
+	!/^image\//i.test(attempt?.contentType ?? "") &&
+	Number.isInteger(attempt?.httpStatus) &&
+	Number.isInteger(attempt?.contentLength) &&
+	attempt.contentLength >= 0 &&
+	isSha256(attempt?.sha256) &&
+	/^https:\/\//.test(attempt?.url ?? "");
+const hasExactAttemptMatrix = (attempts, assets, routes) =>
+	hasExactValues(
+		attempts.map((attempt) => `${attempt.asset}\0${attempt.route}`),
+		assets.flatMap((asset) => routes.map((route) => `${asset}\0${route}`)),
+	) && attempts.every(isCoherentNegativeAttempt);
+const openverseQueries = deepMediaSweep?.openverse?.queries ?? [];
+const expectedOpenverseLabels = [
+	"openverse:unixsextafeira13",
+	"openverse:boostconfig1",
+	"openverse:boostinstaller2",
+	"openverse:desktop skhaz",
+	"openverse:msvczm8",
+	"openverse:msvc9mb0",
+	"openverse:2242002764ab16f49f4dofs2",
+	"openverse:finalor9",
+	"openverse:mapakm5",
+	"openverse:mapatermicoyb6xb3",
+];
+const expectedImageShackAttemptUrl = (attempt) => {
+	const image = imageshackImages.find(
+		(entry) => entry.filename === attempt.asset,
+	);
+	if (!image) return null;
+	const routeTemplates = {
+		"app-download": `https://imageshack.us/download/${image.server}/${image.filename}`,
+		"app-download-com": `https://imageshack.com/download/${image.server}/${image.filename}`,
+		"app-archive-link": `https://imageshack.com/a/img${image.server}/${image.bucket}/${image.filename}`,
+		"v2-thumb": `https://imagizer.imageshack.com/v2/240x180q70/${image.server}/${image.filename}`,
+		"v2-1024x768": `https://imagizer.imageshack.com/v2/1024x768q100/${image.server}/${image.filename}`,
+		"v2-quality-only": `https://imagizer.imageshack.com/v2/q100/${image.server}/${image.filename}`,
+		"scaled-thumb60x60": `https://imageshack.com/scaled/thumb60x60/${image.server}/${image.filename}`,
+		"scaled-square70": `https://imageshack.com/scaled/square70/${image.server}/${image.filename}`,
+		"api-image-detail": `https://imageshack.com/rest_api/v2/images/${image.id}`,
+	};
+	return routeTemplates[attempt.route] ?? null;
+};
+const wordpressAssetDatePath = (asset) => {
+	if (asset.startsWith("unixsextafeira13")) return "2009/02";
+	if (asset.startsWith("boost")) return "2008/06";
+	return "2008/05";
+};
+const expectedWordPressAttemptUrl = (attempt) => {
+	const [hostLabel, origin] = attempt.route.split(":");
+	const datePath = wordpressAssetDatePath(attempt.asset);
+	const originPath =
+		origin === "skhaz.files.wordpress.com"
+			? `${origin}/${datePath}/${attempt.asset}`
+			: `${origin}/wp-content/uploads/${datePath}/${attempt.asset}`;
+	return hostLabel === "direct"
+		? `https://${originPath}`
+		: `https://${hostLabel}/${originPath}`;
+};
+check(
+	deepMediaSweep?.schemaVersion === 1 &&
+		deepMediaSweep?.imageShackDeepRoutes?.count ===
+			deepImageShackAttempts.length &&
+		deepMediaSweep?.imageShackDeepRoutes?.validImageResponses === 0 &&
+		hasExactAttemptMatrix(
+			deepImageShackAttempts,
+			[...expectedImageshackTargets.keys()],
+			expectedDeepImageShackRoutes,
+		) &&
+		deepImageShackAttempts.every(
+			(attempt) =>
+				attempt.url === expectedImageShackAttemptUrl(attempt) &&
+				(attempt.route === "api-image-detail"
+					? attempt.httpStatus === 200 &&
+						attempt.contentType === "application/json; charset=utf-8"
+					: attempt.httpStatus === 404 && attempt.contentType === "text/html"),
+		) &&
+		deepMediaSweep?.wordpressCdnRoutes?.count ===
+			deepWordPressAttempts.length &&
+		deepMediaSweep?.wordpressCdnRoutes?.validImageResponses === 0 &&
+		hasExactAttemptMatrix(
+			deepWordPressAttempts,
+			expectedWordPressAssets,
+			expectedWordPressRoutes,
+		) &&
+		deepWordPressAttempts.every(
+			(attempt) =>
+				attempt.httpStatus === 404 &&
+				attempt.url === expectedWordPressAttemptUrl(attempt),
+		) &&
+		deepMediaSweep?.wordpressMediaApi?.authenticatedAccessRequired === true &&
+		hasExactValues(
+			protectedWordPressMedia.map((attempt) => attempt.mediaId),
+			[107, 108, 118, 120],
+		) &&
+		protectedWordPressMedia.every(
+			(attempt) =>
+				attempt.httpStatus === 403 &&
+				attempt.contentType === "application/json" &&
+				attempt.url ===
+					`https://public-api.wordpress.com/rest/v1.1/sites/2393109/media/${attempt.mediaId}` &&
+				isCoherentNegativeAttempt(attempt),
+		) &&
+		deepMediaSweep?.openverse?.count === openverseQueries.length &&
+		deepMediaSweep?.openverse?.totalResults === 0 &&
+		hasExactValues(
+			openverseQueries.map((query) => query.label),
+			expectedOpenverseLabels,
+		) &&
+		openverseQueries.every((query) => {
+			let url;
+			try {
+				url = new URL(query.url);
+			} catch {
+				return false;
+			}
+			return (
+				query.httpStatus === 200 &&
+				query.contentType === "application/json" &&
+				url.origin === "https://api.openverse.org" &&
+				url.pathname === "/v1/images/" &&
+				url.searchParams.get("q") === query.label.slice("openverse:".length) &&
+				url.searchParams.get("page_size") === "20" &&
+				query.semantic?.resultCount === 0 &&
+				query.semantic?.pageCount === 0 &&
+				isCoherentNegativeAttempt(query)
+			);
+		}),
+	"the deep-media manifest must retain the exact scoped negative checks",
+);
+const expectedCrawlTargets = new Map([
+	[
+		"unixsextafeira13",
+		"com,skhaz,www)/blog/wp-content/uploads/2009/02/unixsextafeira13",
+	],
+	[
+		"boostconfig1",
+		"com,skhaz,www)/blog/wp-content/uploads/2008/06/boostconfig1",
+	],
+	[
+		"boostinstaller2",
+		"com,skhaz,www)/blog/wp-content/uploads/2008/06/boostinstaller2",
+	],
+	["desktop", "com,skhaz,www)/blog/wp-content/uploads/2008/05/desktop"],
+	[
+		"msvczm8-wordpress",
+		"com,skhaz,www)/blog/wp-content/uploads/2008/05/msvczm8",
+	],
+	["scheduler", "com,skhaz,www)/blog/wp-content/uploads/2008/06/scheduler"],
+	["physicsfs", "com,skhaz,www)/blog/wp-content/uploads/2008/04/physicsfs"],
+	[
+		"sdl-physicsfs",
+		"com,skhaz,www)/blog/wp-content/uploads/2008/04/sdl-physicsfs",
+	],
+	[
+		"unixsextafeira13-no-www",
+		"com,skhaz)/blog/wp-content/uploads/2009/02/unixsextafeira13",
+	],
+	[
+		"boostconfig1-no-www",
+		"com,skhaz)/blog/wp-content/uploads/2008/06/boostconfig1",
+	],
+	[
+		"boostinstaller2-no-www",
+		"com,skhaz)/blog/wp-content/uploads/2008/06/boostinstaller2",
+	],
+	["desktop-no-www", "com,skhaz)/blog/wp-content/uploads/2008/05/desktop"],
+	[
+		"msvczm8-wordpress-no-www",
+		"com,skhaz)/blog/wp-content/uploads/2008/05/msvczm8",
+	],
+	["scheduler-no-www", "com,skhaz)/blog/wp-content/uploads/2008/06/scheduler"],
+	["physicsfs-no-www", "com,skhaz)/blog/wp-content/uploads/2008/04/physicsfs"],
+	[
+		"sdl-physicsfs-no-www",
+		"com,skhaz)/blog/wp-content/uploads/2008/04/sdl-physicsfs",
+	],
+	["msvczm8-imageshack", "us,imageshack,img91)/img91/9260/msvczm8"],
+	["msvc9mb0", "us,imageshack,img406)/img406/7664/msvc9mb0"],
+	[
+		"2242002764ab16f49f4dofs2",
+		"us,imageshack,img405)/img405/1079/2242002764ab16f49f4dofs2",
+	],
+	["finalor9", "us,imageshack,img261)/img261/2865/finalor9"],
+	["mapakm5", "us,imageshack,img240)/img240/2306/mapakm5"],
+	["mapatermicoyb6xb3", "us,imageshack,img240)/img240/9194/mapatermicoyb6xb3"],
+]);
+const summarizeCrawlSweep = (manifest) => {
+	const collections = manifest?.collections ?? [];
+	const targets = manifest?.targets ?? [];
+	const queries = manifest?.queries ?? [];
+	const collectionIds = collections.map((collection) => collection.id);
+	const targetLabels = targets.map((target) => target.label);
+	const expectedQueryKeys = collectionIds.flatMap((collection) =>
+		targetLabels.map((target) => `${collection}\0${target}`),
+	);
+	const queryKeys = queries.map(
+		(query) => `${query.collection}\0${query.target}`,
+	);
+	const uniqueBlocks = new Map();
+	let queryStructureIsValid = hasExactValues(queryKeys, expectedQueryKeys);
+	for (const query of queries) {
+		const expectedPrefix = expectedCrawlTargets.get(query.target);
+		const [lowerBlock, upperBlock] = query.boundingBlocks ?? [];
+		const boundsBracketPrefix =
+			lowerBlock?.clusterKey <= expectedPrefix &&
+			expectedPrefix < upperBlock?.clusterKey;
+		const boundsAreConsecutive =
+			Number.isInteger(lowerBlock?.block) &&
+			upperBlock?.block === lowerBlock.block + 1;
+		const sameFileRangesAreContiguous =
+			lowerBlock?.cdxFile !== upperBlock?.cdxFile ||
+			lowerBlock.offset + lowerBlock.length === upperBlock.offset;
+		queryStructureIsValid &&=
+			expectedPrefix === query.surtPrefix &&
+			query.matches === 0 &&
+			Array.isArray(query.boundingBlocks) &&
+			query.boundingBlocks.length === 2 &&
+			boundsBracketPrefix &&
+			boundsAreConsecutive &&
+			sameFileRangesAreContiguous;
+		for (const block of query.boundingBlocks ?? []) {
+			const end = block.offset + block.length - 1;
+			queryStructureIsValid &&=
+				block.length > 0 &&
+				block.offset >= 0 &&
+				block.rangeHeader === `bytes=${block.offset}-${end}` &&
+				block.rangeUrl.includes(`/${query.collection}/`) &&
+				block.rangeUrl.endsWith(`/${block.cdxFile}`) &&
+				isSha256(block.compressedSha256);
+			const blockKey = `${query.collection}\0${block.cdxFile}\0${block.offset}\0${block.length}`;
+			const blockSignature = [
+				block.clusterKey,
+				block.block,
+				block.rangeUrl,
+				block.rangeHeader,
+				block.compressedSha256,
+			].join("\0");
+			const previousBlock = uniqueBlocks.get(blockKey);
+			queryStructureIsValid &&=
+				previousBlock == null || previousBlock.signature === blockSignature;
+			uniqueBlocks.set(blockKey, {
+				length: block.length,
+				signature: blockSignature,
+			});
+		}
+	}
+	const targetStructureIsValid =
+		hasExactValues(targetLabels, [...expectedCrawlTargets.keys()]) &&
+		targets.every(
+			(target) => expectedCrawlTargets.get(target.label) === target.surtPrefix,
+		);
+	const collectionStructureIsValid =
+		collectionIds.length === new Set(collectionIds).size &&
+		collections.every(
+			(collection) =>
+				collection.clusterIndexUrl.includes(`/${collection.id}/`) &&
+				collection.clusterIndexLength > 0 &&
+				collection.clusterRows > 0 &&
+				isSha256(collection.clusterIndexSha256),
+		);
+	return {
+		valid:
+			targetStructureIsValid &&
+			collectionStructureIsValid &&
+			queryStructureIsValid,
+		collectionIds,
+		queries: queries.length,
+		uniqueCdxBlocks: uniqueBlocks.size,
+		cdxCompressedBytes: [...uniqueBlocks.values()].reduce(
+			(sum, block) => sum + block.length,
+			0,
+		),
+		clusterIndexBytes: collections.reduce(
+			(sum, collection) => sum + collection.clusterIndexLength,
+			0,
+		),
+	};
+};
+const advertisedCollectionIds = [
+	...new Set(
+		commonCrawlCollectionsSource
+			.toString("utf8")
+			.match(/CC-MAIN-(?:2008-2009|2009-2010|2012|\d{4}-\d{2})/g) ?? [],
+	),
+];
+const earlyCrawlDerived = summarizeCrawlSweep(commonCrawlEarlySweep);
+const remainingCrawlDerived = summarizeCrawlSweep(commonCrawlRemainingSweep);
+const allCrawlCollectionIds = [
+	...earlyCrawlDerived.collectionIds,
+	...remainingCrawlDerived.collectionIds,
+];
+const earlyArcScans = commonCrawlEarlySweep?.fullArcScans ?? [];
+const arcCompressedBytes = earlyArcScans.reduce(
+	(sum, scan) => sum + scan.compressedLength,
+	0,
+);
+const arcUncompressedBytes = earlyArcScans.reduce(
+	(sum, scan) => sum + scan.uncompressedBytesScanned,
+	0,
+);
+const arcMatchingHeaders = earlyArcScans.reduce(
+	(sum, scan) =>
+		sum +
+		Object.values(scan.matchingArcRecordHeaders ?? {}).reduce(
+			(headerSum, count) => headerSum + count,
+			0,
+		),
+	0,
+);
+check(
+	earlyCrawlDerived.valid &&
+		remainingCrawlDerived.valid &&
+		hasExactValues(allCrawlCollectionIds, advertisedCollectionIds) &&
+		advertisedCollectionIds.length === 125 &&
+		commonCrawlCollectionsSource.length ===
+			commonCrawlRemainingSweep?.inventory?.length &&
+		createHash("sha256").update(commonCrawlCollectionsSource).digest("hex") ===
+			commonCrawlRemainingSweep?.inventory?.sha256 &&
+		commonCrawlRemainingSweep?.inventory?.advertisedCollections ===
+			advertisedCollectionIds.length &&
+		commonCrawlEarlySweep?.summary?.collections ===
+			earlyCrawlDerived.collectionIds.length &&
+		commonCrawlEarlySweep?.summary?.queries === earlyCrawlDerived.queries &&
+		commonCrawlEarlySweep?.summary?.uniqueCdxBlocks ===
+			earlyCrawlDerived.uniqueCdxBlocks &&
+		commonCrawlEarlySweep?.summary?.cdxCompressedBytes ===
+			earlyCrawlDerived.cdxCompressedBytes &&
+		commonCrawlEarlySweep?.summary?.clusterIndexBytes ===
+			earlyCrawlDerived.clusterIndexBytes &&
+		commonCrawlEarlySweep?.summary?.matches === 0 &&
+		commonCrawlEarlySweep?.summary?.errors === 0 &&
+		commonCrawlEarlySweep?.summary?.fullArcFiles === earlyArcScans.length &&
+		commonCrawlEarlySweep?.summary?.fullArcCompressedBytes ===
+			arcCompressedBytes &&
+		commonCrawlEarlySweep?.summary?.fullArcUncompressedBytesScanned ===
+			arcUncompressedBytes &&
+		commonCrawlEarlySweep?.summary?.matchingArcRecordHeaders ===
+			arcMatchingHeaders &&
+		commonCrawlRemainingSweep?.summary?.collectionsExpected ===
+			remainingCrawlDerived.collectionIds.length &&
+		commonCrawlRemainingSweep?.summary?.collectionsCompleted ===
+			remainingCrawlDerived.collectionIds.length &&
+		commonCrawlRemainingSweep?.summary?.queries ===
+			remainingCrawlDerived.queries &&
+		commonCrawlRemainingSweep?.summary?.uniqueCdxBlocks ===
+			remainingCrawlDerived.uniqueCdxBlocks &&
+		commonCrawlRemainingSweep?.summary?.cdxCompressedBytes ===
+			remainingCrawlDerived.cdxCompressedBytes &&
+		commonCrawlRemainingSweep?.summary?.clusterIndexBytes ===
+			remainingCrawlDerived.clusterIndexBytes &&
+		earlyCrawlDerived.queries + remainingCrawlDerived.queries === 2750 &&
+		earlyCrawlDerived.uniqueCdxBlocks +
+			remainingCrawlDerived.uniqueCdxBlocks ===
+			723 &&
+		earlyCrawlDerived.cdxCompressedBytes +
+			remainingCrawlDerived.cdxCompressedBytes ===
+			117492051 &&
+		earlyCrawlDerived.clusterIndexBytes +
+			remainingCrawlDerived.clusterIndexBytes ===
+			15980084528 &&
+		commonCrawlRemainingSweep?.summary?.matches === 0 &&
+		commonCrawlRemainingSweep?.summary?.errors === 0 &&
+		(commonCrawlRemainingSweep?.hits ?? []).length === 0 &&
+		(commonCrawlRemainingSweep?.errors ?? []).length === 0,
+	"the raw Common Crawl entries must derive exact 125-index Cartesian coverage without target locators",
+);
+const installerDigestBase32 =
+	boostInstallerEvidence?.waybackCapture?.cdxDigestBase32Sha1 ?? "";
+const installerDigestHex = decodeBase32Hex(installerDigestBase32);
+check(
+	decodeBase32Hex(`${installerDigestBase32}A`) == null &&
+		decodeBase32Hex(installerDigestBase32.toLowerCase()) == null &&
+		decodeBase32Hex(`${installerDigestBase32}=`) == null,
+	"CDX SHA-1 decoding must reject noncanonical Base32 encodings",
+);
+check(
+	boostInstallerEvidence?.waybackCapture?.timestamp === "20081113215056" &&
+		boostInstallerEvidence?.payloadValidation?.downloadedEntityLength ===
+			191672 &&
+		boostInstallerEvidence?.payloadValidation?.magicHexPrefix?.startsWith(
+			"4d5a",
+		) &&
+		installerDigestHex ===
+			boostInstallerEvidence?.waybackCapture?.cdxDigestHexSha1 &&
+		installerDigestHex === boostInstallerEvidence?.payloadValidation?.sha1 &&
+		boostInstallerEvidence?.payloadValidation?.sha256 ===
+			"a450ec3449f701a6a97584cb6c1c04bf3ee87d5694ed7fff29a216fd1d1b9946" &&
+		boostInstallerEvidence?.payloadValidation?.execution ===
+			"The executable was never launched." &&
+		boostInstallerEvidence?.historicalLinkCdxResult?.status200Rows === 0,
+	"the BoostPro installer evidence must retain independently cross-checked byte verification and hostname qualification",
+);
+const beforePerformance = highlightingPerformance?.revisions?.before;
+const afterPerformance = highlightingPerformance?.revisions?.after;
+const performanceDelta = highlightingPerformance?.delta;
+const roundTo = (value, digits) => {
+	const scale = 10 ** digits;
+	return Math.round(value * scale) / scale;
+};
+const measuredMedian = (values) => {
+	const sorted = [...values].sort((left, right) => left - right);
+	return sorted[Math.floor(sorted.length / 2)];
+};
+const measuredMean = (values) =>
+	roundTo(values.reduce((sum, value) => sum + value, 0) / values.length, 3);
+const sizeDeltaMatches = (group, rawKey, gzipKey) =>
+	performanceDelta?.[rawKey] ===
+		afterPerformance?.[group]?.rawBytes -
+			beforePerformance?.[group]?.rawBytes &&
+	performanceDelta?.[gzipKey] ===
+		afterPerformance?.[group]?.gzipBytes -
+			beforePerformance?.[group]?.gzipBytes;
+const expectedAffectedPostPaths = posts
+	.filter((post) => countCppBlocks(post.html) > 0)
+	.map((post) => `blog/${post.slug}/index.html`);
+check(
+	highlightingPerformance?.schemaVersion === 1 &&
+		highlightingPerformance?.environment?.runs === 15 &&
+		beforePerformance?.git === "6cbad9c16fb95ba7bee754d40847b4964f4a2274" &&
+		beforePerformance?.buildMilliseconds?.length === 15 &&
+		afterPerformance?.buildMilliseconds?.length === 15 &&
+		measuredMedian(beforePerformance.buildMilliseconds) ===
+			beforePerformance.buildMedianMilliseconds &&
+		measuredMedian(afterPerformance.buildMilliseconds) ===
+			afterPerformance.buildMedianMilliseconds &&
+		measuredMean(beforePerformance.buildMilliseconds) ===
+			beforePerformance.buildMeanMilliseconds &&
+		measuredMean(afterPerformance.buildMilliseconds) ===
+			afterPerformance.buildMeanMilliseconds &&
+		performanceDelta?.buildMedianMilliseconds ===
+			roundTo(
+				afterPerformance.buildMedianMilliseconds -
+					beforePerformance.buildMedianMilliseconds,
+				3,
+			) &&
+		performanceDelta?.buildMedianPercent ===
+			roundTo(
+				(afterPerformance.buildMedianMilliseconds /
+					beforePerformance.buildMedianMilliseconds -
+					1) *
+					100,
+				2,
+			) &&
+		afterPerformance.buildMedianMilliseconds <
+			beforePerformance.buildMedianMilliseconds &&
+		sizeDeltaMatches("dist", "distRawBytes", "distGzipBytes") &&
+		sizeDeltaMatches("html", "htmlRawBytes", "htmlGzipBytes") &&
+		sizeDeltaMatches(
+			"codePostHtml",
+			"codePostHtmlRawBytes",
+			"codePostHtmlGzipBytes",
+		) &&
+		sizeDeltaMatches("styleCss", "styleRawBytes", "styleGzipBytes") &&
+		sizeDeltaMatches("appJs", "appRawBytes", "appGzipBytes") &&
+		hasExactValues(
+			highlightingPerformance?.affectedPostPaths ?? [],
+			expectedAffectedPostPaths,
+		) &&
+		highlightingPerformance.affectedPostPaths.every((relativePath) =>
+			existsSync(path.join(DIST, relativePath)),
+		) &&
+		performanceDelta.buildMedianMilliseconds === -29.361 &&
+		performanceDelta.buildMedianPercent === -20.45 &&
+		performanceDelta.distRawBytes === 38883 &&
+		performanceDelta.distGzipBytes === 4486 &&
+		performanceDelta.codePostHtmlRawBytes === 35235 &&
+		performanceDelta.codePostHtmlGzipBytes === 3366 &&
+		performanceDelta.styleGzipBytes === 536 &&
+		performanceDelta.appGzipBytes === 584,
+	"the highlighting performance manifest must derive every published before/after value",
+);
 check(
 	posts.every((post) => {
 		const source = post.source;
@@ -224,8 +860,7 @@ check(
 );
 const classStringPost = posts.find(
 	(post) =>
-		post.slug ===
-		"classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria",
+		post.slug === "classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria",
 );
 const expectedClassStringHtml =
 	'<p>Hoje em dia se torna mais comum computadores com mais de um núcleo, esse bug afeta apenas o Microsoft Visual C++ 6.0, e pode ser um problema para quem usa ele.</p>\n<p>Referencia <a href="http://support.microsoft.com/kb/813810/pt" rel="external noopener" target="_blank">Classe std::string STL provoca falhas e uma corrupção da memória em computadores com múltiplos processadores</a></p>';
@@ -269,7 +904,7 @@ check(
 );
 check(
 	historicalMigrationSource.includes(
-		"Estou mudando de domínio, o novo endereço será <a href=\"http://www.skhaz.com/\"",
+		'Estou mudando de domínio, o novo endereço será <a href="http://www.skhaz.com/"',
 	) && historicalMigrationSource.includes("Mudando de&nbsp;casa"),
 	"the preserved 2008 WordPress.com homepage must contain the migration notice",
 );
@@ -296,7 +931,8 @@ check(
 		(post) =>
 			!post.comments.some(
 				(comment) =>
-					unsafeActiveHtml.test(comment.html) || /<iframe\b/i.test(comment.html),
+					unsafeActiveHtml.test(comment.html) ||
+					/<iframe\b/i.test(comment.html),
 			),
 	),
 	"restored comment HTML must not include active or injected content",
@@ -331,15 +967,105 @@ for (const post of posts) {
 			html.includes("Fonte arquivística"),
 			`generated page does not expose provenance: ${post.slug}`,
 		);
+		const expectedPostBlocks = countCppBlocks(post.html);
+		const renderedBlocks = html.match(/class="code-sample"/g)?.length ?? 0;
+		const copyButtons = html.match(/data-copy-code/g)?.length ?? 0;
+		const highlightedCode = [
+			...html.matchAll(/<code class="hljs language-cpp">([\s\S]*?)<\/code>/gi),
+		];
+		check(
+			renderedBlocks === expectedPostBlocks &&
+				copyButtons === expectedPostBlocks &&
+				highlightedCode.length === expectedPostBlocks,
+			`generated C++ block count is inconsistent: ${post.slug}`,
+		);
+		check(
+			highlightedCode.every((match) => !match[1].includes("\t")) &&
+				!html.includes("syntax-highlight:cpp") &&
+				!html.includes('class="wp_syntax"'),
+			`generated C++ must use normalized indentation and static highlighting: ${post.slug}`,
+		);
 	}
 }
+
+const indentationFixture = readFileSync(
+	path.join(DIST, "blog", "eliminando-o-codigo-fonfarrao", "index.html"),
+	"utf8",
+)
+	.replace(/<[^>]*>/g, "")
+	.replaceAll("&lt;", "<")
+	.replaceAll("&gt;", ">")
+	.replaceAll("&amp;", "&");
+check(
+	indentationFixture.includes(
+		"class Deleter\n{\npublic:\n    void operator()(T* ptr)\n    {\n        if (ptr != NULL) {\n            delete ptr;",
+	),
+	"C++ indentation must consistently follow four-space nesting",
+);
+check(
+	indentationFixture.includes("std::mem_fun(&Keyboard::teardown)") &&
+		indentationFixture.includes("std::mem_fun(&Mouse::teardown)"),
+	"double-encoded C++ ampersands must be normalized from archived HTML",
+);
+const alphaLoaderFixture = readFileSync(
+	path.join(
+		DIST,
+		"blog",
+		"carregando-imagens-com-ou-sem-canal-alpha",
+		"index.html",
+	),
+	"utf8",
+)
+	.replace(/<[^>]*>/g, "")
+	.replaceAll("&lt;", "<")
+	.replaceAll("&gt;", ">")
+	.replaceAll("&amp;", "&");
+check(
+	alphaLoaderFixture.includes("const string& filename"),
+	"archived C++ entity layers must decode to the displayed token",
+);
+const schedulerFixture = readFileSync(
+	path.join(DIST, "blog", "agendamento-de-tarefas", "index.html"),
+	"utf8",
+)
+	.replace(/<[^>]*>/g, "")
+	.replaceAll("&lt;", "<")
+	.replaceAll("&gt;", ">")
+	.replaceAll("&amp;", "&");
+check(
+	schedulerFixture.includes("#include <boost /function.hpp>") &&
+		schedulerFixture.includes("#include </boost><boost /bind.hpp>") &&
+		schedulerFixture.includes("shared_ptr</task><task>") &&
+		schedulerFixture.includes(
+			"if (it == _task_pool.end())\n        {\n            _task_pool.push_back(_task);\n        }",
+		),
+	"unattested historical C++ corruption must remain literal rather than reconstructed",
+);
+const virtualFilesystemFixture = readFileSync(
+	path.join(DIST, "blog", "sistema-de-arquivo-virtual", "index.html"),
+	"utf8",
+)
+	.replace(/<[^>]*>/g, "")
+	.replaceAll("&lt;", "<")
+	.replaceAll("&gt;", ">")
+	.replaceAll("&quot;", '"')
+	.replaceAll("&amp;", "&");
+check(
+	virtualFilesystemFixture.includes(
+		'for (i = rc; *i != NULL; i++)\n    printf("%s\\n", *i);',
+	),
+	"generated C++ must preserve the level of the historical unbraced loop body",
+);
 
 const migrationFile = path.join(
 	DIST,
 	MIGRATION_ROUTE.replace(/^\//, "").replace(/\/$/, ""),
 	"index.html",
 );
-check(existsSync(migrationFile), "missing generated predecessor migration page");
+check(
+	existsSync(migrationFile),
+	"missing generated predecessor migration page",
+);
 if (existsSync(migrationFile)) {
 	const migrationHtml = readFileSync(migrationFile, "utf8");
 	check(
@@ -351,14 +1077,47 @@ if (existsSync(migrationFile)) {
 }
 
 const htmlFiles = [];
+const generatedFiles = [];
 const walk = (directory) => {
 	for (const name of readdirSync(directory)) {
 		const file = path.join(directory, name);
-		if (statSync(file).isDirectory()) walk(file);
-		else if (name.endsWith(".html")) htmlFiles.push(file);
+		if (statSync(file).isDirectory()) {
+			walk(file);
+		} else {
+			generatedFiles.push(file);
+			if (name.endsWith(".html")) htmlFiles.push(file);
+		}
 	}
 };
 walk(DIST);
+const currentTreeRecords = generatedFiles
+	.map((file) => ({
+		file,
+		relativePath: path.relative(DIST, file).split(path.sep).join("/"),
+	}))
+	.sort((left, right) => {
+		if (left.relativePath < right.relativePath) return -1;
+		if (left.relativePath > right.relativePath) return 1;
+		return 0;
+	})
+	.map(({ file, relativePath }) => {
+		const content = readFileSync(file);
+		const digest = createHash("sha256").update(content).digest("hex");
+		return `${relativePath}\0${content.length}\0${digest}\n`;
+	});
+const currentTreeSha256 = createHash("sha256")
+	.update(currentTreeRecords.join(""))
+	.digest("hex");
+check(
+	currentTreeSha256 === afterPerformance?.treeSha256 &&
+		generatedFiles.length === afterPerformance?.dist?.files &&
+		generatedFiles.reduce((sum, file) => sum + statSync(file).size, 0) ===
+			afterPerformance?.dist?.rawBytes &&
+		htmlFiles.length === afterPerformance?.html?.files &&
+		htmlFiles.reduce((sum, file) => sum + statSync(file).size, 0) ===
+			afterPerformance?.html?.rawBytes,
+	"the measured after-performance revision must match the current generated tree",
+);
 
 const resolveLocalReference = (reference) => {
 	const pathname = reference.split("#")[0].split("?")[0];
@@ -448,6 +1207,19 @@ check(
 );
 check(existsSync(path.join(DIST, "sitemap.xml")), "missing sitemap.xml");
 const stylesheet = readFileSync(path.join(DIST, "assets", "style.css"), "utf8");
+check(
+	stylesheet.includes(".code-sample") &&
+		stylesheet.includes(".hljs-keyword") &&
+		stylesheet.includes("tab-size: 4"),
+	"the generated stylesheet must include the C++ presentation theme",
+);
+const clientScript = readFileSync(path.join(DIST, "assets", "app.js"), "utf8");
+check(
+	clientScript.includes("[data-copy-code]") &&
+		clientScript.includes("navigator.clipboard") &&
+		clientScript.includes('document.execCommand("copy")'),
+	"the generated client script must support modern and portable-static code copying",
+);
 for (const match of stylesheet.matchAll(/url\(["']?([^"')]+)["']?\)/g)) {
 	const reference = match[1];
 	if (/^(?:data:|https?:|\/\/)/i.test(reference)) continue;
@@ -470,5 +1242,5 @@ if (problems.length > 0) {
 }
 
 process.stdout.write(
-	`Validated ${posts.length} posts, ${predecessorPosts.length} predecessor record, 72 complete comments (82 recorded), ${htmlFiles.length} HTML pages and all local references.\n`,
+	`Validated ${posts.length} posts, ${expectedCppBlockCount} highlighted C++ blocks, ${predecessorPosts.length} predecessor record, 72 complete comments (82 recorded), ${htmlFiles.length} HTML pages and all local references.\n`,
 );
