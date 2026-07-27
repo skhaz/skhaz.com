@@ -11,8 +11,8 @@ import {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
 const BASE_PATH = "/skhaz.com";
-const MIGRATION_ROUTE =
-	"/arquivo/skhaz-wordpress-com/2008/04/08/mudando-de-casa/";
+const WORDPRESS_ARCHIVE_ROUTE = "/arquivo/skhaz-wordpress-com/";
+const MIGRATION_ROUTE = `${WORDPRESS_ARCHIVE_ROUTE}2008/04/08/mudando-de-casa/`;
 const problems = [];
 const check = (condition, message) => {
 	if (!condition) problems.push(message);
@@ -67,9 +67,15 @@ try {
 
 let imageshackProfile;
 let predecessorPosts;
+let wordpressComOrigins;
+let wordpressComCdxSource;
+let wordpressComCdxSourceRaw;
+let wordpressComPage2Source;
+let wordpressComAutoversioningSource;
 let currentMigrationPost;
 let currentMigrationReplies;
 let historicalMigrationSource;
+let historicalWordPressSeptemberSource;
 let historicalFeedSource;
 let historicalSeptemberHomeSource;
 let recoveryAttempts;
@@ -78,9 +84,12 @@ let missingMediaContinuation;
 let missingMediaContinuationSource;
 let commonCrawlEarlySweep;
 let commonCrawlRemainingSweep;
+let commonCrawlFinalor9Aliases;
+let commonCrawlFinalor9AliasesSource;
 let commonCrawlCollectionsSource;
 let boostInstallerEvidence;
 let highlightingPerformance;
+let originImportPerformance;
 try {
 	imageshackProfile = JSON.parse(
 		readFileSync(
@@ -90,6 +99,19 @@ try {
 	);
 	predecessorPosts = JSON.parse(
 		readFileSync(path.join(ROOT, "content/predecessor-posts.json"), "utf8"),
+	);
+	wordpressComOrigins = JSON.parse(
+		readFileSync(path.join(ROOT, "content/wordpress-com-origins.json"), "utf8"),
+	);
+	wordpressComCdxSourceRaw = readFileSync(
+		path.join(ROOT, "archive/sources/wayback-wordpress-com-cdx-2008-2010.json"),
+	);
+	wordpressComCdxSource = JSON.parse(wordpressComCdxSourceRaw.toString("utf8"));
+	wordpressComPage2Source = readFileSync(
+		path.join(ROOT, "archive/sources/wayback-wordpress-com-page-2-2008.html"),
+	);
+	wordpressComAutoversioningSource = readFileSync(
+		path.join(ROOT, "archive/sources/wordpress-com-autoversioning-2008.jpg"),
 	);
 	currentMigrationPost = JSON.parse(
 		readFileSync(
@@ -111,6 +133,10 @@ try {
 	);
 	historicalMigrationSource = readFileSync(
 		path.join(ROOT, "archive/sources/wayback-wordpress-com-home-2008-04.html"),
+		"utf8",
+	);
+	historicalWordPressSeptemberSource = readFileSync(
+		path.join(ROOT, "archive/sources/wayback-wordpress-com-home-2008-09.html"),
 		"utf8",
 	);
 	historicalFeedSource = readFileSync(
@@ -162,6 +188,15 @@ try {
 			"utf8",
 		),
 	);
+	commonCrawlFinalor9AliasesSource = readFileSync(
+		path.join(
+			ROOT,
+			"archive/sources/commoncrawl-finalor9-aliases-2026-07-27.json",
+		),
+	);
+	commonCrawlFinalor9Aliases = JSON.parse(
+		commonCrawlFinalor9AliasesSource.toString("utf8"),
+	);
 	commonCrawlCollectionsSource = readFileSync(
 		path.join(ROOT, "archive/sources/commoncrawl-collections-2026-07-27.html"),
 	);
@@ -183,6 +218,15 @@ try {
 			"utf8",
 		),
 	);
+	originImportPerformance = JSON.parse(
+		readFileSync(
+			path.join(
+				ROOT,
+				"archive/sources/wordpress-origin-import-performance-2026-07-27.json",
+			),
+			"utf8",
+		),
+	);
 } catch (error) {
 	console.error(
 		`Unable to parse a preserved source snapshot: ${error instanceof Error ? error.message : String(error)}`,
@@ -199,6 +243,31 @@ check(
 	"the synthesized continuation evidence must remain byte-for-byte unchanged",
 );
 check(
+	wordpressComCdxSourceRaw.length === 1977 &&
+		createHash("sha256").update(wordpressComCdxSourceRaw).digest("hex") ===
+			"b89415aa729595d5fbb95402de87c7abffd557b4f89a07ab17efeebccfb5e61e" &&
+		wordpressComPage2Source.length === 14695 &&
+		createHash("sha256").update(wordpressComPage2Source).digest("hex") ===
+			"82eb2b756bfe71f5a71194387176d7cfeb8fd7f1a1ecf563033f12b1c50e13b0" &&
+		wordpressComAutoversioningSource.length === 148946 &&
+		wordpressComAutoversioningSource[0] === 0xff &&
+		wordpressComAutoversioningSource[1] === 0xd8 &&
+		wordpressComAutoversioningSource[2] === 0xff &&
+		createHash("sha256")
+			.update(wordpressComAutoversioningSource)
+			.digest("hex") ===
+			"3456dab46d00d593fe4f3a5dc14941c18fd0e3986ce4a2a293e621d9ae50e805",
+	"the WordPress.com CDX, page-two and supplemental media sources must remain byte-for-byte unchanged",
+);
+check(
+	commonCrawlFinalor9AliasesSource.length === 1627755 &&
+		createHash("sha256")
+			.update(commonCrawlFinalor9AliasesSource)
+			.digest("hex") ===
+			"f716401af606571accfab00eb50ef55ae83b292a6658455d042e415e3a05cba7",
+	"the finalor9 Common Crawl alias evidence must remain byte-for-byte unchanged",
+);
+check(
 	historicalSeptemberHomeSource.length === 11172 &&
 		createHash("sha256").update(historicalSeptemberHomeSource).digest("hex") ===
 			"31165f3957508e4fa958de7ca86646d3e5acaca8e7664fc996f6e5a5eede623e",
@@ -210,6 +279,98 @@ check(
 	new Set(posts.map((post) => post.slug)).size === posts.length,
 	"post slugs must be unique",
 );
+const postSlugs = new Set(posts.map((post) => post.slug));
+const wordpressOriginSlugs = wordpressComOrigins.map((origin) => origin.slug);
+const wordpressOriginsBySlug = new Map(
+	wordpressComOrigins.map((origin) => [origin.slug, origin]),
+);
+const expectedWordPressPostIds = [
+	13, 14, 15, 16, 20, 21, 23, 27, 28, 33, 34, 36, 47, 50, 56,
+];
+check(
+	Array.isArray(wordpressComOrigins) &&
+		wordpressComOrigins.length === 15 &&
+		new Set(wordpressOriginSlugs).size === wordpressComOrigins.length &&
+		wordpressOriginSlugs.every((slug) => postSlugs.has(slug)) &&
+		hasExactValues(
+			wordpressComOrigins.map((origin) => origin.wordpressPostId),
+			expectedWordPressPostIds,
+		),
+	"expected 15 unique WordPress.com origins mapped to existing posts",
+);
+check(
+	new Set([
+		...posts.map((post) => post.slug),
+		...predecessorPosts.map((post) => post.slug),
+	]).size ===
+		posts.length + predecessorPosts.length,
+	"predecessor-only records must not duplicate canonical posts",
+);
+check(
+	wordpressComCdxSource?.[0]?.[0] === "timestamp" &&
+		wordpressComCdxSource
+			.slice(1)
+			.some(
+				(record) =>
+					record[0] === "20080209030031" &&
+					record[1] === "http://skhaz.wordpress.com:80/",
+			) &&
+		wordpressComCdxSource
+			.slice(1)
+			.some(
+				(record) =>
+					record[0] === "20080409155551" &&
+					record[1] === "http://skhaz.wordpress.com:80/",
+			) &&
+		wordpressComCdxSource
+			.slice(1)
+			.some(
+				(record) =>
+					record[0] === "20080920111949" &&
+					record[1] === "http://skhaz.wordpress.com:80/" &&
+					record[2] === "200" &&
+					record[4] === "ZQYE2ME6JFDLHSD6VCPEHH3ALOTZRBEF" &&
+					record[5] === "12162",
+			),
+	"the WordPress.com CDX snapshot must retain the 2008 source captures",
+);
+for (const origin of wordpressComOrigins) {
+	const record = origin.source?.record;
+	const artifactPath = record?.localArtifact
+		? path.join(ROOT, record.localArtifact)
+		: null;
+	const artifact =
+		artifactPath && existsSync(artifactPath)
+			? readFileSync(artifactPath)
+			: null;
+	check(
+		origin.source?.archive === "Wayback Machine" &&
+			origin.originalUrl.startsWith("http://skhaz.wordpress.com/2008/") &&
+			origin.source.captureUrl.includes(origin.source.capturedAt) &&
+			isSha256(record?.artifactSha256) &&
+			artifact?.length === record?.artifactBytes &&
+			createHash("sha256")
+				.update(artifact ?? "")
+				.digest("hex") === record?.artifactSha256 &&
+			artifact?.includes(Buffer.from(`id="post-${origin.wordpressPostId}"`)),
+		`inconsistent WordPress.com origin evidence for ${origin.slug}`,
+	);
+}
+const onePost = posts.find((post) => post.slug === "one");
+const oneWordPressOrigin = wordpressOriginsBySlug.get("one");
+check(
+	onePost?.comments.length === 1 &&
+		onePost?.knownCommentCount === 2 &&
+		oneWordPressOrigin?.source?.capturedAt === "20080920111949" &&
+		oneWordPressOrigin?.source?.record?.localArtifact ===
+			"archive/sources/wayback-wordpress-com-home-2008-09.html" &&
+		historicalWordPressSeptemberSource.includes('id="post-23"') &&
+		historicalWordPressSeptemberSource.includes(
+			'href="http://skhaz.wordpress.com/2008/02/12/one/#comments"',
+		) &&
+		historicalWordPressSeptemberSource.includes(">2 Comentários &#187;</a>"),
+	"ONE must preserve the later two-comment count without inventing the missing body",
+);
 check(
 	posts.reduce((sum, post) => sum + post.comments.length, 0) === 72,
 	"expected 72 fully restored comments",
@@ -218,8 +379,8 @@ check(
 	posts.reduce(
 		(sum, post) => sum + (post.knownCommentCount ?? post.comments.length),
 		0,
-	) === 82,
-	"expected 82 comments recorded across historical captures",
+	) === 83,
+	"expected 83 comments recorded across historical captures",
 );
 check(
 	posts.reduce((sum, post) => sum + post.missingMedia.length, 0) === 11,
@@ -228,6 +389,20 @@ check(
 check(
 	posts.reduce((sum, post) => sum + post.missingDownloads.length, 0) === 3,
 	"expected 3 explicitly documented missing downloads",
+);
+const arretPost = posts.find((post) => post.slug === "lancado-arret-3d");
+const arretOriginal = readFileSync(
+	path.join(ROOT, "public/assets/media/lancado-arret-3d/arret.png"),
+);
+check(
+	arretPost?.html.includes('href="/assets/media/lancado-arret-3d/arret.png"') &&
+		arretPost.html.includes(
+			'src="/assets/media/lancado-arret-3d/arret.thumbnail.png"',
+		) &&
+		arretOriginal.length === 179416 &&
+		createHash("sha256").update(arretOriginal).digest("hex") ===
+			"30f0c36588011e8aff5065e6034f50e4d9f162d1be76e0f11b8b437e2aa5d397",
+	"the Arret post must link its recovered 646x511 WordPress.com original",
 );
 const countCppBlocks = (html) =>
 	[...html.matchAll(/<pre\b([^>]*)>[\s\S]*?<\/pre>/gi)].filter((match) =>
@@ -521,8 +696,8 @@ check(
 		hasExactValues(
 			archiveTeamStatusHistory.map((revision) => revision.revid),
 			[
-				58963, 28795, 28258, 28026, 27945, 27708, 27686, 27155, 26976,
-				24534, 24533, 23739, 20548, 17234, 7576, 2296, 2151,
+				58963, 28795, 28258, 28026, 27945, 27708, 27686, 27155, 26976, 24534,
+				24533, 23739, 20548, 17234, 7576, 2296, 2151,
 			],
 		) &&
 		archiveTeamStatusHistory.every(
@@ -593,10 +768,8 @@ check(
 				expected &&
 				archive.publishedByInternetArchive?.bytes === expected[0] &&
 				archive.publishedByInternetArchive?.sha1 === expected[1] &&
-				archive.download?.bytes ===
-					archive.publishedByInternetArchive.bytes &&
-				archive.download?.sha1 ===
-					archive.publishedByInternetArchive.sha1 &&
+				archive.download?.bytes === archive.publishedByInternetArchive.bytes &&
+				archive.download?.sha1 === archive.publishedByInternetArchive.sha1 &&
 				archive.download?.sha256 === expected[2] &&
 				archive.extractedFiles === expected[3] &&
 				archive.extractedBytes === expected[4] &&
@@ -651,10 +824,7 @@ const expectedMementoLocalTargets = [
 const expectedMementoTargets = new Map(
 	expectedMementoLocalTargets
 		.flatMap(([label, targetPath]) => [
-			[
-				label,
-				`http://www.skhaz.com/blog/wp-content/uploads/${targetPath}`,
-			],
+			[label, `http://www.skhaz.com/blog/wp-content/uploads/${targetPath}`],
 			[
 				`${label}-no-www`,
 				`http://skhaz.com/blog/wp-content/uploads/${targetPath}`,
@@ -665,22 +835,13 @@ const expectedMementoTargets = new Map(
 				"msvczm8-imageshack",
 				"http://img91.imageshack.us/img91/9260/msvczm8.png",
 			],
-			[
-				"msvc9mb0",
-				"http://img406.imageshack.us/img406/7664/msvc9mb0.png",
-			],
+			["msvc9mb0", "http://img406.imageshack.us/img406/7664/msvc9mb0.png"],
 			[
 				"2242002764ab16f49f4dofs2",
 				"http://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.png",
 			],
-			[
-				"finalor9",
-				"http://img261.imageshack.us/img261/2865/finalor9.png",
-			],
-			[
-				"mapakm5",
-				"http://img240.imageshack.us/img240/2306/mapakm5.png",
-			],
+			["finalor9", "http://img261.imageshack.us/img261/2865/finalor9.png"],
+			["mapakm5", "http://img240.imageshack.us/img240/2306/mapakm5.png"],
 			[
 				"mapatermicoyb6xb3",
 				"http://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.png",
@@ -724,9 +885,8 @@ check(
 						.digest("hex"),
 		) &&
 		mementoArchiveErrors.every((error) => error.archive !== null) &&
-		mementoArchiveErrors.filter(
-			(error) => error.archive === "waext.banq.qc.ca",
-		).length === 22 &&
+		mementoArchiveErrors.filter((error) => error.archive === "waext.banq.qc.ca")
+			.length === 22 &&
 		hasExactValues(
 			mementoArchiveErrors
 				.filter((error) => error.archive === "web.archive.org")
@@ -736,10 +896,7 @@ check(
 		mementoArchiveErrors.length === 24 &&
 		mementoEvidence?.summary?.targets === mementoResults.length &&
 		mementoEvidence?.summary?.mementos ===
-			mementoResults.reduce(
-				(sum, result) => sum + result.mementos.length,
-				0,
-			) &&
+			mementoResults.reduce((sum, result) => sum + result.mementos.length, 0) &&
 		mementoEvidence?.summary?.timeouts === 0 &&
 		mementoEvidence?.summary?.queriesWithArchiveErrors ===
 			mementoResults.filter((result) => result.stderrLines.length > 0).length,
@@ -866,19 +1023,16 @@ const derivedContinuationRecoveredFiles = continuationIdAttempts.filter(
 ).length;
 const derivedContinuationPayloadCandidates =
 	derivedContinuationRecoveredFiles +
-	fourArchiveFiles.reduce(
-		(sum, archive) => sum + archive.search.matches,
-		0,
-	) +
+	fourArchiveFiles.reduce((sum, archive) => sum + archive.search.matches, 0) +
 	continuationSourceForgeTrees.reduce(
 		(sum, tree) =>
 			sum +
-			tree.paths.filter((file) => missingTargetFilenamePattern.test(file)).length,
+			tree.paths.filter((file) => missingTargetFilenamePattern.test(file))
+				.length,
 		0,
 	);
 check(
-	continuationSummary?.recoveredFiles ===
-		derivedContinuationRecoveredFiles &&
+	continuationSummary?.recoveredFiles === derivedContinuationRecoveredFiles &&
 		continuationSummary?.payloadCandidates ===
 			derivedContinuationPayloadCandidates &&
 		continuationSummary?.mementoTargets === mementoResults.length &&
@@ -1132,6 +1286,136 @@ check(
 		(commonCrawlRemainingSweep?.errors ?? []).length === 0,
 	"the raw Common Crawl entries must derive exact 125-index Cartesian coverage without target locators",
 );
+const expectedFinalor9Aliases = new Map([
+	["img261-viewer-myphp", "us,imageshack,img261)/my.php?image=finalor9.png"],
+	["img261-viewer-i", "us,imageshack,img261)/i/finalor9.png"],
+	["imageshack-photo", "us,imageshack)/photo/my-images/261/finalor9.png"],
+	[
+		"imageshack-www-photo",
+		"us,imageshack,www)/photo/my-images/261/finalor9.png",
+	],
+	["imageshack-f", "us,imageshack)/f/261/finalor9.png"],
+	["imageshack-www-f", "us,imageshack,www)/f/261/finalor9.png"],
+	["imageshack-id", "us,imageshack)/i/79finalor9p"],
+	["imageshack-www-id", "us,imageshack,www)/i/79finalor9p"],
+	["imageshack-com-id", "com,imageshack)/i/79finalor9p"],
+	["imageshack-com-www-id", "com,imageshack,www)/i/79finalor9p"],
+	["imageshack-a-path", "us,imageshack)/a/img261/2865/finalor9"],
+	["imageshack-www-a-path", "us,imageshack,www)/a/img261/2865/finalor9"],
+	["imageshack-com-a-path", "com,imageshack)/a/img261/2865/finalor9"],
+	["imageshack-com-www-a-path", "com,imageshack,www)/a/img261/2865/finalor9"],
+	[
+		"imagizer-current-thumb",
+		"us,imageshack,imagizer)/v2/240x169q70/261/finalor9.png",
+	],
+	[
+		"imagizer-original-size-q70",
+		"us,imageshack,imagizer)/v2/1145x808q70/261/finalor9.png",
+	],
+	[
+		"imagizer-original-size-q90",
+		"us,imageshack,imagizer)/v2/1145x808q90/261/finalor9.png",
+	],
+	["imagizer-xq90", "us,imageshack,imagizer)/v2/xq90/261/finalor9.png"],
+	["yfrog-id", "com,yfrog)/79finalor9p"],
+	["yfrog-www-id", "com,yfrog,www)/79finalor9p"],
+]);
+const finalor9AliasTargets = commonCrawlFinalor9Aliases?.targets ?? [];
+const finalor9AliasCollections = commonCrawlFinalor9Aliases?.collections ?? [];
+const finalor9AliasCollectionIds = finalor9AliasCollections.map(
+	(collection) => collection.id,
+);
+const crawlCollectionsById = new Map(
+	[
+		...(commonCrawlEarlySweep?.collections ?? []),
+		...(commonCrawlRemainingSweep?.collections ?? []),
+	].map((collection) => [collection.id, collection]),
+);
+let finalor9AliasStructureIsValid =
+	commonCrawlFinalor9Aliases?.schemaVersion === 1 &&
+	hasExactValues(
+		finalor9AliasTargets.map((target) => target.name),
+		[...expectedFinalor9Aliases.keys()],
+	) &&
+	finalor9AliasTargets.every(
+		(target) => expectedFinalor9Aliases.get(target.name) === target.surtPrefix,
+	) &&
+	hasExactValues(finalor9AliasCollectionIds, advertisedCollectionIds);
+let finalor9AliasCompressedBytes = 0;
+let finalor9AliasUncompressedBytes = 0;
+let finalor9AliasBlockCount = 0;
+for (const collection of finalor9AliasCollections) {
+	const inventoryCollection = crawlCollectionsById.get(collection.id);
+	const blocks = collection.blocks ?? [];
+	const blocksById = new Map(blocks.map((block) => [block.block, block]));
+	finalor9AliasStructureIsValid &&=
+		collection.clusterIndexUrl === inventoryCollection?.clusterIndexUrl &&
+		collection.clusterIndexLength === inventoryCollection?.clusterIndexLength &&
+		isSha256(inventoryCollection?.clusterIndexSha256) &&
+		blocksById.size === blocks.length &&
+		hasExactValues(
+			(collection.targets ?? []).map((target) => target.name),
+			[...expectedFinalor9Aliases.keys()],
+		) &&
+		(collection.hits ?? []).length === 0;
+	for (const target of collection.targets ?? []) {
+		const expectedPrefix = expectedFinalor9Aliases.get(target.name);
+		const [lowerId, upperId] = target.boundingBlockIds ?? [];
+		const lower = blocksById.get(lowerId);
+		const upper = blocksById.get(upperId);
+		finalor9AliasStructureIsValid &&=
+			target.surtPrefix === expectedPrefix &&
+			Number.isInteger(target.binarySearchSteps) &&
+			target.binarySearchSteps > 0 &&
+			upperId === lowerId + 1 &&
+			lower?.clusterKey < expectedPrefix &&
+			expectedPrefix <= upper?.clusterKey;
+	}
+	for (const block of blocks) {
+		const end = block.offset + block.length - 1;
+		finalor9AliasStructureIsValid &&=
+			block.cdxFile.startsWith("cdx-") &&
+			block.cdxFile.endsWith(".gz") &&
+			block.offset >= 0 &&
+			block.length > 0 &&
+			block.rangeHeader === `bytes=${block.offset}-${end}` &&
+			block.uncompressedLength > block.length &&
+			isSha256(block.compressedSha256) &&
+			isSha256(block.uncompressedSha256);
+		finalor9AliasCompressedBytes += block.length;
+		finalor9AliasUncompressedBytes += block.uncompressedLength;
+	}
+	finalor9AliasBlockCount += blocks.length;
+}
+const finalor9AliasSummary = commonCrawlFinalor9Aliases?.summary;
+check(
+	finalor9AliasStructureIsValid &&
+		commonCrawlFinalor9Aliases?.object?.imageShackId === "79finalor9p" &&
+		commonCrawlFinalor9Aliases?.object?.filename === "finalor9.png" &&
+		commonCrawlFinalor9Aliases?.object?.server === 261 &&
+		commonCrawlFinalor9Aliases?.object?.bucket === 2865 &&
+		commonCrawlFinalor9Aliases?.object?.width === 1145 &&
+		commonCrawlFinalor9Aliases?.object?.height === 808 &&
+		finalor9AliasSummary?.advertisedCollections === 125 &&
+		finalor9AliasSummary?.collectionsQueried ===
+			finalor9AliasCollections.length &&
+		finalor9AliasSummary?.aliasesPerCollection ===
+			expectedFinalor9Aliases.size &&
+		finalor9AliasSummary?.queries ===
+			finalor9AliasCollections.length * expectedFinalor9Aliases.size &&
+		finalor9AliasSummary?.uniqueCdxBlocks === finalor9AliasBlockCount &&
+		finalor9AliasSummary?.compressedCdxBytes === finalor9AliasCompressedBytes &&
+		finalor9AliasSummary?.uncompressedCdxBytes ===
+			finalor9AliasUncompressedBytes &&
+		finalor9AliasSummary?.matchingCdxLines === 0 &&
+		finalor9AliasSummary?.errors === 0 &&
+		finalor9AliasSummary?.recoveredPayloads === 0 &&
+		finalor9AliasBlockCount === 1863 &&
+		finalor9AliasCompressedBytes === 309375277 &&
+		finalor9AliasUncompressedBytes === 2359818481 &&
+		(commonCrawlFinalor9Aliases?.errors ?? []).length === 0,
+	"the finalor9 alias continuation must retain an internally consistent, inventory-bound zero-match attestation",
+);
 const installerDigestBase32 =
 	boostInstallerEvidence?.waybackCapture?.cdxDigestBase32Sha1 ?? "";
 const installerDigestHex = decodeBase32Hex(installerDigestBase32);
@@ -1236,6 +1520,55 @@ check(
 		performanceDelta.styleGzipBytes === 536 &&
 		performanceDelta.appGzipBytes === 584,
 	"the highlighting performance manifest must derive every published before/after value",
+);
+const originImportBefore = originImportPerformance?.revisions?.before;
+const originImportAfter = originImportPerformance?.revisions?.after;
+const originImportDelta = originImportPerformance?.delta;
+check(
+	originImportPerformance?.schemaVersion === 1 &&
+		originImportPerformance?.environment?.runs === 31 &&
+		originImportBefore?.git === "669a5dc79f9522912741f5aab980c6cccfa6774d" &&
+		originImportBefore?.buildMilliseconds?.length === 31 &&
+		originImportAfter?.buildMilliseconds?.length === 31 &&
+		measuredMedian(originImportBefore.buildMilliseconds) ===
+			originImportBefore.buildMedianMilliseconds &&
+		measuredMedian(originImportAfter.buildMilliseconds) ===
+			originImportAfter.buildMedianMilliseconds &&
+		measuredMean(originImportBefore.buildMilliseconds) ===
+			originImportBefore.buildMeanMilliseconds &&
+		measuredMean(originImportAfter.buildMilliseconds) ===
+			originImportAfter.buildMeanMilliseconds &&
+		originImportDelta?.buildMedianMilliseconds ===
+			roundTo(
+				originImportAfter.buildMedianMilliseconds -
+					originImportBefore.buildMedianMilliseconds,
+				3,
+			) &&
+		originImportDelta?.buildMedianPercent ===
+			roundTo(
+				(originImportAfter.buildMedianMilliseconds /
+					originImportBefore.buildMedianMilliseconds -
+					1) *
+					100,
+				2,
+			) &&
+		originImportAfter.buildMedianMilliseconds <=
+			originImportBefore.buildMedianMilliseconds &&
+		originImportAfter.buildMeanMilliseconds <=
+			originImportBefore.buildMeanMilliseconds &&
+		originImportDelta?.distRawBytes ===
+			originImportAfter.dist.rawBytes - originImportBefore.dist.rawBytes &&
+		originImportDelta?.distGzipBytes ===
+			originImportAfter.dist.gzipBytes - originImportBefore.dist.gzipBytes &&
+		originImportDelta?.htmlRawBytes ===
+			originImportAfter.html.rawBytes - originImportBefore.html.rawBytes &&
+		originImportDelta?.htmlGzipBytes ===
+			originImportAfter.html.gzipBytes - originImportBefore.html.gzipBytes &&
+		originImportAfter.dist.files === originImportBefore.dist.files + 2 &&
+		originImportAfter.html.files === originImportBefore.html.files + 1 &&
+		originImportDelta.buildMedianMilliseconds === -5.588 &&
+		originImportDelta.buildMedianPercent === -4.4,
+	"the WordPress.com import performance manifest must prove no build regression",
 );
 check(
 	posts.every((post) => {
@@ -1374,6 +1707,14 @@ for (const post of posts) {
 			html.includes("Fonte arquivística"),
 			`generated page does not expose provenance: ${post.slug}`,
 		);
+		const wordpressOrigin = wordpressOriginsBySlug.get(post.slug);
+		check(
+			wordpressOrigin
+				? html.includes("sem publicar um post duplicado") &&
+						html.includes(wordpressOrigin.source.captureUrl)
+				: !html.includes("sem publicar um post duplicado"),
+			`generated WordPress.com provenance is inconsistent: ${post.slug}`,
+		);
 		const expectedPostBlocks = countCppBlocks(post.html);
 		const renderedBlocks = html.match(/class="code-sample"/g)?.length ?? 0;
 		const copyButtons = html.match(/data-copy-code/g)?.length ?? 0;
@@ -1464,6 +1805,27 @@ check(
 	"generated C++ must preserve the level of the historical unbraced loop body",
 );
 
+const wordpressArchiveFile = path.join(
+	DIST,
+	WORDPRESS_ARCHIVE_ROUTE.replace(/^\//, "").replace(/\/$/, ""),
+	"index.html",
+);
+check(
+	existsSync(wordpressArchiveFile),
+	"missing generated WordPress.com archive index",
+);
+if (existsSync(wordpressArchiveFile)) {
+	const wordpressArchiveHtml = readFileSync(wordpressArchiveFile, "utf8");
+	check(
+		wordpressArchiveHtml.includes("15 posts") &&
+			wordpressArchiveHtml.includes("nenhum texto foi publicado duas vezes") &&
+			wordpressComOrigins.every((origin) =>
+				wordpressArchiveHtml.includes(`/blog/${origin.slug}/`),
+			),
+		"the WordPress.com archive index must link 15 deduplicated canonical posts",
+	);
+}
+
 const migrationFile = path.join(
 	DIST,
 	MIGRATION_ROUTE.replace(/^\//, "").replace(/\/$/, ""),
@@ -1516,14 +1878,14 @@ const currentTreeSha256 = createHash("sha256")
 	.update(currentTreeRecords.join(""))
 	.digest("hex");
 check(
-	currentTreeSha256 === afterPerformance?.treeSha256 &&
-		generatedFiles.length === afterPerformance?.dist?.files &&
+	currentTreeSha256 === originImportAfter?.treeSha256 &&
+		generatedFiles.length === originImportAfter?.dist?.files &&
 		generatedFiles.reduce((sum, file) => sum + statSync(file).size, 0) ===
-			afterPerformance?.dist?.rawBytes &&
-		htmlFiles.length === afterPerformance?.html?.files &&
+			originImportAfter?.dist?.rawBytes &&
+		htmlFiles.length === originImportAfter?.html?.files &&
 		htmlFiles.reduce((sum, file) => sum + statSync(file).size, 0) ===
-			afterPerformance?.html?.rawBytes,
-	"the measured after-performance revision must match the current generated tree",
+			originImportAfter?.html?.rawBytes,
+	"the WordPress.com after-performance revision must match the current generated tree",
 );
 
 const resolveLocalReference = (reference) => {
@@ -1613,6 +1975,28 @@ check(
 	"RSS endpoint must contain XML",
 );
 check(existsSync(path.join(DIST, "sitemap.xml")), "missing sitemap.xml");
+const memeTagHtml = readFileSync(
+	path.join(DIST, "blog", "tag", "meme", "index.html"),
+	"utf8",
+);
+check(
+	[
+		"meme-aleatoriedades",
+		"meme-como-e-seu-desktop",
+		"qual-a-cara-da-sua-ide",
+	].every((slug) => memeTagHtml.includes(`/blog/${slug}/`)) &&
+		memeTagHtml.includes("3 posts com esta tag"),
+	"case-colliding historical tags must share one complete generated route",
+);
+const sitemapXml = readFileSync(path.join(DIST, "sitemap.xml"), "utf8");
+const sitemapLocations = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+	(match) => match[1],
+);
+check(
+	sitemapLocations.length > 0 &&
+		new Set(sitemapLocations).size === sitemapLocations.length,
+	"sitemap.xml must contain unique route locations",
+);
 const stylesheet = readFileSync(path.join(DIST, "assets", "style.css"), "utf8");
 check(
 	stylesheet.includes(".code-sample") &&
@@ -1649,5 +2033,5 @@ if (problems.length > 0) {
 }
 
 process.stdout.write(
-	`Validated ${posts.length} posts, ${expectedCppBlockCount} highlighted C++ blocks, ${predecessorPosts.length} predecessor record, 72 complete comments (82 recorded), ${htmlFiles.length} HTML pages and all local references.\n`,
+	`Validated ${posts.length} posts, ${wordpressComOrigins.length} deduplicated WordPress.com origins, ${expectedCppBlockCount} highlighted C++ blocks, ${predecessorPosts.length} predecessor-only record, 72 complete comments (83 recorded), ${htmlFiles.length} HTML pages and all local references.\n`,
 );

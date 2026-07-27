@@ -859,7 +859,7 @@
       "Projetos"
     ],
     "tags": [],
-    "html": "<div><a href=\"/assets/media/lancado-arret-3d/arret.thumbnail.png\" title=\"Arret\"><img alt=\"Click para ampliar\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/lancado-arret-3d/arret.thumbnail.png\"/></a></div>\n<p>Esse ai sou eu, o alex fugindo da foto para o meio da neblina :D</p>\n<p align=\"left\">O Arret 0.0.1a  escrito totalmente em C++ usando Irrlicht para o cliente e o   sistema de  colisão foi implementado no servidor usando a   biblioteca fisica Newton e partes da <a href=\"http://skhaz.wordpress.com/2008/02/12/one/\" rel=\"external noopener\" target=\"_blank\">ONE</a>, o projeto não é novo, tem uns 3 anos, já foi até  2D usando SDL, mais informações em <a href=\"http://projetoarret.com.br/\" rel=\"external noopener\" target=\"_blank\">http://projetoarret.com.br/</a>.</p>\n<p>Apesar de eu não fazer parte da equipe (não por nenhum tipo de desavença, mais sim porque prefiro usar <a href=\"http://ogre3d.org/\" rel=\"external noopener\" target=\"_blank\">Ogre</a>), sempre torci e ajudei o projeto, estamos esperando novas atualizações :D</p>",
+    "html": "<div><a href=\"/assets/media/lancado-arret-3d/arret.png\" title=\"Arret\"><img alt=\"Click para ampliar\" decoding=\"async\" loading=\"lazy\" src=\"/assets/media/lancado-arret-3d/arret.thumbnail.png\"/></a></div>\n<p>Esse ai sou eu, o alex fugindo da foto para o meio da neblina :D</p>\n<p align=\"left\">O Arret 0.0.1a  escrito totalmente em C++ usando Irrlicht para o cliente e o   sistema de  colisão foi implementado no servidor usando a   biblioteca fisica Newton e partes da <a href=\"http://skhaz.wordpress.com/2008/02/12/one/\" rel=\"external noopener\" target=\"_blank\">ONE</a>, o projeto não é novo, tem uns 3 anos, já foi até  2D usando SDL, mais informações em <a href=\"http://projetoarret.com.br/\" rel=\"external noopener\" target=\"_blank\">http://projetoarret.com.br/</a>.</p>\n<p>Apesar de eu não fazer parte da equipe (não por nenhum tipo de desavença, mais sim porque prefiro usar <a href=\"http://ogre3d.org/\" rel=\"external noopener\" target=\"_blank\">Ogre</a>), sempre torci e ajudei o projeto, estamos esperando novas atualizações :D</p>",
     "comments": [
       {
         "id": "comment-146",
@@ -1213,6 +1213,7 @@
         "html": "<p>[…] de  colisão foi implementado no servidor usando a   biblioteca fisica Newton e partes da ONE, o projeto não é novo, tem uns 3 anos, já foi até  2D usando SDL, mais informações em […]</p>"
       }
     ],
+    "knownCommentCount": 2,
     "source": {
       "archive": "Wayback Machine",
       "capturedAt": "20080528111145",

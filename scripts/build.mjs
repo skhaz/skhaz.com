@@ -38,14 +38,33 @@ const predecessorPosts = await loadContentCollection(
 	"predecessor-posts.json",
 	"the predecessor-site records",
 );
+const wordpressComOrigins = await loadContentCollection(
+	"wordpress-com-origins.json",
+	"the WordPress.com origin mappings",
+);
+const sourcePostsBySlug = new Map(sourcePosts.map((post) => [post.slug, post]));
+const wordpressOriginSlugs = new Set(
+	wordpressComOrigins.map((origin) => origin.slug),
+);
+if (
+	wordpressOriginSlugs.size !== wordpressComOrigins.length ||
+	wordpressComOrigins.some((origin) => !sourcePostsBySlug.has(origin.slug))
+) {
+	throw new Error(
+		"WordPress.com origins must map one-to-one to existing restored posts",
+	);
+}
+const wordpressOriginsBySlug = new Map(
+	wordpressComOrigins.map((origin) => [origin.slug, origin]),
+);
 const migrationPost = predecessorPosts.find(
 	(post) => post.id === "wordpress-com-59",
 );
 if (!migrationPost) {
 	throw new Error("Missing the verified WordPress.com migration record");
 }
-const migrationRoute =
-	"/arquivo/skhaz-wordpress-com/2008/04/08/mudando-de-casa/";
+const wordpressArchiveRoute = "/arquivo/skhaz-wordpress-com/";
+const migrationRoute = `${wordpressArchiveRoute}2008/04/08/mudando-de-casa/`;
 await rm(DIST, { recursive: true, force: true });
 await mkdir(DIST, { recursive: true });
 await cp(path.join(ROOT, "public"), DIST, { recursive: true });
@@ -70,7 +89,9 @@ const stripTags = (value = "") =>
 const posts = sourcePosts.map((post) => ({
 	...post,
 	presentationHtml: enhanceCodeBlocks(post.html, post.slug),
+	wordpressComOrigin: wordpressOriginsBySlug.get(post.slug) ?? null,
 }));
+const postsBySlug = new Map(posts.map((post) => [post.slug, post]));
 
 const slugify = (value) => {
 	if (value.toLowerCase() === "c++") return "cpp";
@@ -192,7 +213,7 @@ const restorationGapsNote = (post) => {
 	return `<aside class="media-note" aria-label="Nota de restauração"><strong>Nota de restauração:</strong> ${escapeHtml(notes.join("; "))}.</aside>`;
 };
 
-const sidebar = () => `
+const sidebar = `
   <aside class="sidebar" aria-label="Navegação do arquivo">
     <section class="widget archive-note">
       <h2>Arquivo restaurado</h2>
@@ -276,7 +297,7 @@ const layout = ({
       </nav>
       <div class="content-grid">
         <main id="main" class="main-content">${content}</main>
-        ${sidebar()}
+        ${sidebar}
       </div>
       <footer class="site-footer">
         <p>skhaz's blog · conteúdo histórico de Rodrigo “Skhaz” Delduca</p>
@@ -426,6 +447,7 @@ for (const [index, post] of posts.entries()) {
         <p>Conteúdo recuperado via <strong>${sourceLabel}</strong>${source.capturedAt ? `, captura ${escapeHtml(source.capturedAt)}` : ""}.</p>
         ${post.dateNote ? `<p>${escapeHtml(post.dateNote)}</p>` : ""}
         ${source.captureUrl ? `<a href="${escapeHtml(source.captureUrl)}" rel="external nofollow noopener">Abrir registro original ↗</a>` : ""}
+        ${post.wordpressComOrigin ? `<p>Este mesmo post já existia no antecessor <code>skhaz.wordpress.com</code>. A cópia foi unida a este registro canônico, sem publicar um post duplicado.</p><a href="${escapeHtml(post.wordpressComOrigin.source.captureUrl)}" rel="external nofollow noopener">Abrir captura da fase WordPress.com ↗</a>` : ""}
       </details>
     </article>
     <nav class="post-navigation" aria-label="Posts adjacentes">
@@ -467,24 +489,45 @@ const listingPage = async ({
 	);
 };
 
-for (const [category, count] of categories) {
-	await listingPage({
-		route: `/blog/category/${slugify(category)}/`,
-		eyebrow: "Categoria",
-		title: category,
-		description: `${count} post${count === 1 ? "" : "s"} nesta categoria.`,
-		selectedPosts: posts.filter((post) => post.categories.includes(category)),
-	});
-}
-for (const [tag, count] of tags) {
-	await listingPage({
-		route: `/blog/tag/${slugify(tag)}/`,
-		eyebrow: "Tag",
+await Promise.all(
+	categories.map(([category, count]) =>
+		listingPage({
+			route: `/blog/category/${slugify(category)}/`,
+			eyebrow: "Categoria",
+			title: category,
+			description: `${count} post${count === 1 ? "" : "s"} nesta categoria.`,
+			selectedPosts: posts.filter((post) => post.categories.includes(category)),
+		}),
+	),
+);
+const tagListingsByRoute = new Map();
+for (const [tag] of tags) {
+	const routeSlug = slugify(tag);
+	const listing = tagListingsByRoute.get(routeSlug) ?? {
+		routeSlug,
 		title: tag,
-		description: `${count} post${count === 1 ? "" : "s"} com esta tag.`,
-		selectedPosts: posts.filter((post) => post.tags.includes(tag)),
-	});
+		tagNames: new Set(),
+	};
+	listing.tagNames.add(tag);
+	tagListingsByRoute.set(routeSlug, listing);
 }
+const tagListings = [...tagListingsByRoute.values()].map((listing) => ({
+	...listing,
+	selectedPosts: posts.filter((post) =>
+		post.tags.some((tag) => listing.tagNames.has(tag)),
+	),
+}));
+await Promise.all(
+	tagListings.map(({ routeSlug, title, selectedPosts }) =>
+		listingPage({
+			route: `/blog/tag/${routeSlug}/`,
+			eyebrow: "Tag",
+			title,
+			description: `${selectedPosts.length} post${selectedPosts.length === 1 ? "" : "s"} com esta tag.`,
+			selectedPosts,
+		}),
+	),
+);
 
 const legacyTagAliases = [
 	{ route: "/blog/tag/c/", title: "C++", category: "C++" },
@@ -520,30 +563,73 @@ const legacyTagAliases = [
 		slugs: ["agendamento-de-tarefas"],
 	},
 ];
-for (const alias of legacyTagAliases) {
-	const selectedPosts = posts.filter(
-		(post) =>
-			(alias.category && post.categories.includes(alias.category)) ||
-			(alias.tag && post.tags.includes(alias.tag)) ||
-			alias.slugs?.includes(post.slug),
-	);
-	await listingPage({
-		route: alias.route,
-		eyebrow: "Tag histórica",
-		title: alias.title,
-		description: `${selectedPosts.length} posts preservados nesta rota original do WordPress.`,
-		selectedPosts,
-	});
-}
-for (const [month, count] of months) {
-	await listingPage({
-		route: `/blog/${month.replace("-", "/")}/`,
-		eyebrow: "Arquivo mensal",
-		title: formatMonth(month),
-		description: `${count} post${count === 1 ? "" : "s"} publicado${count === 1 ? "" : "s"} neste mês.`,
-		selectedPosts: posts.filter((post) => post.date.startsWith(month)),
-	});
-}
+await Promise.all(
+	legacyTagAliases.map((alias) => {
+		const selectedPosts = posts.filter(
+			(post) =>
+				(alias.category && post.categories.includes(alias.category)) ||
+				(alias.tag && post.tags.includes(alias.tag)) ||
+				alias.slugs?.includes(post.slug),
+		);
+		return listingPage({
+			route: alias.route,
+			eyebrow: "Tag histórica",
+			title: alias.title,
+			description: `${selectedPosts.length} posts preservados nesta rota original do WordPress.`,
+			selectedPosts,
+		});
+	}),
+);
+await Promise.all(
+	months.map(([month, count]) =>
+		listingPage({
+			route: `/blog/${month.replace("-", "/")}/`,
+			eyebrow: "Arquivo mensal",
+			title: formatMonth(month),
+			description: `${count} post${count === 1 ? "" : "s"} publicado${count === 1 ? "" : "s"} neste mês.`,
+			selectedPosts: posts.filter((post) => post.date.startsWith(month)),
+		}),
+	),
+);
+
+const wordpressOriginPosts = wordpressComOrigins.map((origin) => ({
+	origin,
+	post: postsBySlug.get(origin.slug),
+}));
+await writeRoute(
+	wordpressArchiveRoute,
+	layout({
+		title: "Arquivo do WordPress.com",
+		description:
+			"Posts recuperados do antecessor skhaz.wordpress.com, unidos ao arquivo principal sem duplicação.",
+		route: wordpressArchiveRoute,
+		bodyClass: "archive-page predecessor-page",
+		content: `
+    <header class="page-heading">
+      <p class="eyebrow">Fase predecessora · 2008</p>
+      <h1>Arquivo do WordPress.com</h1>
+      <p>A Wayback Machine preservou ${wordpressOriginPosts.length} posts que depois migraram para <code>skhaz.com/blog</code>. Cada captura foi associada ao post canônico já existente; nenhum texto foi publicado duas vezes.</p>
+    </header>
+    <aside class="archive-banner" aria-label="Política de deduplicação">
+      <strong>${posts.length} posts canônicos continuam no arquivo</strong>
+      <span>${wordpressOriginPosts.length} deles têm origem comprovada no WordPress.com, além de um aviso de migração exclusivo.</span>
+      <a href="${migrationRoute}">Ler “${escapeHtml(migrationPost.title)}” →</a>
+    </aside>
+    <section class="compact-post-list">
+      ${wordpressOriginPosts
+				.map(
+					({ origin, post }) => `<article>
+        <time datetime="${post.date}">${post.date.split("-").toReversed().join("/")}</time>
+        <div>
+          <h2><a href="/blog/${post.slug}/">${escapeHtml(post.title)}</a></h2>
+          <p>WordPress.com post ${origin.wordpressPostId} · <a href="${escapeHtml(origin.source.captureUrl)}" rel="external nofollow noopener">captura ${escapeHtml(origin.source.capturedAt)} ↗</a></p>
+        </div>
+      </article>`,
+				)
+				.join("")}
+    </section>`,
+	}),
+);
 
 await writeRoute(
 	migrationRoute,
@@ -554,7 +640,7 @@ await writeRoute(
 		route: migrationRoute,
 		bodyClass: "single-page predecessor-page",
 		content: `
-    <nav class="breadcrumbs" aria-label="Caminho"><a href="/blog/">Início</a><span>›</span><a href="/blog/sobre/">Sobre o arquivo</a><span>›</span><span aria-current="page">${escapeHtml(migrationPost.title)}</span></nav>
+    <nav class="breadcrumbs" aria-label="Caminho"><a href="/blog/">Início</a><span>›</span><a href="${wordpressArchiveRoute}">Arquivo do WordPress.com</a><span>›</span><span aria-current="page">${escapeHtml(migrationPost.title)}</span></nav>
     <article class="single-post">
       <header class="post-header">
         <p class="eyebrow">Fase WordPress.com · aviso de migração</p>
@@ -594,9 +680,9 @@ await writeRoute(
       <h2>Fontes</h2>
       <p>Vinte e dois textos vieram de um RSS completo capturado pela <a href="https://web.archive.org/" rel="external noopener">Wayback Machine</a>. Uma captura da página inicial de julho de 2008 forneceu outros sete textos integrais; a página inicial de setembro preservou parte de um oitavo. As páginas individuais forneceram os comentários. Cinco textos posteriores foram recuperados diretamente dos registros ARC do <a href="https://commoncrawl.org/" rel="external noopener">Common Crawl</a>. Imagens ainda disponíveis vieram do acervo original no WordPress.com.</p>
       <h2>Antes de skhaz.com</h2>
-      <p>Uma captura de 9 de abril de 2008 do antecessor <code>skhaz.wordpress.com</code> preservou o aviso <a href="${migrationRoute}">“Mudando de casa”</a>, publicado no dia anterior e anunciando <code>www.skhaz.com</code>. Ele é exibido em uma seção própria porque nunca foi comprovado sob a rota <code>/blog/</code>. A versão pública desse aviso foi alterada em 2012 para apontar para NULL on error; essa revisão posterior é documentada como proveniência, mas não foi misturada ao corpus histórico de skhaz.com.</p>
+      <p>A Wayback Machine também confirmou <a href="${wordpressArchiveRoute}">${wordpressOriginPosts.length} posts no antecessor <code>skhaz.wordpress.com</code></a>. Como todos já haviam migrado para <code>skhaz.com/blog</code>, as fontes foram associadas aos registros canônicos existentes em vez de criar duplicatas. A captura de 9 de abril de 2008 preservou ainda o aviso exclusivo <a href="${migrationRoute}">“Mudando de casa”</a>, publicado no dia anterior e anunciando <code>www.skhaz.com</code>. A versão pública desse aviso foi alterada em 2012 para apontar para NULL on error; essa revisão posterior é documentada como proveniência, mas não foi misturada ao corpus histórico de skhaz.com.</p>
       <h2>Limites honestos</h2>
-      <p>Onze imagens, três downloads, dez corpos de comentários e o fim de um post parcial não apareceram em nenhum dos arquivos consultados. Eles não foram inventados: cada ausência é marcada no ponto exato ou junto ao conteúdo afetado. Scripts, formulários, publicidade, rastreadores e uma injeção maliciosa encontrada em uma cópia de 2010 foram descartados.</p>
+      <p>Onze imagens, três downloads, onze corpos de comentários e o fim de um post parcial não apareceram em nenhum dos arquivos consultados. Eles não foram inventados: cada ausência é marcada no ponto exato ou junto ao conteúdo afetado. Scripts, formulários, publicidade, rastreadores e uma injeção maliciosa encontrada em uma cópia de 2010 foram descartados.</p>
       <h2>Princípio</h2>
       <blockquote>Restaurar o que existe, sinalizar o que falta e nunca preencher lacunas com conteúdo fabricado.</blockquote>
       <p>O inventário técnico e a proveniência de cada post ficam preservados junto ao código-fonte desta restauração.</p>
@@ -710,16 +796,19 @@ await writeFile(path.join(commentsFeedDirectory, "index.html"), commentsRss);
 await writeFile(path.join(DIST, "blog", "comments.xml"), commentsRss);
 
 const routes = [
-	"/blog/",
-	"/blog/lista-de-posts/",
-	"/blog/sobre/",
-	"/blog/politica-de-privacidade/",
-	migrationRoute,
-	...posts.map((post) => `/blog/${post.slug}/`),
-	...categories.map(([category]) => `/blog/category/${slugify(category)}/`),
-	...tags.map(([tag]) => `/blog/tag/${slugify(tag)}/`),
-	...legacyTagAliases.map((alias) => alias.route),
-	...months.map(([month]) => `/blog/${month.replace("-", "/")}/`),
+	...new Set([
+		"/blog/",
+		"/blog/lista-de-posts/",
+		"/blog/sobre/",
+		"/blog/politica-de-privacidade/",
+		wordpressArchiveRoute,
+		migrationRoute,
+		...posts.map((post) => `/blog/${post.slug}/`),
+		...categories.map(([category]) => `/blog/category/${slugify(category)}/`),
+		...tagListings.map(({ routeSlug }) => `/blog/tag/${routeSlug}/`),
+		...legacyTagAliases.map((alias) => alias.route),
+		...months.map(([month]) => `/blog/${month.replace("-", "/")}/`),
+	]),
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -749,5 +838,5 @@ await cp(routeToFile("/404/"), path.join(DIST, "404.html"));
 await writeFile(path.join(DIST, ".nojekyll"), "");
 
 process.stdout.write(
-	`Built ${posts.length} posts, ${getHighlightedCodeBlockCount()} highlighted code blocks, ${categories.length} categories, ${tags.length} tags and ${months.length} monthly archives.\n`,
+	`Built ${posts.length} posts (${wordpressComOrigins.length} merged WordPress.com origins), ${getHighlightedCodeBlockCount()} highlighted code blocks, ${categories.length} categories, ${tags.length} tags and ${months.length} monthly archives.\n`,
 );

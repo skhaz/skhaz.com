@@ -1,0 +1,565 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="pt-br">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>mutable, que raios é isso? &laquo; SKHAZ&#8217;s Blog</title>
+<meta name="generator" content="WordPress.com" /> <!-- leave this for stats -->
+<link rel="stylesheet" href="http://s1.wordpress.com/wp-content/themes/pub/freshy/style.css?m=1221682564a" type="text/css" media="screen" title="Freshy"/>
+<!--[if gte IE 7]>
+	<link rel="stylesheet" href="http://s2.wordpress.com/wp-content/themes/pub/freshy/ie7.css?m=1204782910a" type="text/css" media="screen" />
+<![endif]-->
+<!--[if lt IE 7]>
+	<link rel="stylesheet" href="http://s3.wordpress.com/wp-content/themes/pub/freshy/ie6.css?m=1204782910a" type="text/css" media="screen" />
+<![endif]-->
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://skhaz.wordpress.com/feed/" />
+<link rel="pingback" href="http://skhaz.wordpress.com/xmlrpc.php" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() { oldonload(); func(); }
+	}
+}
+/* ]]> */
+</script>
+<link rel='stylesheet' href='http://s.wordpress.com/wp-content/themes/h4/global.css?m=1214319868a' type='text/css' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://skhaz.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://skhaz.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	
+<script type="text/javascript">
+var wpcomPageTracker = _gat._getTracker("UA-52447-2");
+wpcomPageTracker._setDomainName("wordpress.com");
+wpcomPageTracker._initData();
+wpcomPageTracker._trackPageview();
+</script>
+	<link rel="introspection" type="application/atomserv+xml" title="Atom API" href="http://skhaz.wordpress.com/wp-app.php" />
+<link rel='openid.server' href='http://skhaz.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://skhaz.wordpress.com/' />
+
+<script defer="defer" id="snap_preview_anywhere" type="text/javascript" src="http://spa.snap.com/snap_preview_anywhere.js?ap=0&amp;si=1&amp;sb=1&amp;key=e5a3c1e6dff5de35b1c6e7c470411886&amp;domain=skhaz.wordpress.com&amp;fl=wordpress&amp;pub=pub-2311827-www.wordpress.com&amp;es=all&amp;lang=pt-br"></script>
+
+
+	<style type="text/css">
+	.menu li a {
+		background-image:url("http://s2.wordpress.com/wp-content/themes/pub/freshy/images/menu/menu_triple.gif");
+	}
+	.menu li a.first_menu {
+		background-image:url("http://s3.wordpress.com/wp-content/themes/pub/freshy/images/menu/menu_start_triple.gif");
+	}
+	.menu li a.last_menu {
+		background-image:url("http://s1.wordpress.com/wp-content/themes/pub/freshy/images/menu/menu_end_triple.gif");
+	}
+	.menu li.current_page_item a {
+		color:#000000 !important;
+	}
+	
+	.description {
+		color:#ADCF20;
+	}
+	#content .commentlist dd.author_comment {
+		background-color:#a3cb00 !important;
+	}
+	html > body #content .commentlist dd.author_comment {
+		background-color:#a3cb00 !important;
+	}
+	#content .commentlist dt.author_comment .date {
+		color:#a3cb00 !important;
+		border-color:#a3cb00 !important;
+	}
+	#content .commentlist .author_comment .author,
+	#content .commentlist .author_comment .author a {
+		color:#a3cb00 !important;
+		border-color:#a3cb00 !important;
+	}
+	#sidebar h2 {
+		color:#f78b0c;
+		background-color:#FFFFFF;
+		border-bottom-color:#f78b0c;
+	}
+	#sidebar {
+		background-color:#FFFFFF;
+	}
+	*::-moz-selection {
+		background-color:#FF3C00;
+	}
+
+	#content a:hover {
+		border-bottom:1px dotted #FF3C00;
+	}
+
+	#sidebar a:hover,
+	#sidebar .current_page_item li a:hover,
+	#sidebar .current-cat li a:hover,
+	#sidebar .current_page_item a,
+	#sidebar .current-cat a ,
+	.readmore,
+	#content .postmetadata a
+	{
+		color : #FF3C00;
+	}
+	
+	#title_image {
+		margin:0;
+		text-align:left;
+		display:block;
+		height:95px;
+	}
+	
+	</style>
+
+	<style type="text/css">
+	#title_image {
+	background-image:url(http://skhaz.files.wordpress.com/2008/02/cropped-abstrato-32.jpg);
+	}
+</style>
+</head>
+<body>
+
+<div id="page">
+	
+	<!-- header -->
+	<div id="header">
+		<div id="title">
+			<h1>
+				<a href="http://skhaz.wordpress.com">
+					<span>SKHAZ&#8217;s Blog</span>
+				</a>
+			</h1>
+			<div class="description">
+				<small>for_each(people.begin(), people.end(), mem_fun(&amp;People::OpenURL(&#8221;http://skhaz.wordpress.com/&#8221;));</small>
+			</div>
+		</div>
+		<div id="title_image"></div>
+	</div>
+	
+	<!-- main div -->
+	<div id="frame">
+
+	<!-- main menu -->
+		<ul class="menu">
+			
+			<li class="page_item">
+				<a class="first_menu" href="http://skhaz.wordpress.com">
+					Início				</a>
+			</li>
+					
+							
+			<li class="last_menu">
+				
+				<!-- put an empty link to have the end of the menu anyway -->
+					
+				<a class="last_menu_off">
+				</a>
+					
+			</li>
+
+		</ul>
+	
+	<hr style="display:none"/>
+
+	<div id="content">
+	
+			
+						
+			<div class="post hentry category-c" id="post-14">
+				
+				<h2><a href="http://skhaz.wordpress.com/2008/02/05/mutable-que-raios-e-isso/" rel="bookmark" title="Ler mutable, que raios é&nbsp;isso?">mutable, que raios é&nbsp;isso?</a></h2>
+
+				<small class="date">
+					<span class="date_day">5</span>
+					<span class="date_month">02</span>
+					<span class="date_year">2008</span>
+				</small>
+					
+				<div class="entry">
+					<div class='snap_preview'><p>Talvez você seja como eu, viciado em usar const, mais muitas vezes nos deparamos com métodos que precisamos alterar<br />
+algum atributo dentro de um método declarado como const</p>
+<pre name="code" class="cpp">
+
+class Image
+{
+   public:
+       void Draw() const;
+
+   private:
+      std::size_t m_BlitErrorCount;
+}
+</pre>
+<p>Vejamos esse exemplo do metodo Draw da classe Image<br />
+precisamos implementar um contador de erros do SDL_BlitSurface (sinceramente não vejo utilidade isso)</p>
+<pre name="code" class="cpp">
+
+void Image::Draw() const
+{
+    if (SDL_BlitSurface(mSurface, NULL, Screen, rect) &lt; 0)
+    {
+        m_BlitErrorCount++;
+        // O compilador acusa erro na linha acima
+        // pois não podemos modificar qualquer
+        // atributo dentro desse método declarado como const
+    }
+}
+</pre>
+<p><strong>Como solucionar?</strong></p>
+<p>Adicione a palavra reservada <strong><em>mutable</em></strong> na declaração de m_BlitErrorCount, ficando assim:</p>
+<pre name="code" class="cpp">
+
+class Image
+{
+    public:
+        void Draw() const;
+
+    private:
+        mutable std::size_t m_BlitErrorCount;
+}
+</pre>
+<p><strong>Veja também</strong></p>
+<p>Um outro caso para o uso da mutable é na implementação do design <a href="http://vinigodoy.wordpress.com/2007/12/24/organizando-a-janela-em-classes/">Organizando a janela em classes</a>, de nosso amigo Vinícius, onde temos à seguinte declaração do método draw</p>
+<pre name="code" class="cpp">
+
+virtual void draw() const = 0;
+</pre>
+<p>Usando a palavra reservada mutable na declaração do atributo usado internamente em draw você &#8220;burla&#8221; o const</p>
+<p>Agora seu código compila sem erros <img src='http://s.wordpress.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+</div>				</div>
+	
+								
+			</div>
+			
+			<p class="navigation">
+				<span class="alignleft">&laquo; <a href="http://skhaz.wordpress.com/2008/02/04/classe-timer/">Classe&nbsp;Timer</a></span>
+				<span class="alignright"><a href="http://skhaz.wordpress.com/2008/02/06/wintermoon-no-contest-da-pdj/">Wintermoon no Contest da&nbsp;PDJ</a> &raquo;</span>
+			</p>
+			<br/>
+			<h3>Ações</h3>
+			<ul class="postmetadata">
+					<li class="with_icon"><img class="icon" src="http://s2.wordpress.com/wp-content/themes/pub/freshy/images/icons/feed-icon-16x16.gif" alt="rss" />&nbsp;<a href='http://skhaz.wordpress.com/2008/02/05/mutable-que-raios-e-isso/feed/'>RSS dos comentários</a></li>
+							<li class="with_icon"><img class="icon" src="http://s3.wordpress.com/wp-content/themes/pub/freshy/images/icons/trackback-icon-16x16.gif" alt="trackback" />&nbsp;<a href="http://skhaz.wordpress.com/2008/02/05/mutable-que-raios-e-isso/trackback/ " rel="trackback" title="make a trackback">Trackback</a></li>
+							</ul>
+				
+			<h3>Informações</h3>
+			<ul class="postmetadata">
+					<!--<li>Autor : skhaz</li>-->
+					<li>Data : 5 Fevereiro 2008</li>
+									<li></li>
+					<li>Categorias : <a href="http://pt-br.wordpress.com/tag/c/" title="Ver todos os posts em C++" rel="category tag">C++</a></li>
+							</ul>
+				
+			
+<!-- You can start editing here. -->
+
+	<h3 id="comments">6 respostas para &#8220;mutable, que raios é&nbsp;isso?&#8221;</h3>
+
+	<dl class="commentlist snap_preview">
+
+			
+		
+		<dt class=" none">
+				<small class="date">
+					<span class="date_day">5</span>
+					<span class="date_month">02</span>
+					<span class="date_year">2008</span>
+				</small>
+		</dt>
+
+		<dd class="commentlist_item alt none" id="comment-2">			
+
+			<div class="comment">
+				<strong class="author" style="height:32px;line-height:32px;">
+				<img alt='' src='http://www.gravatar.com/avatar/5da52b55c44cc725009fffee77ea9c97?s=32&amp;d=identicon' class='avatar avatar-32' height='32' width='32' />				
+				Daniel</strong> <small>(19:02:10)</small> : 								
+				<br style="display:none;"/>
+			
+				<div class="comment_text">				
+				<p>Até onde eu sei o uso de mutable não é muito recomendado, é só para casos muito concretos (realmente nunca precisei). Tem um artigo interessante, que discute o uso de mutable: <a href="http://www.highprogrammer.com/alan/rants/mutable.html" rel="nofollow">http://www.highprogrammer.com/alan/rants/mutable.html</a></p>
+				</div>
+			</div>
+		</dd>
+
+
+	
+			
+		
+		<dt class=" none">
+				<small class="date">
+					<span class="date_day">5</span>
+					<span class="date_month">02</span>
+					<span class="date_year">2008</span>
+				</small>
+		</dt>
+
+		<dd class="commentlist_item  none" id="comment-3">			
+
+			<div class="comment">
+				<strong class="author" style="height:32px;line-height:32px;">
+				<img alt='' src='http://a.wordpress.com/avatar/skhaz-32.jpg' class='avatar avatar-skhaz avatar-32' height='32' width='32' />				
+				<a href='http://skhaz.wordpress.com/' rel='external nofollow'>skhaz</a></strong> <small>(20:41:16)</small> : 								
+				<br style="display:none;"/>
+			
+				<div class="comment_text">				
+				<p>Eu também não recomendo usar ela, porem é bom saber que existe e para que serve, precisei usar apenas uma vez em um trecho da <a href="http://wintermoon.sourceforge.net/wordpress/" rel="nofollow">Wintermoon</a> no exemplo <em>Player</em> no metodo draw (talvez eu realmente não precissa-se usar). Esse artigo é otimo, e eu já tinha lido ele antes de escrever este post. obrigado por comentar ;D</p>
+				</div>
+			</div>
+		</dd>
+
+
+	
+			
+		
+		<dt class=" none">
+				<small class="date">
+					<span class="date_day">5</span>
+					<span class="date_month">02</span>
+					<span class="date_year">2008</span>
+				</small>
+		</dt>
+
+		<dd class="commentlist_item alt none" id="comment-4">			
+
+			<div class="comment">
+				<strong class="author" style="height:32px;line-height:32px;">
+				<img alt='' src='http://a.wordpress.com/avatar/vinigodoy-32.jpg' class='avatar avatar-vinigodoy avatar-32' height='32' width='32' />				
+				<a href='http://vinigodoy.wordpress.com' rel='external nofollow'>vinigodoy</a></strong> <small>(20:46:28)</small> : 								
+				<br style="display:none;"/>
+			
+				<div class="comment_text">				
+				<p>O exemplo que ele deu foi bom.</p>
+<p>A palavra mutable não é recomendada quando envolve atributos que tem relação com o estado da classe. O que não é o caso, por exemplo, do contador de erros, variável tipicamente usada para logs, e que deveria ser imperceptível para um observador externo. </p>
+<p>Eu também nunca precisei dela. </p>
+<p>Mas&#8230; como uma das políticas do C++ é certamente dar poder ao programador para fazer tudo, seja isso bom ou não, é bom conhecer os recursos, e os impactos que ele pode causar.</p>
+				</div>
+			</div>
+		</dd>
+
+
+	
+			
+		
+		<dt class=" none">
+				<small class="date">
+					<span class="date_day">7</span>
+					<span class="date_month">02</span>
+					<span class="date_year">2008</span>
+				</small>
+		</dt>
+
+		<dd class="commentlist_item  none" id="comment-5">			
+
+			<div class="comment">
+				<strong class="author" style="height:32px;line-height:32px;">
+				<img alt='' src='http://www.gravatar.com/avatar/339cded12d981f28cc69eb6154fcdcb3?s=32&amp;d=identicon' class='avatar avatar-32' height='32' width='32' />				
+				Master Orion</strong> <small>(04:41:55)</small> : 								
+				<br style="display:none;"/>
+			
+				<div class="comment_text">				
+				<p>Isto eh q eu chamo de um blog do underground ^^<br />
+nunca vi em nenhum curso essa funçao da C++<br />
+realment parabens</p>
+				</div>
+			</div>
+		</dd>
+
+
+	
+			
+		
+		<dt class=" author_comment">
+				<small class="date">
+					<span class="date_day">8</span>
+					<span class="date_month">02</span>
+					<span class="date_year">2008</span>
+				</small>
+		</dt>
+
+		<dd class="commentlist_item alt author_comment" id="comment-9">			
+
+			<div class="comment">
+				<strong class="author" style="height:32px;line-height:32px;">
+				<img alt='' src='http://a.wordpress.com/avatar/skhaz-32.jpg' class='avatar avatar-skhaz avatar-32' height='32' width='32' />				
+				<a href='http://skhaz.wordpress.com/' rel='external nofollow'>skhaz</a></strong> <small>(21:21:59)</small> : 								
+				<br style="display:none;"/>
+			
+				<div class="comment_text">				
+				<p>Valeu, realmente foi dificel achar um exemplo legal para usar nesse artigo&#8230;<br />
+quanto a mutable é meio rara alguem usar ou falar sobre ela, só vi a engine Ogre usar ela ate hoje (e a wintermoon claro)</p>
+				</div>
+			</div>
+		</dd>
+
+
+	
+			
+		
+		<dt class=" none">
+				<small class="date">
+					<span class="date_day">8</span>
+					<span class="date_month">04</span>
+					<span class="date_year">2008</span>
+				</small>
+		</dt>
+
+		<dd class="commentlist_item  none" id="comment-54">			
+
+			<div class="comment">
+				<strong class="author" style="height:32px;line-height:32px;">
+								
+				<a href='http://www.skhaz.com/blog/mutable-o-legado/' rel='external nofollow'>Mutable, o legado | SKHAZ's Blog</a></strong> <small>(20:53:13)</small> : 								
+				<br style="display:none;"/>
+			
+				<div class="comment_text">				
+				<p>[...] nosso artigo mutable, que raios é isso? agora irei demonstrar um segunda maneira de &#8220;burlar&#8221; o mesmo método const sem usar [...]</p>
+				</div>
+			</div>
+		</dd>
+
+
+	
+	
+	</dl>
+
+
+
+
+<h3 id="respond">Deixe um comentário</h3>
+
+
+<form action="http://skhaz.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p>
+	<input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+	<label for="author">Nome (obrigatório)</label>
+</p>
+<p>
+	<input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+	<label for="email">Correio (não será publicado) (obrigatório)</label>
+</p>
+<p>
+	<input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+	<label for="url">Site (URL)</label>
+</p>
+
+
+<p><small>Você pode usar estas tags : &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </small></p>
+
+<p>
+<textarea name="comment" id="comment" cols="60" rows="10" tabindex="4"></textarea>
+</p>
+<p>
+<input name="submit" type="submit" id="submit" tabindex="5" value="Enviar comentário" />
+<input type="hidden" name="comment_post_ID" value="14" />
+</p>
+
+
+</form>
+
+
+						
+			
+	<!-- nothing found -->
+			
+	</div>
+	
+	<hr style="display:none"/>
+	
+	<!-- sidebar -->
+		
+	<div id="sidebar">
+		<div>
+		<div id="calendar" class="widget widget_calendar"><h2 class="title">Calendário</h2><div id="calendar_wrap"><table id="wp-calendar" summary="Agenda">
+	<caption>Fevereiro 2008</caption>
+	<thead>
+	<tr>
+		<th abbr="Segunda-feira" scope="col" title="Segunda-feira">S</th>
+		<th abbr="Terça-feira" scope="col" title="Terça-feira">T</th>
+		<th abbr="Quarta-feira" scope="col" title="Quarta-feira">Q</th>
+		<th abbr="Quinta-feira" scope="col" title="Quinta-feira">Q</th>
+		<th abbr="Sexta-Feira" scope="col" title="Sexta-Feira">S</th>
+		<th abbr="Sábado" scope="col" title="Sábado">S</th>
+		<th abbr="Domingo" scope="col" title="Domingo">D</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev" class="pad">&nbsp;</td>
+		<td class="pad">&nbsp;</td>
+		<td abbr="Março" colspan="3" id="next"><a href="http://skhaz.wordpress.com/2008/03/" title="Ver posts de Março 2008">Mar &raquo;</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="4" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td>
+	</tr>
+	<tr>
+		<td><a href="http://skhaz.wordpress.com/2008/02/04/" title="Classe&nbsp;Timer">4</a></td><td><a href="http://skhaz.wordpress.com/2008/02/05/" title="mutable, que raios é&nbsp;isso?">5</a></td><td><a href="http://skhaz.wordpress.com/2008/02/06/" title="Wintermoon no Contest da&nbsp;PDJ, Carregando imagens com ou sem canal&nbsp;alpha">6</a></td><td>7</td><td><a href="http://skhaz.wordpress.com/2008/02/08/" title="Visual Studio&nbsp;2008">8</a></td><td>9</td><td><a href="http://skhaz.wordpress.com/2008/02/10/" title="Um pouco mais sobre&nbsp;namespace">10</a></td>
+	</tr>
+	<tr>
+		<td>11</td><td><a href="http://skhaz.wordpress.com/2008/02/12/" title="ONE (Object-Oriented Network&nbsp;Engine), Classe std::string STL no VC 6 provoca corrupção da&nbsp;memória">12</a></td><td>13</td><td><a href="http://skhaz.wordpress.com/2008/02/14/" title="Qual a cara da sua&nbsp;IDE?">14</a></td><td>15</td><td>16</td><td>17</td>
+	</tr>
+	<tr>
+		<td><a href="http://skhaz.wordpress.com/2008/02/18/" title="Eliminando o codigo&nbsp;Fanfarrão">18</a></td><td>19</td><td>20</td><td>21</td><td><a href="http://skhaz.wordpress.com/2008/02/22/" title="Documentação da Wintermoon&nbsp;lançada">22</a></td><td>23</td><td>24</td>
+	</tr>
+	<tr>
+		<td><a href="http://skhaz.wordpress.com/2008/02/25/" title="Meu mousepad após minha namorada&nbsp;ver&#8230;">25</a></td><td>26</td><td>27</td><td>28</td><td>29</td>
+		<td class="pad" colspan="2">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></div>		<div id="text-1" class="widget widget_text">			<h2 class="title">RSS</h2>			<div class="textwidget"><p><a href="http://feeds.feedburner.com/skhaz" target="_blank"><img src="http://skhaz.files.wordpress.com/2008/02/feed.gif">&nbsp;<img src="http://feeds.feedburner.com/~fc/skhaz?bg=FF9900&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0;" alt="" /></a></p></div>
+		</div>		<div id="blog-stats" class="widget widget_statscounter">			<h2 class="title">Estatísticas</h2>			<ul>
+			<li>2,019  visitas</li>
+			</ul>
+		</div>		<div id="text-3" class="widget widget_text">			<h2 class="title">Eu uso</h2>			<div class="textwidget"><a href="http://www.opera.com/download/index.dml?custom=yes" target="_new"><img alt="Opera" src="http://skhaz.files.wordpress.com/2008/02/loveopera.gif" />&nbsp;<img src="http://skhaz.files.wordpress.com/2008/02/opera80x15.gif" /></a></div>
+		</div>		</div>
+	</div>
+
+	<br style="clear:both" /><!-- without this little <br /> NS6 and IE5PC do not stretch the frame div down to encopass the content DIVs -->
+</div>
+				
+<!-- footer -->
+
+<hr style="display:none"/>
+
+<div id="footer">
+	<small class="footer_content">
+	<a href='http://pt-br.wordpress.com/' rel='generator'>Blog no WordPress.com</a>. &bull; Theme: Freshy by <a href="http://www.jide.fr/">Jide</a>
+	</small>
+	
+</div>
+
+</div> <!--- end of the <div id="page"> (from header.php) -->
+
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">_qmeta="qc:adt=0;bti=SKHAZ%27s+Blog;lan=pt-br;dat=20080205;pti=mutable%2C+que+raios+%C3%A9+isso%3F;own=skhaz";_qacct="p-18-mFEk4J448M";quantserve();</script>
+<noscript><p><img src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif" style="display: none" height="1" width="1" alt="" /></p></noscript>
+	<link type="text/css" rel="stylesheet" href="http://s2.wordpress.com/wp-content/plugins/highlight/SyntaxHighlighter.css?m=1208384767a"></link>
+<script src="http://s.stats.wordpress.com/w.js?17" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'2393109','v':'wpcom','user_id':'0','post':'14','subd':'skhaz'});
+ex_go({'crypt':'D6%7C%2CY1mqJ%7E%7CSrOcqJQE%3FFSSYqR%5Db%25IV%25R.0uHZEabd6iKXY%3F%5Dz%5D%2C0udrwByr3KChElf8q3Xo%7ET%2BG4%3Fm2z%5D5osREOmbUCNS9Bf%259c%5D.%26fPKl.j%3FZepeO%2B_%2F%5DdXt_eU3Zr%2Fae81qTPvK%2CU%2Cv%2FE8gi.aJkvEOARDzdvnFq%5BoTdwOC5y'});
+addLoadEvent(function(){linktracker_init(2393109,14);});
+</script>
+
+<!-- SyntaxHighlighter Stuff -->
+<script type="text/javascript" src="http://s2.wordpress.com/wp-content/plugins/highlight/shCore.js"></script>
+<script type="text/javascript" src="http://s2.wordpress.com/wp-content/plugins/highlight/shBrushCpp.js"></script>
+<script type="text/javascript">
+	dp.SyntaxHighlighter.ClipboardSwf = 'http://s2.wordpress.com/wp-content/plugins/highlight/clipboard.swf';
+	dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+
+</body>
+</html>
+
+		
+

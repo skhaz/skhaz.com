@@ -1,6 +1,6 @@
 # Fontes arquivísticas preservadas
 
-Estes arquivos são evidência de pesquisa, não conteúdo pronto para publicação. Capturas HTML podem conter scripts, rastreadores ou injeções históricas e **nunca devem ser copiadas diretamente para `dist/`**. O site é gerado somente a partir do conteúdo sanitizado em `content/`.
+Estes arquivos são evidência de pesquisa, não conteúdo pronto para publicação. Capturas HTML podem conter scripts, rastreadores ou injeções históricas e **nunca devem ser copiadas diretamente para `dist/`**. Inspecione-as como texto ou em um ambiente isolado e sem rede, nunca diretamente em um navegador comum. O site é gerado somente a partir do conteúdo sanitizado em `content/`.
 
 ## Wayback Machine
 
@@ -15,14 +15,22 @@ Estes arquivos são evidência de pesquisa, não conteúdo pronto para publicaç
 | `wayback-home-2008-09.html` | `20080923160108id_/http://www.skhaz.com/blog/` |
 | `wayback-wordpress-god-2008.html` | `20080703055748` — `/blog/wordpress-god/` |
 | `wayback-wordpress-com-cdx-2008.json` | CDX da página inicial de `skhaz.wordpress.com` em 2008 |
+| `wayback-wordpress-com-cdx-2008-2010.json` | enumeração CDX por prefixo do antecessor, incluindo páginas iniciais, três posts individuais e `/page/2/` |
+| `wayback-wordpress-com-home-2008-02.html` | `20080209030031id_/http://skhaz.wordpress.com/` |
 | `wayback-wordpress-com-home-2008-04.html` | `20080409155551id_/http://skhaz.wordpress.com/` |
+| `wayback-wordpress-com-home-2008-09.html` | `20080920111949id_/http://skhaz.wordpress.com/`; registra dois comentários em “ONE”, dos quais somente um corpo foi recuperado |
+| `wayback-wordpress-com-page-2-2008.html` | `20080915065458id_/http://skhaz.wordpress.com/page/2/` |
+| `wayback-wordpress-com-mutable-2008.html` | `20081007181120id_/http://skhaz.wordpress.com/2008/02/05/mutable-que-raios-e-isso/` |
+| `wayback-wordpress-com-visual-studio-2008.html` | `20080920112027id_/http://skhaz.wordpress.com/2008/02/08/visual-studio-2008/` |
+| `wayback-wordpress-com-qual-a-cara-da-sua-ide-2008.html` | `20080514235727id_/http://skhaz.wordpress.com/2008/02/14/qual-a-cara-da-sua-ide/` |
 
-A captura WordPress.com de abril preserva a versão contemporânea de “Mudando de casa”, que anunciava `http://www.skhaz.com/`. Ela prevalece sobre a revisão pública alterada em 2012.
+As capturas WordPress.com comprovam quinze posts que depois migraram para `skhaz.com/blog`. Eles são associados aos registros canônicos por `content/wordpress-com-origins.json` e não são republicados. A captura de abril preserva ainda a versão contemporânea e exclusiva de “Mudando de casa”, que anunciava `http://www.skhaz.com/`; ela prevalece sobre a revisão pública alterada em 2012.
 
 ## Fontes públicas atuais
 
 | Arquivo | Endpoint consultado em 26/07/2026 | Uso |
 | --- | --- | --- |
+| `wordpress-com-autoversioning-2008.jpg` | `https://skhaz.files.wordpress.com/2008/03/autoversioning.jpg` | attachment suplementar válido, 800×600; preservado como evidência, sem substituir o diferente `integracao_com_svn.jpg` exibido no post |
 | `imageshack-profile-2026-07-26.json` | `https://imageshack.com/rest_api/v2/user/skhaz/images?limit=100&offset=0` | metadados de 49 uploads; os seis binários referenciados continuam ausentes |
 | `wordpress-mudando-de-casa-2026-07-26.json` | `https://public-api.wordpress.com/rest/v1.1/sites/2393109/posts/59` | identidade e revisão atual do post 59 |
 | `wordpress-mudando-de-casa-replies-2026-07-26.json` | `https://public-api.wordpress.com/rest/v1.1/sites/2393109/posts/59/replies/` | confirmação estruturada de zero comentários |
@@ -32,8 +40,10 @@ A captura WordPress.com de abril preserva a versão contemporânea de “Mudando
 | `commoncrawl-collections-2026-07-27.html` | `https://data.commoncrawl.org/cc-index/collections/index.html` | inventário bruto que anunciou 125 índices no momento da busca; SHA-256 `6a0a3483…eb964` |
 | `commoncrawl-missing-assets-raw-index-2026-07-27.json` | `data.commoncrawl.org`, 2008–2015 | busca forense nos 23 primeiros índices: 506 consultas, 99 blocos CDX e dois ARC completos; zero localizadores dos alvos |
 | `commoncrawl-missing-assets-remaining-indexes-2026-07-27.json` | `data.commoncrawl.org`, 2016–2026 | continuação nos outros 102 índices anunciados: 2.244 consultas, 624 blocos CDX, zero localizadores e zero erros |
+| `commoncrawl-finalor9-aliases-2026-07-27.json` | `data.commoncrawl.org`, todos os 125 índices anunciados | busca de 20 rotas alternativas do objeto `79finalor9p`: 2.500 consultas, 1.863 blocos CDX e zero linhas correspondentes |
 | `boostpro-1.35-installer-2026-07-27.json` | Wayback, Boost Consulting e BoostPro | verificação estática do instalador contemporâneo do fornecedor; o executável não é republicado e não substitui as capturas do autor |
 | `highlighting-performance-2026-07-27.json` | builds locais antes/depois | quinze amostras aquecidas e intercaladas, tamanhos brutos e gzip do site, dos 11 posts afetados, do CSS e do JavaScript |
+| `wordpress-origin-import-performance-2026-07-27.json` | build-base versus importação deduplicada | 31 amostras aquecidas e intercaladas por revisão; mediana de build de 126,869 ms para 121,281 ms (−4,40%), com árvore gerada vinculada por hash |
 
 Os dois manifestos Common Crawl cobrem, juntos, os 125 índices anunciados no inventário preservado em 27/07/2026: 2.750 buscas por 22 prefixos SURT, 15.980.084.528 bytes de `cluster.idx` examinados e 117.492.051 bytes de blocos CDX baixados e descompactados, sem linha correspondente. Esse resultado é uma negativa limitada ao inventário e aos prefixos documentados, não uma prova de inexistência global nem uma afirmação sobre índices futuros.
 

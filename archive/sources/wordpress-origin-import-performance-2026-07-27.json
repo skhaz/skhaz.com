@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-07-27T18:24:08.000Z",
+  "method": "Thirty-one warm build runs per revision, interleaved in alternating order. Timings use time.perf_counter_ns() around a synchronous node scripts/build.mjs process. Gzip totals compress each generated file independently at level 9. treeSha256 hashes sorted records of relative path, byte length, and per-file SHA-256.",
+  "environment": {
+    "node": "v26.5.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "runs": 31
+  },
+  "revisions": {
+    "before": {
+      "git": "669a5dc79f9522912741f5aab980c6cccfa6774d",
+      "buildMilliseconds": [
+        144.753,
+        145.964,
+        134.547,
+        135.846,
+        315.909,
+        141.633,
+        135.956,
+        138.994,
+        122.308,
+        121.554,
+        125.478,
+        120.844,
+        124.969,
+        122.531,
+        124.519,
+        131.89,
+        122.501,
+        121.772,
+        122.854,
+        125.308,
+        126.312,
+        132.175,
+        125.502,
+        126.944,
+        126.869,
+        124.398,
+        128.246,
+        127.433,
+        146.071,
+        128.9,
+        126.707
+      ],
+      "buildMedianMilliseconds": 126.869,
+      "buildMeanMilliseconds": 135.474,
+      "treeSha256": "f43a3e192fdf2530b1ba17136050a5a14bac39167f5d801ca654e08505cfa26c",
+      "dist": {
+        "files": 239,
+        "rawBytes": 3531465,
+        "gzipBytes": 1677358
+      },
+      "html": {
+        "files": 193,
+        "rawBytes": 1831149,
+        "gzipBytes": 520115
+      }
+    },
+    "after": {
+      "worktree": "wordpress-com-origin-import",
+      "buildMilliseconds": [
+        126.461,
+        136.214,
+        122.269,
+        123.752,
+        126.973,
+        129.07,
+        129.704,
+        133.992,
+        118.899,
+        116.442,
+        124.167,
+        117.301,
+        115.827,
+        115.655,
+        120.186,
+        119.328,
+        119.1,
+        116.297,
+        118.876,
+        118.488,
+        119.446,
+        122.586,
+        121.07,
+        123.074,
+        124.864,
+        121.389,
+        121.281,
+        120.34,
+        123.59,
+        122.664,
+        121.059
+      ],
+      "buildMedianMilliseconds": 121.281,
+      "buildMeanMilliseconds": 122.27,
+      "treeSha256": "8900c80e0eb075b29a7cf117bfe1edb2785d48afadb1e66658f3782fad26b876",
+      "dist": {
+        "files": 241,
+        "rawBytes": 3729652,
+        "gzipBytes": 1859695
+      },
+      "html": {
+        "files": 194,
+        "rawBytes": 1850062,
+        "gzipBytes": 525097
+      }
+    }
+  },
+  "delta": {
+    "buildMedianMilliseconds": -5.588,
+    "buildMedianPercent": -4.4,
+    "distRawBytes": 198187,
+    "distGzipBytes": 182337,
+    "htmlRawBytes": 18913,
+    "htmlGzipBytes": 4982
+  }
+}

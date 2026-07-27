@@ -8,10 +8,10 @@ O blog genuíno esteve disponível em `http://www.skhaz.com/blog/`. A captura ma
 | --- | ---: |
 | Posts | 35 (34 integrais e 1 parcial) |
 | Páginas de apoio | 2 (`Lista de Posts` e `Política de Privacidade`) |
-| Fase predecessora | 1 aviso de migração do WordPress.com, preservado separadamente |
-| Comentários | 72 integrais de 82 registrados |
+| Fase predecessora | 15 origens WordPress.com fundidas aos posts canônicos, sem duplicação; 1 aviso de migração preservado separadamente |
+| Comentários | 72 integrais de 83 registrados |
 | Período | 04/02/2008–09/04/2009 |
-| Imagens locais | 24 |
+| Imagens locais | 25 |
 | Imagens não localizadas | 11 posições (6 identificadas no ImageShack) |
 | Downloads não localizados | 3 |
 
@@ -24,8 +24,9 @@ O blog genuíno esteve disponível em `http://www.skhaz.com/blog/`. A captura ma
 | Página inicial de julho de 2008 | Wayback Machine | compor | Sete posts integrais ausentes do RSS antigo |
 | Página inicial de setembro de 2008 | Wayback Machine | compor | Trecho sobrevivente de `boost-136` |
 | Índice ARC 2009–2010 | Common Crawl | compor | Cinco posts posteriores que não aparecem no índice da Wayback |
-| `skhaz.wordpress.com` | WordPress.com | compor | 24 arquivos de mídia ainda disponíveis na origem |
-| Página inicial do WordPress.com de 09/04/2008 | Wayback Machine | preservar separadamente | Aviso contemporâneo que anunciou a mudança para `www.skhaz.com` |
+| `skhaz.wordpress.com` | WordPress.com | compor | arquivos de mídia ainda disponíveis na origem |
+| Capturas do WordPress.com de 2008 | Wayback Machine | compor sem duplicar | confirmar 15 posts que migraram para `skhaz.com/blog` e associar a proveniência aos registros canônicos |
+| Página inicial do WordPress.com de 09/04/2008 | Wayback Machine | preservar separadamente | aviso contemporâneo exclusivo que anunciou a mudança para `www.skhaz.com` |
 | iNove, por mg12 | repositório público GPL-2.0 | adaptar | Arte da última identidade visual observada |
 | `skhaz/nullonerror` e `nullonerror-posts` | GitHub | não misturar | Continuação editorial em outro domínio e outro período |
 
@@ -54,14 +55,31 @@ Artefatos preservados (origens detalhadas em `archive/sources/README.md`):
 
 ### Fase WordPress.com e a mudança de domínio
 
-A página inicial de `skhaz.wordpress.com` capturada em `20080409155551`, um dia após a publicação, preserva o aviso **“Mudando de casa”** com o texto completo anunciando `http://www.skhaz.com/`. O registro informa data de 8 de abril de 2008, categoria C++ e nenhum comentário. Como esse aviso nunca foi comprovado sob `/blog/`, ele é publicado em `/arquivo/skhaz-wordpress-com/2008/04/08/mudando-de-casa/`, fora dos 35 posts do corpus principal.
+A enumeração de `skhaz.wordpress.com` na Wayback Machine encontrou quinze publicações anteriores à migração. Título, data, ID e corpo correspondem a quinze posts que já estavam preservados sob `skhaz.com/blog`: `classe-timer`, `mutable-que-raios-e-isso`, `wintermoon-no-contest-da-pdj`, `carregando-imagens-com-ou-sem-canal-alpha`, `visual-studio-2008`, `um-pouco-mais-sobre-namespace`, `one`, `classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria`, `qual-a-cara-da-sua-ide`, `eliminando-o-codigo-fonfarrao`, `documentacao-da-wintermoon-lancada`, `meu-mousepad-apos-minha-namorada-ver`, `codeblocks`, `lancado-arret-3d` e `a-vida-e-um-jogo`.
+
+Esses quinze resultados não foram republicados. `content/wordpress-com-origins.json` associa cada URL, ID e captura WordPress.com ao post canônico existente. O índice `/arquivo/skhaz-wordpress-com/` aponta para as mesmas quinze rotas em `/blog/`, e cada página expõe as duas proveniências. Assim, a contagem continua em 35 posts.
+
+A captura inicial de `20080209030031` preserva cinco posts; a página inicial de `20080409155551` preserva quatorze dos quinze e o aviso de migração. A página inicial de `20080920111949` registra que “ONE” já tinha dois comentários, embora somente um corpo tenha sido recuperado. Três capturas individuais posteriores preservam integralmente `mutable-que-raios-e-isso` com seis comentários, `visual-studio-2008` com dois e `qual-a-cara-da-sua-ide` com sete. Uma captura de `/page/2/` fornece confirmação adicional de `classe-timer`.
+
+A página inicial de `skhaz.wordpress.com` capturada em `20080409155551`, um dia após a publicação, preserva ainda o aviso exclusivo **“Mudando de casa”** com o texto completo anunciando `http://www.skhaz.com/`. O registro informa data de 8 de abril de 2008, categoria C++ e nenhum comentário. Como esse aviso nunca foi comprovado sob `/blog/`, ele é publicado em `/arquivo/skhaz-wordpress-com/2008/04/08/mudando-de-casa/`, fora dos 35 posts do corpus principal.
 
 A API pública atual do WordPress.com identifica o mesmo objeto como site `2393109`, post `59`, mas registra uma modificação em `2012-02-23T22:26:25Z` e hoje mostra outro texto apontando para NULL on error. Essa revisão posterior foi preservada apenas como evidência da mutação: não substitui a captura contemporânea e não traz o conteúdo posterior de NULL on error para este arquivo.
+
+A mesma pesquisa corrigiu a mídia de “Lançado o Arret”: a captura contemporânea aponta para `arret.png`, cujo original WordPress.com ainda responde com um PNG válido de 646 × 511. O post agora abre esse original local, SHA-256 `30f0c36588011e8aff5065e6034f50e4d9f162d1be76e0f11b8b437e2aa5d397`, sem alterar o thumbnail histórico.
+
+O WordPress.com também ainda entrega `autoversioning.jpg`, JPEG válido de 800 × 600 e SHA-256 `3456dab46d00d593fe4f3a5dc14941c18fd0e3986ce4a2a293e621d9ae50e805`. Ele mostra o menu do plugin e é visualmente diferente do thumbnail de `integracao_com_svn.jpg`, que mostra a janela de configuração efetivamente exibida no post. Por isso foi preservado somente como attachment suplementar em `archive/sources/wordpress-com-autoversioning-2008.jpg`, sem ser apresentado como substituto do original ausente.
 
 Artefatos preservados:
 
 - `archive/sources/wayback-wordpress-com-cdx-2008.json`
+- `archive/sources/wayback-wordpress-com-cdx-2008-2010.json`
+- `archive/sources/wayback-wordpress-com-home-2008-02.html`
 - `archive/sources/wayback-wordpress-com-home-2008-04.html`
+- `archive/sources/wayback-wordpress-com-home-2008-09.html`
+- `archive/sources/wayback-wordpress-com-page-2-2008.html`
+- `archive/sources/wayback-wordpress-com-mutable-2008.html`
+- `archive/sources/wayback-wordpress-com-visual-studio-2008.html`
+- `archive/sources/wayback-wordpress-com-qual-a-cara-da-sua-ide-2008.html`
 - `archive/sources/wordpress-mudando-de-casa-2026-07-26.json`
 - `archive/sources/wordpress-mudando-de-casa-replies-2026-07-26.json`
 
@@ -102,6 +120,8 @@ A [documentação do ArchiveTeam](https://wiki.archiveteam.org/index.php/ImageSh
 
 Também foram testadas 72 combinações de uploads do WordPress.com, `skhaz.files.wordpress.com` e caches `i0`/`i1`/`i2.wp.com` para originais e miniaturas conhecidas; nenhuma resposta passou assinatura, MIME e dimensões. Os IDs de mídia 107, 108, 118 e 120 existem, mas a API exige autenticação (`403`) e seus bytes não foram expostos. Dez buscas exatas no Openverse retornaram zero resultados. O manifesto completo é `archive/sources/missing-media-deep-sweep-2026-07-27.json`.
 
+Quando o serviço bruto do Common Crawl voltou a responder, uma continuação exclusiva para `finalor9.png` examinou vinte gramáticas alternativas de URL em todos os 125 índices: páginas históricas `my.php`, `/photo/my-images/`, `/f/` e `/i/`; caminhos `/a/img…`; o ID `79finalor9p` em `imageshack.us`, `imageshack.com` e `yfrog.com`; e quatro rotas Imagizer plausíveis. Foram realizadas 2.500 buscas binárias e descompactados 1.863 blocos CDX — 309.375.277 bytes comprimidos e 2.359.818.481 bytes expandidos — sem uma linha contendo o nome ou ID. O resultado continua limitado às vinte variantes e ao inventário consultado; o manifesto reproduzível é `archive/sources/commoncrawl-finalor9-aliases-2026-07-27.json`. A validação local fixa o manifesto por hash, deriva sua aritmética e vincula cada índice ao inventário anterior, mas não republica os 309 MB de blocos: uma auditoria independente da busca negativa deve refazer os ranges documentados.
+
 ### Capturas do instalador Boost
 
 As imagens `boostconfig1.png` e `boostinstaller2.png` eram uploads locais do WordPress, não arquivos do site do fornecedor. Consultas exatas na Wayback Machine e no Arquivo.pt não retornaram capturas dos originais; consultas Wayback bem-sucedidas para as variantes `-300x234.png` também retornaram listas vazias. Páginas contemporâneas da Boost Consulting e da BoostPro confirmam o instalador BoostPro 1.35, suas opções e o link `boost_1_35_0_setup.exe`, mas não contêm as duas capturas do autor. Nenhuma imagem de outro tutorial foi usada como substituta.
@@ -117,6 +137,8 @@ Os 38 blocos C++ são transformados somente durante o build. `content/posts.json
 A indentação é refeita com quatro espaços a partir de chaves, rótulos de acesso, `case` e continuações simples. Essa normalização é apenas visual e não altera o corpus arquivado. Fragmentos historicamente corrompidos como `boost /function.hpp`, `</boost><boost /bind.hpp>` e `shared_ptr</task><task>` são mantidos literalmente: sem um ZIP ou snapshot contemporâneo do fonte, “corrigi-los” seria inventar código. Cada bloco oferece cópia do texto exatamente exibido depois dessa normalização conservadora.
 
 Uma medição intercalou quinze builds aquecidos com o commit-base `6cbad9c`. Depois de reutilizar formatadores de data em vez de recriá-los para cada cartão, a mediana passou de 143,592 ms para 114,231 ms (**−29,361 ms; −20,45%**), mesmo incluindo o realce. Nos 11 posts afetados, o HTML cresceu 35.235 bytes bruto e 3.366 bytes ao comprimir cada página com gzip nível 9; em todo `dist/`, o acréscimo foi 38.883 bytes bruto e 4.486 bytes gzip. CSS e JavaScript somaram, respectivamente, +536 e +584 bytes gzip. Não há custo de parsing do Highlight.js no navegador. Ambiente, amostras, caminhos e método estão em `archive/sources/highlighting-performance-2026-07-27.json`; os totais gzip são comparativos, não uma previsão exata do servidor HTTP.
+
+A importação deduplicada do WordPress.com recebeu uma medição própria, com 31 builds aquecidos e intercalados por revisão. Depois de incorporar a contagem posterior de “ONE”, agregar tags que diferem apenas por caixa e agrupar em paralelo a escrita das páginas independentes, a mediana passou de 126,869 ms para 121,281 ms (**−5,588 ms; −4,40%**), e a média também caiu de 135,474 ms para 122,270 ms. O `dist/` ganhou dois arquivos: o índice de origens e o PNG original do Arret; o acréscimo gzip de 182.337 bytes é quase todo o próprio artefato histórico, não código executável. Método, amostras, tamanhos e hash da árvore gerada estão em `archive/sources/wordpress-origin-import-performance-2026-07-27.json`.
 
 ## Segurança do material histórico
 
@@ -138,7 +160,7 @@ Buscas exatas em repositórios públicos do autor, árvores e histórico alcanç
 
 Resultados genéricos e imagens apenas semelhantes foram rejeitados. O manifesto dessa continuação é `archive/sources/missing-media-continuation-2026-07-27.json`. As negativas permanecem delimitadas: export autenticado do WordPress.com/ImageShack, backups pessoais, caches locais, objetos Git inalcançáveis, contêineres não indexados e coleções privadas ou inacessíveis ainda poderiam conter bytes.
 
-As capturas registram dez comentários cujos corpos não sobreviveram. O site preserva suas contagens sem fabricar autores ou mensagens. O post `boost-136` é exibido como fragmento e termina com uma nota explícita sobre a parte ausente.
+As capturas registram onze comentários cujos corpos não sobreviveram. A diferença adicional vem de “ONE”: a página inicial do WordPress.com em setembro de 2008 registra dois comentários, mas apenas um corpo foi localizado. O site preserva as contagens sem fabricar autores ou mensagens. O post `boost-136` é exibido como fragmento e termina com uma nota explícita sobre a parte ausente.
 
 Não foram corrigidas grafia, gramática, afirmações técnicas ou linguagem de época: esses elementos fazem parte do documento histórico. Comentários ofensivos também não foram reescritos; são apresentados como arquivo, com o contexto e a data originais.
 
@@ -154,4 +176,4 @@ Os arquivos artísticos derivados do iNove são GPL-2.0. Consulte `public/assets
 npm test
 ```
 
-A validação exige 35 posts, 1 aviso predecessor separado, 72 comentários integrais de 82 registrados, captura específica para cada post, 11 lacunas de imagem, 3 downloads ausentes, 38 blocos C++ destacados estaticamente, os manifestos forenses íntegros, feeds históricos, ausência de scripts antigos e inexistência de links locais quebrados no site gerado.
+A validação exige 35 posts canônicos sem duplicação, 15 origens WordPress.com associadas a esses mesmos posts, 1 aviso predecessor separado, 72 comentários integrais de 83 registrados, captura específica para cada post, 11 lacunas de imagem, 3 downloads ausentes, 38 blocos C++ destacados estaticamente, os manifestos forenses íntegros, feeds históricos, ausência de scripts antigos e inexistência de links locais quebrados no site gerado.
