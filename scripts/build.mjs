@@ -9,24 +9,36 @@ const BASE_PATH = "/skhaz.com";
 const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}`;
 const PAGE_SIZE = 10;
 
-const loadPosts = async () => {
+const loadContentCollection = async (filename, label) => {
 	try {
 		const parsed = JSON.parse(
-			await readFile(path.join(ROOT, "content/posts.json"), "utf8"),
+			await readFile(path.join(ROOT, "content", filename), "utf8"),
 		);
 		if (!Array.isArray(parsed) || parsed.length === 0) {
-			throw new TypeError("content/posts.json must contain a non-empty array");
+			throw new TypeError(`${filename} must contain a non-empty array`);
 		}
 		return parsed;
 	} catch (error) {
 		const reason = error instanceof Error ? error.message : String(error);
-		throw new Error(`Unable to load the restored posts: ${reason}`, {
+		throw new Error(`Unable to load ${label}: ${reason}`, {
 			cause: error,
 		});
 	}
 };
 
-const posts = await loadPosts();
+const posts = await loadContentCollection("posts.json", "the restored posts");
+const predecessorPosts = await loadContentCollection(
+	"predecessor-posts.json",
+	"the predecessor-site records",
+);
+const migrationPost = predecessorPosts.find(
+	(post) => post.id === "wordpress-com-59",
+);
+if (!migrationPost) {
+	throw new Error("Missing the verified WordPress.com migration record");
+}
+const migrationRoute =
+	"/arquivo/skhaz-wordpress-com/2008/04/08/mudando-de-casa/";
 await rm(DIST, { recursive: true, force: true });
 await mkdir(DIST, { recursive: true });
 await cp(path.join(ROOT, "public"), DIST, { recursive: true });
@@ -494,6 +506,39 @@ for (const [month, count] of months) {
 }
 
 await writeRoute(
+	migrationRoute,
+	layout({
+		title: migrationPost.title,
+		description:
+			"Aviso histórico que anunciou a migração do blog de skhaz.wordpress.com para skhaz.com em abril de 2008.",
+		route: migrationRoute,
+		bodyClass: "single-page predecessor-page",
+		content: `
+    <nav class="breadcrumbs" aria-label="Caminho"><a href="/blog/">Início</a><span>›</span><a href="/blog/sobre/">Sobre o arquivo</a><span>›</span><span aria-current="page">${escapeHtml(migrationPost.title)}</span></nav>
+    <article class="single-post">
+      <header class="post-header">
+        <p class="eyebrow">Fase WordPress.com · aviso de migração</p>
+        <h1>${escapeHtml(migrationPost.title)}</h1>
+        <p class="post-meta"><time datetime="${migrationPost.date}">${escapeHtml(formatDate(migrationPost.date))}</time> · por ${escapeHtml(migrationPost.author)}</p>
+      </header>
+      <div class="post-body">${migrationPost.html}</div>
+      <aside class="media-note"><strong>Contexto:</strong> este texto foi publicado no antecessor <code>skhaz.wordpress.com</code>, não sob <code>skhaz.com/blog</code>. A captura feita no dia seguinte comprova que ele anunciava a mudança para <code>www.skhaz.com</code>; por isso é preservado separadamente dos 35 posts do corpus principal.</aside>
+      <details class="source-details">
+        <summary>Fonte arquivística</summary>
+        <p>Wayback Machine, captura ${escapeHtml(migrationPost.source.capturedAt)} da página inicial do WordPress.com.</p>
+        <p>A versão pública atual foi modificada em 2012 e passou a apontar para outro domínio. O texto acima segue exclusivamente a captura contemporânea de 2008.</p>
+        <a href="${escapeHtml(migrationPost.source.captureUrl)}" rel="external nofollow noopener">Abrir captura de 2008 ↗</a><br>
+        <a href="${escapeHtml(migrationPost.currentRevision.sourceUrl)}" rel="external nofollow noopener">Abrir registro público atual ↗</a>
+      </details>
+    </article>
+    <section class="comments" aria-labelledby="predecessor-comments-title">
+      <header><p class="eyebrow">Discussão preservada</p><h2 id="predecessor-comments-title">0 comentários</h2></header>
+      <p class="no-comments">A captura histórica e o registro atual concordam que nenhum comentário foi publicado neste aviso.</p>
+    </section>`,
+	}),
+);
+
+await writeRoute(
 	"/blog/sobre/",
 	layout({
 		title: "Sobre a restauração",
@@ -505,9 +550,11 @@ await writeRoute(
     <header class="page-heading"><p class="eyebrow">Memória digital</p><h1>Sobre a restauração</h1><p>Esta é uma reconstrução estática do blog publicado originalmente em <strong>skhaz.com/blog</strong>.</p></header>
     <article class="prose restoration-story">
       <h2>O que voltou</h2>
-      <ul><li><strong>${posts.length} posts</strong>, de 4 de fevereiro de 2008 a 9 de abril de 2009;</li><li><strong>${totalRecoveredComments} comentários integrais</strong> preservados de ${totalHistoricalComments} registrados nas capturas;</li><li>URLs originais, páginas de apoio, categorias, tags, RSS, arquivo mensal e parte das imagens;</li><li>a identidade visual da última fase do blog, inspirada no tema iNove.</li></ul>
+      <ul><li><strong>${posts.length} posts</strong>, de 4 de fevereiro de 2008 a 9 de abril de 2009;</li><li><strong>${totalRecoveredComments} comentários integrais</strong> preservados de ${totalHistoricalComments} registrados nas capturas;</li><li><strong>1 aviso de migração</strong> do antecessor WordPress.com, preservado fora do corpus principal;</li><li>URLs originais, páginas de apoio, categorias, tags, RSS, arquivo mensal e parte das imagens;</li><li>a identidade visual da última fase do blog, inspirada no tema iNove.</li></ul>
       <h2>Fontes</h2>
       <p>Vinte e dois textos vieram de um RSS completo capturado pela <a href="https://web.archive.org/" rel="external noopener">Wayback Machine</a>. Uma captura da página inicial de julho de 2008 forneceu outros sete textos integrais; a página inicial de setembro preservou parte de um oitavo. As páginas individuais forneceram os comentários. Cinco textos posteriores foram recuperados diretamente dos registros ARC do <a href="https://commoncrawl.org/" rel="external noopener">Common Crawl</a>. Imagens ainda disponíveis vieram do acervo original no WordPress.com.</p>
+      <h2>Antes de skhaz.com</h2>
+      <p>Uma captura de 9 de abril de 2008 do antecessor <code>skhaz.wordpress.com</code> preservou o aviso <a href="${migrationRoute}">“Mudando de casa”</a>, publicado no dia anterior e anunciando <code>www.skhaz.com</code>. Ele é exibido em uma seção própria porque nunca foi comprovado sob a rota <code>/blog/</code>. A versão pública desse aviso foi alterada em 2012 para apontar para NULL on error; essa revisão posterior é documentada como proveniência, mas não foi misturada ao corpus histórico de skhaz.com.</p>
       <h2>Limites honestos</h2>
       <p>Onze imagens, três downloads, dez corpos de comentários e o fim de um post parcial não apareceram em nenhum dos arquivos consultados. Eles não foram inventados: cada ausência é marcada no ponto exato ou junto ao conteúdo afetado. Scripts, formulários, publicidade, rastreadores e uma injeção maliciosa encontrada em uma cópia de 2010 foram descartados.</p>
       <h2>Princípio</h2>
@@ -627,6 +674,7 @@ const routes = [
 	"/blog/lista-de-posts/",
 	"/blog/sobre/",
 	"/blog/politica-de-privacidade/",
+	migrationRoute,
 	...posts.map((post) => `/blog/${post.slug}/`),
 	...categories.map(([category]) => `/blog/category/${slugify(category)}/`),
 	...tags.map(([tag]) => `/blog/tag/${slugify(tag)}/`),

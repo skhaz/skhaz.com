@@ -1,0 +1,37 @@
+[
+  {
+    "id": "wordpress-com-59",
+    "slug": "mudando-de-casa",
+    "title": "Mudando de casa",
+    "date": "2008-04-08",
+    "time": "2008-04-08T00:59:49+00:00",
+    "author": "Rodrigo 'Skhaz' Delduca",
+    "categories": [
+      "C++"
+    ],
+    "html": "<p>Estou mudando de domínio, o novo endereço será <a href=\"http://www.skhaz.com/\" rel=\"external nofollow noopener\">http://www.skhaz.com/</a>, obrigado à todos que me apoiarão publicando meu blog no blogtroll (não deixem de atualizar para o novo endereço :D)</p>",
+    "knownCommentCount": 0,
+    "originalSite": "skhaz.wordpress.com",
+    "originalUrl": "http://skhaz.wordpress.com/2008/04/08/mudando-de-casa/",
+    "source": {
+      "archive": "Wayback Machine",
+      "capturedAt": "20080409155551",
+      "originalUrl": "http://skhaz.wordpress.com/",
+      "captureUrl": "https://web.archive.org/web/20080409155551id_/http://skhaz.wordpress.com/",
+      "context": "Full historical body recovered from the WordPress.com homepage one day after publication.",
+      "record": {
+        "status": 200,
+        "mime": "text/html",
+        "digest": "AR4KQOANEEYJ5JNWCUCKYVCSXLYEJ7K6",
+        "length": 26046,
+        "localArtifact": "archive/sources/wayback-wordpress-com-home-2008-04.html"
+      }
+    },
+    "currentRevision": {
+      "sourceUrl": "https://public-api.wordpress.com/rest/v1.1/sites/2393109/posts/59",
+      "modified": "2012-02-23T22:26:25+00:00",
+      "body": "<p>Estou mudando de domínio, o novo endereço será <a title=\"NULL on error\" href=\"http://nullonerror.appspot.com/\">NULL on error</a>, Obrigado!</p>\n",
+      "context": "The live WordPress.com record was revised in 2012 to point to NULL on error. That later revision is preserved as provenance but is not substituted for the body captured in 2008."
+    }
+  }
+]

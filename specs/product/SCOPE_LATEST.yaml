@@ -5,6 +5,7 @@ objective: >-
   archive while preserving original URLs, content, comments, and provenance.
 in_scope:
   - posts published from 2008-02-04 through 2009-04-09
+  - the verified WordPress.com migration notice that announced skhaz.com, kept in a separate predecessor section
   - comments present in retrievable archive copies
   - original post, category, tag, month, feed, and index routes
   - recoverable media and explicit placeholders for missing media
@@ -17,6 +18,7 @@ out_of_scope:
 acceptance:
   verify: npm test
   expected_posts: 35
+  expected_predecessor_records: 1
   expected_complete_comments: 72
   expected_recorded_comments: 82
   expected_missing_media_markers: 11
@@ -31,6 +33,15 @@ prior_art:
   - candidate: WordPress.com media archive
     verdict: compose
     use: original image binaries still available
+  - candidate: 2008 Wayback capture of the WordPress.com predecessor
+    verdict: preserve_separately
+    use: contemporaneous migration notice announcing www.skhaz.com
+  - candidate: current WordPress.com revision of the migration notice
+    verdict: document_only
+    use: revision provenance only; its later nullonerror destination is excluded from the restored corpus
+  - candidate: ImageShack public profile and API
+    verdict: document_only
+    use: metadata for six missing images; legacy binary routes now return 404
   - candidate: iNove WordPress theme
     verdict: extend
     use: final observed visual identity, adapted for static responsive HTML

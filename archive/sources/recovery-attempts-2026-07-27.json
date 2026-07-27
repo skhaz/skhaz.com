@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 1,
+  "retrievedAt": "2026-07-27T00:55:18.009715+00:00",
+  "method": "Unauthenticated public HTTP GETs with redirects; response bytes hashed in full. binarySignature is populated only for recognized image signatures.",
+  "acceptanceRule": "An image is recovered only when response bytes have a valid image signature, coherent MIME and dimensions.",
+  "imageShack": {
+    "assets": [
+      "msvczm8.png",
+      "msvc9mb0.png",
+      "2242002764ab16f49f4dofs2.png",
+      "finalor9.png",
+      "mapakm5.png",
+      "mapatermicoyb6xb3.png"
+    ],
+    "attempts": [
+      {
+        "asset": "msvczm8.png",
+        "route": "legacy-original",
+        "label": "msvczm8.png:legacy-original",
+        "url": "https://img91.imageshack.us/img91/9260/msvczm8.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img91.imageshack.us/img91/9260/msvczm8.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "msvczm8.png",
+        "route": "legacy-thumbnail",
+        "label": "msvczm8.png:legacy-thumbnail",
+        "url": "https://img91.imageshack.us/img91/9260/msvczm8.th.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img91.imageshack.us/img91/9260/msvczm8.th.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "msvczm8.png",
+        "route": "imagizer-original",
+        "label": "msvczm8.png:imagizer-original",
+        "url": "https://imagizer.imageshack.com/img91/9260/msvczm8.png",
+        "httpStatus": 404,
+        "finalUrl": "https://imagizer.imageshack.com/img91/9260/msvczm8.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "msvczm8.png",
+        "route": "image-page-download",
+        "label": "msvczm8.png:image-page-download",
+        "url": "https://imageshack.com/i/2jmsvczm8p/download",
+        "httpStatus": 200,
+        "finalUrl": "https://imageshack.com/",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/i/2jmsvczm8p/download",
+            "location": "/"
+          }
+        ],
+        "contentType": "text/html",
+        "contentLength": 7740,
+        "sha256": "ca08e2149869808af39f351b079e1c92a6f01bfbeac7b3e59bbb4f318f7e1c49",
+        "binarySignature": null,
+        "bodyPreview": "<!-- 9.5.16 -->\n<!DOCTYPE html><html lang=\"en\">\n    <head>\n        <title>ImageShack - Best place for all of your image hosting and image sharing needs</title>        <meta charset=\"utf-8\">\n<meta name=\"copyright\" content=\"Copyright 2026 ImageShack\">\n<meta name=\"google-site-verification\" content=\"gFE6jG6VX-EGA3a-RV5ICuiGS5o3Xxnec4cgcmy8WPM\">\n<meta name=\"description\" content=\"Host your images online with an easy to use image uploader, albums, photo hosting, sharing, dynamic image resizing on web a"
+      },
+      {
+        "asset": "msvczm8.png",
+        "route": "download-route",
+        "label": "msvczm8.png:download-route",
+        "url": "https://imageshack.com/download/2jmsvczm8p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/download/2jmsvczm8p",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/download/2jmsvczm8p",
+            "location": "https://imagizer.imageshack.com/download/2jmsvczm8p"
+          }
+        ],
+        "contentType": "application/octet-stream",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "binarySignature": null,
+        "bodyPreview": ""
+      },
+      {
+        "asset": "msvc9mb0.png",
+        "route": "legacy-original",
+        "label": "msvc9mb0.png:legacy-original",
+        "url": "https://img406.imageshack.us/img406/7664/msvc9mb0.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img406.imageshack.us/img406/7664/msvc9mb0.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "msvc9mb0.png",
+        "route": "legacy-thumbnail",
+        "label": "msvc9mb0.png:legacy-thumbnail",
+        "url": "https://img406.imageshack.us/img406/7664/msvc9mb0.th.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img406.imageshack.us/img406/7664/msvc9mb0.th.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "msvc9mb0.png",
+        "route": "imagizer-original",
+        "label": "msvc9mb0.png:imagizer-original",
+        "url": "https://imagizer.imageshack.com/img406/7664/msvc9mb0.png",
+        "httpStatus": 404,
+        "finalUrl": "https://imagizer.imageshack.com/img406/7664/msvc9mb0.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "msvc9mb0.png",
+        "route": "image-page-download",
+        "label": "msvc9mb0.png:image-page-download",
+        "url": "https://imageshack.com/i/bamsvc9mb0p/download",
+        "httpStatus": 200,
+        "finalUrl": "https://imageshack.com/",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/i/bamsvc9mb0p/download",
+            "location": "/"
+          }
+        ],
+        "contentType": "text/html",
+        "contentLength": 7740,
+        "sha256": "ca08e2149869808af39f351b079e1c92a6f01bfbeac7b3e59bbb4f318f7e1c49",
+        "binarySignature": null,
+        "bodyPreview": "<!-- 9.5.16 -->\n<!DOCTYPE html><html lang=\"en\">\n    <head>\n        <title>ImageShack - Best place for all of your image hosting and image sharing needs</title>        <meta charset=\"utf-8\">\n<meta name=\"copyright\" content=\"Copyright 2026 ImageShack\">\n<meta name=\"google-site-verification\" content=\"gFE6jG6VX-EGA3a-RV5ICuiGS5o3Xxnec4cgcmy8WPM\">\n<meta name=\"description\" content=\"Host your images online with an easy to use image uploader, albums, photo hosting, sharing, dynamic image resizing on web a"
+      },
+      {
+        "asset": "msvc9mb0.png",
+        "route": "download-route",
+        "label": "msvc9mb0.png:download-route",
+        "url": "https://imageshack.com/download/bamsvc9mb0p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/download/bamsvc9mb0p",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/download/bamsvc9mb0p",
+            "location": "https://imagizer.imageshack.com/download/bamsvc9mb0p"
+          }
+        ],
+        "contentType": "application/octet-stream",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "binarySignature": null,
+        "bodyPreview": ""
+      },
+      {
+        "asset": "2242002764ab16f49f4dofs2.png",
+        "route": "legacy-original",
+        "label": "2242002764ab16f49f4dofs2.png:legacy-original",
+        "url": "https://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "2242002764ab16f49f4dofs2.png",
+        "route": "legacy-thumbnail",
+        "label": "2242002764ab16f49f4dofs2.png:legacy-thumbnail",
+        "url": "https://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.th.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.th.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "2242002764ab16f49f4dofs2.png",
+        "route": "imagizer-original",
+        "label": "2242002764ab16f49f4dofs2.png:imagizer-original",
+        "url": "https://imagizer.imageshack.com/img405/1079/2242002764ab16f49f4dofs2.png",
+        "httpStatus": 404,
+        "finalUrl": "https://imagizer.imageshack.com/img405/1079/2242002764ab16f49f4dofs2.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "2242002764ab16f49f4dofs2.png",
+        "route": "image-page-download",
+        "label": "2242002764ab16f49f4dofs2.png:image-page-download",
+        "url": "https://imageshack.com/i/b92242002764ab16f49f4dofs2p/download",
+        "httpStatus": 200,
+        "finalUrl": "https://imageshack.com/",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/i/b92242002764ab16f49f4dofs2p/download",
+            "location": "/"
+          }
+        ],
+        "contentType": "text/html",
+        "contentLength": 7740,
+        "sha256": "ca08e2149869808af39f351b079e1c92a6f01bfbeac7b3e59bbb4f318f7e1c49",
+        "binarySignature": null,
+        "bodyPreview": "<!-- 9.5.16 -->\n<!DOCTYPE html><html lang=\"en\">\n    <head>\n        <title>ImageShack - Best place for all of your image hosting and image sharing needs</title>        <meta charset=\"utf-8\">\n<meta name=\"copyright\" content=\"Copyright 2026 ImageShack\">\n<meta name=\"google-site-verification\" content=\"gFE6jG6VX-EGA3a-RV5ICuiGS5o3Xxnec4cgcmy8WPM\">\n<meta name=\"description\" content=\"Host your images online with an easy to use image uploader, albums, photo hosting, sharing, dynamic image resizing on web a"
+      },
+      {
+        "asset": "2242002764ab16f49f4dofs2.png",
+        "route": "download-route",
+        "label": "2242002764ab16f49f4dofs2.png:download-route",
+        "url": "https://imageshack.com/download/b92242002764ab16f49f4dofs2p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/download/b92242002764ab16f49f4dofs2p",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/download/b92242002764ab16f49f4dofs2p",
+            "location": "https://imagizer.imageshack.com/download/b92242002764ab16f49f4dofs2p"
+          }
+        ],
+        "contentType": "application/octet-stream",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "binarySignature": null,
+        "bodyPreview": ""
+      },
+      {
+        "asset": "finalor9.png",
+        "route": "legacy-original",
+        "label": "finalor9.png:legacy-original",
+        "url": "https://img261.imageshack.us/img261/2865/finalor9.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img261.imageshack.us/img261/2865/finalor9.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "finalor9.png",
+        "route": "legacy-thumbnail",
+        "label": "finalor9.png:legacy-thumbnail",
+        "url": "https://img261.imageshack.us/img261/2865/finalor9.th.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img261.imageshack.us/img261/2865/finalor9.th.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "finalor9.png",
+        "route": "imagizer-original",
+        "label": "finalor9.png:imagizer-original",
+        "url": "https://imagizer.imageshack.com/img261/2865/finalor9.png",
+        "httpStatus": 404,
+        "finalUrl": "https://imagizer.imageshack.com/img261/2865/finalor9.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "finalor9.png",
+        "route": "image-page-download",
+        "label": "finalor9.png:image-page-download",
+        "url": "https://imageshack.com/i/79finalor9p/download",
+        "httpStatus": 200,
+        "finalUrl": "https://imageshack.com/",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/i/79finalor9p/download",
+            "location": "/"
+          }
+        ],
+        "contentType": "text/html",
+        "contentLength": 7740,
+        "sha256": "ca08e2149869808af39f351b079e1c92a6f01bfbeac7b3e59bbb4f318f7e1c49",
+        "binarySignature": null,
+        "bodyPreview": "<!-- 9.5.16 -->\n<!DOCTYPE html><html lang=\"en\">\n    <head>\n        <title>ImageShack - Best place for all of your image hosting and image sharing needs</title>        <meta charset=\"utf-8\">\n<meta name=\"copyright\" content=\"Copyright 2026 ImageShack\">\n<meta name=\"google-site-verification\" content=\"gFE6jG6VX-EGA3a-RV5ICuiGS5o3Xxnec4cgcmy8WPM\">\n<meta name=\"description\" content=\"Host your images online with an easy to use image uploader, albums, photo hosting, sharing, dynamic image resizing on web a"
+      },
+      {
+        "asset": "finalor9.png",
+        "route": "download-route",
+        "label": "finalor9.png:download-route",
+        "url": "https://imageshack.com/download/79finalor9p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/download/79finalor9p",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/download/79finalor9p",
+            "location": "https://imagizer.imageshack.com/download/79finalor9p"
+          }
+        ],
+        "contentType": "application/octet-stream",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "binarySignature": null,
+        "bodyPreview": ""
+      },
+      {
+        "asset": "mapakm5.png",
+        "route": "legacy-original",
+        "label": "mapakm5.png:legacy-original",
+        "url": "https://img240.imageshack.us/img240/2306/mapakm5.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img240.imageshack.us/img240/2306/mapakm5.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "mapakm5.png",
+        "route": "legacy-thumbnail",
+        "label": "mapakm5.png:legacy-thumbnail",
+        "url": "https://img240.imageshack.us/img240/2306/mapakm5.th.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img240.imageshack.us/img240/2306/mapakm5.th.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "mapakm5.png",
+        "route": "imagizer-original",
+        "label": "mapakm5.png:imagizer-original",
+        "url": "https://imagizer.imageshack.com/img240/2306/mapakm5.png",
+        "httpStatus": 404,
+        "finalUrl": "https://imagizer.imageshack.com/img240/2306/mapakm5.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "mapakm5.png",
+        "route": "image-page-download",
+        "label": "mapakm5.png:image-page-download",
+        "url": "https://imageshack.com/i/6omapakm5p/download",
+        "httpStatus": 200,
+        "finalUrl": "https://imageshack.com/",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/i/6omapakm5p/download",
+            "location": "/"
+          }
+        ],
+        "contentType": "text/html",
+        "contentLength": 7740,
+        "sha256": "ca08e2149869808af39f351b079e1c92a6f01bfbeac7b3e59bbb4f318f7e1c49",
+        "binarySignature": null,
+        "bodyPreview": "<!-- 9.5.16 -->\n<!DOCTYPE html><html lang=\"en\">\n    <head>\n        <title>ImageShack - Best place for all of your image hosting and image sharing needs</title>        <meta charset=\"utf-8\">\n<meta name=\"copyright\" content=\"Copyright 2026 ImageShack\">\n<meta name=\"google-site-verification\" content=\"gFE6jG6VX-EGA3a-RV5ICuiGS5o3Xxnec4cgcmy8WPM\">\n<meta name=\"description\" content=\"Host your images online with an easy to use image uploader, albums, photo hosting, sharing, dynamic image resizing on web a"
+      },
+      {
+        "asset": "mapakm5.png",
+        "route": "download-route",
+        "label": "mapakm5.png:download-route",
+        "url": "https://imageshack.com/download/6omapakm5p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/download/6omapakm5p",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/download/6omapakm5p",
+            "location": "https://imagizer.imageshack.com/download/6omapakm5p"
+          }
+        ],
+        "contentType": "application/octet-stream",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "binarySignature": null,
+        "bodyPreview": ""
+      },
+      {
+        "asset": "mapatermicoyb6xb3.png",
+        "route": "legacy-original",
+        "label": "mapatermicoyb6xb3.png:legacy-original",
+        "url": "https://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "mapatermicoyb6xb3.png",
+        "route": "legacy-thumbnail",
+        "label": "mapatermicoyb6xb3.png:legacy-thumbnail",
+        "url": "https://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.th.png",
+        "httpStatus": 404,
+        "finalUrl": "https://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.th.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "mapatermicoyb6xb3.png",
+        "route": "imagizer-original",
+        "label": "mapatermicoyb6xb3.png:imagizer-original",
+        "url": "https://imagizer.imageshack.com/img240/9194/mapatermicoyb6xb3.png",
+        "httpStatus": 404,
+        "finalUrl": "https://imagizer.imageshack.com/img240/9194/mapatermicoyb6xb3.png",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 168,
+        "sha256": "376f5045e4dd8bf68ac9e374518a01c18b2fdf76344f2cc08cac143acc4f3cb8",
+        "binarySignature": null,
+        "bodyPreview": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.2.8</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "asset": "mapatermicoyb6xb3.png",
+        "route": "image-page-download",
+        "label": "mapatermicoyb6xb3.png:image-page-download",
+        "url": "https://imageshack.com/i/6omapatermicoyb6xb3p/download",
+        "httpStatus": 200,
+        "finalUrl": "https://imageshack.com/",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/i/6omapatermicoyb6xb3p/download",
+            "location": "/"
+          }
+        ],
+        "contentType": "text/html",
+        "contentLength": 7740,
+        "sha256": "ca08e2149869808af39f351b079e1c92a6f01bfbeac7b3e59bbb4f318f7e1c49",
+        "binarySignature": null,
+        "bodyPreview": "<!-- 9.5.16 -->\n<!DOCTYPE html><html lang=\"en\">\n    <head>\n        <title>ImageShack - Best place for all of your image hosting and image sharing needs</title>        <meta charset=\"utf-8\">\n<meta name=\"copyright\" content=\"Copyright 2026 ImageShack\">\n<meta name=\"google-site-verification\" content=\"gFE6jG6VX-EGA3a-RV5ICuiGS5o3Xxnec4cgcmy8WPM\">\n<meta name=\"description\" content=\"Host your images online with an easy to use image uploader, albums, photo hosting, sharing, dynamic image resizing on web a"
+      },
+      {
+        "asset": "mapatermicoyb6xb3.png",
+        "route": "download-route",
+        "label": "mapatermicoyb6xb3.png:download-route",
+        "url": "https://imageshack.com/download/6omapatermicoyb6xb3p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/download/6omapatermicoyb6xb3p",
+        "redirects": [
+          {
+            "status": 302,
+            "url": "https://imageshack.com/download/6omapatermicoyb6xb3p",
+            "location": "https://imagizer.imageshack.com/download/6omapatermicoyb6xb3p"
+          }
+        ],
+        "contentType": "application/octet-stream",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "binarySignature": null,
+        "bodyPreview": ""
+      }
+    ],
+    "validImageResponses": 0
+  },
+  "boost": {
+    "attempts": [
+      {
+        "target": "www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1.png",
+        "archive": "Wayback CDX",
+        "label": "cdx:www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1.png",
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "httpStatus": 200,
+        "finalUrl": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "redirects": [],
+        "contentType": "application/json",
+        "contentLength": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "binarySignature": null,
+        "semantic": {
+          "jsonRows": 0,
+          "empty": true
+        },
+        "bodyPreview": "[]\n"
+      },
+      {
+        "target": "www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2.png",
+        "archive": "Wayback CDX",
+        "label": "cdx:www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2.png",
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "httpStatus": 200,
+        "finalUrl": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "redirects": [],
+        "contentType": "application/json",
+        "contentLength": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "binarySignature": null,
+        "semantic": {
+          "jsonRows": 0,
+          "empty": true
+        },
+        "bodyPreview": "[]\n"
+      },
+      {
+        "target": "www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1-300x234.png",
+        "archive": "Wayback CDX",
+        "label": "cdx:www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1-300x234.png",
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1-300x234.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "httpStatus": 504,
+        "finalUrl": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1-300x234.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 160,
+        "sha256": "c9c89d274726b86306e1c97d80360f820bce86042c34c9bb2487aac4ada6d606",
+        "binarySignature": null,
+        "semantic": {
+          "jsonRows": null,
+          "empty": false
+        },
+        "bodyPreview": "<html>\r\n<head><title>504 Gateway Time-out</title></head>\r\n<body>\r\n<center><h1>504 Gateway Time-out</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+      },
+      {
+        "target": "www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2-300x234.png",
+        "archive": "Wayback CDX",
+        "label": "cdx:www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2-300x234.png",
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2-300x234.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "httpStatus": 503,
+        "finalUrl": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2-300x234.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 107,
+        "sha256": "839488ebc08446a096a893996ed23eac321ac166724cd8c5d9092057834d2d79",
+        "binarySignature": null,
+        "semantic": {
+          "jsonRows": null,
+          "empty": false
+        },
+        "bodyPreview": "<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
+      },
+      {
+        "target": "boost-consulting.com/boost_1_35_0_setup.exe",
+        "archive": "Wayback CDX",
+        "label": "cdx:boost-consulting.com/boost_1_35_0_setup.exe",
+        "url": "https://web.archive.org/cdx/search/cdx?url=boost-consulting.com%2Fboost_1_35_0_setup.exe&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "httpStatus": 503,
+        "finalUrl": "https://web.archive.org/cdx/search/cdx?url=boost-consulting.com%2Fboost_1_35_0_setup.exe&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "redirects": [],
+        "contentType": "text/html",
+        "contentLength": 107,
+        "sha256": "839488ebc08446a096a893996ed23eac321ac166724cd8c5d9092057834d2d79",
+        "binarySignature": null,
+        "semantic": {
+          "jsonRows": null,
+          "empty": false
+        },
+        "bodyPreview": "<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
+      },
+      {
+        "target": "www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1.png",
+        "archive": "Arquivo.pt",
+        "label": "arquivo:www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1.png",
+        "url": "https://arquivo.pt/textsearch?versionHistory=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1.png&maxItems=50",
+        "httpStatus": 200,
+        "finalUrl": "https://arquivo.pt/textsearch?versionHistory=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1.png&maxItems=50",
+        "redirects": [],
+        "contentType": "application/json",
+        "contentLength": 295,
+        "sha256": "933061df791c555c86e611777b191e8cfd3288614463acbc9a02329ccaca3340",
+        "binarySignature": null,
+        "semantic": {
+          "estimatedResults": 0,
+          "responseItems": 0
+        },
+        "bodyPreview": "{\"serviceName\":\"Arquivo.pt - the Portuguese web-archive\",\"linkToService\":\"https://arquivo.pt\",\"next_page\":\"https://arquivo.pt/textsearch?versionHistory=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1.png&maxItems=50&offset=50\",\"estimated_nr_results\":0,\"response_items\":[]}"
+      },
+      {
+        "target": "www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2.png",
+        "archive": "Arquivo.pt",
+        "label": "arquivo:www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2.png",
+        "url": "https://arquivo.pt/textsearch?versionHistory=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2.png&maxItems=50",
+        "httpStatus": 200,
+        "finalUrl": "https://arquivo.pt/textsearch?versionHistory=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2.png&maxItems=50",
+        "redirects": [],
+        "contentType": "application/json",
+        "contentLength": 298,
+        "sha256": "c378aeba6a8c3cdb9c2197083b63d331c28d9035ebab3e99a1cbf85f59c8c004",
+        "binarySignature": null,
+        "semantic": {
+          "estimatedResults": 0,
+          "responseItems": 0
+        },
+        "bodyPreview": "{\"serviceName\":\"Arquivo.pt - the Portuguese web-archive\",\"linkToService\":\"https://arquivo.pt\",\"next_page\":\"https://arquivo.pt/textsearch?versionHistory=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2.png&maxItems=50&offset=50\",\"estimated_nr_results\":0,\"response_items\":[]}"
+      },
+      {
+        "target": "boost-consulting.com/products/free",
+        "archive": "Wayback replay",
+        "label": "vendor-page",
+        "url": "https://web.archive.org/web/20080615150814id_/http://www.boost-consulting.com/products/free",
+        "httpStatus": 200,
+        "finalUrl": "https://web.archive.org/web/20080615150814id_/http://www.boost-consulting.com/products/free",
+        "redirects": [],
+        "contentType": "text/html; charset=utf-8",
+        "contentLength": 7525,
+        "sha256": "31c39d2e4fa213168dbef697ab1afa6ac9ffe5975fcd029892a315a3b9d99539",
+        "binarySignature": null,
+        "semantic": {
+          "mentionsBoostInstaller": true,
+          "mentionsBoostconfig1": false,
+          "mentionsBoostinstaller2": false
+        },
+        "bodyPreview": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta name=\"generator\" content=\"Docutils 0.5: http://docutils.sourceforge.net/\" />\n\n  <title>BoostPro Computing - Free Downloads</title>\n  <meta name=\"keywords\" content=\"\" />\n  <meta name=\"description\" content=\"\" />\n  <link rel=\"stylesheet\" type=\"text/css"
+      },
+      {
+        "target": "www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1-300x234.png",
+        "archive": "Wayback CDX",
+        "retryEvidence": true,
+        "retrievedAt": "2026-07-27T00:57:03.755149+00:00",
+        "label": "retry-cdx:www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1-300x234.png",
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1-300x234.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "httpStatus": 200,
+        "finalUrl": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostconfig1-300x234.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "redirects": [],
+        "contentType": null,
+        "contentLength": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "binarySignature": null,
+        "semantic": {
+          "jsonRows": 0,
+          "empty": true
+        },
+        "bodyPreview": "[]\n",
+        "bodyFormat": "JSON parsed from preserved response bytes; response Content-Type was not retained by the retry command."
+      },
+      {
+        "target": "www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2-300x234.png",
+        "archive": "Wayback CDX",
+        "retryEvidence": true,
+        "retrievedAt": "2026-07-27T00:57:03.755635+00:00",
+        "label": "retry-cdx:www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2-300x234.png",
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2-300x234.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "httpStatus": 200,
+        "finalUrl": "https://web.archive.org/cdx/search/cdx?url=www.skhaz.com%2Fblog%2Fwp-content%2Fuploads%2F2008%2F06%2Fboostinstaller2-300x234.png&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "redirects": [],
+        "contentType": null,
+        "contentLength": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "binarySignature": null,
+        "semantic": {
+          "jsonRows": 0,
+          "empty": true
+        },
+        "bodyPreview": "[]\n",
+        "bodyFormat": "JSON parsed from preserved response bytes; response Content-Type was not retained by the retry command."
+      },
+      {
+        "target": "boost-consulting.com/boost_1_35_0_setup.exe",
+        "archive": "Wayback CDX",
+        "retryEvidence": true,
+        "retrievedAt": "2026-07-27T00:57:03.755730+00:00",
+        "label": "retry-cdx:boost-consulting.com/boost_1_35_0_setup.exe",
+        "url": "https://web.archive.org/cdx/search/cdx?url=boost-consulting.com%2Fboost_1_35_0_setup.exe&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "httpStatus": 200,
+        "finalUrl": "https://web.archive.org/cdx/search/cdx?url=boost-consulting.com%2Fboost_1_35_0_setup.exe&output=json&filter=statuscode%3A200&fl=timestamp%2Coriginal%2Cmimetype%2Cstatuscode%2Cdigest%2Clength",
+        "redirects": [],
+        "contentType": null,
+        "contentLength": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "binarySignature": null,
+        "semantic": {
+          "jsonRows": 0,
+          "empty": true
+        },
+        "bodyPreview": "[]\n",
+        "bodyFormat": "JSON parsed from preserved response bytes; response Content-Type was not retained by the retry command."
+      }
+    ],
+    "validImageResponses": 0
+  },
+  "archiveTeamSearch": {
+    "label": "internet-archive-archiveteam-imageshack-search",
+    "url": "https://archive.org/advancedsearch.php?q=%28title%3Aimageshack+OR+description%3Aimageshack+OR+identifier%3Aimageshack%2A%29+AND+collection%3Aarchiveteam&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+    "httpStatus": 200,
+    "finalUrl": "https://archive.org/advancedsearch.php?q=%28title%3Aimageshack+OR+description%3Aimageshack+OR+identifier%3Aimageshack%2A%29+AND+collection%3Aarchiveteam&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+    "redirects": [],
+    "contentType": "application/json",
+    "contentLength": 397,
+    "sha256": "9f62c3ed813600ba256fb040541edda8c5e7c75d5a0cdb6623dd6871f93472a7",
+    "binarySignature": null,
+    "semantic": {
+      "numFound": 0
+    },
+    "bodyPreview": "{\"responseHeader\":{\"status\":0,\"QTime\":29,\"params\":{\"query\":\"(title:imageshack OR description:imageshack OR identifier:imageshack*) AND collection:archiveteam\",\"qin\":\"(title:imageshack OR description:imageshack OR identifier:imageshack*) AND collection:archiveteam\",\"fields\":\"identifier,title,description,collection\",\"wt\":\"json\",\"rows\":200,\"start\":0}},\"response\":{\"numFound\":0,\"start\":0,\"docs\":[]}}"
+  }
+}

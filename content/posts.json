@@ -1243,8 +1243,18 @@
     "comments": [],
     "source": {
       "archive": "Wayback Machine",
+      "capturedAt": "20080528143819",
       "originalUrl": "http://www.skhaz.com/blog/classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria/",
-      "captureUrl": "https://web.archive.org/web/*/http://www.skhaz.com/blog/classe-stdstring-stl-no-vc-6-provoca-corrupcao-da-memoria/"
+      "captureUrl": "https://web.archive.org/web/20080528143819id_/http://feeds.feedburner.com/skhazblog",
+      "context": "Full post body recovered from the archived FeedBurner RSS item; no individual post capture was located.",
+      "record": {
+        "status": 200,
+        "mime": "text/xml",
+        "digest": "OWPCEDQ3W3R5IIHOO7OY32IN2Z5Z462F",
+        "length": 15271,
+        "guid": "http://skhaz.wordpress.com/?p=27",
+        "localArtifact": "archive/sources/wayback-feed-2008.xml"
+      }
     },
     "missingMedia": [],
     "excerpt": "Hoje em dia se torna mais comum computadores com mais de um núcleo, esse bug afeta apenas o Microsoft Visual C++ 6.0, e pode ser um problema para quem usa ele. Referencia Classe std::string STL provoca falhas e uma corrupção da memória em c",
