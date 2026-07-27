@@ -1,0 +1,4 @@
+# Preserved historical evidence and canonical recovered corpora must not be reformatted.
+archive/sources/
+content/posts.json
+content/predecessor-posts.json

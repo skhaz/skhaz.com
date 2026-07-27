@@ -74,6 +74,8 @@ let historicalFeedSource;
 let historicalSeptemberHomeSource;
 let recoveryAttempts;
 let deepMediaSweep;
+let missingMediaContinuation;
+let missingMediaContinuationSource;
 let commonCrawlEarlySweep;
 let commonCrawlRemainingSweep;
 let commonCrawlCollectionsSource;
@@ -133,6 +135,15 @@ try {
 			"utf8",
 		),
 	);
+	missingMediaContinuationSource = readFileSync(
+		path.join(
+			ROOT,
+			"archive/sources/missing-media-continuation-2026-07-27.json",
+		),
+	);
+	missingMediaContinuation = JSON.parse(
+		missingMediaContinuationSource.toString("utf8"),
+	);
 	commonCrawlEarlySweep = JSON.parse(
 		readFileSync(
 			path.join(
@@ -179,6 +190,14 @@ try {
 	process.exit(1);
 }
 
+check(
+	missingMediaContinuationSource.length === 46574 &&
+		createHash("sha256")
+			.update(missingMediaContinuationSource)
+			.digest("hex") ===
+			"81f2ae7ae2b5bc589381aff0cd4630798d62c4800e5434342739ffcd156f3567",
+	"the synthesized continuation evidence must remain byte-for-byte unchanged",
+);
 check(
 	historicalSeptemberHomeSource.length === 11172 &&
 		createHash("sha256").update(historicalSeptemberHomeSource).digest("hex") ===
@@ -487,6 +506,394 @@ check(
 			);
 		}),
 	"the deep-media manifest must retain the exact scoped negative checks",
+);
+const continuationArchiveTeam = missingMediaContinuation?.archiveTeamImageShack;
+const archiveTeamStatusHistory =
+	continuationArchiveTeam?.revisionApi?.statusHistory ?? [];
+check(
+	missingMediaContinuation?.schemaVersion === 1 &&
+		continuationArchiveTeam?.wiki?.httpStatus === 200 &&
+		continuationArchiveTeam?.wiki?.statesNotSavedYet === true &&
+		isSha256(continuationArchiveTeam?.wiki?.sha256) &&
+		continuationArchiveTeam?.revisionApi?.revisionCount ===
+			archiveTeamStatusHistory.length &&
+		archiveTeamStatusHistory.length === 17 &&
+		hasExactValues(
+			archiveTeamStatusHistory.map((revision) => revision.revid),
+			[
+				58963, 28795, 28258, 28026, 27945, 27708, 27686, 27155, 26976,
+				24534, 24533, 23739, 20548, 17234, 7576, 2296, 2151,
+			],
+		) &&
+		archiveTeamStatusHistory.every(
+			(revision) => revision.archivingStatus === "{{notsavedyet}}",
+		) &&
+		continuationArchiveTeam?.tracker?.httpStatus === 404 &&
+		continuationArchiveTeam?.githubRepositorySearch?.httpStatus === 200 &&
+		continuationArchiveTeam?.githubRepositorySearch?.totalCount === 0,
+	"the continuation must retain the bounded public ArchiveTeam ImageShack evidence",
+);
+const continuationIaSearches =
+	missingMediaContinuation?.internetArchiveMetadataSearches ?? [];
+const expectedContinuationIaResults = new Map([
+	["six-image-tokens", [0, []]],
+	["all-distinctive-target-names", [0, []]],
+	["imageshack-data-items", [1, ["4archive"]]],
+	["author-creator", [0, []]],
+]);
+check(
+	hasExactValues(
+		continuationIaSearches.map((query) => query.label),
+		[...expectedContinuationIaResults.keys()],
+	) &&
+		continuationIaSearches.every((query) => {
+			const expected = expectedContinuationIaResults.get(query.label);
+			return (
+				expected &&
+				query.httpStatus === 200 &&
+				query.numFound === expected[0] &&
+				hasExactValues(query.identifiers ?? [], expected[1]) &&
+				isSha256(query.sha256)
+			);
+		}),
+	"the continuation must retain the exact Internet Archive metadata results",
+);
+const fourArchiveEvidence = missingMediaContinuation?.fourArchiveCandidate;
+const fourArchiveFiles = fourArchiveEvidence?.archives ?? [];
+const expectedFourArchiveFiles = new Map([
+	[
+		"4chan_imageshack_links.7z",
+		[
+			22515122,
+			"8012efaf9a3c1de087b51b6e066b90e72a962489",
+			"89b053a54753e60250f05ef44cd6af826ea4ba54b7339b95153e3e8bf0901ce6",
+			1,
+			89815187,
+		],
+	],
+	[
+		"4archive-imageurls.7z",
+		[
+			21617353,
+			"91f79b212577d5fdcbe57ee46838e0358426fa6e",
+			"49c49db76c813d982174589e1efe15b0495783c6bfc800ed0fcf521698bb99ae",
+			57646,
+			106523916,
+		],
+	],
+]);
+check(
+	hasExactValues(
+		fourArchiveFiles.map((archive) => archive.name),
+		[...expectedFourArchiveFiles.keys()],
+	) &&
+		fourArchiveFiles.every((archive) => {
+			const expected = expectedFourArchiveFiles.get(archive.name);
+			return (
+				expected &&
+				archive.publishedByInternetArchive?.bytes === expected[0] &&
+				archive.publishedByInternetArchive?.sha1 === expected[1] &&
+				archive.download?.bytes ===
+					archive.publishedByInternetArchive.bytes &&
+				archive.download?.sha1 ===
+					archive.publishedByInternetArchive.sha1 &&
+				archive.download?.sha256 === expected[2] &&
+				archive.extractedFiles === expected[3] &&
+				archive.extractedBytes === expected[4] &&
+				archive.search?.extractedFiles === archive.extractedFiles &&
+				archive.search?.extractedBytes === archive.extractedBytes &&
+				archive.search?.matches === 0
+			);
+		}) &&
+		fourArchiveEvidence?.matches === 0 &&
+		fourArchiveEvidence?.extractedFiles ===
+			fourArchiveFiles.reduce(
+				(sum, archive) => sum + archive.extractedFiles,
+				0,
+			) &&
+		fourArchiveEvidence?.extractedBytes ===
+			fourArchiveFiles.reduce(
+				(sum, archive) => sum + archive.extractedBytes,
+				0,
+			) &&
+		hasExactValues(fourArchiveEvidence?.patterns ?? [], [
+			"msvczm8",
+			"msvc9mb0",
+			"2242002764ab16f49f4dofs2",
+			"finalor9",
+			"mapakm5",
+			"mapatermicoyb6xb3",
+			"2jmsvczm8p",
+			"bamsvc9mb0p",
+			"b92242002764ab16f49f4dofs2p",
+			"79finalor9p",
+			"6omapakm5p",
+			"6omapatermicoyb6xb3p",
+			"img91/9260",
+			"img406/7664",
+			"img405/1079",
+			"img261/2865",
+			"img240/2306",
+			"img240/9194",
+		]),
+	"the 4archive candidate maps must retain their verified hashes and complete negative search",
+);
+const expectedMementoLocalTargets = [
+	["unixsextafeira13", "2009/02/unixsextafeira13.jpg"],
+	["boostconfig1", "2008/06/boostconfig1.png"],
+	["boostinstaller2", "2008/06/boostinstaller2.png"],
+	["desktop", "2008/05/desktop.jpg"],
+	["msvczm8-wordpress", "2008/05/msvczm8.png"],
+	["scheduler", "2008/06/scheduler.zip"],
+	["physicsfs", "2008/04/physicsfs.zip"],
+	["sdl-physicsfs", "2008/04/sdl-physicsfs.zip"],
+];
+const expectedMementoTargets = new Map(
+	expectedMementoLocalTargets
+		.flatMap(([label, targetPath]) => [
+			[
+				label,
+				`http://www.skhaz.com/blog/wp-content/uploads/${targetPath}`,
+			],
+			[
+				`${label}-no-www`,
+				`http://skhaz.com/blog/wp-content/uploads/${targetPath}`,
+			],
+		])
+		.concat([
+			[
+				"msvczm8-imageshack",
+				"http://img91.imageshack.us/img91/9260/msvczm8.png",
+			],
+			[
+				"msvc9mb0",
+				"http://img406.imageshack.us/img406/7664/msvc9mb0.png",
+			],
+			[
+				"2242002764ab16f49f4dofs2",
+				"http://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.png",
+			],
+			[
+				"finalor9",
+				"http://img261.imageshack.us/img261/2865/finalor9.png",
+			],
+			[
+				"mapakm5",
+				"http://img240.imageshack.us/img240/2306/mapakm5.png",
+			],
+			[
+				"mapatermicoyb6xb3",
+				"http://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.png",
+			],
+		]),
+);
+const mementoEvidence = missingMediaContinuation?.mementoAggregation;
+const mementoResults = mementoEvidence?.results ?? [];
+const mementoArchiveErrors = mementoResults.flatMap((result) =>
+	result.stderrLines.map((line) => ({
+		label: result.label,
+		archive: line.match(/main\.go:\d+: ([^ ]+) =>/)?.[1] ?? null,
+	})),
+);
+const emptySha256 =
+	"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+check(
+	mementoEvidence?.tool?.version === "1.0-rc9" &&
+		mementoEvidence?.tool?.activeArchiveCount === 13 &&
+		mementoEvidence?.tool?.archivesConfigSha256 ===
+			"e78e9c65fd40d96971069623354a4289707aafb6a746b43da0b32c243cfa104c" &&
+		hasExactValues(
+			mementoResults.map((result) => result.label),
+			[...expectedMementoTargets.keys()],
+		) &&
+		mementoResults.every(
+			(result) =>
+				result.originalUrl === expectedMementoTargets.get(result.label) &&
+				result.exitCode === 0 &&
+				result.stdoutBytes === 0 &&
+				result.stdoutSha256 === emptySha256 &&
+				Array.isArray(result.mementos) &&
+				result.mementos.length === 0 &&
+				Array.isArray(result.stderrLines) &&
+				result.stderrLines.length > 0 &&
+				result.stderrBytes ===
+					Buffer.byteLength(`${result.stderrLines.join("\n")}\n`) &&
+				result.stderrSha256 ===
+					createHash("sha256")
+						.update(`${result.stderrLines.join("\n")}\n`)
+						.digest("hex"),
+		) &&
+		mementoArchiveErrors.every((error) => error.archive !== null) &&
+		mementoArchiveErrors.filter(
+			(error) => error.archive === "waext.banq.qc.ca",
+		).length === 22 &&
+		hasExactValues(
+			mementoArchiveErrors
+				.filter((error) => error.archive === "web.archive.org")
+				.map((error) => error.label),
+			["mapakm5", "mapatermicoyb6xb3"],
+		) &&
+		mementoArchiveErrors.length === 24 &&
+		mementoEvidence?.summary?.targets === mementoResults.length &&
+		mementoEvidence?.summary?.mementos ===
+			mementoResults.reduce(
+				(sum, result) => sum + result.mementos.length,
+				0,
+			) &&
+		mementoEvidence?.summary?.timeouts === 0 &&
+		mementoEvidence?.summary?.queriesWithArchiveErrors ===
+			mementoResults.filter((result) => result.stderrLines.length > 0).length,
+	"the Memento continuation must retain all exact targets, empty results and archive errors",
+);
+const continuationIdAttempts =
+	missingMediaContinuation?.imageShackIdRoutes?.attempts ?? [];
+const expectedContinuationIdRoutes = [
+	"id-only-original-dimensions",
+	"id-only-original-dimensions-png-extension",
+];
+check(
+	hasExactValues(
+		continuationIdAttempts.map(
+			(attempt) => `${attempt.asset}\0${attempt.route}`,
+		),
+		[...expectedImageshackTargets.keys()].flatMap((asset) =>
+			expectedContinuationIdRoutes.map((route) => `${asset}\0${route}`),
+		),
+	) &&
+		continuationIdAttempts.every((attempt) => {
+			const expected = expectedImageshackTargets.get(attempt.asset);
+			if (!expected) return false;
+			const [id, width, height] = expected;
+			const extension = attempt.route.endsWith("png-extension") ? ".png" : "";
+			return (
+				attempt.imageId === id &&
+				attempt.url ===
+					`https://imagizer.imageshack.com/v2/${width}x${height}q100/${id}${extension}` &&
+				attempt.httpStatus === 200 &&
+				attempt.declaredContentLength === "0" &&
+				attempt.contentLength === 0 &&
+				attempt.sha256 === emptySha256 &&
+				attempt.first32Hex === "" &&
+				attempt.binarySignature == null &&
+				attempt.contentType ===
+					(extension ? "image/png" : "application/octet-stream")
+			);
+		}) &&
+		missingMediaContinuation?.imageShackIdRoutes?.summary?.attempts ===
+			continuationIdAttempts.length &&
+		missingMediaContinuation?.imageShackIdRoutes?.summary?.errors === 0 &&
+		missingMediaContinuation?.imageShackIdRoutes?.summary?.validImages === 0 &&
+		missingMediaContinuation?.imageShackIdRoutes?.summary?.emptyBodies ===
+			continuationIdAttempts.length,
+	"the continuation must not promote ImageShack's empty 200 responses to images",
+);
+const continuationHostingQueries =
+	missingMediaContinuation?.publicAuthorHosting?.apiQueries ?? [];
+const continuationHostingQuery = (label) =>
+	continuationHostingQueries.find((query) => query.label === label);
+const continuationSourceForgeTrees =
+	missingMediaContinuation?.publicAuthorHosting?.sourceForgeCurrentTrees ?? [];
+const expectedSourceForgeCurrentTrees = new Map([
+	[
+		"olimposgames",
+		[
+			"https://sourceforge.net/p/olimposgames/code/HEAD/tree/documentacao/base/livro-cpp.7z",
+		],
+	],
+	[
+		"pmdd",
+		[
+			"https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/caixote.blend",
+			"https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/casa3.blend",
+			"https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/license.txt",
+			"https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/poco.blend",
+			"https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/poco2.blend",
+			"https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/rocha.blend",
+			"https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/stone%202.blend",
+			"https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/stone1.blend",
+		],
+	],
+]);
+const missingTargetFilenamePattern =
+	/(?:scheduler|physicsfs|sdl-physicsfs|boostconfig1|boostinstaller2|unixsextafeira13|desktop\.jpg|msvczm8|msvc9mb0|2242002764ab16f49f4dofs2|finalor9|mapakm5|mapatermicoyb6xb3)/i;
+check(
+	hasExactValues(
+		continuationHostingQueries.map((query) => query.label),
+		[
+			"gitlab-user",
+			"gitlab-public-projects",
+			"bitbucket-public-repositories",
+			"bitbucket-demo-tree",
+			"sourceforge-profile",
+			"sourceforge-olimposgames-project",
+			"sourceforge-pmdd-project",
+		],
+	) &&
+		continuationHostingQueries.every(
+			(query) => query.httpStatus === 200 && isSha256(query.sha256),
+		) &&
+		continuationHostingQuery("gitlab-user")?.derived?.ids?.[0] === 3345430 &&
+		continuationHostingQuery("gitlab-public-projects")?.derived?.projects ===
+			0 &&
+		continuationHostingQuery("bitbucket-public-repositories")?.derived
+			?.repositories === 1 &&
+		hasExactValues(
+			continuationHostingQuery("bitbucket-demo-tree")?.derived?.paths ?? [],
+			["Demo01.pro", "MinhaClasse.cpp", "MinhaClasse.h", "main.cpp"],
+		) &&
+		hasExactValues(
+			continuationSourceForgeTrees.map((tree) => tree.project),
+			["olimposgames", "pmdd"],
+		) &&
+		continuationSourceForgeTrees.every((tree) => {
+			const expectedPaths = expectedSourceForgeCurrentTrees.get(tree.project);
+			const derivedTargetMatches = tree.paths.filter((file) =>
+				missingTargetFilenamePattern.test(file),
+			);
+			return (
+				expectedPaths &&
+				tree.reachableFiles === tree.paths.length &&
+				hasExactValues(tree.paths, expectedPaths) &&
+				hasExactValues(tree.targetMatches ?? [], derivedTargetMatches) &&
+				derivedTargetMatches.length === 0
+			);
+		}),
+	"the continuation must retain its bounded public author-hosting inventory",
+);
+const continuationSummary = missingMediaContinuation?.summary;
+const derivedContinuationRecoveredFiles = continuationIdAttempts.filter(
+	(attempt) => attempt.binarySignature != null && attempt.contentLength > 0,
+).length;
+const derivedContinuationPayloadCandidates =
+	derivedContinuationRecoveredFiles +
+	fourArchiveFiles.reduce(
+		(sum, archive) => sum + archive.search.matches,
+		0,
+	) +
+	continuationSourceForgeTrees.reduce(
+		(sum, tree) =>
+			sum +
+			tree.paths.filter((file) => missingTargetFilenamePattern.test(file)).length,
+		0,
+	);
+check(
+	continuationSummary?.recoveredFiles ===
+		derivedContinuationRecoveredFiles &&
+		continuationSummary?.payloadCandidates ===
+			derivedContinuationPayloadCandidates &&
+		continuationSummary?.mementoTargets === mementoResults.length &&
+		continuationSummary?.mementosReported ===
+			mementoEvidence?.summary?.mementos &&
+		continuationSummary?.fourArchiveExtractedFiles ===
+			fourArchiveEvidence?.extractedFiles &&
+		continuationSummary?.fourArchiveExtractedBytes ===
+			fourArchiveEvidence?.extractedBytes &&
+		continuationSummary?.imageShackIdRouteAttempts ===
+			continuationIdAttempts.length &&
+		continuationSummary?.imageShackIdRouteEmptyBodies ===
+			continuationIdAttempts.filter((attempt) => attempt.contentLength === 0)
+				.length,
+	"the continuation summary must be derived from its evidence records",
 );
 const expectedCrawlTargets = new Map([
 	[

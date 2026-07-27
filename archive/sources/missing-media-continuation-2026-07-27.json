@@ -1,0 +1,1047 @@
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-07-27T14:17:09.566681+00:00",
+  "acceptanceRule": "Only author-attributable payload bytes with valid media signatures/coherent MIME and dimensions, or an intact ZIP central directory, count as recovered. Metadata, HTML, JSON, empty bodies, and memento locators do not.",
+  "archiveTeamImageShack": {
+    "wiki": {
+      "url": "https://wiki.archiveteam.org/index.php/ImageShack",
+      "httpStatus": 200,
+      "finalUrl": "https://wiki.archiveteam.org/index.php/ImageShack",
+      "contentType": "text/html; charset=UTF-8",
+      "contentLength": 19754,
+      "sha256": "2a5ab365f402a936c799932061224781ce979c9ac7d2667fde4bc0b2582fe38a",
+      "statesNotSavedYet": true
+    },
+    "revisionApi": {
+      "url": "https://wiki.archiveteam.org/api.php?action=query&prop=revisions&titles=ImageShack&rvprop=ids%7Ctimestamp%7Cuser%7Ccomment%7Ccontent&rvslots=main&rvlimit=max&format=json&formatversion=2",
+      "httpStatus": 200,
+      "finalUrl": "https://wiki.archiveteam.org/api.php?action=query&prop=revisions&titles=ImageShack&rvprop=ids%7Ctimestamp%7Cuser%7Ccomment%7Ccontent&rvslots=main&rvlimit=max&format=json&formatversion=2",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": 23350,
+      "sha256": "5a3d71ed2409467ccce8a6d71577e592123780dbb986b20ba8d21b75d0a0b386",
+      "revisionCount": 17,
+      "statusHistory": [
+        {
+          "revid": 58963,
+          "parentid": 28795,
+          "timestamp": "2025-12-25T16:50:29Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 28795,
+          "parentid": 28258,
+          "timestamp": "2017-01-17T16:28:56Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 28258,
+          "parentid": 28026,
+          "timestamp": "2017-01-17T14:00:01Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 28026,
+          "parentid": 27945,
+          "timestamp": "2017-01-17T13:11:59Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 27945,
+          "parentid": 27708,
+          "timestamp": "2017-01-17T11:45:29Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 27708,
+          "parentid": 27686,
+          "timestamp": "2017-01-17T11:00:03Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 27686,
+          "parentid": 27155,
+          "timestamp": "2017-01-16T16:32:20Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 27155,
+          "parentid": 26976,
+          "timestamp": "2017-01-16T15:10:01Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 26976,
+          "parentid": 24534,
+          "timestamp": "2017-01-16T14:36:55Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 24534,
+          "parentid": 24533,
+          "timestamp": "2015-10-31T11:04:17Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 24533,
+          "parentid": 23739,
+          "timestamp": "2015-10-31T11:04:04Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 23739,
+          "parentid": 20548,
+          "timestamp": "2015-06-28T21:46:43Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 20548,
+          "parentid": 17234,
+          "timestamp": "2014-10-25T21:00:37Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 17234,
+          "parentid": 7576,
+          "timestamp": "2013-07-07T21:58:07Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 7576,
+          "parentid": 2296,
+          "timestamp": "2012-04-10T15:06:21Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 2296,
+          "parentid": 2151,
+          "timestamp": "2011-01-24T15:02:29Z",
+          "archivingStatus": "{{notsavedyet}}"
+        },
+        {
+          "revid": 2151,
+          "parentid": 0,
+          "timestamp": "2011-01-12T21:42:11Z",
+          "archivingStatus": "{{notsavedyet}}"
+        }
+      ]
+    },
+    "tracker": {
+      "url": "https://tracker.archiveteam.org/imageshack/",
+      "httpStatus": 404,
+      "finalUrl": "https://tracker.archiveteam.org/imageshack/",
+      "contentType": "text/html;charset=utf-8",
+      "contentLength": 4857,
+      "sha256": "8b904e81e2983511efb573a74ab95007edc1877498797afb3db8ac5d346cd3e3",
+      "saysProjectDoesNotExist": false
+    },
+    "githubRepositorySearch": {
+      "url": "https://api.github.com/search/repositories?q=imageshack+org%3AArchiveTeam&per_page=100",
+      "httpStatus": 200,
+      "finalUrl": "https://api.github.com/search/repositories?q=imageshack+org%3AArchiveTeam&per_page=100",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": 55,
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "totalCount": 0
+    },
+    "conclusion": "No public ArchiveTeam ImageShack rescue project or dedicated repository was found. This does not exclude undocumented, private, dark, or unindexed WARCs."
+  },
+  "internetArchiveMetadataSearches": [
+    {
+      "url": "https://archive.org/advancedsearch.php?q=%28msvczm8+OR+msvc9mb0+OR+2242002764ab16f49f4dofs2+OR+finalor9+OR+mapakm5+OR+mapatermicoyb6xb3%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+      "httpStatus": 200,
+      "finalUrl": "https://archive.org/advancedsearch.php?q=%28msvczm8+OR+msvc9mb0+OR+2242002764ab16f49f4dofs2+OR+finalor9+OR+mapakm5+OR+mapatermicoyb6xb3%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+      "contentType": "application/json",
+      "contentLength": 733,
+      "sha256": "9f8f80b03d4efc7325f03b4e935f14ed16ca2a311e2d6897761332ec645373a5",
+      "label": "six-image-tokens",
+      "numFound": 0,
+      "identifiers": []
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=%28%22scheduler.zip%22+OR+%22physicsfs.zip%22+OR+%22sdl-physicsfs.zip%22+OR+%22boostconfig1.png%22+OR+%22boostinstaller2.png%22+OR+%22unixsextafeira13%22+OR+%22msvczm8.png%22+OR+%22msvc9mb0.png%22+OR+%222242002764ab16f49f4dofs2.png%22+OR+%22finalor9.png%22+OR+%22mapakm5.png%22+OR+%22mapatermicoyb6xb3.png%22%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+      "httpStatus": 200,
+      "finalUrl": "https://archive.org/advancedsearch.php?q=%28%22scheduler.zip%22+OR+%22physicsfs.zip%22+OR+%22sdl-physicsfs.zip%22+OR+%22boostconfig1.png%22+OR+%22boostinstaller2.png%22+OR+%22unixsextafeira13%22+OR+%22msvczm8.png%22+OR+%22msvc9mb0.png%22+OR+%222242002764ab16f49f4dofs2.png%22+OR+%22finalor9.png%22+OR+%22mapakm5.png%22+OR+%22mapatermicoyb6xb3.png%22%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+      "contentType": "application/json",
+      "contentLength": 1638,
+      "sha256": "d0ed3e17460762f843a2e5125e854728b69fa3904e87579bfd946e14a589babd",
+      "label": "all-distinctive-target-names",
+      "numFound": 0,
+      "identifiers": []
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=%28title%3Aimageshack+OR+description%3Aimageshack+OR+identifier%3Aimageshack%2A+OR+subject%3Aimageshack%29+AND+mediatype%3Adata&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+      "httpStatus": 200,
+      "finalUrl": "https://archive.org/advancedsearch.php?q=%28title%3Aimageshack+OR+description%3Aimageshack+OR+identifier%3Aimageshack%2A+OR+subject%3Aimageshack%29+AND+mediatype%3Adata&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+      "contentType": "application/json",
+      "contentLength": 3625,
+      "sha256": "827843c17b18c0420dcee7707c10b9058707e53ce25d463bb1bd38d30e90e1a9",
+      "label": "imageshack-data-items",
+      "numFound": 1,
+      "identifiers": [
+        "4archive"
+      ]
+    },
+    {
+      "url": "https://archive.org/advancedsearch.php?q=creator%3A%28skhaz+OR+%22Rodrigo+Delduca%22%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+      "httpStatus": 200,
+      "finalUrl": "https://archive.org/advancedsearch.php?q=creator%3A%28skhaz+OR+%22Rodrigo+Delduca%22%29&fl%5B%5D=identifier&fl%5B%5D=title&fl%5B%5D=description&fl%5B%5D=collection&rows=200&page=1&output=json",
+      "contentType": "application/json",
+      "contentLength": 295,
+      "sha256": "081c149494ecb9375c62447ec52688edcdcbe49e91c40425cd32c51b6c9d57f2",
+      "label": "author-creator",
+      "numFound": 0,
+      "identifiers": []
+    }
+  ],
+  "fourArchiveCandidate": {
+    "item": "https://archive.org/details/4archive",
+    "scope": "Independently assembled 4chan/4archive dataset from 2014-2015; not an ArchiveTeam ImageShack rescue and not global ImageShack coverage.",
+    "archives": [
+      {
+        "name": "4chan_imageshack_links.7z",
+        "url": "https://archive.org/download/4archive/4chan_imageshack_links.7z",
+        "download": {
+          "bytes": 22515122,
+          "sha1": "8012efaf9a3c1de087b51b6e066b90e72a962489",
+          "sha256": "89b053a54753e60250f05ef44cd6af826ea4ba54b7339b95153e3e8bf0901ce6"
+        },
+        "extractedFiles": 1,
+        "extractedBytes": 89815187,
+        "publishedByInternetArchive": {
+          "bytes": 22515122,
+          "sha1": "8012efaf9a3c1de087b51b6e066b90e72a962489"
+        },
+        "search": {
+          "extractedFiles": 1,
+          "extractedBytes": 89815187,
+          "matches": 0
+        }
+      },
+      {
+        "name": "4archive-imageurls.7z",
+        "url": "https://archive.org/download/4archive/4archive-imageurls.7z",
+        "download": {
+          "bytes": 21617353,
+          "sha1": "91f79b212577d5fdcbe57ee46838e0358426fa6e",
+          "sha256": "49c49db76c813d982174589e1efe15b0495783c6bfc800ed0fcf521698bb99ae"
+        },
+        "extractedFiles": 57646,
+        "extractedBytes": 106523916,
+        "publishedByInternetArchive": {
+          "bytes": 21617353,
+          "sha1": "91f79b212577d5fdcbe57ee46838e0358426fa6e"
+        },
+        "search": {
+          "extractedFiles": 57646,
+          "extractedBytes": 106523916,
+          "matches": 0
+        }
+      }
+    ],
+    "extractionTool": "bsdtar 3.5.3 - libarchive 3.7.4 zlib/1.2.12 liblzma/5.4.3 bz2lib/1.0.8 ",
+    "patterns": [
+      "msvczm8",
+      "msvc9mb0",
+      "2242002764ab16f49f4dofs2",
+      "finalor9",
+      "mapakm5",
+      "mapatermicoyb6xb3",
+      "2jmsvczm8p",
+      "bamsvc9mb0p",
+      "b92242002764ab16f49f4dofs2p",
+      "79finalor9p",
+      "6omapakm5p",
+      "6omapatermicoyb6xb3p",
+      "img91/9260",
+      "img406/7664",
+      "img405/1079",
+      "img261/2865",
+      "img240/2306",
+      "img240/9194"
+    ],
+    "matches": 0,
+    "extractedFiles": 57647,
+    "extractedBytes": 196339103,
+    "conclusion": "Both mapping archives were downloaded, their IA-listed SHA-1 values matched, and every extracted file was searched. No target filename, public ImageShack ID, server/bucket tuple, or mapped replacement was found."
+  },
+  "mementoAggregation": {
+    "completedAt": "2026-07-27T14:17:00.039589+00:00",
+    "tool": {
+      "name": "MemGator",
+      "version": "1.0-rc9",
+      "releaseUrl": "https://github.com/oduwsdl/MemGator/releases/tag/1.0-rc9",
+      "binaryAsset": "memgator-darwin-arm64",
+      "binarySha256": "ac9bf5104d33ae78ded7cc96765573932d5938dae1edf8a1240839a976cb03a7",
+      "archivesConfigUrl": "https://git.io/archives",
+      "archivesConfigSha256": "e78e9c65fd40d96971069623354a4289707aafb6a746b43da0b32c243cfa104c",
+      "activeArchiveCount": 13
+    },
+    "method": "One MemGator JSON TimeMap aggregation per exact HTTP original URL against every non-ignored archive in the pinned 20-entry config (13 active); four queries ran concurrently. Empty output means the aggregator found no memento. Archive errors are retained per query and prevent treating an empty result as proof that every configured archive answered successfully.",
+    "acceptanceRule": "A memento is only a locator. Any candidate replay still requires payload retrieval and media/ZIP binary validation.",
+    "results": [
+      {
+        "label": "unixsextafeira13",
+        "originalUrl": "http://www.skhaz.com/blog/wp-content/uploads/2009/02/unixsextafeira13.jpg",
+        "exitCode": 0,
+        "durationMilliseconds": 2561,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "17f36134831b9d3a637b9196f0c71321a06f3e16ba4ab7643ec4d11aacf0b01f",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:44.138130 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=14fcd0983a30d37239f54f5b69facd867a0196cb5714338e9d4ebbed49ed624a\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "unixsextafeira13-no-www",
+        "originalUrl": "http://skhaz.com/blog/wp-content/uploads/2009/02/unixsextafeira13.jpg",
+        "exitCode": 0,
+        "durationMilliseconds": 2520,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "49d88e058291c6b72c02dd059d4f482db57e0c1d13584c6328c43e9ebde15048",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:44.097967 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=959e1308331122609859ca73d3d69feeda2e51c7cda0a12db03946f552cb18ed\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "boostconfig1",
+        "originalUrl": "http://www.skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2565,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "189ba0f92325fa5b2f73cd89096e7991a5302fda29d543e1278baf725f0b2566",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:44.144191 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=571ad945626168e23d809ca35e91d54b7865683bb383ddccc616d163225bae42\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "boostconfig1-no-www",
+        "originalUrl": "http://skhaz.com/blog/wp-content/uploads/2008/06/boostconfig1.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2464,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "601759bde70ad76a1e386d28f714cf05474580aafbdc2f5877c723a9b5559867",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:44.043209 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=283b62e9a172889968c76b098f0614920f461b346815c2a5be0bf5bb93b2a340\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "boostinstaller2",
+        "originalUrl": "http://www.skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2185,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "22afd680cb8cf3f7d1e3032cf9f1f5e7aad72f19bb0267367067eec032ba071e",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:46.230166 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=14fcd0983a30d37239f54f5b69facd8642895b34c9e552b053e72d74be949df6\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "boostinstaller2-no-www",
+        "originalUrl": "http://skhaz.com/blog/wp-content/uploads/2008/06/boostinstaller2.png",
+        "exitCode": 0,
+        "durationMilliseconds": 4305,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "e711931bd7029e2fc376b92eaf02401115f012ccb6b0e9f2794ba0e77d18f051",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:46.252425 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=571ad945626168e23d809ca35e91d54bb04fdd9e1920336598f09d1d09266fc0\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "desktop",
+        "originalUrl": "http://www.skhaz.com/blog/wp-content/uploads/2008/05/desktop.jpg",
+        "exitCode": 0,
+        "durationMilliseconds": 2161,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "98574cf1742f7ddbc6f7f0f3e5371e3c2982775fd6124129b4435eb28dc950a9",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:46.298723 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=283b62e9a172889968c76b098f0614928f72f2c9cea29fc48eeb7134d2525230\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "desktop-no-www",
+        "originalUrl": "http://skhaz.com/blog/wp-content/uploads/2008/05/desktop.jpg",
+        "exitCode": 0,
+        "durationMilliseconds": 2162,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "90ec68a5bb950eb6ed52d55bdd6290fd74e95e760e1a1be17f03e98b7ad9d9f2",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:46.305854 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=571ad945626168e23d809ca35e91d54bc84a0221da1405fea6b97b5f4fc5beaa\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "msvczm8-wordpress",
+        "originalUrl": "http://www.skhaz.com/blog/wp-content/uploads/2008/05/msvczm8.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2181,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "ce9b12b5129c39683db31d0713a35b844c2c9ecdc1d4fb51532a2af70eeab2b4",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:48.412000 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=283b62e9a172889968c76b098f06149215d442a502ce0aad5013afacc535a813\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "msvczm8-wordpress-no-www",
+        "originalUrl": "http://skhaz.com/blog/wp-content/uploads/2008/05/msvczm8.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2134,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "272816a7ac2188bfaebfbd7a72a001733ea24449cb15f5637a37e63098001f69",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:48.433153 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=283b62e9a172889968c76b098f061492c06190a777fd209a1edf7080a73b3d87\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "scheduler",
+        "originalUrl": "http://www.skhaz.com/blog/wp-content/uploads/2008/06/scheduler.zip",
+        "exitCode": 0,
+        "durationMilliseconds": 2190,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "6301952d78e1428b517867b1cc574842cdb5eb081c40acc79cbfde277f8147f6",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:48.496548 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=14fcd0983a30d37239f54f5b69facd86de5497bcaa81b5d49c4e29e9202abf8b\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "scheduler-no-www",
+        "originalUrl": "http://skhaz.com/blog/wp-content/uploads/2008/06/scheduler.zip",
+        "exitCode": 0,
+        "durationMilliseconds": 2239,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "3b10ed5f7ca4514f37ec9a172fe479a7bb6a8e78c20ef6f8ad060c005e9cb57a",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:50.642708 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=571ad945626168e23d809ca35e91d54bb458a4830dbeaeb0b46293e7008ff946\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "physicsfs",
+        "originalUrl": "http://www.skhaz.com/blog/wp-content/uploads/2008/04/physicsfs.zip",
+        "exitCode": 0,
+        "durationMilliseconds": 2156,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "122ce4e34bc9d5cf51439382a3f964622bae6e6fc386914f5ca0ae0e338fb397",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:50.567606 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=959e1308331122609859ca73d3d69fee3882e4390ae52e47c480f2469e858800\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "physicsfs-no-www",
+        "originalUrl": "http://skhaz.com/blog/wp-content/uploads/2008/04/physicsfs.zip",
+        "exitCode": 0,
+        "durationMilliseconds": 2160,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "da5f93e304530350beab7e3c21943dd7f3dfbe262fbeb11a9e8916b12c974e34",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:50.593080 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=14fcd0983a30d37239f54f5b69facd86096d2f5ad33d461aa520bbc4428d662f\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "sdl-physicsfs",
+        "originalUrl": "http://www.skhaz.com/blog/wp-content/uploads/2008/04/sdl-physicsfs.zip",
+        "exitCode": 0,
+        "durationMilliseconds": 2112,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "cc931488263022dcfb97a82a10dc5889942a351831522f7c2c4944e8a0224c72",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:50.608310 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=571ad945626168e23d809ca35e91d54b409ce1c9887a091f0f8d12939b660dd3\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "sdl-physicsfs-no-www",
+        "originalUrl": "http://skhaz.com/blog/wp-content/uploads/2008/04/sdl-physicsfs.zip",
+        "exitCode": 0,
+        "durationMilliseconds": 2128,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "b3eb6948af6f4d5f9a9c0c914159499d810ed8f75279c999dec7bd17563df366",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:52.695928 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=959e1308331122609859ca73d3d69fee282a8b95093c6fbe5679b8a1d8c2b330\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "msvczm8-imageshack",
+        "originalUrl": "http://img91.imageshack.us/img91/9260/msvczm8.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2175,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "df967110cc1bdc361e8dc8da0ea6e5ed382db136d0b221640c24ad81e010e026",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:52.768495 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=14fcd0983a30d37239f54f5b69facd86c041409d94a6fd220d55ea20ac843cc8\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "msvc9mb0",
+        "originalUrl": "http://img406.imageshack.us/img406/7664/msvc9mb0.png",
+        "exitCode": 0,
+        "durationMilliseconds": 9430,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "e5b866100c998aeb6649521ea9d90cf37c00ec4dabc202a13ae8f913bfc441b0",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:52.781862 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=571ad945626168e23d809ca35e91d54bdd5dafe5f150d0408eea5a60b3502cce\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "2242002764ab16f49f4dofs2",
+        "originalUrl": "http://img405.imageshack.us/img405/1079/2242002764ab16f49f4dofs2.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2162,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "2b1d6f52dbb19096ef4dc931c69879761301d3fe9a8e3530c29939fa792c51cf",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:52.805158 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=959e1308331122609859ca73d3d69fee44e17447bf00b248dc76c4fe3b7e24d3\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "finalor9",
+        "originalUrl": "http://img261.imageshack.us/img261/2865/finalor9.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2331,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 247,
+        "stderrSha256": "4d51c363112fbc217d2cca30dda79d9b55989bf68072143ea78d0af0e97575a2",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:55.027155 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=283b62e9a172889968c76b098f0614921aab383b6a538014da072621859653c6\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "mapakm5",
+        "originalUrl": "http://img240.imageshack.us/img240/2306/mapakm5.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2125,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 484,
+        "stderrSha256": "8a7ea988fb41e1cd40334338a23e49f919bc384afd31033ff45bf05327f8d233",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:53.004894 main.go:292: web.archive.org => Network error: Get \"https://web.archive.org/web/timemap/link/http://img240.imageshack.us/img240/2306/mapakm5.png\": dial tcp 207.241.237.3:443: connect: connection refused",
+          "ERROR: 2026/07/27 11:16:54.893789 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=283b62e9a172889968c76b098f0614923b829fb6bff480dcf4dec89b5c1e7c31\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      },
+      {
+        "label": "mapatermicoyb6xb3",
+        "originalUrl": "http://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.png",
+        "exitCode": 0,
+        "durationMilliseconds": 2090,
+        "stdoutBytes": 0,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrBytes": 494,
+        "stderrSha256": "fd21933e072942bdbe1f285e1b70acb0cb1520915f0fad40fdc875050560e734",
+        "stderrLines": [
+          "ERROR: 2026/07/27 11:16:53.026550 main.go:292: web.archive.org => Network error: Get \"https://web.archive.org/web/timemap/link/http://img240.imageshack.us/img240/9194/mapatermicoyb6xb3.png\": dial tcp 207.241.237.3:443: connect: connection refused",
+          "ERROR: 2026/07/27 11:16:54.896022 main.go:292: waext.banq.qc.ca => Network error: Get \"https://indispo.banq.qc.ca/SecurityPage-fr-en.html?_event_transid=959e1308331122609859ca73d3d69feef6637a2e94b1846872cf641fdb208050\": stopped after 10 redirects"
+        ],
+        "mementos": [],
+        "stdoutPreview": ""
+      }
+    ],
+    "summary": {
+      "targets": 22,
+      "mementos": 0,
+      "timeouts": 0,
+      "queriesWithArchiveErrors": 22
+    }
+  },
+  "imageShackIdRoutes": {
+    "completedAt": "2026-07-27T14:12:50.144515+00:00",
+    "method": "Raw byte-preserving HTTPS GETs with redirects for ImageShack Imagizer v2 routes derived from each preserved public image ID and original dimensions, both without an extension and with .png.",
+    "acceptanceRule": "A recovered image requires non-empty bytes, a recognized image signature, coherent MIME, and dimensions matching preserved metadata.",
+    "attempts": [
+      {
+        "asset": "msvczm8.png",
+        "imageId": "2jmsvczm8p",
+        "route": "id-only-original-dimensions",
+        "url": "https://imagizer.imageshack.com/v2/1024x768q100/2jmsvczm8p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/1024x768q100/2jmsvczm8p",
+        "contentType": "application/octet-stream",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "msvczm8.png",
+        "imageId": "2jmsvczm8p",
+        "route": "id-only-original-dimensions-png-extension",
+        "url": "https://imagizer.imageshack.com/v2/1024x768q100/2jmsvczm8p.png",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/1024x768q100/2jmsvczm8p.png",
+        "contentType": "image/png",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "mapakm5.png",
+        "imageId": "6omapakm5p",
+        "route": "id-only-original-dimensions",
+        "url": "https://imagizer.imageshack.com/v2/1024x768q100/6omapakm5p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/1024x768q100/6omapakm5p",
+        "contentType": "application/octet-stream",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "mapakm5.png",
+        "imageId": "6omapakm5p",
+        "route": "id-only-original-dimensions-png-extension",
+        "url": "https://imagizer.imageshack.com/v2/1024x768q100/6omapakm5p.png",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/1024x768q100/6omapakm5p.png",
+        "contentType": "image/png",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "finalor9.png",
+        "imageId": "79finalor9p",
+        "route": "id-only-original-dimensions",
+        "url": "https://imagizer.imageshack.com/v2/1145x808q100/79finalor9p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/1145x808q100/79finalor9p",
+        "contentType": "application/octet-stream",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "finalor9.png",
+        "imageId": "79finalor9p",
+        "route": "id-only-original-dimensions-png-extension",
+        "url": "https://imagizer.imageshack.com/v2/1145x808q100/79finalor9p.png",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/1145x808q100/79finalor9p.png",
+        "contentType": "image/png",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "mapatermicoyb6xb3.png",
+        "imageId": "6omapatermicoyb6xb3p",
+        "route": "id-only-original-dimensions",
+        "url": "https://imagizer.imageshack.com/v2/800x600q100/6omapatermicoyb6xb3p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/800x600q100/6omapatermicoyb6xb3p",
+        "contentType": "application/octet-stream",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "mapatermicoyb6xb3.png",
+        "imageId": "6omapatermicoyb6xb3p",
+        "route": "id-only-original-dimensions-png-extension",
+        "url": "https://imagizer.imageshack.com/v2/800x600q100/6omapatermicoyb6xb3p.png",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/800x600q100/6omapatermicoyb6xb3p.png",
+        "contentType": "image/png",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "msvc9mb0.png",
+        "imageId": "bamsvc9mb0p",
+        "route": "id-only-original-dimensions",
+        "url": "https://imagizer.imageshack.com/v2/756x581q100/bamsvc9mb0p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/756x581q100/bamsvc9mb0p",
+        "contentType": "application/octet-stream",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "msvc9mb0.png",
+        "imageId": "bamsvc9mb0p",
+        "route": "id-only-original-dimensions-png-extension",
+        "url": "https://imagizer.imageshack.com/v2/756x581q100/bamsvc9mb0p.png",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/756x581q100/bamsvc9mb0p.png",
+        "contentType": "image/png",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "2242002764ab16f49f4dofs2.png",
+        "imageId": "b92242002764ab16f49f4dofs2p",
+        "route": "id-only-original-dimensions",
+        "url": "https://imagizer.imageshack.com/v2/1024x768q100/b92242002764ab16f49f4dofs2p",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/1024x768q100/b92242002764ab16f49f4dofs2p",
+        "contentType": "application/octet-stream",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      },
+      {
+        "asset": "2242002764ab16f49f4dofs2.png",
+        "imageId": "b92242002764ab16f49f4dofs2p",
+        "route": "id-only-original-dimensions-png-extension",
+        "url": "https://imagizer.imageshack.com/v2/1024x768q100/b92242002764ab16f49f4dofs2p.png",
+        "httpStatus": 200,
+        "finalUrl": "https://imagizer.imageshack.com/v2/1024x768q100/b92242002764ab16f49f4dofs2p.png",
+        "contentType": "image/png",
+        "declaredContentLength": "0",
+        "contentLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "first32Hex": "",
+        "binarySignature": null
+      }
+    ],
+    "summary": {
+      "attempts": 12,
+      "errors": 0,
+      "validImages": 0,
+      "emptyBodies": 12
+    }
+  },
+  "publicAuthorHosting": {
+    "apiQueries": [
+      {
+        "url": "https://gitlab.com/api/v4/users?username=skhaz",
+        "httpStatus": 200,
+        "finalUrl": "https://gitlab.com/api/v4/users?username=skhaz",
+        "contentType": "application/json",
+        "contentLength": 303,
+        "sha256": "abb5ed6558b139e17a5777948d5a99823cb43dc87b8a59ef6fcc66e7d7f2ec4c",
+        "label": "gitlab-user",
+        "derived": {
+          "users": 1,
+          "ids": [
+            3345430
+          ],
+          "names": [
+            "Rodrigo Delduca"
+          ]
+        }
+      },
+      {
+        "url": "https://gitlab.com/api/v4/users/3345430/projects?per_page=100&simple=true",
+        "httpStatus": 200,
+        "finalUrl": "https://gitlab.com/api/v4/users/3345430/projects?per_page=100&simple=true",
+        "contentType": "application/json",
+        "contentLength": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "label": "gitlab-public-projects",
+        "derived": {
+          "projects": 0,
+          "paths": []
+        }
+      },
+      {
+        "url": "https://api.bitbucket.org/2.0/repositories/skhaz?pagelen=100",
+        "httpStatus": 200,
+        "finalUrl": "https://api.bitbucket.org/2.0/repositories/skhaz?pagelen=100",
+        "contentType": "application/json; charset=utf-8",
+        "contentLength": 3295,
+        "sha256": "371903811a0813dac4a206689abf130a28db0dbd85a70e34835a72416b72bbc0",
+        "label": "bitbucket-public-repositories",
+        "derived": {
+          "repositories": 1,
+          "slugs": [
+            "demo-c-c-brasil"
+          ]
+        }
+      },
+      {
+        "url": "https://api.bitbucket.org/2.0/repositories/skhaz/demo-c-c-brasil/src/master/?pagelen=100",
+        "httpStatus": 200,
+        "finalUrl": "https://api.bitbucket.org/2.0/repositories/skhaz/demo-c-c-brasil/src/master/?pagelen=100",
+        "contentType": "application/json; charset=utf-8",
+        "contentLength": 3669,
+        "sha256": "c32aed744c150bd0bf6ebe0d66c337d6c3b64818556ecf7e7d878ae336cfcb93",
+        "label": "bitbucket-demo-tree",
+        "derived": {
+          "files": 4,
+          "paths": [
+            "Demo01.pro",
+            "MinhaClasse.cpp",
+            "MinhaClasse.h",
+            "main.cpp"
+          ]
+        }
+      },
+      {
+        "url": "https://sourceforge.net/rest/u/skhaz/profile",
+        "httpStatus": 200,
+        "finalUrl": "https://sourceforge.net/rest/u/skhaz/profile",
+        "contentType": "application/json; charset=utf-8",
+        "contentLength": 477,
+        "sha256": "cbd9250028f0eb3ae5902733395710a137d64ce22d93d7eb14c459de33dda57b",
+        "label": "sourceforge-profile",
+        "derived": {
+          "username": "skhaz",
+          "projects": [
+            "Olimpo's Games",
+            "Projeto Mundo dos Dragoes"
+          ]
+        }
+      },
+      {
+        "url": "https://sourceforge.net/rest/p/olimposgames",
+        "httpStatus": 200,
+        "finalUrl": "https://sourceforge.net/rest/p/olimposgames",
+        "contentType": "application/json; charset=utf-8",
+        "contentLength": 5112,
+        "sha256": "b90ea0499df48754be766e5f5d24906de208e5011f53d39b16c1274328046fcf",
+        "label": "sourceforge-olimposgames-project",
+        "derived": {
+          "shortname": "olimposgames",
+          "developers": [
+            "skhaz",
+            "eduardonunesp",
+            "killguns",
+            "kerenskystudios",
+            "ramonwadry",
+            "ton_br",
+            "h3xacod3",
+            "billguedes",
+            "dfa"
+          ],
+          "tools": [
+            {
+              "name": "reviews",
+              "mountPoint": "reviews"
+            },
+            {
+              "name": "summary",
+              "mountPoint": "summary"
+            },
+            {
+              "name": "discussion",
+              "mountPoint": "discussion"
+            },
+            {
+              "name": "support",
+              "mountPoint": "support"
+            },
+            {
+              "name": "files-sf",
+              "mountPoint": "files"
+            },
+            {
+              "name": "mailman",
+              "mountPoint": "mailman"
+            },
+            {
+              "name": "svn",
+              "mountPoint": "code"
+            },
+            {
+              "name": "activity",
+              "mountPoint": "activity"
+            }
+          ]
+        }
+      },
+      {
+        "url": "https://sourceforge.net/rest/p/pmdd",
+        "httpStatus": 200,
+        "finalUrl": "https://sourceforge.net/rest/p/pmdd",
+        "contentType": "application/json; charset=utf-8",
+        "contentLength": 4943,
+        "sha256": "553870740ff61ee2096ff1e86f54e97e84d7a0538b4195f2d0ae6f932137f68f",
+        "label": "sourceforge-pmdd-project",
+        "derived": {
+          "shortname": "pmdd",
+          "developers": [
+            "sandrosf",
+            "rafael_bugstyle",
+            "skhaz",
+            "pmdd",
+            "valdirsalgueiro",
+            "toymak3r"
+          ],
+          "tools": [
+            {
+              "name": "blog",
+              "mountPoint": "news"
+            },
+            {
+              "name": "reviews",
+              "mountPoint": "reviews"
+            },
+            {
+              "name": "svn",
+              "mountPoint": "code"
+            },
+            {
+              "name": "cvs",
+              "mountPoint": "cvs"
+            },
+            {
+              "name": "support",
+              "mountPoint": "support"
+            },
+            {
+              "name": "files-sf",
+              "mountPoint": "files"
+            },
+            {
+              "name": "tickets",
+              "mountPoint": "bugs"
+            },
+            {
+              "name": "summary",
+              "mountPoint": "summary"
+            },
+            {
+              "name": "activity",
+              "mountPoint": "activity"
+            },
+            {
+              "name": "mailman",
+              "mountPoint": "mailman"
+            }
+          ]
+        }
+      }
+    ],
+    "sourceForgeCurrentTrees": [
+      {
+        "project": "olimposgames",
+        "revision": 1,
+        "rootUrl": "https://sourceforge.net/p/olimposgames/code/HEAD/tree/",
+        "reachableFiles": 1,
+        "paths": [
+          "https://sourceforge.net/p/olimposgames/code/HEAD/tree/documentacao/base/livro-cpp.7z"
+        ],
+        "targetMatches": []
+      },
+      {
+        "project": "pmdd",
+        "revision": 30,
+        "rootUrl": "https://sourceforge.net/p/pmdd/code/HEAD/tree/",
+        "reachableFiles": 8,
+        "paths": [
+          "https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/caixote.blend",
+          "https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/casa3.blend",
+          "https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/license.txt",
+          "https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/poco.blend",
+          "https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/poco2.blend",
+          "https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/rocha.blend",
+          "https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/stone%202.blend",
+          "https://sourceforge.net/p/pmdd/code/HEAD/tree/3D/models/ambient/stone1.blend"
+        ],
+        "targetMatches": []
+      }
+    ],
+    "conclusion": "No target appears in the currently public project lists or reachable current trees. Deleted, private, group-owned, unindexed, and unreachable history remain outside this claim."
+  },
+  "summary": {
+    "recoveredFiles": 0,
+    "payloadCandidates": 0,
+    "mementoTargets": 22,
+    "mementosReported": 0,
+    "fourArchiveExtractedFiles": 57647,
+    "fourArchiveExtractedBytes": 196339103,
+    "imageShackIdRouteAttempts": 12,
+    "imageShackIdRouteEmptyBodies": 12
+  },
+  "boundedNegative": "No exact asset payload was found in the named public queries and downloaded mapping archives. This does not prove global nonexistence; authenticated account exports, personal backups, private caches, unindexed containers, inaccessible archive collections, or future collections may still contain bytes."
+}
